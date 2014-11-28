@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">  
+  <bean id="userDao" parent="abstractDao"> 
+    <property name="proxyInterfaces"> 
+      <value>org.cx.card.dao.IUserDAO</value> 
+    </property>  
+    <property name="target"> 
+      <bean parent="baseDAO"> 
+        <constructor-arg> 
+          <value>org.cx.card.domain.User</value> 
+        </constructor-arg> 
+      </bean> 
+    </property> 
+  </bean>  
+  
+  <bean id="cardDao" parent="abstractDao"> 
+    <property name="proxyInterfaces"> 
+      <value>org.cx.card.dao.ICardDAO</value> 
+    </property>  
+    <property name="target"> 
+      <bean parent="baseDAO"> 
+        <constructor-arg> 
+          <value>org.cx.card.domain.Card</value> 
+        </constructor-arg> 
+      </bean> 
+    </property> 
+  </bean>
+  
+  <bean id="processDao" parent="abstractDao"> 
+    <property name="proxyInterfaces"> 
+      <value>org.cx.card.dao.IProcessDAO</value> 
+    </property>  
+    <property name="target"> 
+      <bean parent="baseDAO"> 
+        <constructor-arg> 
+          <value>org.cx.card.domain.Process</value> 
+        </constructor-arg> 
+      </bean> 
+    </property> 
+  </bean>
+  
+  <bean id="jdbcQueryDao" class="org.cx.card.dao.impl.JDBCQueryDaoImpl">
+  	<property name="dataSource" ref="dataSource"></property>
+  </bean> 
+   
+  <!-- 自动加载关联对象 -->
+  <bean id="jpaPoLoader" class="com.easyjf.core.dao.impl.JpaPOLoaderImpl">
+  	<property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
+
+</beans>

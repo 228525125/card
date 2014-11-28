@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>playstation</title>
+<link type="text/css" href="css/default.css" media="screen" rel="stylesheet" />
+<script type="text/javascript" src="plugins/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/util/Map.js"></script>
+<script type="text/javascript" src="js/util/common.js"></script>
+<script type="text/javascript" src="js/core/Observable.js"></script>
+<script type="text/javascript" src="js/core/Observer.js"></script>
+<script type="text/javascript" src="js/core/Context.js"></script>
+<script type="text/javascript" src="js/widget/Container.js"></script>
+<script type="text/javascript" src="js/widget/CardGroup.js"></script>
+<script type="text/javascript" src="js/widget/CardGroupPlace.js"></script>
+<script type="text/javascript" src="js/widget/Ground.js"></script>
+<script type="text/javascript" src="js/widget/GroundPlace.js"></script>
+<script type="text/javascript" src="js/widget/UseCard.js"></script>
+<script type="text/javascript" src="js/widget/UseCardPlace.js"></script>
+<script type="text/javascript" src="js/widget/Notice.js"></script>
+<script type="text/javascript" src="js/widget/NoticePlace.js"></script>
+<script type="text/javascript" src="js/command/Command.js"></script>
+<script type="text/javascript" src="js/command/Buffer.js"></script>
+<script type="text/javascript" src="js/command/QueryCommand.js"></script>
+<script type="text/javascript" src="js/command/ContextCommand.js"></script>
+<script type="text/javascript" src="js/command/ShowCommand.js"></script>
+<script type="text/javascript" src="js/command/ControlCommand.js"></script>
+<script type="text/javascript" src="js/command/CommandFactory.js"></script>
+<script type="text/javascript" src="js/command/Invoker.js"></script>
+<script type="text/javascript" src="js/widget/Player.js"></script>
+<script type="text/javascript" src="js/action/Action.js"></script>
+<script type="text/javascript" src="js/action/CommandQueryAttackAction.js"></script>
+<script type="text/javascript" src="js/action/CommandQueryCallAction.js"></script>
+<script type="text/javascript" src="js/action/CommandQueryMoveAction.js"></script>
+<script type="text/javascript" src="js/action/CommandQueryConjureAction.js"></script>
+<script type="text/javascript" src="js/action/CommandSelectAction.js"></script>
+<script type="text/javascript" src="js/action/CommandShowAction.js"></script>
+<script type="text/javascript" src="js/action/CommandReloadAction.js"></script>
+<script type="text/javascript" src="js/action/GroundAddAction.js"></script>
+<script type="text/javascript" src="js/action/GroundRemoveAction.js"></script>
+<script type="text/javascript" src="js/action/PlaceInAction.js"></script>
+<script type="text/javascript" src="js/action/PlaceOutAction.js"></script>
+<script type="text/javascript" src="js/action/UseCardAddAction.js"></script>
+<script type="text/javascript" src="js/action/UseCardRemoveAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardMoveAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardCallAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardAttackAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardAttackedAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardActivateAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardDeathAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardHpAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardAtkAction.js"></script>
+<script type="text/javascript" src="js/action/LifeCardExpAction.js"></script>
+<script type="text/javascript" src="js/action/PlayerPowerAction.js"></script>
+<script type="text/javascript" src="js/action/SkillAccurateAction.js"></script>
+<script type="text/javascript" src="js/action/SkillAttackBackAction.js"></script>
+<script type="text/javascript" src="js/action/SkillDodgeAction.js"></script>
+<script type="text/javascript" src="js/action/SkillParryAction.js"></script>
+<script type="text/javascript" src="js/action/SkillThumpAction.js"></script>
+<script type="text/javascript" src="js/action/ContextStartAction.js"></script>
+<script type="text/javascript" src="js/action/ContextControlAction.js"></script>
+<script type="text/javascript" src="js/action/ContextDeployAction.js"></script>
+<script type="text/javascript" src="js/action/ContextDoneAction.js"></script>
+<script type="text/javascript" src="js/action/ContextFinishAction.js"></script>
+<script type="text/javascript" src="js/action/ControlQueueRemoveAction.js"></script>
+<script type="text/javascript" src="js/action/ControlQueueInsertAction.js"></script>
+<script type="text/javascript" src="js/action/ActionFactory.js"></script>
+<script type="text/javascript" src="js/play.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	Context.setOwn({
+		id:${id},
+		account:'${account}',
+		name:'${name}'
+	});
+</script>
+<div class="divInfo">
+
+</div>
+<div id="command_show0" class="command_show0"></div>
+<div id="command_show1" class="command_show1"></div>
+<div id="command_show2" class="command_show2"></div>
+<div id="command_show3" class="command_show3"></div>
+<div class="ground">
+<div class="usecard1">
+	<div class="usecard2" id="usecard1_0"></div>
+	<div class="usecard2" id="usecard1_1"></div>
+	<div class="usecard2" id="usecard1_2"></div>
+	<div class="usecard2" id="usecard1_3"></div>
+	<div class="usecard2" id="usecard1_4"></div>
+	<div class="usecard2" id="usecard1_5"></div>
+	<div class="usecard2" id="usecard1_6"></div>
+	<div class="usecard2" id="usecard1_7"></div>
+	<div class="usecard2" id="cardgroup1"></div>
+</div>
+
+#foreach($row in [1..15])
+	<div class="row">
+	#foreach($column in [1..15])
+		<div class="column" id="ground${row}1001${column}"></div>
+	#end		
+	</div>
+#end
+
+<div class="usecard1">
+	<div class="usecard2" id="cardgroup2"></div>
+	<div class="usecard2" id="usecard2_7"></div>
+	<div class="usecard2" id="usecard2_6"></div>
+	<div class="usecard2" id="usecard2_5"></div>
+	<div class="usecard2" id="usecard2_4"></div>
+	<div class="usecard2" id="usecard2_3"></div>
+	<div class="usecard2" id="usecard2_2"></div>
+	<div class="usecard2" id="usecard2_1"></div>
+	<div class="usecard2" id="usecard2_0"></div>
+</div>
+</div>
+<div class="command_window">
+<div id="command_output" class="command_1">
+</div>
+<div class="command_2"><input id="command_input" class="command_input" type="text" value="" alt="admin"/></div>
+</div>
+<p><button id="test" onclick="location.href='user.do?cmd=login'">重新登陆</button></p>
+</body>
+</html>

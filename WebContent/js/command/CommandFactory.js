@@ -1,0 +1,24 @@
+var CommandFactory = function(){
+	var command = null;
+	return {
+		createCommand : function(action, data){
+			if(-1!=action.indexOf('Query')){      //跟查询相关的
+				Buffer.cancelQuery();
+				command = new QueryCommand(action,data);
+				
+				var pd = Context.getPlayer(data.player.id);
+				Buffer.setQueryContainer(pd.getContainer(data.container.name));
+				Buffer.setQueryPositionList(data.positionList);
+			}else if(-1!=action.indexOf('Context')){       //与比赛相关，但与具体元素无关的（独立的一块区域显示）
+				command = new ContextCommand(action,data);   //这里position硬编码1，1表示<div>command_show
+			}else if('Command_Show'==action){              //（独立的一块区域显示）
+				command = new ShowCommand(action,data);  
+			}else if('Player_Power'==action){              //（独立的一块区域显示）
+				command = new ControlCommand(action,data);
+			}else
+				command = new Command(action,data);
+			
+			return command;
+		}
+	}
+}();
