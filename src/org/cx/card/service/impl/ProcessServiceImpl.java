@@ -68,7 +68,6 @@ public class ProcessServiceImpl implements IProcessService{
 		return true;
 	}	
 	
-	@Override
 	public Integer getNewSequence(String playNo) {
 		// TODO Auto-generated method stub
 		String sql = "select max(sequence) from Process p where p.playNo = '"+playNo+"'";

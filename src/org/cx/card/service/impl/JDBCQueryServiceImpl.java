@@ -24,7 +24,6 @@ public class JDBCQueryServiceImpl implements JDBCQueryService {
 	@Autowired
 	private JDBCQueryDao jdbcDao;
 	
-	@Override
 	public List query(String sql) {
 		// TODO Auto-generated method stub
 		return jdbcDao.queryForList(sql);

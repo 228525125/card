@@ -33,7 +33,6 @@ public class JDBCQueryDaoImpl extends JdbcDaoSupport implements JDBCQueryDao {
 		return getJdbcTemplate().queryForObject(sql, type);		
 	}
 	
-	@Override
 	public Object execute(String callName, CallableStatementCallback csc) {
 		// TODO Auto-generated method stub
 		//getJdbcTemplate().call(CallableStatementCreator, arg1)
