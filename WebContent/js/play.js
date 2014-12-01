@@ -199,6 +199,25 @@ $(function(){
 	ActionFactory.register('Context_ControlQueue_Remove', 'new ControlQueueRemoveAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Insert', 'new ControlQueueInsertAction(data.info,view)');
 	
+	Glossary.add(Glossary.Attack_Mode,0,'近战');
+	Glossary.add(Glossary.Attack_Mode,1,'远程');
+	Glossary.add(Glossary.Attack_Type,0,'普通');
+	Glossary.add(Glossary.Attack_Type,1,'穿刺');
+	Glossary.add(Glossary.Attack_Type,2,'法术');
+	Glossary.add(Glossary.Attack_Type,3,'投石');
+	Glossary.add(Glossary.Attack_Type,4,'混沌');
+	Glossary.add(Glossary.Attacked_Type,0,'无护甲');
+	Glossary.add(Glossary.Attacked_Type,1,'轻型护甲');
+	Glossary.add(Glossary.Attacked_Type,2,'中型护甲');
+	Glossary.add(Glossary.Attacked_Type,3,'重型护甲');
+	Glossary.add(Glossary.Attacked_Type,4,'城墙');
+	Glossary.add(Glossary.Death_Status,0,'live');
+	Glossary.add(Glossary.Death_Status,1,'death');
+	Glossary.add(Glossary.Move_Type,0,'步行');
+	Glossary.add(Glossary.Move_Type,1,'飞行');
+	Glossary.add(Glossary.Move_Type,2,'瞬移');
+	
+	
 	//-------------------init end-------------------
 	
 	Context.beginSyn();
