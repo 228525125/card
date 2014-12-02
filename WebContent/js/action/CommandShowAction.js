@@ -7,6 +7,12 @@ $.extend(CommandShowAction.prototype, new Action, {
 	doAction : function(){
 		var h = this.view.html();
 		var res = '';
+		var buff = '';
+		for(var i=0;i<this.info.card.buffList.length;i++){
+			buff += this.info.card.buffList[i].name;
+			if((i+1)<this.info.card.buffList.length)
+				buff += ',';
+		}
 		if(null!=this.info.player)
 			res += '<p style="margin: 0;padding: 0;">player:'+this.info.player.name+'</p>';
 		
@@ -47,7 +53,8 @@ $.extend(CommandShowAction.prototype, new Action, {
 			'<p style="margin: 0;padding: 0;">death:</br>&nbsp;&nbsp;&nbsp;&nbsp;'+' '+
 			'status:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
 			'<p style="margin: 0;padding: 0;">call:</br>&nbsp;&nbsp;&nbsp;&nbsp;'+' '+
-			'consume:'+this.info.card.call.consume+'</p>';
+			'consume:'+this.info.card.call.consume+'</p>'+
+			'<p style="margin: 0;padding: 0;">buff:</br>&nbsp;&nbsp;&nbsp;&nbsp;'+buff+'</p>';
 		
 		if(null!=this.info.skill)
 			res += '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 属性:'+this.info.skill.style+' | 发动方式:'+this.info.skill.velocity+'</p>';
