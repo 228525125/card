@@ -5,6 +5,9 @@ var Glossary = function(){
 	typeMap.put('Attacked_Type',new Map());
 	typeMap.put('Death_Status',new Map());
 	typeMap.put('Move_Type',new Map());
+	typeMap.put('ActiveSkill_Velocity',new Map());
+	typeMap.put('ActiveSkill_Style',new Map());
+	typeMap.put('ActiveSkill_Func',new Map());
 	
 	return {
 		add: function(type,code,name){
@@ -23,6 +26,9 @@ var Glossary = function(){
 		Attack_Type : 'Attack_Type',
 		Attacked_Type : 'Attacked_Type',
 		Death_Status : 'Death_Status',
-		Move_Type : 'Move_Type'
+		Move_Type : 'Move_Type',
+		ActiveSkill_Velocity : 'ActiveSkill_Velocity',
+		ActiveSkill_Style : 'ActiveSkill_Style',
+		ActiveSkill_Func : 'ActiveSkill_Func'
 	}
 }();

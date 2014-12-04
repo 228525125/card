@@ -185,7 +185,7 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_State_Activate', 'new LifeCardActivateAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_DamageChance', 'new LifeCardDamageChanceAction(data.info,view)');	
+	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');	
 	ActionFactory.register('Card_LifeCard_Skill_Dodge', 'new SkillDodgeAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Skill_Accurate', 'new SkillAccurateAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Skill_AttackBack', 'new SkillAttackBackAction(data.info,view)');
@@ -216,6 +216,14 @@ $(function(){
 	Glossary.add(Glossary.Move_Type,0,'步行');
 	Glossary.add(Glossary.Move_Type,1,'飞行');
 	Glossary.add(Glossary.Move_Type,2,'瞬移');
+	Glossary.add(Glossary.ActiveSkill_Velocity,0,'瞬发');
+	Glossary.add(Glossary.ActiveSkill_Velocity,1,'蓄力');
+	Glossary.add(Glossary.ActiveSkill_Style,0,'法术');
+	Glossary.add(Glossary.ActiveSkill_Style,1,'物理');
+	Glossary.add(Glossary.ActiveSkill_Func,0,'其他');
+	Glossary.add(Glossary.ActiveSkill_Func,1,'移动限制');
+	Glossary.add(Glossary.ActiveSkill_Func,2,'直接伤害');
+	Glossary.add(Glossary.ActiveSkill_Func,3,'召唤');
 	
 	
 	//-------------------init end-------------------

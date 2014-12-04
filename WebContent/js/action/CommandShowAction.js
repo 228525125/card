@@ -70,8 +70,12 @@ $.extend(CommandShowAction.prototype, new Action, {
 			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
 		}
 		
-		if(null!=this.info.skill)
-			res += '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 属性:'+this.info.skill.style+' | 发动方式:'+this.info.skill.velocity+'</p>';
+		if(null!=this.info.skill){
+			this.info.skill.consume = undefined==this.info.skill.consume ? '无' : this.info.skill.consume; 
+			this.info.skill.cooldown = undefined==this.info.skill.cooldown ? '无' : this.info.skill.cooldown;
+			this.info.skill.velocity = undefined==this.info.skill.velocity ? '无' : Glossary.get(Glossary.ActiveSkill_Velocity,this.info.skill.velocity);
+			res += '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 属性:'+Glossary.get(Glossary.ActiveSkill_Style,this.info.skill.style)+' | 发动方式:'+this.info.skill.velocity+'</p>';
+		}
 		
 		if(null!=this.info.trick)
 			res += '<p style="margin: 0;padding: 0;">trick:'+this.info.trick.name+'</p>';
