@@ -15,7 +15,7 @@ $.extend(ControlQueueRemoveAction.prototype, new Action, {
 			if(i<(this.info.queue.length-1))
 				res += ' | ';
 		}
-		res += '</p>';
+		res += '</p><p style="margin: 0;padding: 0;">------------------------------------------------------------------------</p>';
 		
 		this.view.html(h+res);
 		

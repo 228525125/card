@@ -198,6 +198,7 @@ $(function(){
 	ActionFactory.register('Context_Finish', 'new ContextFinishAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Remove', 'new ControlQueueRemoveAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Insert', 'new ControlQueueInsertAction(data.info,view)');
+	ActionFactory.register('Context_ControlQueue_Refurbish', 'new ControlQueueRefurbishAction(data.info,view)');
 	
 	Glossary.add(Glossary.Attack_Mode,0,'近战');
 	Glossary.add(Glossary.Attack_Mode,1,'远程');
