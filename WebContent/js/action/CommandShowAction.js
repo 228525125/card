@@ -59,6 +59,8 @@ $.extend(CommandShowAction.prototype, new Action, {
 			'| attackBack:'+this.info.card.attacked.attackBackChance+' '+
 			'| dodge:'+this.info.card.attacked.dodgeChance+' '+
 			'| parry:'+this.info.card.attacked.parryChance+' '+'</p>'+
+			'<p style="margin: 0;padding: 0;">conjure:'+' '+
+			'power:'+this.info.card.conjure.power+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">move:'+' '+
 			'type:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
 			'| moveable:'+this.info.card.move.moveable+' '+'</p>'+
