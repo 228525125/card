@@ -47,22 +47,28 @@ function syn(){
     });
 }
 
+function command_input_sub(){
+	var html = $('#command_output').html();
+	var value = $('input#command_input').val();
+	if(null!=value && ''!=value){
+		var player = $('input#command_input').attr('alt');
+		var command = value;//.substring(player.length+1,value.length);
+		var input = '<p style="margin: 0;padding: 0;">'+player+'>'+command+'</p>';
+		$('input#command_input').val('');
+		$('#command_output').html(html+input);
+		var scrollTop = $("#command_output")[0].scrollHeight;
+	    $("#command_output").scrollTop(scrollTop+1);
+	    
+	    post(command);
+	}
+}
+
 $(function(){
 	$("#command_input").focus();
 	
 	$("#command_input").die().live("keydown",function(event){      
         if(event.keyCode==13){  
-        	var html = $('#command_output').html();
-        	var value = $('input#command_input').val();
-        	var player = $('input#command_input').attr('alt');
-        	var command = value;//.substring(player.length+1,value.length);
-        	var input = '<p style="margin: 0;padding: 0;">'+player+'>'+command+'</p>';
-        	$('input#command_input').val('');
-        	$('#command_output').html(html+input);
-        	var scrollTop = $("#command_output")[0].scrollHeight;
-            $("#command_output").scrollTop(scrollTop+1);
-            
-            post(command);
+        	command_input_sub();
         }
     });
 	
@@ -86,22 +92,59 @@ $(function(){
 	});
 	
 	$("div").mouseover(function(event){
-		if(-1!=this.id.indexOf('1001'))
+		if(-1!=this.id.indexOf('ground'))
 			$("#command_show0").html('当前坐标：'+this.id.substring(6,this.id.length));        
 	});
+	
 	$("div").mousedown(function(event){
-		if(-1!=this.id.indexOf('1001')){
-			var position = this.id.substring(6,this.id.length);
-			post('select ground place'+position+' card;show;');
+		if(-1!=this.id.indexOf('ground')){
+			var position = this.id.substring(6,this.id.length);			
+			var val = $("#command_input").val();
+			
+			if(-1!=val.indexOf('call') || -1!=val.indexOf('move')){
+				val += 'ground place'+position;
+			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure')){
+				val += 'ground place'+position+' card' 
+			}else{
+				val = '';
+			}
+			
+			$("#command_input").val(val);
+			command_input_sub();
+			
+			post('select ground place'+position+' card;show');
 		}
 		if(-1!=this.id.indexOf('usecard')){
 			var playerId =this.id.substring(7,this.id.length).split('_')[0];
 			var position = this.id.substring(7,this.id.length).split('_')[1];
 			if(Context.getOwn().id==playerId)
-				post('select use card'+position+';show;');
+				post('select use card'+position+';show');
 		}
 	});
 	
+	$("#button_call").click(function(){
+		post('query call');
+		$("#command_input").val('call ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_move").click(function(){
+		post('query move');
+		$("#command_input").val('move ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_attack").click(function(){
+		post('query attack');
+		$("#command_input").val('attack ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_conjure").click(function(){
+		post('query conjure');
+		$("#command_input").val('conjure ');
+		$("#command_input").focus();
+	});
 	//-------------------init-------------------
 	
 	var useCard1 = new UseCard();

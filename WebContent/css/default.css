@@ -67,6 +67,19 @@ body {
 	z-index: 1;
 }
 
+.command_button {
+	width:370px;
+	height:20px;
+	background-color: #336784;
+	color:lime;
+	padding: 5px;
+	position: relative;
+	word-break:break-all;
+	top: 0px;
+	left: 20px;
+	z-index: 1;
+}
+
 .command_window{
 	width:600px;
 	height:100px;
@@ -108,7 +121,7 @@ body {
 	padding: 5px;
 	position: relative;
 	z-index: 1;
-	top: -580px;
+	top: -610px;
 	left: 400px;
 }
 
