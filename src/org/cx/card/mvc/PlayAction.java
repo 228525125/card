@@ -41,7 +41,6 @@ public class PlayAction extends BaseAction {
 			return page("index");
 		}else{
 			return forward("login", "user");
-			
 		}
 	}
 	

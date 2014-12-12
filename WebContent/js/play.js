@@ -102,17 +102,17 @@ $(function(){
 			var val = $("#command_input").val();
 			
 			if(-1!=val.indexOf('call') || -1!=val.indexOf('move')){
-				val += 'ground place'+position;
+				val += 'ground place'+position+';';
 			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure')){
-				val += 'ground place'+position+' card' 
+				val += 'ground place'+position+' card;'; 
 			}else{
 				val = '';
 			}
 			
+			val += 'select ground place'+position+' card;show';
+			
 			$("#command_input").val(val);
 			command_input_sub();
-			
-			post('select ground place'+position+' card;show');
 		}
 		if(-1!=this.id.indexOf('usecard')){
 			var playerId =this.id.substring(7,this.id.length).split('_')[0];
