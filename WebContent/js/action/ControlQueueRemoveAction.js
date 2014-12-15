@@ -11,7 +11,7 @@ $.extend(ControlQueueRemoveAction.prototype, new Action, {
 		
 		res += '<p style="margin: 0;padding: 0;">';
 		for(var i=0;i<this.info.queue.length;i++){
-			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].unit.name;
+			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].unit.name+'('+this.info.queue[i].count+')';
 			if(i<(this.info.queue.length-1))
 				res += ' | ';
 		}
