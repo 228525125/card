@@ -3,9 +3,7 @@ function post(command){
     	var h = $('#command_output').html();
     	var p = $('input#command_input').attr('alt');
     	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
-    	$('#command_output').html(h+res);
-    	var scrollTop = $("#command_output")[0].scrollHeight;
-        $("#command_output").scrollTop(scrollTop+1);
+    	command_output_val(res);
     	
     	var data = response.result[0].data;
     	if(0<data.length){
@@ -27,9 +25,7 @@ function syn(){
     	var h = $('#command_output').html();
     	var p = $('input#command_input').attr('alt');
     	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
-    	$('#command_output').html(h+res);
-    	var scrollTop = $("#command_output")[0].scrollHeight;
-        $("#command_output").scrollTop(scrollTop+1);
+    	command_output_val(res);
     	
     	var data = response.result[0].data;
     	if(0<data.length){
@@ -47,6 +43,13 @@ function syn(){
     });
 }
 
+function command_output_val(msg){
+	var html = $('#command_output').html();
+	$('#command_output').html(html+msg);
+	var scrollTop = $("#command_output")[0].scrollHeight;
+    $("#command_output").scrollTop(scrollTop+1);
+}
+
 function command_input_sub(){
 	var html = $('#command_output').html();
 	var value = $('input#command_input').val();
@@ -55,15 +58,14 @@ function command_input_sub(){
 		var command = value;//.substring(player.length+1,value.length);
 		var input = '<p style="margin: 0;padding: 0;">'+player+'>'+command+'</p>';
 		$('input#command_input').val('');
-		$('#command_output').html(html+input);
-		var scrollTop = $("#command_output")[0].scrollHeight;
-	    $("#command_output").scrollTop(scrollTop+1);
+		command_output_val(input);
 	    
 	    post(command);
 	}
 }
 
 $(function(){
+	
 	$("#command_input").focus();
 	
 	$("#command_input").die().live("keydown",function(event){      
