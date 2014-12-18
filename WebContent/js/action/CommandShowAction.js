@@ -6,7 +6,7 @@ CommandShowAction = function(info,view){
 $.extend(CommandShowAction.prototype, new Action, {
 	doAction : function(){
 		var h = this.view.html();
-		var res = '';		
+		var res = '';
 		if(null!=this.info.player)
 			res += '<p style="margin: 0;padding: 0;">player:'+this.info.player.name+'</p>';
 		

@@ -51,40 +51,43 @@ public class PlayAction extends BaseAction {
 		if(null!=form.get("command")&&!"".equals(form.get("command").toString())){
 			String command = form.get("command").toString();
 			msg = command +"-"+ msg;
+			Invoker invoker = new Invoker();
 			try {
-				Invoker invoker = new Invoker();
-				String response;
 				if(-1!=command.indexOf("create"))
-					response = invoker.receiveCommand(command, new CreateCommand(getUser()));
+					invoker.receiveCommand(command, new CreateCommand(getUser()));
 				else if(-1!=command.indexOf("join"))
-					response = invoker.receiveCommand(command, new JoinCommand(getUser()));
+					invoker.receiveCommand(command, new JoinCommand(getUser()));
 				else if(-1!=command.indexOf("finish"))
-					response = invoker.receiveCommand(command, new FinishCommand(getUser()));
+					invoker.receiveCommand(command, new FinishCommand(getUser()));
 				else
-					response = invoker.receiveCommand(getUser(), command);
+					invoker.receiveCommand(getUser(), command);
 				
-				if(!"".equals(response)&&0<response.split(";").length){
-					String[] resps = response.split(";");
-					String playNo = getUser().getContext().getPlayNo();
-					Integer sequence = processService.getNewSequence(playNo);
-					for(int i=0;i<resps.length;i++){
-						Process p = new Process();
-						p.setPlayNo(playNo);
-						p.setCommand(resps[i]);
-						p.setSequence(sequence+i);
-						p.setPlayerId(getUser().getId());
-						String action = resps[i].split("\",")[0].substring(11);
-						p.setAction(action);
-						list.add(p);
-						
-						processService.addProcess(p);
-					}
-				}
 			} catch (ValidatorException e) {
 				// TODO Auto-generated catch block
 				msg = e.getMessage();
 			}
+			
+			String response = invoker.getResponse();
+			
+			if(!"".equals(response)&&0<response.split(";").length){
+				String[] resps = response.split(";");
+				String playNo = getUser().getContext().getPlayNo();
+				Integer sequence = processService.getNewSequence(playNo);
+				for(int i=0;i<resps.length;i++){
+					Process p = new Process();
+					p.setPlayNo(playNo);
+					p.setCommand(resps[i]);
+					p.setSequence(sequence+i);
+					p.setPlayerId(getUser().getId());
+					String action = resps[i].split("\",")[0].substring(11);
+					p.setAction(action);
+					list.add(p);
+					
+					processService.addProcess(p);
+				}
+			}
 		}
+		
 		return success(form, true, list, msg);
 	}
 	
