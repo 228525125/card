@@ -10,7 +10,5 @@ $.extend(LifeCardMoveAction.prototype, new Action, {
 		var place = container.getPlace(info.begin);
 		place.view.html('');
 		this.view.html(this.info.card.name);*/
-	
-		post('select ground place'+this.info.position+' card');
 	}
 });
