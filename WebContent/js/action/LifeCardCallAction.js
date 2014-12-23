@@ -5,6 +5,8 @@ LifeCardCallAction = function(info,view){
 
 $.extend(LifeCardCallAction.prototype, new Action, {
 	doAction : function(){	
-		
+		if('send'==this.info.sign){
+			post('select ground place'+this.info.position+' card;');
+		}
 	}
 });

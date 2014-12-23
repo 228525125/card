@@ -100,8 +100,13 @@ public class PlayAction extends BaseAction {
 		&&null!=form.get("sequence")
 		&&!"".equals(form.get("sequence").toString())){
 			sequence = Integer.valueOf(form.get("sequence").toString());
-			list = jdbcService.query("select sequence,command from cprocess where playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence");
+			//list = jdbcService.query("select sequence,command from Cprocess where playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence");
+			String sql = "playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence";
+			list = processService.query(sql, null, 0, 999);
 		}
+		
+		for(Process p : list)
+			p.setSign(Process.Sign_Syn);
 		
 		msg += sequence;
 		

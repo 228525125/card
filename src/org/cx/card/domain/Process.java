@@ -27,6 +27,12 @@ public class Process {
 	
 	private String action;
 	
+	public static final String Sign_Syn = "syn";
+	
+	public static final String Sign_Send = "send";
+	
+	private String sign = Sign_Send;         //用于前台判断syn和send
+	
 	public Long getId() {
 		return id;
 	}
@@ -63,5 +69,10 @@ public class Process {
 	public void setAction(String action) {
 		this.action = action;
 	}
-	
+	public String getSign() {
+		return sign;
+	}
+	public void setSign(String sign) {
+		this.sign = sign;
+	}
 }

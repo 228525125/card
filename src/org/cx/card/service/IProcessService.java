@@ -2,8 +2,10 @@ package org.cx.card.service;
 
 import java.io.Serializable;
 import java.util.List;
+
 import com.easyjf.web.tools.IPageList;
 import com.easyjf.core.support.query.IQueryObject;
+
 import org.cx.card.domain.Process;
 /**
  * ProcessService
@@ -62,4 +64,6 @@ public interface IProcessService {
 	 * @return
 	 */
 	Integer getNewSequence(String playNo);
+	
+	public List<Process> query(String sql, Object[] params, int start, int end);
 }

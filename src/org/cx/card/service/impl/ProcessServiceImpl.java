@@ -81,4 +81,8 @@ public class ProcessServiceImpl implements IProcessService{
 		
 	}
 	
+	public List<Process> query(String sql, Object[] params, int start, int end){
+		return processDao.find(sql, params, start, end);
+	}
+	
 }

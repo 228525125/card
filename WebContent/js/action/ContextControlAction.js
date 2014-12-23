@@ -16,6 +16,11 @@ $.extend(ContextControlAction.prototype, new Action, {
 		else
 			Context.beginSyn();
 		
+		if('send'==this.info.sign && undefined!=this.info.life){
+			post('select ground place'+this.info.life.containerPosition+' card');
+			h += '-'+this.info.life.name;
+		}
+		
 		place.view.html(h);
 	}
 });

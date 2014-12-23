@@ -11,7 +11,7 @@ function post(command){
     			var sequence = data[i].sequence;
     			
     			var jsonObject = $.parseJSON(data[i].command);    			
-        		Invoker.response(jsonObject);
+        		Invoker.response(jsonObject, data[i].sign);
             		
             	Context.setProcessSequence(sequence);
     			
@@ -33,8 +33,8 @@ function syn(){
     			var sequence = data[i].sequence;
     			
     			if(sequence>Context.getProcessSequence()){     //异步时，可能会出现重复发送同步命令，这样就避免了重复加载
-	    			var jsonObject = $.parseJSON(data[i].command);    			
-	    			Invoker.response(jsonObject);
+	    			var jsonObject = $.parseJSON(data[i].command);
+	    			Invoker.response(jsonObject, data[i].sign);
 	        		
 	        		Context.setProcessSequence(sequence);
     			}
