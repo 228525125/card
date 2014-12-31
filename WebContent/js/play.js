@@ -231,11 +231,12 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');	
-	ActionFactory.register('Card_LifeCard_Skill_Dodge', 'new SkillDodgeAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Skill_Accurate', 'new SkillAccurateAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Skill_AttackBack', 'new SkillAttackBackAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Skill_Parry', 'new SkillParryAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Skill_Thump', 'new SkillThumpAction(data.info,view)');
+	ActionFactory.register('Skill_Dodge', 'new SkillDodgeAction(data.info,view)');
+	ActionFactory.register('Skill_Accurate', 'new SkillAccurateAction(data.info,view)');
+	ActionFactory.register('Skill_AttackBack', 'new SkillAttackBackAction(data.info,view)');
+	ActionFactory.register('Skill_Parry', 'new SkillParryAction(data.info,view)');
+	ActionFactory.register('Skill_Thump', 'new SkillThumpAction(data.info,view)');
+	ActionFactory.register('Buff_AttackLockBuff_Affect', 'new BuffAttackLockBuffAffectAction(data.info,view)');
 	ActionFactory.register('Context_Start', 'new ContextStartAction(data.info,view)');
 	ActionFactory.register('Context_Control', 'new ContextControlAction(data.info,view)');
 	ActionFactory.register('Context_Deploy', 'new ContextDeployAction(data.info,view)');
