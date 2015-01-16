@@ -7,6 +7,7 @@ import org.cx.card.domain.User;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.Context;
 import org.cx.game.core.ContextFactory;
+import org.cx.game.core.IContext;
 import org.cx.game.core.IPlayer;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.widget.ICamp;
@@ -37,13 +38,13 @@ public class JoinCommand extends ExternalCommand {
 		context.setAttribute(parameter.toString(), null);
 		
 		IGround ground = user1.getGround();
-		ICamp camp = ground.getPlace(1510018).getCamp();       //硬编码
 		
 		user2.setGround(ground);
-		user2.setId(2);
-		camp.setPlayer(user2);
+		user2.setId(2);                           //硬编码
 		
-		Context ctx = ContextFactory.createContext(user1, user2);
+		ground.setPlayerToCamp(1, user2);         //硬编码
+		
+		IContext ctx = ContextFactory.createContext(user1, user2);
 		context.setAttribute(user1.getAccount(), ctx);
 		context.setAttribute(user2.getAccount(), ctx);
 		

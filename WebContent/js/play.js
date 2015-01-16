@@ -208,7 +208,18 @@ $(function(){
 	data2.put('Notice', notice);
 	var player2 = new Player('2',data2);       //硬编码，这里的2应该是player的id属性
 	
-	Context.init(player1,player2);
+	var data3 = new Map();
+	data3.put('Ground', ground);
+	data3.put('Cemetery', ground);
+	data3.put('TrickList', ground);
+	data3.put('Notice', notice);
+	var faction = new Player('101', data3);     //硬编码，101表示中立生物
+	
+	//context初始化
+	Context.addPlayer(player1);
+	Context.addPlayer(player2);
+	Context.addPlayer(faction);
+	Context.setNotice(notice);
 	
 	ActionFactory.register('Player_Power', 'new PlayerPowerAction(data.info,view)');
 	ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');

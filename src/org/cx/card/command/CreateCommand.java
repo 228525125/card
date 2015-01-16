@@ -4,12 +4,12 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
-import org.cx.card.ground.GroundFactory;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.IPlayer;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
 import org.cx.game.widget.GroundDecorator;
+import org.cx.game.widget.GroundFactory;
 import org.cx.game.widget.ICamp;
 import org.cx.game.widget.IGround;
 
@@ -31,13 +31,12 @@ public class CreateCommand extends ExternalCommand {
 		// TODO Auto-generated method stub
 		super.execute(parameter);
 		
-		IGround ground = GroundFactory.getSimpleGround();      //硬编码
-		ICamp camp = ground.getPlace(110018).getCamp();        //硬编码
+		IGround ground = GroundFactory.getInstance("test");
 		
 		player.setGround(ground);
 		player.setId(1);                       //硬编码
 		
-		camp.setPlayer(player);
+		ground.setPlayerToCamp(0, player);     //硬编码
 		
 		context.setAttribute(parameter.toString(), player);
 	}

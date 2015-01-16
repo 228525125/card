@@ -1,5 +1,5 @@
 //全局对象
-var Context = function(player1,player2){
+var Context = function(){
 	var playerMap = new Map();
 	var map = new Map(); 
 	var control = null;
@@ -9,10 +9,8 @@ var Context = function(player1,player2){
 	var timer = null;
 	//var queue = new Array();   //目前无法测试
 	return {
-		init:function(player1,player2){
-			playerMap.put(player1.id,player1);
-			playerMap.put(player2.id,player2);
-			notice = player1.getContainer('Notice');
+		addPlayer:function(player){
+			playerMap.put(player.id, player);
 		},
 		getPlayer:function(playerId){
 			return playerMap.get(playerId);
@@ -31,6 +29,9 @@ var Context = function(player1,player2){
 		},
 		getNotice: function(){
 			return notice;
+		},
+		setNotice: function(ne){
+			notice = ne;
 		},
 		setProcessSequence: function(sequence){
 			processSequence = sequence;
