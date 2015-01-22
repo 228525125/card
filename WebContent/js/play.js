@@ -247,6 +247,7 @@ $(function(){
 	ActionFactory.register('Skill_AttackBack', 'new SkillAttackBackAction(data.info,view)');
 	ActionFactory.register('Skill_Parry', 'new SkillParryAction(data.info,view)');
 	ActionFactory.register('Skill_Thump', 'new SkillThumpAction(data.info,view)');
+	ActionFactory.register('Skill_Puncture', 'new SkillPunctureAction(data.info,view)');
 	ActionFactory.register('Buff_AttackLockBuff_Affect', 'new BuffAttackLockBuffAffectAction(data.info,view)');
 	ActionFactory.register('Context_Start', 'new ContextStartAction(data.info,view)');
 	ActionFactory.register('Context_Control', 'new ContextControlAction(data.info,view)');

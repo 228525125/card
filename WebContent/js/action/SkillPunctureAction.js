@@ -1,9 +1,9 @@
-SkillAttackBackAction = function(info,view){
+SkillPunctureAction = function(info,view){
 	this.info = info;
 	this.view = view;
 }
 
-$.extend(SkillAttackBackAction.prototype, new Action, {
+$.extend(SkillPunctureAction.prototype, new Action, {
 	doAction : function(){
 		var div = $('<div>'+this.info.skill.name+'</div>');
 		div.css("color","red");
