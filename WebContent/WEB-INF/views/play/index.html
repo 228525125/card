@@ -2,10 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+#parse("/link_share.html")
 <title>playstation</title>
 <link type="text/css" href="css/default.css" media="screen" rel="stylesheet" />
+<!-- 
 <script type="text/javascript" src="plugins/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="plugins/layer/layer.min.js"></script>
+ -->
+<script type="text/javascript" src="plugins/extjs/card/UploadFormPanel.js"></script>
 <script type="text/javascript" src="js/util/Map.js"></script>
 <script type="text/javascript" src="js/util/common.js"></script>
 <script type="text/javascript" src="js/util/Glossary.js"></script>
@@ -93,6 +97,7 @@
 	<button id="button_move">move</button>
 	<button id="button_attack">attack</button>
 	<button id="button_conjure">conjure</button>
+	<button id="button_config">config</button>
 </div>
 <div class="ground">
 <div class="usecard1">
@@ -132,7 +137,71 @@
 </div>
 <div class="command_2"><input id="command_input" class="command_input" type="text" value="" alt="admin"/></div>
 </div>
+<!-- 
 <p><button id="test" onclick="location.href='user.do?cmd=login'">重新登陆</button></p>
 <button id="test1">小小提示层</button>
+ -->
+
+<script type="text/javascript">
+Ext.QuickTips.init();
+Ext.Ajax.timeout = 5 * 60 * 1000;// 10分钟，默认为30秒  设置加载数据超时最大值
+Ext.onReady(function(){
+	var win;
+    var button = Ext.get('button_config');
+
+    button.on('click', function(){
+    	if(!win){
+    		var fp = new UploadFormPanel();
+    	
+            win = new Ext.Window({
+				width:360,
+				height:370,
+				layout:'fit',
+				buttonAlign:"center",
+				title:'上传配置文件',
+				iconCls:'cogIcon',
+				border:false,
+				modal:true,
+				shadow:true,
+				closeAction:'hide',
+				items:[fp],
+				buttons:[{text:"保存",
+						  handler:function(){
+						  	  fp.form.submit({
+									waitMsg:'正在保存。。。',
+						            url:'upload.do',
+						            method:'POST',
+						            success:function(form,action){
+										if(null!=action.result&&action.result.msg)
+							        		Ext.Msg.alert('提示',action.result.msg,function(){
+							        			win.close();
+							        		},this);
+										else{
+								           	win.close();
+										}
+						            },
+						            scope:this
+							});	
+						  },
+						  scope:this},
+						  {text:"清空",
+						   handler:function(){
+							  fp.form.reset();
+						   },
+						   scope:this},
+						  {text:"取消",
+						   handler:function(){
+							   fp.form.reset();
+							   win.hide();
+						   },
+						   scope:this}
+						 ]					  
+			});
+    	}
+    	
+    	win.show(this);
+    });
+});
+</script>
 </body>
 </html>

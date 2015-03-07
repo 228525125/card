@@ -4,6 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
+	<!-- 定义文件上传的位置 -->
+	<context-param>
+		<param-name>uploadPath</param-name>
+		<!-- <param-value>D:/apache-tomcat-6.0.32/webapps/card/docs/</param-value>  -->
+		<param-value>F:/CX/项目/MyEclipse/workspace101/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/card/docs/</param-value>
+	</context-param>
+	
 	<!--定义easyjweb的配置文件位置 -->
 	<context-param>
 		<param-name>easyjwebConfigLocation</param-name>
