@@ -27,7 +27,6 @@ public class UploadAction extends BaseAction {
 	public Page doIndex(WebForm form, Module m) {
 		ServletContext sc = ActionContext.getContext().getSession().getServletContext();
 		String fileSavePath = sc.getInitParameter("uploadPath");
-		ExtResult r = new ExtResult();
 		
 		if(!form.getFileElement().keySet().isEmpty()){
 			String selected = "";
@@ -37,16 +36,11 @@ public class UploadAction extends BaseAction {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if(!"".equals(selected)){
-				r.setSuccess(true);	
-			}else{
-				r.setSuccess(false);
-			}
 		}
 		
-		form.jsonResult(r);
-		this.forwardPage=Page.JSONPage;
-		return Page.JSONPage;
+		Page page = pageForExtForm(form);
+		page.setContentType("text/html;charset=UTF-8");
+		return page;
 	}
 	
 	/**
