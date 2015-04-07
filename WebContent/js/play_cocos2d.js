@@ -1,23 +1,30 @@
 function post(command){
-	$.post("play.do?cmd=send",{command:command},function(response){
-    	var h = $('#command_output').html();
-    	var p = $('input#command_input').attr('alt');
-    	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
-    	command_output_val(res);
-    	
-    	var data = response.result[0].data;
-    	if(0<data.length){
-    		for(var i=0;i<data.length;i++){
-    			var sequence = data[i].sequence;
-    			
-    			var jsonObject = $.parseJSON(data[i].command);    			
-        		Invoker.response(jsonObject, data[i].sign);
-            		
-            	Context.setProcessSequence(sequence);
-    			
-    		}
-    	}
-    });
+	var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+	xhr.open("post","play.do?cmd=send",true);
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function (event) {
+		if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status <= 207)) {
+			var response = $.parseJSON(xhr.responseText);
+			var h = $('#command_output').html();
+	    	var p = $('input#command_input').attr('alt');
+	    	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
+	    	command_output_val(res);
+	    	
+	    	var data = response.result[0].data;
+	    	if(0<data.length){
+	    		for(var i=0;i<data.length;i++){
+	    			var sequence = data[i].sequence;
+	    			var jsonObject = $.parseJSON(data[i].command);    			
+	        		Invoker.response(jsonObject, data[i].sign);
+	            		
+	            	Context.setProcessSequence(sequence);
+	    			
+	    		}
+	    	}
+		}
+	}
+	
+	xhr.send("command="+command);
 }
 
 function syn(){
