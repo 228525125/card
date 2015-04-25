@@ -37,7 +37,7 @@
 			</camp>
 		</campList>
 		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                  <!-- 被占用位置的集合 -->
-			<position type="int">510018</position>
+			<position type="int">610013</position>
 		</disableList>
 		<strongHoldList type="java.util.ArrayList" interface="java.util.List" collection="true">                                               <!-- 据点的集合 -->
 			<StrongHold type="org.cx.game.widget.LifeCardStrongHold" interface="org.cx.game.widget.IStrongHold">                               
