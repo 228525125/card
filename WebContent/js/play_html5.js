@@ -65,6 +65,8 @@ function command_input_sub(){
 
 $(function(){
 	
+	//---------------------UI----------------------
+	
 	$("#command_input").focus();
 	
 	$("#command_input").die().live("keydown",function(event){      
@@ -146,6 +148,9 @@ $(function(){
 		$("#command_input").val('conjure ');
 		$("#command_input").focus();
 	});
+	
+	//--------------------UI end------------------
+	
 	//-------------------init-------------------
 	
 	var useCard1 = new UseCard();
