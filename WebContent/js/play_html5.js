@@ -245,13 +245,8 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_State_Activate', 'new LifeCardActivateAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');	
-	ActionFactory.register('Skill_Dodge', 'new SkillDodgeAction(data.info,view)');
-	ActionFactory.register('Skill_Accurate', 'new SkillAccurateAction(data.info,view)');
-	ActionFactory.register('Skill_AttackBack', 'new SkillAttackBackAction(data.info,view)');
-	ActionFactory.register('Skill_Parry', 'new SkillParryAction(data.info,view)');
-	ActionFactory.register('Skill_Thump', 'new SkillThumpAction(data.info,view)');
-	ActionFactory.register('Skill_Puncture', 'new SkillPunctureAction(data.info,view)');
+	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');
+	ActionFactory.register('Skill_UseSkill', 'new SkillAction(data.info,view)');
 	ActionFactory.register('Buff_AttackLockBuff_Affect', 'new BuffAttackLockBuffAffectAction(data.info,view)');
 	ActionFactory.register('Context_Start', 'new ContextStartAction(data.info,view)');
 	ActionFactory.register('Context_Control', 'new ContextControlAction(data.info,view)');
@@ -262,6 +257,14 @@ $(function(){
 	ActionFactory.register('Context_ControlQueue_Insert', 'new ControlQueueInsertAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Refurbish', 'new ControlQueueRefurbishAction(data.info,view)');
 	ActionFactory.register('Container_Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
+	
+	SkillActionFactory.register('AttackBack','new SkillAttackBackAction(info,view)');
+	SkillActionFactory.register('Dodge', 'new SkillDodgeAction(info,view)');
+	SkillActionFactory.register('Accurate', 'new SkillAccurateAction(info,view)');
+	SkillActionFactory.register('Parry', 'new SkillParryAction(info,view)');
+	SkillActionFactory.register('Thump', 'new SkillThumpAction(info,view)');
+	SkillActionFactory.register('Puncture', 'new SkillPunctureAction(info,view)');
+	SkillActionFactory.register('ShieldHit', 'new SkillShieldHitAction(info,view)');
 	
 	Glossary.add(Glossary.Attack_Mode,0,'近战');
 	Glossary.add(Glossary.Attack_Mode,1,'远程');
