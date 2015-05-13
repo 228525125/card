@@ -247,7 +247,9 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');
 	ActionFactory.register('Skill_UseSkill', 'new SkillAction(data.info,view)');
-	ActionFactory.register('Buff_AttackLockBuff_Affect', 'new BuffAttackLockBuffAffectAction(data.info,view)');
+	ActionFactory.register('Buff_Affect', 'new BuffAffectAction(data.info,view)');
+	ActionFactory.register('Buff_Effect', 'new BuffEffectAction(data.info,view)');
+	ActionFactory.register('Buff_Invalid', 'new BuffInvalidAction(data.info,view)');
 	ActionFactory.register('Context_Start', 'new ContextStartAction(data.info,view)');
 	ActionFactory.register('Context_Control', 'new ContextControlAction(data.info,view)');
 	ActionFactory.register('Context_Deploy', 'new ContextDeployAction(data.info,view)');
@@ -265,6 +267,9 @@ $(function(){
 	SkillActionFactory.register('Thump', 'new SkillThumpAction(info,view)');
 	SkillActionFactory.register('Puncture', 'new SkillPunctureAction(info,view)');
 	SkillActionFactory.register('ShieldHit', 'new SkillShieldHitAction(info,view)');
+	
+	BuffEffectActionFactory.register('AttackLockBuff', 'new BuffAttackLockBuffEffectAction(info,view)');
+	BuffAffectActionFactory.register('DizzyBuff', 'new BuffDizzyBuffAffectAction(info,view)');
 	
 	Glossary.add(Glossary.Attack_Mode,0,'近战');
 	Glossary.add(Glossary.Attack_Mode,1,'远程');
