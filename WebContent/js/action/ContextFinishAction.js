@@ -1,10 +1,11 @@
 
-ContextFinishAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ContextFinishAction.prototype, new Action, {
+ContextFinishAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var h = this.view.html();
 		this.view.html(h+'<p style="margin: 0;padding: 0;">GameOver！</p>');

@@ -1,9 +1,10 @@
-CommandQueryMoveAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
+CommandQueryMoveAction = jClass(Action, {
+	
+	init: function(info,view){
 
-$.extend(CommandQueryMoveAction.prototype, new Action,{
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		this.view.css("background-color","aqua");
 		/*var div = $('<div style="font-size:9px;">'+this.info.position+'</div>');

@@ -16,7 +16,7 @@ var CommandFactory = function(){
 			}else if('Player_Power'==action){              //（独立的一块区域显示）
 				command = new ControlCommand(action,data);
 			}else
-				command = new Command(action,data);
+				command = new GeneralCommand(action,data);
 			
 			return command;
 		}

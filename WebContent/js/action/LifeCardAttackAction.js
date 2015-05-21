@@ -1,9 +1,10 @@
-LifeCardAttackAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(LifeCardAttackAction.prototype, new Action, {
+LifeCardAttackAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		/*var div = $('<div>攻击</div>');
 		div.css("color","red");

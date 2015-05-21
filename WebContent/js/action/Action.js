@@ -1,9 +1,11 @@
-Action = function(){
+Action = jClass({
 	
-}
-
-Action.prototype = {
-	doAction: function(info,view){
+	init: function(info,view){
+		this.info = info;
+		this.view = view;
+	},
+	
+	doAction: function(){
 		//子类覆盖
 	}
-}
+});

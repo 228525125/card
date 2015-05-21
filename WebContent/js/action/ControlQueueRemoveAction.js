@@ -1,10 +1,11 @@
 
-ControlQueueRemoveAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ControlQueueRemoveAction.prototype, new Action, {
+ControlQueueRemoveAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var h = this.view.html();		
 		var res = '<p style="margin: 0;padding: 0;">unit：'+this.info.unit.name+'->从队列移除</p>';

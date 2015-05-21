@@ -1,10 +1,11 @@
-BuffInvalidAction = function(info,view){
-	this.info = info;
-	this.view = view;
-	this.skillMap = new Map();
-}
-
-$.extend(BuffInvalidAction.prototype, new Action, {
+BuffInvalidAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+		this.skillMap = new Map();
+	},
+	
 	doAction : function(){
 		var action = BuffInvalidActionFactory.createAction(this.info,this.view)
 		if(null!=action)

@@ -1,15 +1,16 @@
-
-Command = function(action,info){
-	this.player = info.player;
-	var playerData = Context.getPlayer(this.player.id);
-	this.container = playerData.getContainer(info.container.name);
-	this.position = info.position;
-	this.action = action;
-	this.info = info;
-}
-
-Command.prototype = {
+/**
+ * 命令
+ */
+Command = jClass({
+	
+	init: function(container,position,action,info){
+		this.container = container;
+		this.position = position;
+		this.action = action;
+		this.info = info;
+	},
+	
 	execute: function(){
 		this.container.act(this.position, this.action, this.info);
 	}
-}
+});

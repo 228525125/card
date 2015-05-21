@@ -1,9 +1,10 @@
-GroundAddAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(GroundAddAction.prototype, new Action, {
+GroundAddAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		this.view.html(this.info.card.name);
 	}

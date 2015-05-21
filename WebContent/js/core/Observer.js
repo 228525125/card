@@ -1,14 +1,13 @@
 /**
- * 
- * @param view 是一个jquery对象
- * @returns
+ * 观察者
  */
-Observer = function(){
-
-}
-
-Observer.prototype = {
+Observer = jClass({
+	
+	init: function(){
+		
+	},
+	
 	update: function(info){
 		
 	}
-}
+});

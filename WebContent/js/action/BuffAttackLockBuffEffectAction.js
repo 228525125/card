@@ -1,9 +1,10 @@
-BuffAttackLockBuffEffectAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(BuffAttackLockBuffEffectAction.prototype, new Action, {
+BuffAttackLockBuffEffectAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		Buffer.cancelSelect();
 		Buffer.cancelQuery();

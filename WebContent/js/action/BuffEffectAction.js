@@ -1,10 +1,11 @@
-BuffEffectAction = function(info,view){
-	this.info = info;
-	this.view = view;
-	this.skillMap = new Map();
-}
-
-$.extend(BuffEffectAction.prototype, new Action, {
+BuffEffectAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+		this.skillMap = new Map();
+	},
+	
 	doAction : function(){
 		var action = BuffEffectActionFactory.createAction(this.info,this.view)
 		if(null!=action)

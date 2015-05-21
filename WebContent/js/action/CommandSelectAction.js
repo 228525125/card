@@ -1,9 +1,10 @@
-CommandSelectAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(CommandSelectAction.prototype, new Action, {
+CommandSelectAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		Buffer.cancelSelect();
 		Buffer.cancelQuery();

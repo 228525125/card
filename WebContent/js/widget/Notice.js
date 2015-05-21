@@ -1,6 +1,10 @@
-//用于显示提示信息
-Notice = function(){
-	this.observablelist = new Array();
-}
-
-$.extend(Notice.prototype, new Container);
+/**
+ * 用于显示提示信息
+ */
+Notice = jClass(Container, {
+	
+	init: function() {
+		
+		this.superFunction();
+	}
+});

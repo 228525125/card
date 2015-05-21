@@ -1,7 +1,11 @@
-
-UseCard = function(){
-	this.observablelist = new Array();
-}
-
-$.extend(UseCard.prototype, new Container);
+/**
+ * 手牌
+ */
+UseCard = jClass(Container, {
+	
+	init: function(){
+		
+		this.superFunction();
+	}
+});
 

@@ -1,9 +1,10 @@
-SkillPunctureAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(SkillPunctureAction.prototype, new Action, {
+SkillPunctureAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var div = $('<div>'+this.info.skill.name+'</div>');
 		div.css("color","red");

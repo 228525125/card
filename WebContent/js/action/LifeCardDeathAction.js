@@ -1,9 +1,10 @@
-LifeCardDeathAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(LifeCardDeathAction.prototype, new Action, {
+LifeCardDeathAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){	
 		var div = $('<div style="font-size:9px;">死亡</div>');
 		div.css("color","red");

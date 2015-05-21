@@ -1,10 +1,11 @@
 
-ContextDeployAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ContextDeployAction.prototype, new Action, {
+ContextDeployAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var h = this.view.html();
 		this.view.html(h+'<p style="margin: 0;padding: 0;">player：'+this.info.control.name+'->开始部署</p>');

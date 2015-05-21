@@ -1,9 +1,10 @@
-CommandQueryCallAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(CommandQueryCallAction.prototype, new Action,{
+CommandQueryCallAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		this.view.css("background-color","aqua");
 		/*var div = $('<div style="font-size: 5px;">'+this.info.position+'</div>');

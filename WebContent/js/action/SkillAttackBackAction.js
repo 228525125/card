@@ -1,9 +1,10 @@
-SkillAttackBackAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(SkillAttackBackAction.prototype, new Action, {
+SkillAttackBackAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var div = $('<div>'+this.info.skill.name+'</div>');
 		div.css("color","red");

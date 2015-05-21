@@ -1,9 +1,10 @@
 //命令执行者
-Invoker = function(){
-	this.command = null;
-}
-
-Invoker.prototype = {
+Invoker = jClass({
+	
+	init: function(){
+		this.command = null;
+	},
+	
 	action: function(){
 		this.command.execute();
 	},
@@ -15,6 +16,6 @@ Invoker.prototype = {
 		this.command = CommandFactory.createCommand(action,data);
 		this.action();
 	}
-}
+});
 
 var Invoker = new Invoker();

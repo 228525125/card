@@ -1,9 +1,10 @@
-CommandQueryConjureAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(CommandQueryConjureAction.prototype, new Action,{
+CommandQueryConjureAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		this.view.css("background-color","aqua");
 	}

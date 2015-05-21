@@ -1,9 +1,10 @@
-CommandReloadAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(CommandReloadAction.prototype, new Action, {
+CommandReloadAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var playerData = Context.getPlayer(this.info[0].player.id);
 		var group = playerData.getContainer('CardGroup');

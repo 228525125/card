@@ -1,9 +1,10 @@
-LifeCardExpAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(LifeCardExpAction.prototype, new Action, {
+LifeCardExpAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		
 	}

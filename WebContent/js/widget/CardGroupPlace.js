@@ -1,9 +1,10 @@
 	
-CardGroupPlace = function(view){
-	this.view = view;
-}
-
-$.extend(CardGroupPlace.prototype, new Observer, {
+CardGroupPlace = jClass(Observer,{
+	
+	init: function(view) {
+		this.view = view;
+	},
+	
 	update: function(data){
 		if("CardGroup_Add" == data.action){
 			this.card = data.card;

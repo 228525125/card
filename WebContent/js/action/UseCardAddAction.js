@@ -1,9 +1,10 @@
-UseCardAddAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(UseCardAddAction.prototype, new Action,{
+UseCardAddAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		this.view.html(this.info.card.name);
 	}

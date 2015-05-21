@@ -1,9 +1,10 @@
-SkillThumpAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(SkillThumpAction.prototype, new Action, {
+SkillThumpAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var div = $('<div>'+this.info.skill.name+'</div>');
 		div.css("color","red");

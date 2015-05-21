@@ -1,10 +1,7 @@
-LifeCardImmuneDamageRatioAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(LifeCardImmuneDamageRatioAction.prototype, new Action, {
-	doAction : function(){
+LifeCardImmuneDamageRatioAction = jClass(Action, {
+	
+	init: function(info,view){
 		
+		this.superFunction(info,view);
 	}
 });

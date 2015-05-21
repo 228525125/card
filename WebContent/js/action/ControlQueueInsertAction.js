@@ -1,10 +1,11 @@
 
-ControlQueueInsertAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ControlQueueInsertAction.prototype, new Action, {
+ControlQueueInsertAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var h = this.view.html();		
 		var res = '<p style="margin: 0;padding: 0;">unit：'+this.info.unit.name+'->插入队列</p>';

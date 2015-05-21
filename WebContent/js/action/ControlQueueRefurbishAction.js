@@ -1,10 +1,11 @@
 
-ControlQueueRefurbishAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ControlQueueRefurbishAction.prototype, new Action, {
+ControlQueueRefurbishAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		var h = this.view.html();		
 		var res = '<p style="margin: 0;padding: 0;">刷新队列</p>';

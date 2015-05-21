@@ -1,9 +1,10 @@
-PlaceInAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(PlaceInAction.prototype, new Action, {
+PlaceInAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		Buffer.cancelSelect();
 		Buffer.cancelQuery();

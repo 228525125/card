@@ -1,10 +1,11 @@
 
-ContextControlAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(ContextControlAction.prototype, new Action, {
+ContextControlAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	doAction : function(){
 		Context.setControl(this.info.control);
 		var notice = Context.getNotice();

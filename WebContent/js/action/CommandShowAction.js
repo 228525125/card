@@ -1,9 +1,10 @@
-CommandShowAction = function(info,view){
-	this.info = info;
-	this.view = view;
-}
-
-$.extend(CommandShowAction.prototype, new Action, {
+CommandShowAction = jClass(Action, {
+	
+	init: function(info,view){
+		
+		this.superFunction(info,view);
+	},
+	
 	showPlayer : function(){
 		var text = '<p style="margin: 0;padding: 0;">player:'+this.info.player.name+'</p>';
 		return text;
