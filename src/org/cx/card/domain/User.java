@@ -1,5 +1,8 @@
 package org.cx.card.domain;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +30,7 @@ import org.cx.game.command.CommandBuffer;
 import org.cx.game.core.Context;
 import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
+import org.cx.game.tools.PropertiesUtil;
 import org.cx.game.widget.CardGroup;
 import org.cx.game.widget.CardGroupDecorator;
 import org.cx.game.widget.ICamp;
@@ -100,13 +104,15 @@ public class User extends Player{
 		return decks;
 	}
 	
-	private static String filePath = "/org/cx/card/domain/user.xml";
+	private static String filePath = "/org/cx/card/domain/user.xml";   
+	//private static String filePath = "F:/CX/项目/MyEclipse/workspace101/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/card/docs/user/user.xml";
 	
 	private List<Integer> getCards2(){
 		List<Integer> list = new ArrayList<Integer>();
 		SAXReader saxReader = new SAXReader();
-		InputStream is=CardFactory.class.getResourceAsStream(filePath); 
+		InputStream is=CardFactory.class.getResourceAsStream(filePath);
 		try {
+			
 			Document document = saxReader.read(is);
 			Element root = document.getRootElement();
 			Element users = root.element("users");

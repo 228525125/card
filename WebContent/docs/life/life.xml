@@ -2,6 +2,22 @@
 
 <game>
 	<cards>
+		<card type="org.cx.game.card.ext.Cure" cardID="8421001">
+			<parameter>
+				<id type="int">8421001</id>
+				<consume type="int">1</consume>
+				<style type="int">0</style>
+				<func type="int">1</func>
+				<cureScale type="int">10</cureScale>
+				<tireBout type="int">3</tireBout>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
+				<parameter>
+					<consume type="int">1</consume>
+				</parameter>
+			</apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
 			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
 				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
