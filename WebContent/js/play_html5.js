@@ -15,6 +15,23 @@ function post(command){
             	Context.setProcessSequence(sequence);
     			
     		}
+    		
+    		/* 间隔执行
+    		var i = 0;
+			var vID = setInterval(function(){
+    	    	if(i<data.length){
+    	    		var sequence = data[i].sequence;
+        			var jsonObject = $.parseJSON(data[i].command);
+        			var sign = data[i].sign;
+        			Invoker.response(jsonObject, sign);
+            		
+                	Context.setProcessSequence(sequence);
+    	    		
+    	    		i++;
+    	    	 }else{
+    	    		 clearInterval(vID);
+    	    	 }
+    	     },1000);*/
     	}
     });
 }
@@ -38,6 +55,27 @@ function syn(){
 	        		Context.setProcessSequence(sequence);
     			}
     		}
+    		
+    		/* 间隔执行
+    		var i = 0;
+			var vID = setInterval(function(){
+    	    	if(i<data.length){
+    	    		var sequence = data[i].sequence;
+    	    			
+    	    		if(sequence>Context.getProcessSequence()){
+    		    		var jsonObject = $.parseJSON(data[i].command);
+    		    		var sign = data[i].sign;
+    		    			
+    		    		Invoker.response(jsonObject, sign);
+    		    			
+    		        	Context.setProcessSequence(sequence);
+    	    		}
+    	    		
+    	    		i++;
+    	    	 }else{
+    	    		 clearInterval(vID);
+    	    	 }
+    	     },1000);*/
     	}
     });
 }
