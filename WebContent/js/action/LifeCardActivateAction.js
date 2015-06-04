@@ -7,7 +7,7 @@ LifeCardActivateAction = jClass(Action, {
 	},
 	
 	doAction : function(){
-		if(this.info.available)
-			this.view.css("color","yellow");
+		if(this.info.activate)
+			this.view.css("background-color","yellow");
 	}
 });
