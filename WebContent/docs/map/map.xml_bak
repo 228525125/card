@@ -39,5 +39,22 @@
 		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                  <!-- 被占用位置的集合 -->
 			<position type="int">610013</position>
 		</disableList>
+		<strongHoldList type="java.util.ArrayList" interface="java.util.List" collection="true">                                               <!-- 据点的集合 --> 
+			<StrongHold type="org.cx.game.widget.LifeCardStrongHold" interface="org.cx.game.widget.IStrongHold">                               
+				<parameter>
+					<position type="int">810014</position>                                                                                     <!-- 据点位置 --> 
+					<range type="int">2</range>                                                                                                <!-- 据点刷新范围 --> 
+					<bout type="int">2</bout>                                                                                                  <!-- 据点刷新频率 -->					
+				</parameter>
+				<player type="org.cx.game.npc.Faction" interface="org.cx.game.core.IPlayer" factory="org.cx.game.npc.FactionFactory">          <!-- 据点所属派系 -->
+					<factoryMethodParameter>
+						<id type="int">101</id>			
+					</factoryMethodParameter>
+				</player>
+				<cardIDList type="java.util.ArrayList" interface="java.util.List" collection="true">                                           <!-- 据点包含的生物 --> 
+					<cardID type="int">1110004</cardID>
+				</cardIDList>
+			</StrongHold>
+		</strongHoldList>
 	</map>
 </maps>

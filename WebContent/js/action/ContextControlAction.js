@@ -21,9 +21,9 @@ ContextControlAction = jClass(Action, {
 			h += '-'+this.info.life.name;
 		}
 		
-		if('send'==this.info.sign && undefined!=this.info.life){
+		/*if('send'==this.info.sign && undefined!=this.info.life){
 			post('select ground place'+this.info.position+' card');
-		}
+		}*/
 		
 		place.view.html(h);
 	}

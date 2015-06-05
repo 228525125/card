@@ -50,7 +50,15 @@ function syn(){
     			
     			if(sequence>Context.getProcessSequence()){     //异步时，可能会出现重复发送同步命令，这样就避免了重复加载
 	    			var jsonObject = $.parseJSON(data[i].command);
-	    			Invoker.response(jsonObject, data[i].sign);
+	    			if('Command_Show'==jsonObject.action ||
+	    			    'Command_Select'==jsonObject.action || 
+	    			    'Command_Query_Call'==jsonObject.action ||
+	    			    'Command_Query_Attack'==jsonObject.action ||
+	    			    'Command_Query_Move'==jsonObject.action ||
+	    			    'Command_Query_Conjure'==jsonObject.action)
+	    			;
+	    			else
+	    				Invoker.response(jsonObject, data[i].sign);
 	        		
 	        		Context.setProcessSequence(sequence);
     			}
@@ -328,6 +336,7 @@ $(function(){
 	Glossary.add(Glossary.Attacked_Type,4,'城墙');
 	Glossary.add(Glossary.Death_Status,0,'live');
 	Glossary.add(Glossary.Death_Status,1,'death');
+	Glossary.add(Glossary.Death_Status,2,'exsits');
 	Glossary.add(Glossary.Move_Type,0,'步行');
 	Glossary.add(Glossary.Move_Type,1,'飞行');
 	Glossary.add(Glossary.Move_Type,2,'瞬移');
