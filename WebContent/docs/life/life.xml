@@ -18,6 +18,48 @@
 			</apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1410018">
+			<parameter>
+				<id type="int">1410018</id>
+			</parameter>
+			<consume type="int">100</consume>
+			<hp type="int">210</hp>
+			<atk type="int">54</atk>
+			<range type="int">5</range>
+			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
+			<star type="int">1</star>
+			<energy type="int">3</energy>
+			<parryChance type="int">0</parryChance>
+			<dodgeChance type="int">0</dodgeChance>
+			<speedChance type="int">120</speedChance>
+			<accurateChance type="int">100</accurateChance>
+			<thumpChance type="int">0</thumpChance>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
+				<parameter>
+					<mode type="int">1</mode>
+					<type type="int">1</type>
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">2</armourType>
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
 			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
 				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
@@ -256,7 +298,7 @@
 				<Puncture type="org.cx.game.card.skill.ext.Puncture">
 					<parameter>
 						<style type="int">1</style>
-						<chance type="int">100</chance>
+						<chance type="int">30</chance>
 						<downImmuneDamageRatio type="int">100</downImmuneDamageRatio>
 					</parameter>
 				</Puncture>
