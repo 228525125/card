@@ -2,6 +2,23 @@
 
 <game>
 	<cards>
+		<card type="org.cx.game.card.ext.AngerRoar" cardID="8422002">
+			<parameter>
+				<id type="int">8422002</id>
+				<consume type="int">1</consume>
+				<style type="int">2</style>
+				<func type="int">4</func>
+				<radius type="int">3</radius>
+				<bout type="int">3</bout>
+				<atkScale type="int">20</atkScale>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
+				<parameter>
+					<consume type="int">1</consume>
+				</parameter>
+			</apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1120006">
 			<parameter>
 				<id type="int">1120006</id>
