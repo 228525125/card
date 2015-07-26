@@ -2,74 +2,21 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.LifeCard" cardID="1120006">
+		<card type="org.cx.game.card.ext.Cure" cardID="8421001">
 			<parameter>
-				<id type="int">1120006</id>
+				<id type="int">8421001</id>
+				<consume type="int">1</consume>
+				<style type="int">0</style>
+				<func type="int">1</func>
+				<cureScale type="int">10</cureScale>
+				<tireBout type="int">3</tireBout>
 			</parameter>
-			<consume type="int">170</consume>
-			<hp type="int">320</hp>
-			<atk type="int">72</atk>
-			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.2</immuneDamageRatio>
-			<star type="int">2</star>
-			<energy type="int">3</energy>
-			<parryChance type="int">0</parryChance>
-			<dodgeChance type="int">0</dodgeChance>
-			<speedChance type="int">90</speedChance>
-			<accurateChance type="int">100</accurateChance>
-			<thumpChance type="int">0</thumpChance>
-			<lockChance type="int">100</lockChance>
-			<fleeChance type="int">0</fleeChance>
-			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
 				<parameter>
-					<mode type="int">0</mode>
-					<type type="int">0</type>
+					<consume type="int">1</consume>
 				</parameter>
-			</attack>
-			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
-				<parameter>
-					<armourType type="int">3</armourType>
-				</parameter>
-			</attacked>
-			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
-			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
-				<parameter>
-					<type type="int">0</type>
-				</parameter>
-			</move>
-			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
-			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
-			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
-			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			</apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
-			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-			<useCardPolicy type="org.cx.game.policy.UseCardPolicy" interface="org.cx.game.policy.IUseCardPolicy">
-				<formulaList type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<LevelFormula type="org.cx.game.policy.LevelFormula" interface="org.cx.game.policy.IFormula"></LevelFormula>
-					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
-				</formulaList>
-			</useCardPolicy>
-			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DamageIncrease type="org.cx.game.card.skill.ext.DamageIncrease">
-					<parameter>
-						<style type="int">1</style>
-						<bout type="int">5</bout>
-						<scale type="int">20</scale>
-					</parameter>
-				</DamageIncrease>
-				<AngerRoar type="org.cx.game.card.skill.ext.AngerRoar">
-					<parameter>
-						<consume type="int">100</consume>
-						<cooldown type="int">5</cooldown>
-						<velocity type="int">0</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
-						<range type="int">3</range>
-						<bout type="int">3</bout>
-						<atkScale type="int">20</atkScale>
-					</parameter>
-				</AngerRoar>
-			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1410018">
 			<parameter>
@@ -361,13 +308,14 @@
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearLine>
+				<!-- 
 				<SpearInfeed type="org.cx.game.card.skill.ext.SpearInfeed">
 					<parameter>
 						<style type="int">1</style>
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearInfeed>
-				 <!--
+				 -->
 				<Bump type="org.cx.game.card.skill.ext.Bump">
 					<parameter>
 						<consume type="int">100</consume>
@@ -376,11 +324,10 @@
 						<style type="int">1</style>
 						<func type="int">0</func>
 						<step type="int">3</step>
-						<atkScale type="int">100</atkScale>        
+						<atkScale type="int">100</atkScale>                                                                                           <!-- 攻击比例，技能所有比例都基于% -->
 						<bout type="int">1</bout>
 					</parameter>
 				</Bump>
-				-->
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1120006">
@@ -1277,22 +1224,6 @@
 					</parameter>
 				</CrossbowCircle>
 			</skillList>
-		</card>
-		<card type="org.cx.game.card.ext.Cure" cardID="8421001">
-			<parameter>
-				<id type="int">8421001</id>
-				<consume type="int">1</consume>
-				<style type="int">0</style>
-				<func type="int">1</func>
-				<cureScale type="int">10</cureScale>
-				<tireBout type="int">3</tireBout>
-			</parameter>
-			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
-				<parameter>
-					<consume type="int">1</consume>
-				</parameter>
-			</apply>
-			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
 	</cards>
 </game>
