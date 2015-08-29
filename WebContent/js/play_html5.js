@@ -55,7 +55,8 @@ function syn(){
 	    			    'Command_Query_Call'==jsonObject.action ||
 	    			    'Command_Query_Attack'==jsonObject.action ||
 	    			    'Command_Query_Move'==jsonObject.action ||
-	    			    'Command_Query_Conjure'==jsonObject.action)
+	    			    'Command_Query_Conjure'==jsonObject.action ||
+	    			    'Command_Query_Apply'==jsonObject.action)
 	    			;
 	    			else
 	    				Invoker.response(jsonObject, data[i].sign);
@@ -196,6 +197,7 @@ $(function(){
 	});
 	
 	$("#button_apply").click(function(){
+		post('query apply');
 		$("#command_input").val('apply ');
 		$("#command_input").focus();
 	});
@@ -287,7 +289,9 @@ $(function(){
 	ActionFactory.register('Command_Query_Call', 'new CommandQueryCallAction(data.info,view)');
 	ActionFactory.register('Command_Query_Attack', 'new CommandQueryAttackAction(data.info,view)');
 	ActionFactory.register('Command_Query_Move', 'new CommandQueryMoveAction(data.info,view)');
-	ActionFactory.register('Command_Query_Conjure', 'new CommandQueryConjureAction(data.info,view)');	
+	ActionFactory.register('Command_Query_Conjure', 'new CommandQueryConjureAction(data.info,view)');
+	ActionFactory.register('Command_Query_Apply', 'new CommandQueryApplyAction(data.info,view)');
+	
 	ActionFactory.register('Card_LifeCard_Action_Move', 'new LifeCardMoveAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Call', 'new LifeCardCallAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Death', 'new LifeCardDeathAction(data.info,view)');

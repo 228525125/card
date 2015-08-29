@@ -2,22 +2,88 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.ext.AngerRoar" cardID="8422002">
+		<card type="org.cx.game.card.ext.TransmitIn" cardID="8523003">
 			<parameter>
-				<id type="int">8422002</id>
+				<id type="int">8523003</id>
 				<consume type="int">1</consume>
 				<style type="int">2</style>
-				<func type="int">4</func>
-				<radius type="int">3</radius>
-				<bout type="int">3</bout>
-				<atkScale type="int">20</atkScale>
+				<func type="int">5</func>
 			</parameter>
-			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
-				<parameter>
-					<consume type="int">1</consume>
-				</parameter>
-			</apply>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1230008">
+			<parameter>
+				<id type="int">1230008</id>
+			</parameter>
+			<consume type="int">290</consume>
+			<hp type="int">320</hp>
+			<atk type="int">65</atk>
+			<range type="int">4</range>
+			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<star type="int">3</star>
+			<energy type="int">3</energy>
+			<parryChance type="int">0</parryChance>
+			<dodgeChance type="int">0</dodgeChance>
+			<speedChance type="int">100</speedChance>
+			<accurateChance type="int">100</accurateChance>
+			<thumpChance type="int">0</thumpChance>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
+				<parameter>
+					<mode type="int">1</mode>
+					<type type="int">2</type>
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">0</armourType>
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<TransmitIn type="org.cx.game.card.skill.ext.TransmitIn">
+					<parameter>
+						<consume type="int">35</consume>
+						<cooldown type="int">5</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
+					</parameter>
+				</TransmitIn>
+				<TransmitOut type="org.cx.game.card.skill.ext.TransmitOut">
+					<parameter>
+						<consume type="int">70</consume>
+						<cooldown type="int">10</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
+						<range type="int">8</range>
+					</parameter>
+				</TransmitOut>
+				<TransmitBack type="org.cx.game.card.skill.ext.TransmitBack">
+					<parameter>
+						<consume type="int">25</consume>
+						<cooldown type="int">3</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
+						<bout type="int">3</bout>
+					</parameter>
+				</TransmitBack>
+			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1120006">
 			<parameter>
@@ -1304,11 +1370,30 @@
 				<cureScale type="int">10</cureScale>
 				<tireBout type="int">3</tireBout>
 			</parameter>
-			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply">
-				<parameter>
-					<consume type="int">1</consume>
-				</parameter>
-			</apply>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.ext.AngerRoar" cardID="8422002">
+			<parameter>
+				<id type="int">8422002</id>
+				<consume type="int">1</consume>
+				<style type="int">2</style>
+				<func type="int">4</func>
+				<radius type="int">3</radius>
+				<bout type="int">3</bout>
+				<atkScale type="int">20</atkScale>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.ext.TransmitIn" cardID="8523003">
+			<parameter>
+				<id type="int">8523003</id>
+				<consume type="int">1</consume>
+				<style type="int">2</style>
+				<func type="int">5</func>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
 	</cards>
