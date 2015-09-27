@@ -2,200 +2,6 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.ext.TransmitIn" cardID="8523003">
-			<parameter>
-				<id type="int">8523003</id>
-				<consume type="int">1</consume>
-				<style type="int">2</style>
-				<func type="int">5</func>
-			</parameter>
-			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
-			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
-		</card>
-		<card type="org.cx.game.card.LifeCard" cardID="1230008">
-			<parameter>
-				<id type="int">1230008</id>
-			</parameter>
-			<consume type="int">290</consume>
-			<hp type="int">320</hp>
-			<atk type="int">65</atk>
-			<range type="int">4</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
-			<star type="int">3</star>
-			<energy type="int">3</energy>
-			<parryChance type="int">0</parryChance>
-			<dodgeChance type="int">0</dodgeChance>
-			<speedChance type="int">100</speedChance>
-			<accurateChance type="int">100</accurateChance>
-			<thumpChance type="int">0</thumpChance>
-			<lockChance type="int">100</lockChance>
-			<fleeChance type="int">0</fleeChance>
-			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
-				<parameter>
-					<mode type="int">1</mode>
-					<type type="int">2</type>
-				</parameter>
-			</attack>
-			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
-				<parameter>
-					<armourType type="int">0</armourType>
-				</parameter>
-			</attacked>
-			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
-			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
-				<parameter>
-					<type type="int">0</type>
-				</parameter>
-			</move>
-			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
-			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
-			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
-			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
-			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
-			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<TransmitIn type="org.cx.game.card.skill.ext.TransmitIn">
-					<parameter>
-						<consume type="int">35</consume>
-						<cooldown type="int">5</cooldown>
-						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
-					</parameter>
-				</TransmitIn>
-				<TransmitOut type="org.cx.game.card.skill.ext.TransmitOut">
-					<parameter>
-						<consume type="int">70</consume>
-						<cooldown type="int">10</cooldown>
-						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
-						<range type="int">8</range>
-					</parameter>
-				</TransmitOut>
-				<TransmitBack type="org.cx.game.card.skill.ext.TransmitBack">
-					<parameter>
-						<consume type="int">25</consume>
-						<cooldown type="int">3</cooldown>
-						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
-						<bout type="int">3</bout>
-					</parameter>
-				</TransmitBack>
-			</skillList>
-		</card>
-		<card type="org.cx.game.card.LifeCard" cardID="1120006">
-			<parameter>
-				<id type="int">1120006</id>
-			</parameter>
-			<consume type="int">170</consume>
-			<hp type="int">320</hp>
-			<atk type="int">72</atk>
-			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.2</immuneDamageRatio>
-			<star type="int">2</star>
-			<energy type="int">3</energy>
-			<parryChance type="int">0</parryChance>
-			<dodgeChance type="int">0</dodgeChance>
-			<speedChance type="int">90</speedChance>
-			<accurateChance type="int">100</accurateChance>
-			<thumpChance type="int">0</thumpChance>
-			<lockChance type="int">100</lockChance>
-			<fleeChance type="int">0</fleeChance>
-			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
-				<parameter>
-					<mode type="int">0</mode>
-					<type type="int">0</type>
-				</parameter>
-			</attack>
-			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
-				<parameter>
-					<armourType type="int">3</armourType>
-				</parameter>
-			</attacked>
-			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
-			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
-				<parameter>
-					<type type="int">0</type>
-				</parameter>
-			</move>
-			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
-			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
-			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
-			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
-			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
-			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-			<useCardPolicy type="org.cx.game.policy.UseCardPolicy" interface="org.cx.game.policy.IUseCardPolicy">
-				<formulaList type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<LevelFormula type="org.cx.game.policy.LevelFormula" interface="org.cx.game.policy.IFormula"></LevelFormula>
-					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
-				</formulaList>
-			</useCardPolicy>
-			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DamageIncrease type="org.cx.game.card.skill.ext.DamageIncrease">
-					<parameter>
-						<style type="int">1</style>
-						<bout type="int">5</bout>
-						<scale type="int">20</scale>
-					</parameter>
-				</DamageIncrease>
-				<AngerRoar type="org.cx.game.card.skill.ext.AngerRoar">
-					<parameter>
-						<consume type="int">100</consume>
-						<cooldown type="int">5</cooldown>
-						<velocity type="int">0</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
-						<range type="int">3</range>
-						<bout type="int">3</bout>
-						<atkScale type="int">20</atkScale>
-					</parameter>
-				</AngerRoar>
-			</skillList>
-		</card>
-		<card type="org.cx.game.card.LifeCard" cardID="1410018">
-			<parameter>
-				<id type="int">1410018</id>
-			</parameter>
-			<consume type="int">100</consume>
-			<hp type="int">210</hp>
-			<atk type="int">54</atk>
-			<range type="int">5</range>
-			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
-			<star type="int">1</star>
-			<energy type="int">3</energy>
-			<parryChance type="int">0</parryChance>
-			<dodgeChance type="int">0</dodgeChance>
-			<speedChance type="int">120</speedChance>
-			<accurateChance type="int">100</accurateChance>
-			<thumpChance type="int">0</thumpChance>
-			<lockChance type="int">100</lockChance>
-			<fleeChance type="int">0</fleeChance>
-			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
-				<parameter>
-					<mode type="int">1</mode>
-					<type type="int">1</type>
-				</parameter>
-			</attack>
-			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
-				<parameter>
-					<armourType type="int">2</armourType>
-				</parameter>
-			</attacked>
-			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
-			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
-				<parameter>
-					<type type="int">0</type>
-				</parameter>
-			</move>
-			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
-			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
-			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
-			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
-			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
-			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
 			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
 				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
@@ -204,7 +10,7 @@
 			<hp type="int">240</hp>                                                                                            <!-- 生命值 -->
 			<atk type="int">60</atk>                                                                                           <!-- 攻击力 -->
 			<range type="int">1</range>                                                                                        <!-- 攻击距离 -->
-			<immuneDamageRatio type="double">0.2</immuneDamageRatio>                                                               <!-- 免伤比 -->
+			<immuneDamageRatio type="int">20</immuneDamageRatio>                                                               <!-- 免伤比 -->
 			<star type="int">1</star>                                                                                          <!-- 等级 -->
 			<energy type="int">3</energy>                                                                                      <!-- 精力，这个跟移动范围有关，范围=精力/单格消耗，单格消耗统一为1 -->
 			<parryChance type="int">0</parryChance>                                                                         <!-- 格挡 -->
@@ -243,6 +49,70 @@
 					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
 				</formulaList>
 			</useCardPolicy>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<DogHuntUnits type="org.cx.game.card.skill.ext.forest.DogHuntUnits">
+					<parameter>                                                                                
+						<range type="int">3</range>                                                                                                   
+						<defScale type="int">10</defScale>                                                                                           
+					</parameter>
+				</DogHuntUnits>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
+			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
+				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
+			</parameter>
+			<consume type="int">100</consume>
+			<hp type="int">240</hp>                                                                                            <!-- 生命值 -->
+			<atk type="int">60</atk>                                                                                           <!-- 攻击力 -->
+			<range type="int">1</range>                                                                                        <!-- 攻击距离 -->
+			<immuneDamageRatio type="int">20</immuneDamageRatio>                                                               <!-- 免伤比 -->
+			<star type="int">1</star>                                                                                          <!-- 等级 -->
+			<energy type="int">3</energy>                                                                                      <!-- 精力，这个跟移动范围有关，范围=精力/单格消耗，单格消耗统一为1 -->
+			<parryChance type="int">0</parryChance>                                                                         <!-- 格挡 -->
+			<dodgeChance type="int">0</dodgeChance>                                                                         <!-- 躲闪 -->
+			<speedChance type="int">100</speedChance>                                                                          <!-- 速度 -->
+			<accurateChance type="int">100</accurateChance>                                                                 <!-- 准确 -->
+			<thumpChance type="int">0</thumpChance>                                                                          <!-- 重击 -->
+			<lockChance type="int">100</lockChance>                                                                          <!-- 锁定 -->
+			<fleeChance type="int">0</fleeChance>                                                                            <!-- 逃脱 -->
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">                                   <!-- 带interface属性表示使用接口赋值 -->
+				<parameter>
+					<mode type="int">0</mode>                                                                                  <!-- 攻击模式，0：近；1：远 -->
+					<type type="int">0</type>                                                                                  <!-- 攻击类型，0：普通；1：穿刺；2：法术；3：投石；4、混沌 -->
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">3</armourType>                                                                      <!-- 防御类型，0：无；1：轻型；2：中型；3：重型；4：城墙 -->
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>                                         <!-- 可选填，默认是1 -->					
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>                                                                                  <!-- 移动类型，0：步行；1：飞行；2：瞬移 -->
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected>
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>                                  <!-- 可选填，默认是1 -->
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+			<useCardPolicy type="org.cx.game.policy.UseCardPolicy" interface="org.cx.game.policy.IUseCardPolicy">
+				<formulaList type="java.util.ArrayList" interface="java.util.List" collection="true">
+					<LevelFormula type="org.cx.game.policy.LevelFormula" interface="org.cx.game.policy.IFormula"></LevelFormula>
+					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
+				</formulaList>
+			</useCardPolicy>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<DogHuntUnits type="org.cx.game.card.skill.ext.forest.DogHuntUnits">
+					<parameter>                                                                                
+						<range type="int">3</range>                                                                                                   
+						<defScale type="int">10</defScale>                                                                                           
+					</parameter>
+				</DogHuntUnits>
+			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1130001">
 			<parameter>
@@ -252,7 +122,7 @@
 			<hp type="int">480</hp>
 			<atk type="int">50</atk>
 			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.42</immuneDamageRatio>
+			<immuneDamageRatio type="int">42</immuneDamageRatio>
 			<star type="int">3</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -330,7 +200,7 @@
 			<hp type="int">480</hp>
 			<atk type="int">36</atk>
 			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.36</immuneDamageRatio>
+			<immuneDamageRatio type="int">36</immuneDamageRatio>
 			<star type="int">2</star>
 			<energy type="int">2</energy>
 			<parryChance type="int">20</parryChance>
@@ -391,7 +261,7 @@
 			<hp type="int">410</hp>
 			<atk type="int">86</atk>
 			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.2</immuneDamageRatio>
+			<immuneDamageRatio type="int">20</immuneDamageRatio>
 			<star type="int">4</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -474,7 +344,7 @@
 			<hp type="int">320</hp>
 			<atk type="int">72</atk>
 			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.2</immuneDamageRatio>
+			<immuneDamageRatio type="int">20</immuneDamageRatio>
 			<star type="int">2</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -543,7 +413,7 @@
 			<hp type="int">500</hp>
 			<atk type="int">72</atk>
 			<range type="int">1</range>
-			<immuneDamageRatio type="double">0.36</immuneDamageRatio>
+			<immuneDamageRatio type="int">36</immuneDamageRatio>
 			<star type="int">4</star>
 			<energy type="int">5</energy>
 			<parryChance type="int">0</parryChance>
@@ -619,7 +489,7 @@
 			<hp type="int">320</hp>
 			<atk type="int">65</atk>
 			<range type="int">4</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">3</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -692,7 +562,7 @@
 			<hp type="int">230</hp>
 			<atk type="int">65</atk>
 			<range type="int">3</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">2</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -758,7 +628,7 @@
 			<hp type="int">280</hp>
 			<atk type="int">65</atk>
 			<range type="int">4</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">3</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -837,7 +707,7 @@
 			<hp type="int">170</hp>
 			<atk type="int">54</atk>
 			<range type="int">3</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">1</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -879,7 +749,7 @@
 			<hp type="int">390</hp>
 			<atk type="int">39</atk>
 			<range type="int">3</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">3</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -972,7 +842,7 @@
 			<hp type="int">280</hp>
 			<atk type="int">32</atk>
 			<range type="int">3</range>
-			<immuneDamageRatio type="double">0.04</immuneDamageRatio>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
 			<star type="int">2</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -1037,7 +907,7 @@
 			<hp type="int">270</hp>
 			<atk type="int">70</atk>
 			<range type="int">4</range>
-			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
 			<star type="int">2</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -1096,7 +966,7 @@
 			<hp type="int">320</hp>
 			<atk type="int">70</atk>
 			<range type="int">4</range>
-			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
 			<star type="int">3</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -1173,7 +1043,7 @@
 			<hp type="int">210</hp>
 			<atk type="int">54</atk>
 			<range type="int">5</range>
-			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
 			<star type="int">1</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
@@ -1215,7 +1085,7 @@
 			<hp type="int">400</hp>
 			<atk type="int">60</atk>
 			<range type="int">3</range>
-			<immuneDamageRatio type="double">0.12</immuneDamageRatio>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
 			<star type="int">4</star>
 			<energy type="int">4</energy>
 			<parryChance type="int">0</parryChance>
@@ -1291,7 +1161,7 @@
 			<hp type="int">370</hp>
 			<atk type="int">92</atk>
 			<range type="int">5</range>
-			<immuneDamageRatio type="double">0.3</immuneDamageRatio>
+			<immuneDamageRatio type="int">30</immuneDamageRatio>
 			<star type="int">4</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
