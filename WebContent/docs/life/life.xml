@@ -56,6 +56,13 @@
 						<defScale type="int">10</defScale>                                                                                           
 					</parameter>
 				</DogHuntUnits>
+				<Weak type="org.cx.game.card.skill.ext.forest.Weak">
+					<parameter>
+						<bout type="int">2</bout>
+						<downScale type="int">50</downScale>
+						<chance type="int">100</chance>
+					</parameter>
+				</Weak>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
