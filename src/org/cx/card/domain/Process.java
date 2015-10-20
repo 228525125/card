@@ -20,7 +20,7 @@ public class Process {
 	private String playNo;
 	private Integer sequence;
 	
-	@Column(length = 2000)
+	@Column(length = 8000)
 	private String command;
 	
 	private Integer playerId;
