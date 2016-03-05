@@ -153,7 +153,7 @@ $(function(){
 			
 			if(-1!=val.indexOf('call') || -1!=val.indexOf('move')){
 				val += 'ground place'+position+';';
-			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多中参数形式，这里只默认了一种，其他形式只有手动输入了
+			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
 				val += 'ground place'+position+' card;'; 
 			}else{
 				val = '';

@@ -105,7 +105,7 @@ public class User extends Player{
 	}
 	
 	private static String filePath = "/org/cx/card/domain/user.xml";   
-	//private static String filePath = "F:/CX/项目/MyEclipse/workspace101/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/card/docs/user/user.xml";
+	//private static String filePath = "F:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/card/docs/user/user.xml";
 	
 	private List<Integer> getCards2(){
 		List<Integer> list = new ArrayList<Integer>();

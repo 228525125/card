@@ -2,67 +2,89 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
-			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
-				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
+		<card type="org.cx.game.card.magic.Xianluo" cardID="8111006">
+			<parameter>
+				<id type="int">8111006</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
 			</parameter>
-			<consume type="int">100</consume>
-			<hp type="int">240</hp>                                                                                            <!-- 生命值 -->
-			<atk type="int">60</atk>                                                                                           <!-- 攻击力 -->
-			<range type="int">1</range>                                                                                        <!-- 攻击距离 -->
-			<immuneDamageRatio type="int">20</immuneDamageRatio>                                                               <!-- 免伤比 -->
-			<star type="int">1</star>                                                                                          <!-- 等级 -->
-			<energy type="int">3</energy>                                                                                      <!-- 精力，这个跟移动范围有关，范围=精力/单格消耗，单格消耗统一为1 -->
-			<parryChance type="int">0</parryChance>                                                                         <!-- 格挡 -->
-			<dodgeChance type="int">0</dodgeChance>                                                                         <!-- 躲闪 -->
-			<speedChance type="int">100</speedChance>                                                                          <!-- 速度 -->
-			<accurateChance type="int">100</accurateChance>                                                                 <!-- 准确 -->
-			<thumpChance type="int">0</thumpChance>                                                                          <!-- 重击 -->
-			<lockChance type="int">100</lockChance>                                                                          <!-- 锁定 -->
-			<fleeChance type="int">0</fleeChance>                                                                            <!-- 逃脱 -->
-			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">                                   <!-- 带interface属性表示使用接口赋值 -->
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1230008">
+			<parameter>
+				<id type="int">1230008</id>
+			</parameter>
+			<consume type="int">290</consume>
+			<hp type="int">320</hp>
+			<atk type="int">65</atk>
+			<range type="int">4</range>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
+			<star type="int">3</star>
+			<energy type="int">3</energy>
+			<parryChance type="int">0</parryChance>
+			<dodgeChance type="int">0</dodgeChance>
+			<speedChance type="int">100</speedChance>
+			<accurateChance type="int">100</accurateChance>
+			<thumpChance type="int">0</thumpChance>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
 				<parameter>
-					<mode type="int">0</mode>                                                                                  <!-- 攻击模式，0：近；1：远 -->
-					<type type="int">0</type>                                                                                  <!-- 攻击类型，0：普通；1：穿刺；2：法术；3：投石；4、混沌 -->
+					<mode type="int">1</mode>
+					<type type="int">2</type>
 				</parameter>
 			</attack>
 			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
 				<parameter>
-					<armourType type="int">3</armourType>                                                                      <!-- 防御类型，0：无；1：轻型；2：中型；3：重型；4：城墙 -->
+					<armourType type="int">0</armourType>
 				</parameter>
 			</attacked>
-			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>                                         <!-- 可选填，默认是1 -->					
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
 			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
 				<parameter>
-					<type type="int">0</type>                                                                                  <!-- 移动类型，0：步行；1：飞行；2：瞬移 -->
+					<type type="int">0</type>
 				</parameter>
 			</move>
 			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
-			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected>
-			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>                                  <!-- 可选填，默认是1 -->
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
 			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-			<useCardPolicy type="org.cx.game.policy.UseCardPolicy" interface="org.cx.game.policy.IUseCardPolicy">
-				<formulaList type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<LevelFormula type="org.cx.game.policy.LevelFormula" interface="org.cx.game.policy.IFormula"></LevelFormula>
-					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
-				</formulaList>
-			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DogHuntUnits type="org.cx.game.card.skill.ext.forest.DogHuntUnits">
-					<parameter>                                                                                
-						<range type="int">3</range>                                                                                                   
-						<defScale type="int">10</defScale>                                                                                           
-					</parameter>
-				</DogHuntUnits>
-				<Weak type="org.cx.game.card.skill.ext.forest.Weak">
+				<TransmitIn type="org.cx.game.card.skill.TransmitIn">
 					<parameter>
-						<bout type="int">2</bout>
-						<downScale type="int">50</downScale>
-						<chance type="int">100</chance>
+						<consume type="int">35</consume>
+						<cooldown type="int">5</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
 					</parameter>
-				</Weak>
+				</TransmitIn>
+				<TransmitOut type="org.cx.game.card.skill.TransmitOut">
+					<parameter>
+						<consume type="int">70</consume>
+						<cooldown type="int">10</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
+						<range type="int">8</range>
+					</parameter>
+				</TransmitOut>
+				<TransmitBack type="org.cx.game.card.skill.TransmitBack">
+					<parameter>
+						<consume type="int">25</consume>
+						<cooldown type="int">3</cooldown>
+						<velocity type="int">1</velocity>
+						<style type="int">0</style>
+						<func type="int">0</func>
+						<bout type="int">3</bout>
+					</parameter>
+				</TransmitBack>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
@@ -113,7 +135,76 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DogHuntUnits type="org.cx.game.card.skill.ext.forest.DogHuntUnits">
+				<DogHuntUnits type="org.cx.game.card.skill.DogHuntUnits">
+					<parameter>                                                                                
+						<range type="int">3</range>                                                                                                   
+						<defScale type="int">10</defScale>                                                                                           
+					</parameter>
+				</DogHuntUnits>
+				<Bump type="org.cx.game.card.skill.Bump">
+					<parameter>
+						<consume type="int">50</consume>                                                                                             <!-- 消耗能量 -->
+						<cooldown type="int">5</cooldown>                                                                                            <!-- 冷却时间 -->
+						<velocity type="int">0</velocity>                                                                                            <!-- 0：瞬发；1：蓄力；-->
+						<style type="int">0</style>                                                                                                  <!-- 0：魔法；1：物理； -->
+						<func type="int">1</func>   
+						<range type="int">8</range>
+						<atkScale type="int">10</atkScale>
+						<dizzyChance type="int">20</dizzyChance>
+						<dizzyBout type="int">3</dizzyBout>
+					</parameter>
+				</Bump>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
+			<parameter>                                                                                                        <!-- parameter表示构造参数，参数名可以不跟程序参数名一致，但顺序必须一致 -->
+				<id type="int">1110004</id>                                                                                     <!-- 卡片id 唯一编码 -->
+			</parameter>
+			<consume type="int">100</consume>
+			<hp type="int">240</hp>                                                                                            <!-- 生命值 -->
+			<atk type="int">60</atk>                                                                                           <!-- 攻击力 -->
+			<range type="int">1</range>                                                                                        <!-- 攻击距离 -->
+			<immuneDamageRatio type="int">20</immuneDamageRatio>                                                               <!-- 免伤比 -->
+			<star type="int">1</star>                                                                                          <!-- 等级 -->
+			<energy type="int">3</energy>                                                                                      <!-- 精力，这个跟移动范围有关，范围=精力/单格消耗，单格消耗统一为1 -->
+			<parryChance type="int">0</parryChance>                                                                         <!-- 格挡 -->
+			<dodgeChance type="int">0</dodgeChance>                                                                         <!-- 躲闪 -->
+			<speedChance type="int">100</speedChance>                                                                          <!-- 速度 -->
+			<accurateChance type="int">100</accurateChance>                                                                 <!-- 准确 -->
+			<thumpChance type="int">0</thumpChance>                                                                          <!-- 重击 -->
+			<lockChance type="int">100</lockChance>                                                                          <!-- 锁定 -->
+			<fleeChance type="int">0</fleeChance>                                                                            <!-- 逃脱 -->
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">                                   <!-- 带interface属性表示使用接口赋值 -->
+				<parameter>
+					<mode type="int">0</mode>                                                                                  <!-- 攻击模式，0：近；1：远 -->
+					<type type="int">0</type>                                                                                  <!-- 攻击类型，0：普通；1：穿刺；2：法术；3：投石；4、混沌 -->
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">3</armourType>                                                                      <!-- 防御类型，0：无；1：轻型；2：中型；3：重型；4：城墙 -->
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>                                         <!-- 可选填，默认是1 -->					
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>                                                                                  <!-- 移动类型，0：步行；1：飞行；2：瞬移 -->
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected>
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>                                  <!-- 可选填，默认是1 -->
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+			<useCardPolicy type="org.cx.game.policy.UseCardPolicy" interface="org.cx.game.policy.IUseCardPolicy">
+				<formulaList type="java.util.ArrayList" interface="java.util.List" collection="true">
+					<LevelFormula type="org.cx.game.policy.LevelFormula" interface="org.cx.game.policy.IFormula"></LevelFormula>
+					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
+				</formulaList>
+			</useCardPolicy>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<DogHuntUnits type="org.cx.game.card.skill.DogHuntUnits">
 					<parameter>                                                                                
 						<range type="int">3</range>                                                                                                   
 						<defScale type="int">10</defScale>                                                                                           
@@ -169,7 +260,7 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<ShieldHit type="org.cx.game.card.skill.ext.ShieldHit">
+				<ShieldHit type="org.cx.game.card.skill.ShieldHit">
 					<parameter>
 						<consume type="int">50</consume>                                                                                             <!-- 消耗能量 -->
 						<cooldown type="int">5</cooldown>                                                                                            <!-- 冷却时间 -->
@@ -180,7 +271,7 @@
 						<bout type="int">1</bout>                                                                                                    <!-- 眩晕回合数 -->
 					</parameter>
 				</ShieldHit>
-				<Aid type="org.cx.game.card.skill.ext.Aid">
+				<Aid type="org.cx.game.card.skill.Aid">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">3</cooldown>
@@ -190,7 +281,7 @@
 						<bout type="int">3</bout>
 					</parameter>
 				</Aid>
-				<WarnAureole type="org.cx.game.card.skill.ext.WarnAureole">
+				<WarnAureole type="org.cx.game.card.skill.WarnAureole">
 					<parameter>
 						<style type="int">0</style>
 						<range type="int">3</range>
@@ -247,7 +338,7 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<ShieldHit type="org.cx.game.card.skill.ext.ShieldHit">
+				<ShieldHit type="org.cx.game.card.skill.ShieldHit">
 					<parameter>
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
@@ -308,27 +399,27 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<Puncture type="org.cx.game.card.skill.ext.Puncture">
+				<Puncture type="org.cx.game.card.skill.Puncture">
 					<parameter>
 						<style type="int">1</style>
 						<chance type="int">30</chance>
 						<downImmuneDamageRatio type="int">100</downImmuneDamageRatio>
 					</parameter>
 				</Puncture>
-				<SpearLine type="org.cx.game.card.skill.ext.SpearLine">
+				<SpearLine type="org.cx.game.card.skill.SpearLine">
 					<parameter>
 						<style type="int">1</style>
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearLine>
-				<SpearInfeed type="org.cx.game.card.skill.ext.SpearInfeed">
+				<SpearInfeed type="org.cx.game.card.skill.SpearInfeed">
 					<parameter>
 						<style type="int">1</style>
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearInfeed>
 				 <!--
-				<Bump type="org.cx.game.card.skill.ext.Bump">
+				<Bump type="org.cx.game.card.skill.Bump">
 					<parameter>
 						<consume type="int">100</consume>
 						<cooldown type="int">5</cooldown>
@@ -391,14 +482,14 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DamageIncrease type="org.cx.game.card.skill.ext.DamageIncrease">
+				<DamageIncrease type="org.cx.game.card.skill.DamageIncrease">
 					<parameter>
 						<style type="int">1</style>
 						<bout type="int">5</bout>
 						<scale type="int">20</scale>
 					</parameter>
 				</DamageIncrease>
-				<AngerRoar type="org.cx.game.card.skill.ext.AngerRoar">
+				<AngerRoar type="org.cx.game.card.skill.AngerRoar">
 					<parameter>
 						<consume type="int">100</consume>
 						<cooldown type="int">5</cooldown>
@@ -460,7 +551,7 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">				
-				<AssistAttack type="org.cx.game.card.skill.ext.AssistAttack">
+				<AssistAttack type="org.cx.game.card.skill.AssistAttack">
 					<parameter>
 						<consume type="int">100</consume>
 						<cooldown type="int">10</cooldown>
@@ -470,7 +561,7 @@
 						<bout type="int">10</bout>
 					</parameter>
 				</AssistAttack>
-				<AssistDefend type="org.cx.game.card.skill.ext.AssistDefend">
+				<AssistDefend type="org.cx.game.card.skill.AssistDefend">
 					<parameter>
 						<consume type="int">100</consume>
 						<cooldown type="int">10</cooldown>
@@ -480,7 +571,7 @@
 						<bout type="int">10</bout>
 					</parameter>
 				</AssistDefend>
-				<Sprint type="org.cx.game.card.skill.ext.Sprint">
+				<Sprint type="org.cx.game.card.skill.Sprint">
 					<parameter>
 						<style type="int">1</style>
 						<atkScale type="int">10</atkScale>
@@ -530,7 +621,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<TransmitIn type="org.cx.game.card.skill.ext.TransmitIn">
+				<TransmitIn type="org.cx.game.card.skill.TransmitIn">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -539,7 +630,7 @@
 						<func type="int">0</func>
 					</parameter>
 				</TransmitIn>
-				<TransmitOut type="org.cx.game.card.skill.ext.TransmitOut">
+				<TransmitOut type="org.cx.game.card.skill.TransmitOut">
 					<parameter>
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
@@ -549,7 +640,7 @@
 						<range type="int">8</range>
 					</parameter>
 				</TransmitOut>
-				<TransmitBack type="org.cx.game.card.skill.ext.TransmitBack">
+				<TransmitBack type="org.cx.game.card.skill.TransmitBack">
 					<parameter>
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
@@ -603,7 +694,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<MagicShield type="org.cx.game.card.skill.ext.MagicShield">	
+				<MagicShield type="org.cx.game.card.skill.MagicShield">	
 					<parameter>
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
@@ -615,7 +706,7 @@
 						<bout type="int">3</bout>
 					</parameter>
 				</MagicShield>
-				<Sheep type="org.cx.game.card.skill.ext.Sheep">
+				<Sheep type="org.cx.game.card.skill.Sheep">
 					<parameter>
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
@@ -669,7 +760,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<IceArrow type="org.cx.game.card.skill.ext.IceArrow">
+				<IceArrow type="org.cx.game.card.skill.IceArrow">
 					<parameter>
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
@@ -682,7 +773,7 @@
 						<speedScale type="int">50</speedScale>
 					</parameter>
 				</IceArrow>
-				<IceRing type="org.cx.game.card.skill.ext.IceRing">
+				<IceRing type="org.cx.game.card.skill.IceRing">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -694,7 +785,7 @@
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</IceRing>
-				<IceVallum type="org.cx.game.card.skill.ext.IceVallum">
+				<IceVallum type="org.cx.game.card.skill.IceVallum">
 					<parameter>
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
@@ -790,7 +881,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<WoundHealing type="org.cx.game.card.skill.ext.WoundHealing">
+				<WoundHealing type="org.cx.game.card.skill.WoundHealing">
 					<parameter>
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
@@ -802,7 +893,7 @@
 						<tireBout type="int">5</tireBout>
 					</parameter>
 				</WoundHealing>
-				<QuickCure type="org.cx.game.card.skill.ext.QuickCure">
+				<QuickCure type="org.cx.game.card.skill.QuickCure">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -813,7 +904,7 @@
 						<remainHpScale type="int">5</remainHpScale>
 					</parameter>
 				</QuickCure>
-				<SpiritCure type="org.cx.game.card.skill.ext.SpiritCure">
+				<SpiritCure type="org.cx.game.card.skill.SpiritCure">
 					<parameter>
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
@@ -824,7 +915,7 @@
 						<scale type="int">100</scale>
 					</parameter>
 				</SpiritCure>
-				<HolyBody type="org.cx.game.card.skill.ext.HolyBody">
+				<HolyBody type="org.cx.game.card.skill.HolyBody">
 					<parameter>
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
@@ -834,7 +925,7 @@
 						<bout type="int">3</bout>
 					</parameter>
 				</HolyBody>
-				<SpiritFocus type="org.cx.game.card.skill.ext.SpiritFocus">
+				<SpiritFocus type="org.cx.game.card.skill.SpiritFocus">
 					<parameter>
 						<style type="int">1</style>
 					</parameter>
@@ -883,7 +974,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<Cure type="org.cx.game.card.skill.ext.Cure">
+				<Cure type="org.cx.game.card.skill.Cure">
 					<parameter>
 						<consume type="int">20</consume>
 						<cooldown type="int">2</cooldown>
@@ -894,7 +985,7 @@
 						<tireBout type="int">3</tireBout>
 					</parameter>
 				</Cure>
-				<DispelMagic type="org.cx.game.card.skill.ext.DispelMagic">
+				<DispelMagic type="org.cx.game.card.skill.DispelMagic">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">3</cooldown>
@@ -948,7 +1039,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<AutomateAmmo type="org.cx.game.card.skill.ext.AutomateAmmo">
+				<AutomateAmmo type="org.cx.game.card.skill.AutomateAmmo">
 					<parameter>
 						<consume type="int">0</consume>
 						<cooldown type="int">1</cooldown>
@@ -957,7 +1048,7 @@
 						<func type="int">0</func>					
 					</parameter>
 				</AutomateAmmo>
-				<AimShoot type="org.cx.game.card.skill.ext.AimShoot">
+				<AimShoot type="org.cx.game.card.skill.AimShoot">
 					<parameter>
 						<style type="int">1</style>
 						<upScale type="int">100</upScale>
@@ -1007,7 +1098,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<HunterTab type="org.cx.game.card.skill.ext.HunterTab">
+				<HunterTab type="org.cx.game.card.skill.HunterTab">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -1018,7 +1109,7 @@
 						<damageScale type="int">30</damageScale>					
 					</parameter>
 				</HunterTab>
-				<CallBear type="org.cx.game.card.skill.ext.CallBear">
+				<CallBear type="org.cx.game.card.skill.CallBear">
 					<parameter>
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
@@ -1027,7 +1118,7 @@
 						<func type="int">0</func>										
 					</parameter>
 				</CallBear>
-				<FreezeTrickSkill type="org.cx.game.card.skill.ext.FreezeTrickSkill">
+				<FreezeTrickSkill type="org.cx.game.card.skill.FreezeTrickSkill">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -1126,7 +1217,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<Hide type="org.cx.game.card.skill.ext.Hide">
+				<Hide type="org.cx.game.card.skill.Hide">
 					<parameter>
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
@@ -1136,7 +1227,7 @@
 						<bout type="int">3</bout>					
 					</parameter>
 				</Hide>
-				<PrickTrickSkill type="org.cx.game.card.skill.ext.PrickTrickSkill">
+				<PrickTrickSkill type="org.cx.game.card.skill.PrickTrickSkill">
 					<parameter>
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
@@ -1147,12 +1238,12 @@
 						<downMoveScale type="int">60</downMoveScale>										
 					</parameter>
 				</PrickTrickSkill>
-				<ArmCrossbow type="org.cx.game.card.skill.ext.ArmCrossbow">
+				<ArmCrossbow type="org.cx.game.card.skill.ArmCrossbow">
 					<parameter>
 						<style type="int">1</style>
 					</parameter>
 				</ArmCrossbow>
-				<AimShoot type="org.cx.game.card.skill.ext.AimShoot">
+				<AimShoot type="org.cx.game.card.skill.AimShoot">
 					<parameter>
 						<style type="int">1</style>
 						<upScale type="int">200</upScale>
@@ -1202,7 +1293,7 @@
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<CrossbowLine type="org.cx.game.card.skill.ext.CrossbowLine">
+				<CrossbowLine type="org.cx.game.card.skill.CrossbowLine">
 					<parameter>
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
@@ -1213,7 +1304,7 @@
 						<atkScale type="int">100</atkScale>					
 					</parameter>
 				</CrossbowLine>
-				<CrossbowArc type="org.cx.game.card.skill.ext.CrossbowArc">
+				<CrossbowArc type="org.cx.game.card.skill.CrossbowArc">
 					<parameter>
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
@@ -1224,7 +1315,7 @@
 						<atkScale type="int">100</atkScale>										
 					</parameter>
 				</CrossbowArc>
-				<CrossbowCircle type="org.cx.game.card.skill.ext.CrossbowCircle">
+				<CrossbowCircle type="org.cx.game.card.skill.CrossbowCircle">
 					<parameter>
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
@@ -1238,7 +1329,7 @@
 				</CrossbowCircle>
 			</skillList>
 		</card>
-		<card type="org.cx.game.card.ext.Cure" cardID="8421001">
+		<card type="org.cx.game.card.magic.Cure" cardID="8421001">
 			<parameter>
 				<id type="int">8421001</id>
 				<consume type="int">1</consume>
@@ -1250,7 +1341,7 @@
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
-		<card type="org.cx.game.card.ext.AngerRoar" cardID="8422002">
+		<card type="org.cx.game.card.magic.AngerRoar" cardID="8422002">
 			<parameter>
 				<id type="int">8422002</id>
 				<consume type="int">1</consume>
@@ -1263,13 +1354,16 @@
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
-		<card type="org.cx.game.card.ext.TransmitIn" cardID="8523003">
+		<card type="org.cx.game.card.magic.TransmitIn" cardID="8523003">
 			<parameter>
 				<id type="int">8523003</id>
 				<consume type="int">1</consume>
 				<style type="int">2</style>
 				<func type="int">5</func>
 			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1230008</conjurer>
+			</conjurerList>
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
