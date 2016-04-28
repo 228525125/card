@@ -2,11 +2,12 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.magic.Xianluo" cardID="8111006">
+		<card type="org.cx.game.card.magic.Qianggong" cardID="8412009">
 			<parameter>
-				<id type="int">8111006</id>
+				<id type="int">8412009</id>
 				<consume type="int">1</consume>
 				<bout type="int">3</bout>
+				<atkUpScale type="int">50</atkUpScale>
 			</parameter>
 			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<conjurer type="int">1110004</conjurer>
@@ -61,8 +62,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 					</parameter>
 				</TransmitIn>
 				<TransmitOut type="org.cx.game.card.skill.TransmitOut">
@@ -70,8 +69,6 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<range type="int">8</range>
 					</parameter>
 				</TransmitOut>
@@ -80,8 +77,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</TransmitBack>
@@ -146,8 +141,6 @@
 						<consume type="int">50</consume>                                                                                             <!-- 消耗能量 -->
 						<cooldown type="int">5</cooldown>                                                                                            <!-- 冷却时间 -->
 						<velocity type="int">0</velocity>                                                                                            <!-- 0：瞬发；1：蓄力；-->
-						<style type="int">0</style>                                                                                                  <!-- 0：魔法；1：物理； -->
-						<func type="int">1</func>   
 						<range type="int">8</range>
 						<atkScale type="int">10</atkScale>
 						<dizzyChance type="int">20</dizzyChance>
@@ -264,9 +257,7 @@
 					<parameter>
 						<consume type="int">50</consume>                                                                                             <!-- 消耗能量 -->
 						<cooldown type="int">5</cooldown>                                                                                            <!-- 冷却时间 -->
-						<velocity type="int">0</velocity>                                                                                            <!-- 0：瞬发；1：蓄力；-->
-						<style type="int">0</style>                                                                                                  <!-- 0：魔法；1：物理； -->
-						<func type="int">1</func>                                                                                                    <!-- 0：其他；1：移动限制；2：直接伤害；3：召唤； -->
+						<velocity type="int">0</velocity>                                                                                            <!-- 0：瞬发；1：蓄力；-->                                                                                             <!-- 0：其他；1：移动限制；2：直接伤害；3：召唤； -->
 						<atkScale type="int">60</atkScale>                                                                                           <!-- 攻击比例，技能所有比例都基于% -->
 						<bout type="int">1</bout>                                                                                                    <!-- 眩晕回合数 -->
 					</parameter>
@@ -276,14 +267,11 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">1</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</Aid>
 				<WarnAureole type="org.cx.game.card.skill.WarnAureole">
 					<parameter>
-						<style type="int">0</style>
 						<range type="int">3</range>
 						<immuneDamageRatio type="int">10</immuneDamageRatio>
 					</parameter>
@@ -343,8 +331,6 @@
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<atkScale type="int">60</atkScale>                                                                                           <!-- 攻击比例，技能所有比例都基于% -->
 						<bout type="int">1</bout>                                                                                                    <!-- 眩晕回合数 -->
 					</parameter>
@@ -401,20 +387,17 @@
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<Puncture type="org.cx.game.card.skill.Puncture">
 					<parameter>
-						<style type="int">1</style>
 						<chance type="int">30</chance>
 						<downImmuneDamageRatio type="int">100</downImmuneDamageRatio>
 					</parameter>
 				</Puncture>
 				<SpearLine type="org.cx.game.card.skill.SpearLine">
 					<parameter>
-						<style type="int">1</style>
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearLine>
 				<SpearInfeed type="org.cx.game.card.skill.SpearInfeed">
 					<parameter>
-						<style type="int">1</style>
 						<atkScale type="int">100</atkScale>
 					</parameter>
 				</SpearInfeed>
@@ -424,8 +407,6 @@
 						<consume type="int">100</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">1</style>
-						<func type="int">0</func>
 						<step type="int">3</step>
 						<atkScale type="int">100</atkScale>        
 						<bout type="int">1</bout>
@@ -484,7 +465,6 @@
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<DamageIncrease type="org.cx.game.card.skill.DamageIncrease">
 					<parameter>
-						<style type="int">1</style>
 						<bout type="int">5</bout>
 						<scale type="int">20</scale>
 					</parameter>
@@ -494,8 +474,6 @@
 						<consume type="int">100</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<range type="int">3</range>
 						<bout type="int">3</bout>
 						<atkScale type="int">20</atkScale>
@@ -556,8 +534,6 @@
 						<consume type="int">100</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">1</style>
-						<func type="int">0</func>
 						<bout type="int">10</bout>
 					</parameter>
 				</AssistAttack>
@@ -566,14 +542,11 @@
 						<consume type="int">100</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">1</style>
-						<func type="int">0</func>
 						<bout type="int">10</bout>
 					</parameter>
 				</AssistDefend>
 				<Sprint type="org.cx.game.card.skill.Sprint">
 					<parameter>
-						<style type="int">1</style>
 						<atkScale type="int">10</atkScale>
 					</parameter>
 				</Sprint>
@@ -626,8 +599,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 					</parameter>
 				</TransmitIn>
 				<TransmitOut type="org.cx.game.card.skill.TransmitOut">
@@ -635,8 +606,6 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<range type="int">8</range>
 					</parameter>
 				</TransmitOut>
@@ -645,8 +614,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</TransmitBack>
@@ -699,8 +666,6 @@
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<atkScaleOfDefend type="int">200</atkScaleOfDefend>
 						<offsetScale type="int">100</offsetScale>
 						<bout type="int">3</bout>
@@ -711,8 +676,6 @@
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</Sheep>
@@ -765,8 +728,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<bout type="int">3</bout>
 						<atkScale type="int">100</atkScale>
 						<energyScale type="int">50</energyScale>
@@ -778,8 +739,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<range type="int">3</range>
 						<bout type="int">3</bout>
 						<atkScale type="int">100</atkScale>
@@ -790,8 +749,6 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</IceVallum>
@@ -886,8 +843,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">5</bout>
 						<renewScale type="int">5</renewScale>
 						<tireBout type="int">5</tireBout>
@@ -898,8 +853,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<atkScaleForHp type="int">200</atkScaleForHp>
 						<remainHpScale type="int">5</remainHpScale>
 					</parameter>
@@ -909,8 +862,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">0</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 						<scale type="int">100</scale>
 					</parameter>
@@ -920,16 +871,9 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 					</parameter>
 				</HolyBody>
-				<SpiritFocus type="org.cx.game.card.skill.SpiritFocus">
-					<parameter>
-						<style type="int">1</style>
-					</parameter>
-				</SpiritFocus>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1320013">
@@ -979,8 +923,6 @@
 						<consume type="int">20</consume>
 						<cooldown type="int">2</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<atkScaleForHp type="int">400</atkScaleForHp>
 						<tireBout type="int">3</tireBout>
 					</parameter>
@@ -990,8 +932,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<dispelNumber type="int">1</dispelNumber>
 					</parameter>
 				</DispelMagic>
@@ -1044,13 +984,11 @@
 						<consume type="int">0</consume>
 						<cooldown type="int">1</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">1</style>
-						<func type="int">0</func>					
+						<bout type="int">3</bout>			
 					</parameter>
 				</AutomateAmmo>
 				<AimShoot type="org.cx.game.card.skill.AimShoot">
 					<parameter>
-						<style type="int">1</style>
 						<upScale type="int">100</upScale>
 					</parameter>
 				</AimShoot>
@@ -1103,8 +1041,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>
 						<damageScale type="int">30</damageScale>					
 					</parameter>
@@ -1114,8 +1050,6 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>										
 					</parameter>
 				</CallBear>
 				<FreezeTrickSkill type="org.cx.game.card.skill.FreezeTrickSkill">
@@ -1123,8 +1057,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">1</func>
 						<freezeBout type="int">2</freezeBout>
 						<damageScale type="int">10</damageScale>
 						<energyDownScale type="int">100</energyDownScale>
@@ -1222,8 +1154,6 @@
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<bout type="int">3</bout>					
 					</parameter>
 				</Hide>
@@ -1232,20 +1162,17 @@
 						<consume type="int">50</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<maimedBout type="int">3</maimedBout>
-						<downMoveScale type="int">60</downMoveScale>										
+						<damageScale type="int">10</damageScale>
+						<boutDamageScale type="int">10</boutDamageScale>
+						<energyDownScale type="int">60</energyDownScale>										
 					</parameter>
 				</PrickTrickSkill>
 				<ArmCrossbow type="org.cx.game.card.skill.ArmCrossbow">
-					<parameter>
-						<style type="int">1</style>
-					</parameter>
+					
 				</ArmCrossbow>
 				<AimShoot type="org.cx.game.card.skill.AimShoot">
 					<parameter>
-						<style type="int">1</style>
 						<upScale type="int">200</upScale>
 					</parameter>
 				</AimShoot>
@@ -1298,8 +1225,6 @@
 						<consume type="int">25</consume>
 						<cooldown type="int">3</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<length type="int">5</length>
 						<atkScale type="int">100</atkScale>					
 					</parameter>
@@ -1309,8 +1234,6 @@
 						<consume type="int">35</consume>
 						<cooldown type="int">5</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<radius type="int">4</radius>
 						<atkScale type="int">100</atkScale>										
 					</parameter>
@@ -1320,8 +1243,6 @@
 						<consume type="int">70</consume>
 						<cooldown type="int">10</cooldown>
 						<velocity type="int">1</velocity>
-						<style type="int">0</style>
-						<func type="int">0</func>
 						<radius type="int">3</radius>
 						<atkScale type="int">100</atkScale>
 						<range type="int">8</range>										
@@ -1333,8 +1254,6 @@
 			<parameter>
 				<id type="int">8421001</id>
 				<consume type="int">1</consume>
-				<style type="int">0</style>
-				<func type="int">1</func>
 				<cureScale type="int">10</cureScale>
 				<tireBout type="int">3</tireBout>
 			</parameter>
@@ -1345,8 +1264,6 @@
 			<parameter>
 				<id type="int">8422002</id>
 				<consume type="int">1</consume>
-				<style type="int">2</style>
-				<func type="int">4</func>
 				<radius type="int">3</radius>
 				<bout type="int">3</bout>
 				<atkScale type="int">20</atkScale>
@@ -1354,15 +1271,65 @@
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
-		<card type="org.cx.game.card.magic.TransmitIn" cardID="8523003">
+		<card type="org.cx.game.card.magic.TransmitIn" cardID="8923003">
 			<parameter>
-				<id type="int">8523003</id>
+				<id type="int">8923003</id>
 				<consume type="int">1</consume>
-				<style type="int">2</style>
-				<func type="int">5</func>
 			</parameter>
 			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<conjurer type="int">1230008</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Xianluo" cardID="8111006">
+			<parameter>
+				<id type="int">8111006</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<defDownScale type="int">50</defDownScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.HardSkin" cardID="8421005">
+			<parameter>
+				<id type="int">8421005</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<defUpScale type="int">30</defUpScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.SharpTooth" cardID="8421007">
+			<parameter>
+				<id type="int">8421007</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<atkUpScale type="int">30</atkUpScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Qiushengbenneng" cardID="8412008">
+			<parameter>
+				<id type="int">8412008</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<energyUpScale type="int">50</energyUpScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
 			</conjurerList>
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>

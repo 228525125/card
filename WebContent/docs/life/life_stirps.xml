@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<lifeStirps>
+		<stirps type="human" description="人类" code="51">
+			
+		</stirps>
+		<stirps type="angel" description="天使" code="52">
+		
+		</stirps>
+		<stirps type="die" description="亡灵" code="53">
+		
+		</stirps>
+		<stirps type="daimon" description="恶魔" code="54">
+		
+		</stirps>
+		<stirps type="beast" description="野兽" code="55">
+		
+		</stirps>
+	</lifeStirps>
+</game>

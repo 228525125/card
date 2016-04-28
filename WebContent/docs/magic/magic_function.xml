@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game>
+	<magicFunction>
+		<function type="astrict" description="限制" code='101'>
+			<magic type="org.cx.game.card.buff.AttackLockBuff" description="锁定"></magic>
+			<magic type="org.cx.game.card.buff.DizzyBuff" description="眩晕"></magic>
+			<magic type="org.cx.game.card.buff.FreezeTrickBuff" description="冷冻陷阱"></magic>
+			<magic type="org.cx.game.card.buff.XianluoTrickBuff" description="陷落陷阱"></magic>
+			
+		</function>
+		<function type="damage" description="直接伤害" code='102'>
+			<magic type="org.cx.game.card.skill.CrossbowArc" description="弩.弧光"></magic>
+			<magic type="org.cx.game.card.skill.CrossbowCircle" description="弩.环伏"></magic>
+			<magic type="org.cx.game.card.skill.CrossbowLine" description="弩.直电"></magic>
+			<magic type="org.cx.game.card.skill.IceArrow" description="冰箭"></magic>
+			<magic type="org.cx.game.card.skill.IceRing" description="冰霜新星"></magic>
+			<magic type="org.cx.game.card.skill.IceStorm" description="冰风暴"></magic>
+			<magic type="org.cx.game.card.skill.ShieldHit" description="盾击"></magic>			
+		
+			<magic type="org.cx.game.card.skill.Bump" description="冲撞"></magic>
+		</function>
+		<function type="call" description="召唤" code='103'>
+			<magic type="org.cx.game.card.skill.CallBear" description="召唤熊"></magic>
+		</function>
+		<function type="gain" description="增益，不专指任何一方" code='104'>
+			<magic type="org.cx.game.card.buff.ImmuneBuff" description="免疫"></magic>
+		
+			<magic type="org.cx.game.card.skill.Aid" description="援助"></magic>
+			<magic type="org.cx.game.card.buff.AidBuff" description="援助"></magic>
+			<magic type="org.cx.game.card.skill.AngerRoar" description="怒吼"></magic>
+			<magic type="org.cx.game.card.buff.AngerRoarBuff" description="怒吼"></magic>
+			<magic type="org.cx.game.card.magic.AngerRoar" description="怒吼"></magic>
+			<magic type="org.cx.game.card.skill.AssistAttack" description="协助.进攻"></magic>
+			<magic type="org.cx.game.card.buff.AssistAttackBuff" description="协助.进攻"></magic>
+			<magic type="org.cx.game.card.skill.AssistDefend" description="协助.防守"></magic>
+			<magic type="org.cx.game.card.buff.AssistDefendBuff" description="协助.防守"></magic>
+			<magic type="org.cx.game.card.skill.AutomateAmmo" description="装弹"></magic>
+			<magic type="org.cx.game.card.buff.AddAmmoBuff" description="装弹"></magic>
+			<magic type="org.cx.game.card.skill.Cure" description="治疗"></magic>
+			<magic type="org.cx.game.card.magic.Cure" description="治疗"></magic>
+			<magic type="org.cx.game.card.skill.QuickCure" description="快速治疗"></magic>
+			<magic type="org.cx.game.card.skill.SpiritCure" description="精神治疗"></magic>
+			<magic type="org.cx.game.card.buff.SpiritCureBuff" description="精神治疗"></magic>
+			<magic type="org.cx.game.card.skill.WoundHealing" description="伤口愈合"></magic>
+			<magic type="org.cx.game.card.buff.WoundHealingBuff" description="伤口愈合"></magic>
+			<magic type="org.cx.game.card.skill.DispelMagic" description="驱魔"></magic>
+			<magic type="org.cx.game.card.buff.DamageResistBuff" description="抵消伤害"></magic>
+			<magic type="org.cx.game.card.skill.Gamble" description="孤注一掷"></magic>
+			<magic type="org.cx.game.card.buff.GambleBuff" description="孤注一掷"></magic>
+			<magic type="org.cx.game.card.skill.Hide" description="隐身"></magic>
+			<magic type="org.cx.game.card.buff.HideBuff" description="隐身"></magic>
+			<magic type="org.cx.game.card.skill.HolyBody" description="神圣护体"></magic>
+			<magic type="org.cx.game.card.buff.HolyBodyBuff" description="神圣护体"></magic>
+			<magic type="org.cx.game.card.skill.IceVallum" description="寒冰壁垒"></magic>
+			<magic type="org.cx.game.card.buff.IceVallumBuff" description="寒冰壁垒"></magic>
+			<magic type="org.cx.game.card.skill.MagicShield" description="魔法护盾"></magic>
+			<magic type="org.cx.game.card.buff.MagicShieldBuff" description="魔法护盾"></magic>
+			<magic type="org.cx.game.card.skill.Sprint" description="冲刺"></magic>
+			<magic type="org.cx.game.card.skill.WarnAureole" description="警戒光环"></magic>
+			<magic type="org.cx.game.card.buff.WarnAureoleBuff" description="警戒光环"></magic>
+		
+			<magic type="org.cx.game.card.skill.DogHuntUnits" description="狗头人围猎"></magic>
+			<magic type="org.cx.game.card.skill.BarbedAureole" description="荆棘光环"></magic>
+			<magic type="org.cx.game.card.buff.BarbedAureoleBuff" description="荆棘光环"></magic>
+			<magic type="org.cx.game.card.magic.HardSkin" description="石化皮肤"></magic>
+			<magic type="org.cx.game.card.buff.HardSkinBuff" description="石化皮肤"></magic>
+			<magic type="org.cx.game.card.magic.SharpTooth" description="铁齿铜牙"></magic>
+			<magic type="org.cx.game.card.buff.SharpToothBuff" description="铁齿铜牙"></magic>
+			<magic type="org.cx.game.card.magic.Qiushengbenneng" description="求生本能"></magic>
+			<magic type="org.cx.game.card.buff.QiushengbennengBuff" description="求生本能"></magic>
+		</function>
+		<function type="loss" description="损益，不专指任何一方" code='105'>
+			<magic type="org.cx.game.card.buff.TiredAttackBuff" description="疲劳攻击"></magic>
+			<magic type="org.cx.game.card.buff.CureTiredBuff" description="治疗疲劳"></magic>
+			<magic type="org.cx.game.card.buff.DamageIncreaseBuff" description="伤害加深"></magic>
+			<magic type="org.cx.game.card.buff.FreezeBuff" description="冻结"></magic>
+			<magic type="org.cx.game.card.skill.HunterTab" description="猎人标记"></magic>
+			<magic type="org.cx.game.card.buff.HunterTabBuff" description="猎人标记"></magic>
+			<magic type="org.cx.game.card.buff.MaimedBuff" description="残废"></magic>
+		
+			<magic type="org.cx.game.card.skill.Weak" description="虚弱"></magic>
+			<magic type="org.cx.game.card.buff.WeakBuff" description="虚弱"></magic>
+			<magic type="org.cx.game.card.skill.Stone" description="石化"></magic>
+			<magic type="org.cx.game.card.buff.StoneBuff" description="石化"></magic>
+		</function>
+		<function type="sustainedDamage" description="持续伤害" code='106'>
+			<magic type="org.cx.game.card.buff.PrickTrickBuff" description="地刺陷阱"></magic>
+		</function>
+		<function type="trick" description="陷阱" code='107'>
+			<magic type="org.cx.game.card.skill.FreezeTrickSkill" description="冷冻陷阱"></magic>
+			<magic type="org.cx.game.card.trick.FreezeTrick" description="冷冻陷阱"></magic>
+			
+			<magic type="org.cx.game.card.skill.PrickTrickSkill" description="地刺陷阱"></magic>
+			<magic type="org.cx.game.card.trick.PrickTrick" description="地刺陷阱"></magic>
+			
+			<magic type="org.cx.game.card.trick.XianluoTrick" description="陷落陷阱"></magic>
+		</function>
+		<function type="other" code='199'>
+			<magic type="org.cx.game.card.skill.TransmitBack" description="传送.定"></magic>
+			<magic type="org.cx.game.card.buff.TransmitBackBuff" description="传送.定"></magic>
+			<magic type="org.cx.game.card.skill.TransmitIn" description="传送.回"></magic>
+			<magic type="org.cx.game.card.magic.TransmitIn" description="传送.回"></magic>
+			<magic type="org.cx.game.card.skill.TransmitOut" description="传送.出"></magic>
+		</function>
+	</magicFunction>
+</game>

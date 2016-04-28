@@ -97,7 +97,7 @@ public class User extends Player{
 	@Transient
 	private List<ICard> decks = null;
 	
-	public List<ICard> getDecks(){
+	public List<ICard> decksList(){
 		if(null==decks){                  //只加载一次数据库
 			decks = CardFactory.getInstances(getCards2());  //切换到数据库，使用getCards()
 		}
