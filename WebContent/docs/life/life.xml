@@ -337,6 +337,48 @@
 				</ShieldHit>
 			</skillList>
 		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1410018">
+			<parameter>
+				<id type="int">1410018</id>
+			</parameter>
+			<consume type="int">100</consume>
+			<hp type="int">210</hp>
+			<atk type="int">54</atk>
+			<range type="int">5</range>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
+			<star type="int">1</star>
+			<energy type="int">3</energy>
+			<parryChance type="int">0</parryChance>
+			<dodgeChance type="int">0</dodgeChance>
+			<speedChance type="int">120</speedChance>
+			<accurateChance type="int">100</accurateChance>
+			<thumpChance type="int">0</thumpChance>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
+				<parameter>
+					<mode type="int">1</mode>
+					<type type="int">1</type>
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">2</armourType>
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1140005">
 			<parameter>
 				<id type="int">1140005</id>

@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
 	<lifeStirps>
-		<stirps type="human" description="人类" code="51">
-			
+		<stirps type="human" description="人类" code="201">
+			<life type="org.cx.game.card.LifeCard" cardID="1110004" description="战士"></life>
+			<life type="org.cx.game.card.LifeCard" cardID="1230008" description="大法师"></life>
+			<life type="org.cx.game.card.LifeCard" cardID="1130001" description="亲卫军"></life>
+			<life type="org.cx.game.card.LifeCard" cardID="1120002" description="盾卫"></life>
+			<life type="org.cx.game.card.LifeCard" cardID="1140005" description="禁卫军"></life>
+			<life type="org.cx.game.card.LifeCard" cardID="1410018" description="弓弩手"></life>
 		</stirps>
-		<stirps type="angel" description="天使" code="52">
+		<stirps type="angel" description="天使" code="202">
 		
 		</stirps>
-		<stirps type="die" description="亡灵" code="53">
+		<stirps type="die" description="亡灵" code="203">
 		
 		</stirps>
-		<stirps type="daimon" description="恶魔" code="54">
+		<stirps type="daimon" description="恶魔" code="204">
 		
 		</stirps>
-		<stirps type="beast" description="野兽" code="55">
+		<stirps type="beast" description="野兽" code="205">
+		
+		</stirps>
+		<stirps type="other" description="其他" code="299">
 		
 		</stirps>
 	</lifeStirps>
