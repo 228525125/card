@@ -19,7 +19,7 @@
 		
 		</stirps>
 		<stirps type="beast" description="野兽" code="205">
-		
+			<life type="org.cx.game.card.LifeCard" cardID="1110004" description="战士"></life>
 		</stirps>
 		<stirps type="other" description="其他" code="299">
 		

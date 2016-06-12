@@ -53,7 +53,15 @@
 			<magic type="org.cx.game.card.skill.BarbedAureole" description="荆棘光环"></magic>
 			<magic type="org.cx.game.card.buff.BarbedAureoleBuff" description="荆棘光环"></magic>
 			<magic type="org.cx.game.card.magic.Qiushengbenneng" description="求生本能"></magic>
-			<magic type="org.cx.game.card.buff.QiushengbennengBuff" description="求生本能"></magic>
+			<magic type="org.cx.game.card.buff.QiushengbennengBuff" description="求生本能"></magic>			
+			<magic type="org.cx.game.card.skill.daoqie" description="盗窃"></magic>
+			<magic type="org.cx.game.card.skill.MianyichongfengAureole" description="免疫冲锋"></magic>
+			<magic type="org.cx.game.card.buff.MianyichongfengAureoleBuff" description="免疫冲锋"></magic>
+			<magic type="org.cx.game.card.skill.DunpaifangyuAureole" description="盾牌防御"></magic>
+			<magic type="org.cx.game.card.buff.DunpaifangyuAureoleBuff" description="盾牌防御"></magic>
+			<magic type="org.cx.game.card.skill.Jingshenzhuanzhu" description="精神专注"></magic>
+			<magic type="org.cx.game.card.skill.TongchoudikaiAureole" description="同仇敌忾"></magic>
+			<magic type="org.cx.game.card.buff.TongchoudikaiAureoleBuff" description="同仇敌忾"></magic>
 		</style>
 		<style type="magic" description="魔法" code='12'>
 			<magic type="org.cx.game.card.skill.CrossbowArc" description="弩.弧光"></magic>

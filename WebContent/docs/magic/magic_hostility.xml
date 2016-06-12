@@ -23,6 +23,9 @@
 			<magic type="org.cx.game.card.buff.HardSkinBuff" description="石化皮肤"></magic>
 			<magic type="org.cx.game.card.buff.SharpToothBuff" description="铁齿铜牙"></magic>
 			<magic type="org.cx.game.card.buff.QiushengbennengBuff" description="求生本能"></magic>
+			<magic type="org.cx.game.card.buff.MianyichongfengAureoleBuff" description="免疫冲锋"></magic>
+			<magic type="org.cx.game.card.buff.DunpaifangyuAureoleBuff" description="盾牌防御"></magic>
+			<magic type="org.cx.game.card.buff.TongchoudikaiAureoleBuff" description="同仇敌忾"></magic>
 		</hostility>
 		<hostility type="harm" description="受损，指携带buff的一方" code='22'>
 			<magic type="org.cx.game.card.buff.AttackLockBuff" description="锁定"></magic>

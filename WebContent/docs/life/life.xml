@@ -2,18 +2,66 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.magic.Qianggong" cardID="8412009">
+		<card type="org.cx.game.card.LifeCard" cardID="1320013">
 			<parameter>
-				<id type="int">8412009</id>
-				<consume type="int">1</consume>
-				<bout type="int">3</bout>
-				<atkUpScale type="int">50</atkUpScale>
+				<id type="int">1320013</id>
 			</parameter>
-			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<conjurer type="int">1110004</conjurer>
-			</conjurerList>
-			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<consume type="int">170</consume>
+			<hp type="int">280</hp>
+			<atk type="int">32</atk>
+			<range type="int">3</range>
+			<immuneDamageRatio type="int">4</immuneDamageRatio>
+			<star type="int">2</star>
+			<energy type="int">3</energy>
+			<parryChance type="int">0</parryChance>
+			<dodgeChance type="int">0</dodgeChance>
+			<speedChance type="int">100</speedChance>
+			<accurateChance type="int">100</accurateChance>
+			<thumpChance type="int">0</thumpChance>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
+				<parameter>
+					<mode type="int">1</mode>
+					<type type="int">2</type>
+				</parameter>
+			</attack>
+			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
+				<parameter>
+					<armourType type="int">0</armourType>
+				</parameter>
+			</attacked>
+			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
+			<move type="org.cx.game.action.Move" interface="org.cx.game.action.IMove">
+				<parameter>
+					<type type="int">0</type>
+				</parameter>
+			</move>
+			<conjure type="org.cx.game.action.Conjure" interface="org.cx.game.action.IConjure"></conjure>   
+			<affected type="org.cx.game.action.Affected" interface="org.cx.game.action.IAffected"></affected> 
+			<swap type="org.cx.game.action.Swap" interface="org.cx.game.action.ISwap"></swap>
+			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Cure type="org.cx.game.card.skill.Cure">
+					<parameter>
+						<consume type="int">20</consume>
+						<cooldown type="int">2</cooldown>
+						<velocity type="int">1</velocity>
+						<atkScaleForHp type="int">150</atkScaleForHp>
+						<tireBout type="int">3</tireBout>
+					</parameter>
+				</Cure>
+				<DispelMagic type="org.cx.game.card.skill.DispelMagic">
+					<parameter>
+						<consume type="int">35</consume>
+						<cooldown type="int">3</cooldown>
+						<velocity type="int">1</velocity>
+						<dispelNumber type="int">1</dispelNumber>
+					</parameter>
+				</DispelMagic>
+			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1230008">
 			<parameter>
@@ -147,6 +195,17 @@
 						<dizzyBout type="int">3</dizzyBout>
 					</parameter>
 				</Bump>
+				<Daoqie type="org.cx.game.card.skill.Daoqie">
+					<parameter>
+						<chance type="int">100</chance> 
+						<power type="int">50</power>
+					</parameter>
+				</Daoqie>
+				<Jingshenzhuanzhu type="org.cx.game.card.skill.Jingshenzhuanzhu">
+					<parameter>
+						<cureUpScale type="int">100</cureUpScale>
+					</parameter>
+				</Jingshenzhuanzhu>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1110004">                                                                <!-- id：第一位种族，第二位职业，第三位等级，第4-6位编号 -->
@@ -197,12 +256,11 @@
 				</formulaList>
 			</useCardPolicy>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<DogHuntUnits type="org.cx.game.card.skill.DogHuntUnits">
-					<parameter>                                                                                
-						<range type="int">3</range>                                                                                                   
-						<defScale type="int">10</defScale>                                                                                           
+				<MianyichongfengAureole type="org.cx.game.card.skill.MianyichongfengAureole">
+					<parameter>
+						<range type="int">2</range>
 					</parameter>
-				</DogHuntUnits>
+				</MianyichongfengAureole>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1130001">
@@ -211,7 +269,7 @@
 			</parameter>
 			<consume type="int">290</consume>
 			<hp type="int">480</hp>
-			<atk type="int">50</atk>
+			<atk type="int">450</atk>
 			<range type="int">1</range>
 			<immuneDamageRatio type="int">42</immuneDamageRatio>
 			<star type="int">3</star>
@@ -252,16 +310,7 @@
 					<NotEnoughResourceFormula type="org.cx.game.policy.NotEnoughResourceFormula" interface="org.cx.game.policy.IFormula"></NotEnoughResourceFormula>
 				</formulaList>
 			</useCardPolicy>
-			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<ShieldHit type="org.cx.game.card.skill.ShieldHit">
-					<parameter>
-						<consume type="int">50</consume>                                                                                             <!-- 消耗能量 -->
-						<cooldown type="int">5</cooldown>                                                                                            <!-- 冷却时间 -->
-						<velocity type="int">0</velocity>                                                                                            <!-- 0：瞬发；1：蓄力；-->                                                                                             <!-- 0：其他；1：移动限制；2：直接伤害；3：召唤； -->
-						<atkScale type="int">60</atkScale>                                                                                           <!-- 攻击比例，技能所有比例都基于% -->
-						<bout type="int">1</bout>                                                                                                    <!-- 眩晕回合数 -->
-					</parameter>
-				</ShieldHit>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">s
 				<Aid type="org.cx.game.card.skill.Aid">
 					<parameter>
 						<consume type="int">35</consume>
@@ -276,6 +325,12 @@
 						<immuneDamageRatio type="int">10</immuneDamageRatio>
 					</parameter>
 				</WarnAureole>
+				<TongchoudikaiAureole type="org.cx.game.card.skill.TongchoudikaiAureole">
+					<parameter>
+						<range type="int">3</range>
+						<atkUpScale type="int">20</atkUpScale>
+					</parameter>
+				</TongchoudikaiAureole>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1120002">
@@ -335,6 +390,12 @@
 						<bout type="int">1</bout>                                                                                                    <!-- 眩晕回合数 -->
 					</parameter>
 				</ShieldHit>
+				<DunpaifangyuAureole type="org.cx.game.card.skill.DunpaifangyuAureole">
+					<parameter>
+						<range type="int">2</range>
+						<atkDownScale type="int">-50</atkDownScale>
+					</parameter>
+				</DunpaifangyuAureole>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1410018">
@@ -1369,6 +1430,19 @@
 				<consume type="int">1</consume>
 				<bout type="int">3</bout>
 				<energyUpScale type="int">50</energyUpScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Qianggong" cardID="8412009">
+			<parameter>
+				<id type="int">8412009</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<atkUpScale type="int">50</atkUpScale>
 			</parameter>
 			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<conjurer type="int">1110004</conjurer>

@@ -17,8 +17,6 @@
 			<magic type="org.cx.game.card.skill.IceRing" description="冰霜新星"></magic>
 			<magic type="org.cx.game.card.skill.IceStorm" description="冰风暴"></magic>
 			<magic type="org.cx.game.card.skill.ShieldHit" description="盾击"></magic>			
-		
-			<magic type="org.cx.game.card.skill.Bump" description="冲撞"></magic>
 		</function>
 		<function type="call" description="召唤" code='103'>
 			<magic type="org.cx.game.card.skill.CallBear" description="召唤熊"></magic>
@@ -69,6 +67,13 @@
 			<magic type="org.cx.game.card.buff.SharpToothBuff" description="铁齿铜牙"></magic>
 			<magic type="org.cx.game.card.magic.Qiushengbenneng" description="求生本能"></magic>
 			<magic type="org.cx.game.card.buff.QiushengbennengBuff" description="求生本能"></magic>
+			
+			<magic type="org.cx.game.card.skill.MianyichongfengAureole" description="免疫冲锋"></magic>
+			<magic type="org.cx.game.card.buff.MianyichongfengAureoleBuff" description="免疫冲锋"></magic>
+			<magic type="org.cx.game.card.skill.DunpaifangyuAureole" description="盾牌防御"></magic>
+			<magic type="org.cx.game.card.buff.DunpaifangyuAureoleBuff" description="盾牌防御"></magic>
+			<magic type="org.cx.game.card.skill.TongchoudikaiAureole" description="同仇敌忾"></magic>
+			<magic type="org.cx.game.card.buff.TongchoudikaiAureoleBuff" description="同仇敌忾"></magic>
 		</function>
 		<function type="loss" description="损益，不专指任何一方" code='105'>
 			<magic type="org.cx.game.card.buff.TiredAttackBuff" description="疲劳攻击"></magic>
@@ -95,6 +100,9 @@
 			<magic type="org.cx.game.card.trick.PrickTrick" description="地刺陷阱"></magic>
 			
 			<magic type="org.cx.game.card.trick.XianluoTrick" description="陷落陷阱"></magic>
+		</function>
+		<function type="bump" description="冲锋" code='108'>
+			<magic type="org.cx.game.card.skill.Bump" description="冲撞"></magic>
 		</function>
 		<function type="other" code='199'>
 			<magic type="org.cx.game.card.skill.TransmitBack" description="传送.定"></magic>
