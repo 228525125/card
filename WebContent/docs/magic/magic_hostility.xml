@@ -26,6 +26,9 @@
 			<magic type="org.cx.game.card.buff.MianyichongfengAureoleBuff" description="免疫冲锋"></magic>
 			<magic type="org.cx.game.card.buff.DunpaifangyuAureoleBuff" description="盾牌防御"></magic>
 			<magic type="org.cx.game.card.buff.TongchoudikaiAureoleBuff" description="同仇敌忾"></magic>
+			<magic type="org.cx.game.card.buff.ZhufuBuff" description="祝福"></magic>
+			<magic type="org.cx.game.card.buff.JingshenhujiaBuff" description="精神护甲"></magic>
+			<magic type="org.cx.game.card.buff.JingzhunBuff" description="精准"></magic>
 		</hostility>
 		<hostility type="harm" description="受损，指携带buff的一方" code='22'>
 			<magic type="org.cx.game.card.buff.AttackLockBuff" description="锁定"></magic>
@@ -43,6 +46,7 @@
 		
 			<magic type="org.cx.game.card.buff.WeakBuff" description="虚弱"></magic>
 			<magic type="org.cx.game.card.buff.StoneBuff" description="石化"></magic>
+			<magic type="org.cx.game.card.buff.KuangquanbingBuff" description="狂犬病"></magic>
 		</hostility>
 		<hostility type="neutral" description="中性，指携带buff的一方" code='23'>
 			<magic type="org.cx.game.card.buff.HideBuff" description="隐身"></magic>

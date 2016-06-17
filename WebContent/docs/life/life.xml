@@ -2,20 +2,32 @@
 
 <game>
 	<cards>
-		<card type="org.cx.game.card.LifeCard" cardID="1320013">
+		<card type="org.cx.game.card.magic.Kuangquanbing" cardID="8522014">
 			<parameter>
-				<id type="int">1320013</id>
+				<id type="int">8522014</id>
+				<consume type="int">1</consume>
+				<bout type="int">1</bout>				
 			</parameter>
-			<consume type="int">170</consume>
-			<hp type="int">280</hp>
-			<atk type="int">32</atk>
-			<range type="int">3</range>
-			<immuneDamageRatio type="int">4</immuneDamageRatio>
-			<star type="int">2</star>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1410018</conjurer>
+			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1410018">
+			<parameter>
+				<id type="int">1410018</id>
+			</parameter>
+			<consume type="int">100</consume>
+			<hp type="int">210</hp>
+			<atk type="int">54</atk>
+			<range type="int">5</range>
+			<immuneDamageRatio type="int">12</immuneDamageRatio>
+			<star type="int">1</star>
 			<energy type="int">3</energy>
 			<parryChance type="int">0</parryChance>
 			<dodgeChance type="int">0</dodgeChance>
-			<speedChance type="int">100</speedChance>
+			<speedChance type="int">120</speedChance>
 			<accurateChance type="int">100</accurateChance>
 			<thumpChance type="int">0</thumpChance>
 			<lockChance type="int">100</lockChance>
@@ -23,12 +35,12 @@
 			<attack type="org.cx.game.action.Attack" interface="org.cx.game.action.IAttack">
 				<parameter>
 					<mode type="int">1</mode>
-					<type type="int">2</type>
+					<type type="int">1</type>
 				</parameter>
 			</attack>
 			<attacked type="org.cx.game.action.Attacked" interface="org.cx.game.action.IAttacked">
 				<parameter>
-					<armourType type="int">0</armourType>
+					<armourType type="int">2</armourType>
 				</parameter>
 			</attacked>
 			<call type="org.cx.game.action.Call" interface="org.cx.game.action.ICall"></call>
@@ -43,25 +55,6 @@
 			<death type="org.cx.game.action.Death" interface="org.cx.game.action.IDeath"></death>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 			<renew type="org.cx.game.action.Renew" interface="org.cx.game.action.IRenew"></renew>
-			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<Cure type="org.cx.game.card.skill.Cure">
-					<parameter>
-						<consume type="int">20</consume>
-						<cooldown type="int">2</cooldown>
-						<velocity type="int">1</velocity>
-						<atkScaleForHp type="int">150</atkScaleForHp>
-						<tireBout type="int">3</tireBout>
-					</parameter>
-				</Cure>
-				<DispelMagic type="org.cx.game.card.skill.DispelMagic">
-					<parameter>
-						<consume type="int">35</consume>
-						<cooldown type="int">3</cooldown>
-						<velocity type="int">1</velocity>
-						<dispelNumber type="int">1</dispelNumber>
-					</parameter>
-				</DispelMagic>
-			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1230008">
 			<parameter>
@@ -261,6 +254,13 @@
 						<range type="int">2</range>
 					</parameter>
 				</MianyichongfengAureole>
+				<Weak type="org.cx.game.card.skill.Weak">
+					<parameter>
+						<bout type="int">3</bout>
+						<downScale type="int">50</downScale>
+						<chance type="int">100</chance>
+					</parameter>
+				</Weak>
 			</skillList>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="1130001">
@@ -1363,6 +1363,15 @@
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
+		<card type="org.cx.game.card.magic.DispelMagic" cardID="8421010">
+			<parameter>
+				<id type="int">8421010</id>
+				<consume type="int">1</consume>
+				<dispelNumber type="int">1</dispelNumber>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
 		<card type="org.cx.game.card.magic.AngerRoar" cardID="8422002">
 			<parameter>
 				<id type="int">8422002</id>
@@ -1405,9 +1414,6 @@
 				<bout type="int">3</bout>
 				<defUpScale type="int">30</defUpScale>
 			</parameter>
-			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<conjurer type="int">1110004</conjurer>
-			</conjurerList>
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
@@ -1431,9 +1437,6 @@
 				<bout type="int">3</bout>
 				<energyUpScale type="int">50</energyUpScale>
 			</parameter>
-			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<conjurer type="int">1110004</conjurer>
-			</conjurerList>
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>
@@ -1444,9 +1447,36 @@
 				<bout type="int">3</bout>
 				<atkUpScale type="int">50</atkUpScale>
 			</parameter>
-			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<conjurer type="int">1110004</conjurer>
-			</conjurerList>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Zhufu" cardID="8421011">
+			<parameter>
+				<id type="int">8421011</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<atkUpScale type="int">100</atkUpScale>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Jingshenhujia" cardID="8421012">
+			<parameter>
+				<id type="int">8421012</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<defUpScale type="int">30</defUpScale>
+			</parameter>
+			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
+			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
+		</card>
+		<card type="org.cx.game.card.magic.Jingzhun" cardID="8421013">
+			<parameter>
+				<id type="int">8421013</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<rangeUpValue type="int">3</rangeUpValue>
+			</parameter>
 			<apply type="org.cx.game.action.Apply" interface="org.cx.game.action.IApply"></apply>
 			<chuck type="org.cx.game.action.Chuck" interface="org.cx.game.action.IChuck"></chuck>
 		</card>

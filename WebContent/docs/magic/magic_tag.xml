@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game>
+	<magicTag>
+		<tag type="life" description="生命" code="301">
+			<magic type="org.cx.game.card.skill.Cure" description="治疗"></magic>
+			<magic type="org.cx.game.card.magic.Cure" description="治疗"></magic>
+			<magic type="org.cx.game.card.skill.DispelMagic" description="驱散"></magic>
+			<magic type="org.cx.game.card.magic.DispelMagic" description="驱散"></magic>
+		</tag>
+		<tag type="spirit" description="精神/心灵" code="302">
+			<magic type="org.cx.game.card.skill.Weak" description="虚弱"></magic>
+			<magic type="org.cx.game.card.magic.Kuangquanbing" description="狂犬病"></magic>
+			<magic type="org.cx.game.card.magic.Zhufu" description="祝福"></magic>
+			<magic type="org.cx.game.card.magic.Jingshenhujia" description="精神护甲"></magic>
+			<magic type="org.cx.game.card.magic.Jingzhun" description="精准"></magic>
+		</tag>
+		<tag type="spirit" description="神圣" code="303">
+		
+		</tag>
+		<tag type="spirit" description="自然" code="304">
+			<magic type="org.cx.game.card.magic.HardSkin" description="石化皮肤"></magic>
+			<magic type="org.cx.game.card.magic.SharpTooth" description="铁齿铜牙"></magic>
+			<magic type="org.cx.game.card.magic.Qiushengbenneng" description="求生本能"></magic>
+			<magic type="org.cx.game.card.skill.Stone" description="石化"></magic>
+		</tag>
+	</magicTag>
+</game>
