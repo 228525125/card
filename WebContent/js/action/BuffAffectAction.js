@@ -7,7 +7,7 @@ BuffAffectAction = jClass(Action, {
 	},
 	
 	doAction : function(){
-		var action = BuffAffectActionFactory.createAction(this.info,this.view)
+		var action = BuffAffectActionFactory.createAction(this.info,this.view);
 		if(null!=action)
 			action.doAction();
 	}

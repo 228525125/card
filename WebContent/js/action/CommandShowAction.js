@@ -67,25 +67,19 @@ CommandShowAction = jClass(Action, {
 			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+' '+
 			'| hp:'+this.info.card.death.hp+' '+
 			'| atk:'+this.info.card.attack.atk+' '+
-			'| def:'+this.info.card.attacked.immuneDamageRatio+' '+
 			'| energy:'+this.info.card.move.energy+
 			'| activate:'+this.info.card.activate+'</p>'+
 			'<p style="margin: 0;padding: 0;">attack:'+' '+
 			'range:'+this.info.card.attack.range+' '+
 			'| mode:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
-			'| type:'+Glossary.get(Glossary.Attack_Type,this.info.card.attack.type)+' '+
-			'| accurate:'+this.info.card.attack.accurateChance+' '+
-			'</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thump:'+this.info.card.attack.thumpChance+' '+
 			'| speed:'+this.info.card.attack.speedChance+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">attacked:'+' '+
-			'armour:'+Glossary.get(Glossary.Attacked_Type,this.info.card.attacked.armourType)+' '+
-			'| attackBack:'+this.info.card.attacked.attackBackChance+' '+
-			'| dodge:'+this.info.card.attacked.dodgeChance+' '+
-			'| parry:'+this.info.card.attacked.parryChance+' '+'</p>'+
+			'| attackBack:'+this.info.card.attacked.attackBack+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">conjure:'+' '+
 			'power:'+this.info.card.conjure.power+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">move:'+' '+
 			'type:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
+			'| flee:'+this.info.card.move.fleeChance+
 			'| moveable:'+this.info.card.move.moveable+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">death:'+' '+
 			'status:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
@@ -94,7 +88,7 @@ CommandShowAction = jClass(Action, {
 			'<p style="margin: 0;padding: 0;">skill:'+skill+'</p>'+
 			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
 		}else{
-			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>'
+			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>';
 		}
 		
 		return text;

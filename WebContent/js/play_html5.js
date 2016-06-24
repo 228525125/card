@@ -328,16 +328,6 @@ $(function(){
 	
 	Glossary.add(Glossary.Attack_Mode,0,'近战');
 	Glossary.add(Glossary.Attack_Mode,1,'远程');
-	Glossary.add(Glossary.Attack_Type,0,'普通');
-	Glossary.add(Glossary.Attack_Type,1,'穿刺');
-	Glossary.add(Glossary.Attack_Type,2,'法术');
-	Glossary.add(Glossary.Attack_Type,3,'投石');
-	Glossary.add(Glossary.Attack_Type,4,'混沌');
-	Glossary.add(Glossary.Attacked_Type,0,'无护甲');
-	Glossary.add(Glossary.Attacked_Type,1,'轻型护甲');
-	Glossary.add(Glossary.Attacked_Type,2,'中型护甲');
-	Glossary.add(Glossary.Attacked_Type,3,'重型护甲');
-	Glossary.add(Glossary.Attacked_Type,4,'城墙');
 	Glossary.add(Glossary.Death_Status,0,'live');
 	Glossary.add(Glossary.Death_Status,1,'death');
 	Glossary.add(Glossary.Death_Status,2,'exsits');
@@ -348,10 +338,16 @@ $(function(){
 	Glossary.add(Glossary.ActiveSkill_Velocity,1,'蓄力');
 	Glossary.add(Glossary.ActiveSkill_Style,0,'法术');
 	Glossary.add(Glossary.ActiveSkill_Style,1,'物理');
-	Glossary.add(Glossary.ActiveSkill_Func,0,'其他');
-	Glossary.add(Glossary.ActiveSkill_Func,1,'移动限制');
-	Glossary.add(Glossary.ActiveSkill_Func,2,'直接伤害');
-	Glossary.add(Glossary.ActiveSkill_Func,3,'召唤');
+	Glossary.add(Glossary.ActiveSkill_Func,199,'其他');
+	Glossary.add(Glossary.ActiveSkill_Func,101,'移动限制');
+	Glossary.add(Glossary.ActiveSkill_Func,102,'直接伤害');
+	Glossary.add(Glossary.ActiveSkill_Func,103,'召唤');
+	Glossary.add(Glossary.ActiveSkill_Func,104,'增益');
+	Glossary.add(Glossary.ActiveSkill_Func,105,'损益');
+	Glossary.add(Glossary.ActiveSkill_Func,106,'持续伤害');
+	Glossary.add(Glossary.ActiveSkill_Func,107,'陷阱');
+	Glossary.add(Glossary.ActiveSkill_Func,108,'冲锋');
+	
 	
 	
 	//-------------------init end-------------------
