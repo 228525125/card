@@ -68,7 +68,7 @@ CommandShowAction = jClass(Action, {
 			'| hp:'+this.info.card.death.hp+' '+
 			'| atk:'+this.info.card.attack.atk+' '+
 			'| energy:'+this.info.card.move.energy+
-			'| activate:'+this.info.card.activate+'</p>'+
+			'| activate:'+this.info.card.activate.activation+'</p>'+
 			'<p style="margin: 0;padding: 0;">attack:'+' '+
 			'range:'+this.info.card.attack.range+' '+
 			'| mode:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+

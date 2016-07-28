@@ -10,7 +10,7 @@ LifeCardActivateAction = jClass(Action, {
 		if(this.info.activate){
 			this.view.css("background-color","yellow");
 			var v = this.view;
-			setTimeout(function(){v.css("background-color","")},1000);
+			setTimeout(function(){v.css("background-color","");},1000);
 		}
 	}
 });

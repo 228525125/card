@@ -14,11 +14,27 @@
 					<position type="int">810011</position>                                                                                    <!-- 位置 -->
 				</parameter>
 				<entryList type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<entry type="int">710011</entry>
-					<entry type="int">710012</entry>
-					<entry type="int">810012</entry>
-					<entry type="int">910011</entry>
-					<entry type="int">910012</entry>
+					<entry type="int">510015</entry>
+					<entry type="int">510016</entry>
+					<entry type="int">510014</entry>
+					<entry type="int">610015</entry>
+					<entry type="int">610016</entry>
+					<entry type="int">610014</entry>
+					<entry type="int">710015</entry>
+					<entry type="int">710016</entry>
+					<entry type="int">710014</entry>
+					<entry type="int">810015</entry>
+					<entry type="int">810016</entry>
+					<entry type="int">810014</entry>
+					<entry type="int">910015</entry>
+					<entry type="int">910016</entry>
+					<entry type="int">910014</entry>
+					<entry type="int">1010015</entry>
+					<entry type="int">1010016</entry>
+					<entry type="int">1010014</entry>
+					<entry type="int">1110014</entry>
+					<entry type="int">1110015</entry>
+					<entry type="int">1110016</entry>
 				</entryList>
 			</camp>
 			<camp type="org.cx.game.widget.Camp" interface="org.cx.game.widget.ICamp">
@@ -28,16 +44,36 @@
 					<position type="int">8100115</position>
 				</parameter>
 				<entryList type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<entry type="int">7100115</entry>
-					<entry type="int">7100114</entry>
-					<entry type="int">8100114</entry>
-					<entry type="int">9100115</entry>
-					<entry type="int">9100114</entry>
+					<entry type="int">5100112</entry>
+					<entry type="int">5100110</entry>
+					<entry type="int">5100111</entry>
+					<entry type="int">6100112</entry>
+					<entry type="int">6100110</entry>
+					<entry type="int">6100111</entry>
+					<entry type="int">7100112</entry>
+					<entry type="int">7100110</entry>
+					<entry type="int">7100111</entry>
+					<entry type="int">8100112</entry>
+					<entry type="int">8100110</entry>
+					<entry type="int">8100111</entry>
+					<entry type="int">9100112</entry>
+					<entry type="int">9100110</entry>
+					<entry type="int">9100111</entry>
+					<entry type="int">10100112</entry>
+					<entry type="int">10100110</entry>
+					<entry type="int">10100111</entry>
+					<entry type="int">11100112</entry>
+					<entry type="int">11100110</entry>
+					<entry type="int">11100111</entry>
 				</entryList>
 			</camp>
 		</campList>
-		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                  <!-- 被占用位置的集合 -->
+		
+		<!-- 被占用位置的集合 -->
+		<!-- 
+		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                 
 			<position type="int">610013</position>
 		</disableList>
+		 -->
 	</map>
 </maps>

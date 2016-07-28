@@ -17,6 +17,8 @@ UseCardRemoveAction = jClass(Action, {
 			if((i+1)<=7){
 				var uc2 = useCard.getPlace(i+1);
 				uc1.view.html(uc2.view.html());
+			}else{
+				uc1.view.html('');
 			}
 		}		
 		

@@ -297,7 +297,7 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_Action_Death', 'new LifeCardDeathAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Attack', 'new LifeCardAttackAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Attacked', 'new LifeCardAttackedAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_Activate', 'new LifeCardActivateAction(data.info,view)');
+	ActionFactory.register('Card_LifeCard_Action_Activate', 'new LifeCardActivateAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');
