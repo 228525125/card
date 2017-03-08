@@ -26,6 +26,7 @@ import javax.persistence.Transient;
 
 import org.cx.game.card.CardFactory;
 import org.cx.game.card.ICard;
+import org.cx.game.card.LifeCard;
 import org.cx.game.command.CommandBuffer;
 import org.cx.game.core.Context;
 import org.cx.game.core.IPlayer;
@@ -133,5 +134,5 @@ public class User extends Player{
 			e.printStackTrace();
 		}
 		return list;
-	}
+	}	
 }

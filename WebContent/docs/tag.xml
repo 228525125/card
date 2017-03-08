@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game>
+	<tags>
+	
+		<!-- 技能属性  -->
+		<category key="jinengshuxing" description="技能属性" code="1001">
+			<tag key="wuli" description="物理" code="111">
+				<object type="org.cx.game.card.skill.DogHuntUnits" description="狗头人围猎" code="1001001"></object>
+			</tag>
+			<tag key="fashu" description="法术" code="112"></tag>	
+		</category>		
+		
+		<!-- 法术功能  -->
+		<category key="fashugongneng" description="法术功能" code="1005">
+			<tag key="xianzhi" description="限制" code="201"></tag>
+			<tag key="zhijieshanghai" description="直接伤害" code="202"></tag>
+			<tag key="zhaohuan" description="召唤" code="203"></tag>
+			<tag key="zengyi" description="治疗" code="204"></tag>
+			<tag key="sunyi" description="损益" code="205"></tag>
+			<tag key="chixushanghai" description="持续伤害" code="206"></tag>
+			<tag key="xianjing" description="陷阱" code="207"></tag>
+			<tag key="chongfeng" description="冲锋" code="208"></tag>
+			<tag key="qita" description="其他" code="299"></tag>
+		</category>
+		
+		<!-- 敌我类型  -->
+		<category key="diwoleixing" description="敌我类型" code="1002">
+			<tag key="shouyi" description="受益" code="121"></tag>
+			<tag key="shousun" description="受损" code="122"></tag>
+			<tag key="zhongxing" description="中性" code="123"></tag>
+		</category>
+		
+		<!-- 职业  -->
+		<category key="profession" description="职业" code="1006">
+			<tag key="zhanshi" description="战士" code="301"></tag>
+			<tag key="mofashi" description="魔法师" code="302"></tag>
+			<tag key="mushi" description="牧师" code="303"></tag>
+			<tag key="shengqishi" description="圣骑士" code="304"></tag>
+			<tag key="lieren" description="猎人" code="305"></tag>
+			<tag key="daozei" description="盗贼" code="306"></tag>
+			<tag key="deluyi" description="德鲁伊" code="307"></tag>
+			<tag key="deluyi" description="海盗" code="308">
+				<object type="org.cx.game.card.LifeCard" description="南海船工" code="10100002"></object>
+			</tag>
+		</category>
+		
+		<!-- 卡牌类型  -->
+		<category key="kapaileixing" description="卡牌类型" code="1003">
+			<tag key="suicongka" description="随从卡" code="131"></tag>
+			<tag key="mofaka" description="魔法卡" code="132"></tag>
+		</category>
+		
+		<!-- 种族  -->
+		<category key="zhongzu" description="种族" code="1004">
+			<tag key="renlei" description="人类" code="171">
+			</tag>
+			<tag key="wangling" description="亡灵" code="172"></tag>
+			<tag key="tianshen" description="天神" code="173"></tag>
+			<tag key="emo" description="恶魔" code="174"></tag>
+			<tag key="yeshou" description="野兽" code="175"></tag>
+			<tag key="kunchong" description="昆虫" code="176"></tag>
+			<tag key="zhiwu" description="植物" code="177"></tag>
+			<tag key="jixie" description="机械" code="178"></tag>
+			<tag key="jixie" description="龙" code="179"></tag>
+			<tag key="jixie" description="鱼" code="180"></tag>
+		</category>
+	</tags>
+</game>

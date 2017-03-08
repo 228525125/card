@@ -74,12 +74,12 @@ CommandShowAction = jClass(Action, {
 			'| mode:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
 			'| speed:'+this.info.card.attack.speedChance+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">attacked:'+' '+
-			'| attackBack:'+this.info.card.attacked.attackBack+' '+'</p>'+
+			'| armour:'+this.info.card.attacked.armour+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">conjure:'+' '+
 			'power:'+this.info.card.conjure.power+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">move:'+' '+
 			'type:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
-			'| flee:'+this.info.card.move.fleeChance+
+			'| flee:'+this.info.card.move.flee+
 			'| moveable:'+this.info.card.move.moveable+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">death:'+' '+
 			'status:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
@@ -87,6 +87,11 @@ CommandShowAction = jClass(Action, {
 			'consume:'+this.info.card.call.consume+'</p>'+
 			'<p style="margin: 0;padding: 0;">skill:'+skill+'</p>'+
 			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
+		}else if(this.info.card.id>=10150001 && this.info.card.id<=10159999){           //表示魔法卡
+			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>'+
+			'<p style="margin: 0;padding: 0;">apply:'+' '+
+			'| consume '+this.info.card.apply.consume+'</p>'+
+			'<p style="margin: 0;padding: 0;">depiction:'+this.info.card.depiction+'</p>';
 		}else{
 			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>';
 		}

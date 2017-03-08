@@ -313,6 +313,7 @@ $(function(){
 	ActionFactory.register('Context_ControlQueue_Remove', 'new ControlQueueRemoveAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Insert', 'new ControlQueueInsertAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Refurbish', 'new ControlQueueRefurbishAction(data.info,view)');
+	ActionFactory.register('Context_ControlQueue_Move', 'new ControlQueueMoveAction(data.info,view)');
 	ActionFactory.register('Container_Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
 	
 	SkillActionFactory.register('AttackBack','new SkillAttackBackAction(info,view)');

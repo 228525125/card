@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<game>
+	<cards>
+	
+		<!-- forest -->
+		<card type="org.cx.game.card.LifeCard" cardID="5110043">
+			<parameter>
+				<id type="int">5110043</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">8</hp>
+			<atk type="int">4</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<star type="int">1</star>
+			<energy type="int">4</energy>
+			<speedChance type="int">150</speedChance>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<DogHuntUnits type="org.cx.game.card.skill.DogHuntUnits">
+					<parameter>                                                                                
+						<range type="int">5</range>                                                                                                   
+						<atkValue type="int">2</atkValue>                                                                                           
+					</parameter>
+				</DogHuntUnits>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5110044">
+			<parameter>
+				<id type="int">5110044</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">10</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">1</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<QuickAttack type="org.cx.game.card.effect.QuickAttack"></QuickAttack>
+				<DogHuntUnits type="org.cx.game.card.skill.DogHuntUnits">
+					<parameter>                                                                                
+						<range type="int">5</range>                                                                                                   
+						<atkValue type="int">2</atkValue>                                                                                           
+					</parameter>
+				</DogHuntUnits>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5110045">
+			<parameter>
+				<id type="int">5110045</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">12</hp>
+			<atk type="int">7</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">50</speedChance>
+			<star type="int">1</star>
+			<energy type="int">4</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="6110046">
+			<parameter>
+				<id type="int">6110046</id>
+			</parameter>
+			<consume type="int">2</consume>
+			<hp type="int">15</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">200</speedChance>
+			<star type="int">2</star>
+			<energy type="int">5</energy>
+			<moveType type="int">1</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Weak type="org.cx.game.card.skill.Weak">
+					<parameter>
+						<bout type="int">3</bout>
+						<downScale type="int">50</downScale>
+						<chance type="int">100</chance>
+					</parameter>
+				</Weak>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="7310047"> 
+			<parameter> 
+				<id type="int">7310047</id> 
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">15</hp>  
+			<atk type="int">0</atk> 
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">0</attackRange>
+			<star type="int">1</star>              
+			<energy type="int">0</energy> 
+			<moveType type="int">0</moveType>  
+			<speedChance type="int">0</speedChance>
+			<lockChance type="int">100</lockChance>    
+			<fleeChance type="int">0</fleeChance>  
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<BarbedAureole type="org.cx.game.card.skill.BarbedAureole">
+					<parameter>
+						<range type="int">4</range>
+						<returnRatio type="int">100</returnRatio>
+					</parameter>
+				</BarbedAureole>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5120048">
+			<parameter>
+				<id type="int">5120048</id>
+			</parameter>
+			<consume type="int">2</consume>
+			<hp type="int">25</hp>
+			<atk type="int">10</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">50</speedChance>
+			<star type="int">2</star>
+			<energy type="int">2</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5420049">
+			<parameter>
+				<id type="int">5420049</id>
+			</parameter>
+			<consume type="int">2</consume>
+			<hp type="int">15</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">1</attackMode>
+			<attackRange type="int">5</attackRange>
+			<speedChance type="int">150</speedChance>
+			<star type="int">2</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Weak type="org.cx.game.card.skill.Weak">
+					<parameter>
+						<bout type="int">3</bout>
+						<downScale type="int">50</downScale>
+						<chance type="int">100</chance>
+					</parameter>
+				</Weak>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5120050">
+			<parameter>
+				<id type="int">5120050</id>
+			</parameter>
+			<consume type="int">3</consume>
+			<hp type="int">30</hp>
+			<atk type="int">10</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">3</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="5130051">
+			<parameter>
+				<id type="int">5130051</id>
+			</parameter>
+			<consume type="int">3</consume>
+			<hp type="int">30</hp>
+			<atk type="int">15</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">3</star>
+			<energy type="int">2</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Stone type="org.cx.game.card.skill.Stone">
+					<parameter>
+						<bout type="int">2</bout>
+						<chance type="int">100</chance>
+					</parameter>
+				</Stone>
+			</skillList>
+		</card>
+		
+		<!-- human -->
+		<card type="org.cx.game.card.LifeCard" cardID="1110052">
+			<parameter>
+				<id type="int">1110052</id>
+			</parameter>
+			<consume type="int">2</consume>
+			<hp type="int">15</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">200</speedChance>
+			<star type="int">2</star>
+			<energy type="int">4</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Daoqie type="org.cx.game.card.skill.Daoqie">
+					<parameter>
+						<chance type="int">100</chance> 
+						<power type="int">1</power>
+					</parameter>
+				</Daoqie>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1110053">
+			<parameter>
+				<id type="int">1110053</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">10</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">1</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1110054">
+			<parameter>
+				<id type="int">1110054</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">10</hp>
+			<atk type="int">10</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">1</star>
+			<energy type="int">2</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<!-- 
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<MianyichongfengAureole type="org.cx.game.card.skill.MianyichongfengAureole">
+					<parameter>
+						<range type="int">2</range>
+					</parameter>
+				</MianyichongfengAureole>
+			</skillList>
+			 -->
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1310055">
+			<parameter>
+				<id type="int">1310055</id>
+			</parameter>
+			<consume type="int">1</consume>
+			<hp type="int">30</hp>
+			<atk type="int">0</atk>
+			<attackMode type="int">1</attackMode>
+			<attackRange type="int">4</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">1</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<cure type="org.cx.game.card.skill.Cure">
+					<parameter>
+						<cureValue type="int">5</cureValue>
+						<tireBout type="int">1</tireBout>
+					</parameter>
+				</cure>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1120056">
+			<parameter>
+				<id type="int">1120056</id>
+			</parameter>
+			<consume type="int">3</consume>
+			<hp type="int">35</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">3</star>
+			<energy type="int">2</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1320057">
+			<parameter>
+				<id type="int">1320057</id>
+			</parameter>
+			<consume type="int">3</consume>
+			<hp type="int">30</hp>
+			<atk type="int">8</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">3</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Jingshenzhuanzhu type="org.cx.game.card.skill.Jingshenzhuanzhu">
+					<parameter>
+						<cureUpScale type="int">100</cureUpScale>
+					</parameter>
+				</Jingshenzhuanzhu>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1420058">
+			<parameter>
+				<id type="int">1420058</id>
+			</parameter>
+			<consume type="int">2</consume>
+			<hp type="int">20</hp>
+			<atk type="int">5</atk>
+			<attackMode type="int">1</attackMode>
+			<attackRange type="int">5</attackRange>
+			<speedChance type="int">150</speedChance>
+			<star type="int">2</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<AutomateAmmo type="org.cx.game.card.skill.AutomateAmmo">
+					<parameter>
+						<bout type="int">3</bout>
+					</parameter>
+				</AutomateAmmo>
+			</skillList>
+		</card>
+		<card type="org.cx.game.card.LifeCard" cardID="1120059">
+			<parameter>
+				<id type="int">1120059</id>
+			</parameter>
+			<consume type="int">3</consume>
+			<hp type="int">30</hp>
+			<atk type="int">10</atk>
+			<attackMode type="int">0</attackMode>
+			<attackRange type="int">1</attackRange>
+			<speedChance type="int">100</speedChance>
+			<star type="int">3</star>
+			<energy type="int">3</energy>
+			<moveType type="int">0</moveType>
+			<lockChance type="int">100</lockChance>
+			<fleeChance type="int">0</fleeChance>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<TongchoudikaiAureole type="org.cx.game.card.skill.TongchoudikaiAureole">
+					<parameter>
+						<range type="int">3</range>
+						<atkUpValue type="int">2</atkUpValue>
+					</parameter>
+				</TongchoudikaiAureole>
+			</skillList>
+		</card>
+
+		<!-- magic -->
+		<card type="org.cx.game.card.magic.Cure" cardID="8421001">
+			<parameter>
+				<id type="int">8421001</id>
+				<consume type="int">1</consume>
+				<cureScale type="int">10</cureScale>
+				<tireBout type="int">3</tireBout>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.DispelMagic" cardID="8421010">
+			<parameter>
+				<id type="int">8421010</id>
+				<consume type="int">1</consume>
+				<dispelNumber type="int">1</dispelNumber>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.AngerRoar" cardID="8422002">
+			<parameter>
+				<id type="int">8422002</id>
+				<consume type="int">1</consume>
+				<radius type="int">3</radius>
+				<bout type="int">3</bout>
+				<atkScale type="int">20</atkScale>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.TransmitIn" cardID="8923003">
+			<parameter>
+				<id type="int">8923003</id>
+				<consume type="int">1</consume>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1230008</conjurer>
+			</conjurerList>
+		</card>
+		<card type="org.cx.game.card.magic.Xianluo" cardID="8111006">
+			<parameter>
+				<id type="int">8111006</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<defDownScale type="int">50</defDownScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+		</card>
+		<card type="org.cx.game.card.magic.HardSkin" cardID="8421005">
+			<parameter>
+				<id type="int">8421005</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<damageDownValue type="int">1</damageDownValue>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.SharpTooth" cardID="8421007">
+			<parameter>
+				<id type="int">8421007</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<atkUpScale type="int">30</atkUpScale>
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1110004</conjurer>
+			</conjurerList>
+		</card>
+		<card type="org.cx.game.card.magic.Qiushengbenneng" cardID="8412008">
+			<parameter>
+				<id type="int">8412008</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<energyUpScale type="int">50</energyUpScale>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.Qianggong" cardID="8412009">
+			<parameter>
+				<id type="int">8412009</id>
+				<consume type="int">2</consume>
+				<bout type="int">1</bout>
+				<atkUpValue type="int">4</atkUpValue>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.Zhufu" cardID="8421011">
+			<parameter>
+				<id type="int">8421011</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<atkUpScale type="int">100</atkUpScale>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.Jingshenhujia" cardID="8421012">
+			<parameter>
+				<id type="int">8421012</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<hpUpValue type="int">3</hpUpValue>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.Jingzhun" cardID="8421013">
+			<parameter>
+				<id type="int">8421013</id>
+				<consume type="int">1</consume>
+				<bout type="int">3</bout>
+				<rangeUpValue type="int">3</rangeUpValue>
+			</parameter>
+		</card>
+		<card type="org.cx.game.card.magic.Kuangquanbing" cardID="8522014">
+			<parameter>
+				<id type="int">8522014</id>
+				<consume type="int">1</consume>
+				<bout type="int">1</bout>				
+			</parameter>
+			<conjurerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<conjurer type="int">1410018</conjurer>
+			</conjurerList>
+		</card>
+	</cards>
+</game>
