@@ -10,7 +10,6 @@ import org.cx.game.core.ContextFactory;
 import org.cx.game.core.IContext;
 import org.cx.game.core.IPlayer;
 import org.cx.game.exception.ValidatorException;
-import org.cx.game.widget.ICamp;
 import org.cx.game.widget.IGround;
 
 import com.easyjf.web.ActionContext;
@@ -42,7 +41,7 @@ public class JoinCommand extends ExternalCommand {
 		user2.setGround(ground);
 		user2.setId(2);                           //硬编码
 		
-		ground.setPlayerToCamp(1, user2);         //硬编码
+		ground.captureBuilding(20800811, user2);         //硬编码
 		
 		IContext ctx = ContextFactory.createContext(user1, user2);
 		context.setAttribute(user1.getAccount(), ctx);

@@ -13,7 +13,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -38,7 +38,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -64,7 +64,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -74,12 +74,12 @@
 				<id type="int">10100002</id>
 			</parameter>
 			<atk type="int">2</atk>
-			<hp type="int">1</hp>
+			<hp type="int">10</hp>
 			<consume type="int">1</consume>
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -97,7 +97,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -120,7 +120,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -142,7 +142,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -165,7 +165,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -187,7 +187,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -205,12 +205,12 @@
 				<id type="int">10100009</id>
 			</parameter>
 			<atk type="int">0</atk>
-			<hp type="int">4</hp>
+			<hp type="int">40</hp>
 			<consume type="int">1</consume>
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">2</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -228,7 +228,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -246,7 +246,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -269,7 +269,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -287,7 +287,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -311,7 +311,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -336,7 +336,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -360,7 +360,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -384,7 +384,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -406,7 +406,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -428,7 +428,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -446,7 +446,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -464,7 +464,7 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
@@ -482,11 +482,12 @@
 			<attackRange type="int">1</attackRange>
 			<speedChance type="int">100</speedChance>
 			<energy type="int">3</energy>
-			<moveType type="int">0</moveType>
+			<moveType type="int">141</moveType>
 			<star type="int">2</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<Taunt type="org.cx.game.card.effect.Taunt"></Taunt>
 				<Wuqigongjijianshaosuicongxiaohao type="org.cx.game.card.skill.Wuqigongjijianshaosuicongxiaohao"></Wuqigongjijianshaosuicongxiaohao>
 			</skillList>
 		</card>
@@ -516,13 +517,14 @@
 		</card>
 		<card type="org.cx.game.card.magic.YingyongdajiMagic" cardID="10150004">
 			<parameter>
-				<harm type="int">4</harm>
+				<atk type="int">4</atk>
 				<consume type="int">1</consume>
 			</parameter>
 		</card>
 		<card type="org.cx.game.card.magic.ZhisidajiMagic" cardID="10150005">
 			<parameter>
-				<atkUpValue type="int">4</atkUpValue>
+				<harm1 type="int">-4</harm1>
+				<harm2 type="int">-6</harm2>
 				<consume type="int">3</consume>
 			</parameter>
 		</card>

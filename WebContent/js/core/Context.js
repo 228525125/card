@@ -4,6 +4,7 @@ var Context = function(){
 	var map = new Map(); 
 	var control = null;
 	var notice = null;
+	var optionList = null;
 	var processSequence = 0;
 	var own = null;    //仅有id、name、account属性，用于判断当前操作者
 	var timer = null;
@@ -33,6 +34,12 @@ var Context = function(){
 		setNotice: function(ne){
 			notice = ne;
 		},
+		getOptionList: function(){
+			return optionList;
+		},
+		setOptionList: function(ol){
+			optionList = ol;
+		},
 		setProcessSequence: function(sequence){
 			processSequence = sequence;
 		},
@@ -52,7 +59,44 @@ var Context = function(){
 		},
 		getOwn: function(){
 			return own;
-		}
+		},
+		reloadLandform: function(){
+			var landform = this.get(this.Landform);
+			var keys = Object.getOwnPropertyNames(landform);
+			
+			for(var i=0;i<keys.length;i++){
+				var key = keys[i];
+				var value = landform[key];
+				var ground = this.get(this.Ground);
+				var place = ground.getPlace(key);
+				var landformName = Glossary.get(Glossary.Ground_Landform,value);
+				if('山'==landformName)
+					place.view.css("background-color","#EFE4B0");
+				else if('丘林'==landformName)
+					place.view.css("background-color","#80FF80");
+				else if('森林'==landformName)
+					place.view.css("background-color","#22B14C");
+			}
+		},
+		reloadBuilding : function(){
+			var buildingList = this.get(this.BuildingList);
+			
+			for(var i=0;i<buildingList.length;i++){
+				var building = buildingList[i];
+				var buildingName = Glossary.get(Glossary.Ground_Building,building.type);
+				
+				var ground = this.get(this.Ground);
+				var place = ground.getPlace(building.position);
+				
+				if('城镇'==buildingName)
+					place.view.css("background-color","#C8BFE7");
+				else if('桥'==buildingName)
+					place.view.css("background-color","#FFFFFF");
+			}
+		},
+		Ground : 'Ground',
+		Landform : 'Landform',
+		BuildingList : 'BuildingList'
 		/*,
 		getQueue: function(){
 			return queue;

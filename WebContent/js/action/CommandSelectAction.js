@@ -9,7 +9,7 @@ CommandSelectAction = jClass(Action, {
 		Buffer.cancelSelect();
 		Buffer.cancelQuery();
 		
-		this.view.css("color","green");
+		this.view.css("color","red");
 		
 		var pd = Context.getPlayer(this.info.player.id);
 		Buffer.setSelectContainer(pd.getContainer(this.info.container.name));

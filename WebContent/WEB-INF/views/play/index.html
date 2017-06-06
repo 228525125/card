@@ -5,6 +5,7 @@
 #parse("/link_share.html")
 <title>playstation</title>
 <link type="text/css" href="css/default.css" media="screen" rel="stylesheet"/>
+<link type="text/css" href="css/honeycomb.css" media="screen" rel="stylesheet"/>
 <script type="text/javascript" src="plugins/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="plugins/layer/layer.min.js"></script>
 <script type="text/javascript" src="js/UploadFormPanel.js"></script>
@@ -40,6 +41,7 @@
 <script type="text/javascript" src="js/action/CommandQueryMoveAction.js"></script>
 <script type="text/javascript" src="js/action/CommandQueryConjureAction.js"></script>
 <script type="text/javascript" src="js/action/CommandQueryApplyAction.js"></script>
+<script type="text/javascript" src="js/action/CommandQueryExecuteAction.js"></script>
 <script type="text/javascript" src="js/action/CommandSelectAction.js"></script>
 <script type="text/javascript" src="js/action/CommandShowAction.js"></script>
 <script type="text/javascript" src="js/action/CommandReloadAction.js"></script>
@@ -106,7 +108,7 @@
 <div id="command_show2" class="command_show2"></div>
 <div id="command_show3" class="command_show3"></div>
 <div id="command_button" class="command_button">
-	<button id="button_call">call</button>
+	<button id="button_execute">exec</button>
 	<button id="button_move">move</button>
 	<button id="button_attack">atta</button>
 	<button id="button_conjure">conj</button>
@@ -114,6 +116,8 @@
 	<button id="button_config">conf</button>	
 </div>
 <div class="ground">
+
+<!-- 
 <div class="usecard1">
 	<div class="usecard2" id="usecard1_0"></div>
 	<div class="usecard2" id="usecard1_1"></div>
@@ -125,15 +129,23 @@
 	<div class="usecard2" id="usecard1_7"></div>
 	<div class="usecard2" id="cardgroup1"></div>
 </div>
+ -->
 
-#foreach($row in [1..15])
-	<div class="row">
-	#foreach($column in [1..15])
-		<div class="column" id="ground${column}1001${row}"></div>
-	#end		
-	</div>
+#foreach($row in [1..12])
+#set ($x=36*($row - 1) + 5)
+#set ($y=$row%2*21 + 5)
+<div class="line" style="top:${x}px;left:$!{y}px;">
+	#foreach($column in [1..21])
+    <div class="boxF">
+        <div class="boxS">
+            <div class="boxT" id="ground${column}8008${row}"></div>
+        </div>
+     </div>
+     #end
+</div>
 #end
 
+<!-- 
 <div class="usecard1">
 	<div class="usecard2" id="cardgroup2"></div>
 	<div class="usecard2" id="usecard2_7"></div>
@@ -145,11 +157,53 @@
 	<div class="usecard2" id="usecard2_1"></div>
 	<div class="usecard2" id="usecard2_0"></div>
 </div>
+ -->
+
 </div>
+
+<div class="command_option">
+	<div class="option1" id="option0" title="option0"></div>
+	<div class="option1" id="option1" title="option1"></div>
+	<div class="option1" id="option2" title="option2"></div>
+	<div class="option1" id="option3" title="option3"></div>
+	<div class="option1" id="option4" title="option4"></div>
+	<div class="option1" id="option5" title="option5"></div>
+	<div class="option1" id="option6" title="option6"></div>
+	<div class="option1" id="option7" title="option7"></div>
+</div>
+
 <div class="command_window">
 <div id="command_output" class="command_1">
 </div>
 <div class="command_2"><input id="command_input" class="command_input" type="text" value="" alt="admin"/></div>
+</div>
+
+<div class="linshi">
+	<div class="usecard1">
+		<div class="usecard2" id="usecard1_0"></div>
+		<div class="usecard2" id="usecard1_1"></div>
+		<div class="usecard2" id="usecard1_2"></div>
+		<div class="usecard2" id="usecard1_3"></div>
+		<div class="usecard2" id="usecard1_4"></div>
+		<div class="usecard2" id="usecard1_5"></div>
+		<div class="usecard2" id="usecard1_6"></div>
+		<div class="usecard2" id="usecard1_7"></div>
+		<div class="usecard2" id="cardgroup1"></div>
+	</div>
+</div>
+
+<div class="linshi">
+	<div class="usecard1">
+		<div class="usecard2" id="cardgroup2"></div>
+		<div class="usecard2" id="usecard2_7"></div>
+		<div class="usecard2" id="usecard2_6"></div>
+		<div class="usecard2" id="usecard2_5"></div>
+		<div class="usecard2" id="usecard2_4"></div>
+		<div class="usecard2" id="usecard2_3"></div>
+		<div class="usecard2" id="usecard2_2"></div>
+		<div class="usecard2" id="usecard2_1"></div>
+		<div class="usecard2" id="usecard2_0"></div>
+	</div>
 </div>
 <!-- 
 <p><button id="test" onclick="location.href='user.do?cmd=login'">重新登陆</button></p>

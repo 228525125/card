@@ -19,6 +19,7 @@ import org.cx.card.command.JoinCommand;
 import org.cx.card.domain.Process;
 import org.cx.card.service.IProcessService;
 import org.cx.card.service.JDBCQueryService;
+import org.cx.card.util.Tools;
 
 import com.easyjf.container.annonation.Inject;
 import com.easyjf.web.ActionContext;
@@ -44,6 +45,7 @@ public class PlayAction extends BaseAction {
 	}
 
 	public Page index(WebForm form){
+		form.addResult("tools", new Tools());
 		if(null!=getUser()){
 			form.addResult("user", getUser().getAccount());
 			form.addPo(getUser());

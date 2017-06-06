@@ -56,7 +56,8 @@ function syn(){
 	    			    'Command_Query_Attack'==jsonObject.action ||
 	    			    'Command_Query_Move'==jsonObject.action ||
 	    			    'Command_Query_Conjure'==jsonObject.action ||
-	    			    'Command_Query_Apply'==jsonObject.action)
+	    			    'Command_Query_Apply'==jsonObject.action ||
+	    			    'Command_Query_Execute'==jsonObject.action)
 	    			;
 	    			else
 	    				Invoker.response(jsonObject, data[i].sign);
@@ -172,9 +173,9 @@ $(function(){
 		}
 	});
 	
-	$("#button_call").click(function(){
-		post('query call');
-		$("#command_input").val('call ');
+	$("#button_execute").click(function(){
+		post('query execute');
+		$("#command_input").val('execute ');
 		$("#command_input").focus();
 	});
 	
@@ -202,6 +203,16 @@ $(function(){
 		$("#command_input").focus();
 	});
 	
+	var optionList=new Array($("#option0"),$("#option1"),$("#option2"),$("#option3"),$("#option4"),$("#option5"),$("#option6"),$("#option7"));
+	
+	for(var i=0;i<optionList.length;i++){
+		optionList[i].mousedown(function(event){
+			var val = 'select ' + this.title + ';show;';
+			$("#command_input").val(val);
+			command_input_sub();
+		});
+	}
+	
 	//--------------------UI end------------------
 	
 	//-------------------init-------------------
@@ -228,10 +239,13 @@ $(function(){
 	useCard2.addObserver(new UseCardPlace(6,$("#usecard2_6")));
 	useCard2.addObserver(new UseCardPlace(7,$("#usecard2_7")));
 	
+	var xBorder = 21;
+	var yBorder = 12;
+	
 	var ground = new Ground();
-	for(var i=1;i<=15;i++){
-		for(var n=1;n<=15;n++){
-			ground.addObserver(new GroundPlace(""+i+"1001"+n,$("#ground"+i+"1001"+n)));
+	for(var i=1;i<=xBorder;i++){
+		for(var n=1;n<=yBorder;n++){
+			ground.addObserver(new GroundPlace(""+i+"8008"+n,$("#ground"+i+"8008"+n)));
 		}
 	}
 
@@ -254,6 +268,7 @@ $(function(){
 	data1.put('Cemetery', ground);
 	data1.put('TrickList', ground);
 	data1.put('Notice', notice);
+	//data1.put('OptionList', optionList);
 	var player1 = new Player('1',data1);         //硬编码，这里的1应该是player的id属性
 	
 	var data2 = new Map();
@@ -263,6 +278,7 @@ $(function(){
 	data2.put('Cemetery', ground);
 	data2.put('TrickList', ground);
 	data2.put('Notice', notice);
+	//data2.put('OptionList', optionList);
 	var player2 = new Player('2',data2);       //硬编码，这里的2应该是player的id属性
 	
 	var data3 = new Map();
@@ -270,6 +286,7 @@ $(function(){
 	data3.put('Cemetery', ground);
 	data3.put('TrickList', ground);
 	data3.put('Notice', notice);
+	//data3.put('OptionList', optionList);
 	var faction = new Player('101', data3);     //硬编码，101表示中立生物
 	
 	//context初始化
@@ -277,6 +294,8 @@ $(function(){
 	Context.addPlayer(player2);
 	Context.addPlayer(faction);
 	Context.setNotice(notice);
+	Context.setOptionList(optionList);
+	Context.put(Context.Ground,ground);
 	
 	ActionFactory.register('Player_Power', 'new PlayerPowerAction(data.info,view)');
 	ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');
@@ -291,6 +310,7 @@ $(function(){
 	ActionFactory.register('Command_Query_Move', 'new CommandQueryMoveAction(data.info,view)');
 	ActionFactory.register('Command_Query_Conjure', 'new CommandQueryConjureAction(data.info,view)');
 	ActionFactory.register('Command_Query_Apply', 'new CommandQueryApplyAction(data.info,view)');
+	ActionFactory.register('Command_Query_Execute', 'new CommandQueryExecuteAction(data.info,view)');
 	
 	ActionFactory.register('Card_LifeCard_Action_Move', 'new LifeCardMoveAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Call', 'new LifeCardCallAction(data.info,view)');
@@ -332,24 +352,35 @@ $(function(){
 	Glossary.add(Glossary.Death_Status,0,'live');
 	Glossary.add(Glossary.Death_Status,1,'death');
 	Glossary.add(Glossary.Death_Status,2,'exsits');
-	Glossary.add(Glossary.Move_Type,0,'步行');
-	Glossary.add(Glossary.Move_Type,1,'飞行');
-	Glossary.add(Glossary.Move_Type,2,'瞬移');
+	Glossary.add(Glossary.Move_Type,141,'步行');
+	Glossary.add(Glossary.Move_Type,142,'骑行');
+	Glossary.add(Glossary.Move_Type,143,'驾驶');
+	Glossary.add(Glossary.Move_Type,144,'飞行');
+	Glossary.add(Glossary.Move_Type,145,'传送');
 	Glossary.add(Glossary.ActiveSkill_Velocity,0,'瞬发');
 	Glossary.add(Glossary.ActiveSkill_Velocity,1,'蓄力');
 	Glossary.add(Glossary.ActiveSkill_Style,0,'法术');
 	Glossary.add(Glossary.ActiveSkill_Style,1,'物理');
-	Glossary.add(Glossary.ActiveSkill_Func,199,'其他');
-	Glossary.add(Glossary.ActiveSkill_Func,101,'移动限制');
-	Glossary.add(Glossary.ActiveSkill_Func,102,'直接伤害');
-	Glossary.add(Glossary.ActiveSkill_Func,103,'召唤');
-	Glossary.add(Glossary.ActiveSkill_Func,104,'增益');
-	Glossary.add(Glossary.ActiveSkill_Func,105,'损益');
-	Glossary.add(Glossary.ActiveSkill_Func,106,'持续伤害');
-	Glossary.add(Glossary.ActiveSkill_Func,107,'陷阱');
-	Glossary.add(Glossary.ActiveSkill_Func,108,'冲锋');
-	
-	
+	Glossary.add(Glossary.ActiveSkill_Func,201,'移动限制');
+	Glossary.add(Glossary.ActiveSkill_Func,202,'直接伤害');
+	Glossary.add(Glossary.ActiveSkill_Func,203,'召唤');
+	Glossary.add(Glossary.ActiveSkill_Func,204,'治疗');
+	Glossary.add(Glossary.ActiveSkill_Func,205,'损益');
+	Glossary.add(Glossary.ActiveSkill_Func,206,'持续伤害');
+	Glossary.add(Glossary.ActiveSkill_Func,207,'陷阱');
+	Glossary.add(Glossary.ActiveSkill_Func,208,'冲锋');
+	Glossary.add(Glossary.ActiveSkill_Func,209,'秘术');
+	Glossary.add(Glossary.ActiveSkill_Func,299,'其他');
+	Glossary.add(Glossary.Ground_Landform,401,'草地');
+	Glossary.add(Glossary.Ground_Landform,402,'丘林');
+	Glossary.add(Glossary.Ground_Landform,403,'森林');
+	Glossary.add(Glossary.Ground_Landform,404,'河');
+	Glossary.add(Glossary.Ground_Landform,405,'山');
+	Glossary.add(Glossary.Ground_Landform,406,'沼泽');
+	Glossary.add(Glossary.Ground_Landform,407,'旱地');
+	Glossary.add(Glossary.Ground_Landform,408,'沙地');
+	Glossary.add(Glossary.Ground_Building,501,'城镇');
+	Glossary.add(Glossary.Ground_Building,502,'桥');
 	
 	//-------------------init end-------------------
 	

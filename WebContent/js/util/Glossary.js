@@ -8,6 +8,8 @@ var Glossary = function(){
 	typeMap.put('ActiveSkill_Velocity',new Map());
 	typeMap.put('ActiveSkill_Style',new Map());
 	typeMap.put('ActiveSkill_Func',new Map());
+	typeMap.put('Ground_Landform',new Map());
+	typeMap.put('Ground_Building',new Map());
 	
 	return {
 		add: function(type,code,name){
@@ -29,6 +31,8 @@ var Glossary = function(){
 		Move_Type : 'Move_Type',
 		ActiveSkill_Velocity : 'ActiveSkill_Velocity',
 		ActiveSkill_Style : 'ActiveSkill_Style',
-		ActiveSkill_Func : 'ActiveSkill_Func'
+		ActiveSkill_Func : 'ActiveSkill_Func',
+		Ground_Landform : 'Ground_Landform',
+		Ground_Building : 'Ground_Building'
 	}
 }();

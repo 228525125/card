@@ -7,5 +7,5 @@ var BuffInvalidActionFactory = function(){
 		register : function(buffName, actionObject){
 			actionMap.put(buffName, actionObject);
 		}
-	}
+	};
 }();

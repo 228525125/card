@@ -10,7 +10,6 @@ import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
 import org.cx.game.widget.GroundDecorator;
 import org.cx.game.widget.GroundFactory;
-import org.cx.game.widget.ICamp;
 import org.cx.game.widget.IGround;
 
 import com.easyjf.web.ActionContext;
@@ -36,7 +35,7 @@ public class CreateCommand extends ExternalCommand {
 		player.setGround(ground);
 		player.setId(1);                       //硬编码
 		
-		ground.setPlayerToCamp(0, player);     //硬编码
+		ground.captureBuilding(380082, player);     //硬编码
 		
 		context.setAttribute(parameter.toString(), player);
 	}

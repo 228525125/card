@@ -7,7 +7,7 @@ BuffInvalidAction = jClass(Action, {
 	},
 	
 	doAction : function(){
-		var action = BuffInvalidActionFactory.createAction(this.info,this.view)
+		var action = BuffInvalidActionFactory.createAction(this.info,this.view);
 		if(null!=action)
 			action.doAction();
 	}

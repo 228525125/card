@@ -12,5 +12,12 @@ ContextStartAction = jClass(Action, {
 		
 		var scrollTop = this.view[0].scrollHeight;
 		this.view.scrollTop(scrollTop+1);
+		
+		Context.put(Context.Landform,this.info.landform);
+		Context.reloadLandform();
+		
+		Context.put(Context.BuildingList,this.info.buildingList);
+		Context.reloadBuilding();
+		
 	}
 });

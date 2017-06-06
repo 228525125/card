@@ -1,25 +1,514 @@
 <maps>
-	<map type="org.cx.game.widget.Ground" id="test">
+	<map type="org.cx.game.widget.HoneycombGround" id="test">
 		<description>测试专用图</description>
 		<parameter>
-			<xBorder type="int">15</xBorder>                                                                                                  <!-- 地图边界：x轴最大值 -->
-			<yBorder type="int">15</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
+			<xBorder type="int">21</xBorder>                                                                                                  <!-- 地图边界：x轴最大值 -->
+			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
 			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
 		</parameter>
-		<campList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 营地的集合 -->
-			<camp type="org.cx.game.widget.Camp" interface="org.cx.game.widget.ICamp">
+		<buildingList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 城镇的集合 -->
+			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
-					<position type="int">810015</position>                                                                                    <!-- 位置 -->
+					<position type="int">380082</position>                                                                                   <!-- 位置 -->
+					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
-			</camp>
-			<camp type="org.cx.game.widget.Camp" interface="org.cx.game.widget.ICamp">
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
+						<parameter>
+							<cardId type="int">10100001</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100002</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100003</cardId>
+						</parameter>
+					</option>
+				</options>
+			</town>
+			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
-					<position type="int">8100111</position>
+					<position type="int">2080082</position>                                                                                   <!-- 位置 -->
+					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
-			</camp>
-		</campList>
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
+						<parameter>
+							<cardId type="int">10100001</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100002</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100003</cardId>
+						</parameter>
+					</option>
+				</options>
+			</town>
+			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+				<parameter>
+					<position type="int">1280086</position>                                                                                   <!-- 位置 -->
+					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
+				</parameter>
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
+						<parameter>
+							<cardId type="int">10100001</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100002</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100003</cardId>
+						</parameter>
+					</option>
+				</options>
+			</town>
+			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+				<parameter>
+					<position type="int">3800811</position>                                                                                   <!-- 位置 -->
+					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
+				</parameter>
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
+						<parameter>
+							<cardId type="int">10100001</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100002</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100003</cardId>
+						</parameter>
+					</option>
+				</options>
+			</town>
+			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+				<parameter>
+					<position type="int">20800811</position>
+					<main type='bool'>true</main>
+				</parameter>
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
+						<parameter>
+							<cardId type="int">10100001</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100002</cardId>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.CallOption">
+						<parameter>
+							<cardId type="int">10100003</cardId>
+						</parameter>
+					</option>
+				</options>
+			</town>
+		</buildingList>
 		
-		<!-- 被占用位置的集合 -->
+		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<!-- 山 -->
+			<!-- 9 -->
+			<map>
+				<key type="int">180086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">280086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">380086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">480086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">580086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">180087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">280087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">380087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">480087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">580087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680087</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 10 -->
+			<map>
+				<key type="int">780081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">780082</key>
+				<value type="int">405</value>
+			</map>	
+			<map>
+				<key type="int">780083</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">880081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">880082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680083</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 8 -->
+			<map>
+				<key type="int">7800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">7800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800812</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">9800812</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 2 -->
+			<map>
+				<key type="int">1480081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1680082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580083</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1680083</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 4 -->
+			<map>
+				<key type="int">16800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">17800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">15800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">16800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">15800812</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">16800812</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 3 -->
+			<map>
+				<key type="int">1780086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1880086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1980086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2080086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2180086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1780087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1880087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1980087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2080087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2180087</key>
+				<value type="int">405</value>
+			</map>
+			
+			<!-- 山丘 -->
+			<!-- 10 -->
+			<map>
+				<key type="int">580082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">680082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">480083</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">580083</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 8 -->
+			<map>
+				<key type="int">5800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">6800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">5800811</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">6800811</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 2 -->
+			<map>
+				<key type="int">1780082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1880082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1780083</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1880083</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 4 -->
+			<map>
+				<key type="int">18800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">19800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">17800811</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">18800811</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 中 -->
+			<map>
+				<key type="int">1180085</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1280085</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1180086</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1380086</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1180087</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1280087</key>
+				<value type="int">402</value>
+			</map>
+			
+			<!-- 森林 -->
+			<!-- 10 -->
+			<map>
+				<key type="int">680084</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">780084</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">580085</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">680085</key>
+				<value type="int">403</value>
+			</map>
+			<!-- 8 -->
+			<map>
+				<key type="int">680088</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">780088</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">680089</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">780089</key>
+				<value type="int">403</value>
+			</map>
+			<!-- 2 -->
+			<map>
+				<key type="int">1680084</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1780084</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1680085</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1780085</key>
+				<value type="int">403</value>
+			</map>
+			<!-- 4 -->
+			<map>
+				<key type="int">1780088</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1880088</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1680089</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1780089</key>
+				<value type="int">403</value>
+			</map>
+			<!-- 中 -->
+			<map>
+				<key type="int">1280084</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1080085</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1080087</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1380085</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1380087</key>
+				<value type="int">403</value>
+			</map>
+			<map>
+				<key type="int">1280088</key>
+				<value type="int">403</value>
+			</map>
+		</landformMap>
+		
+		<!-- 无效的位置集合（暂时没用） -->
 		<!-- 
 		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                 
 			<position type="int">610013</position>

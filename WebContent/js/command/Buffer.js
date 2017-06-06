@@ -31,6 +31,8 @@ var Buffer = function(){
 					var queryPlace = queryContainer.getPlace(queryPositionList[i]);
 					queryPlace.view.css("background-color","");
 				}
+				Context.reloadLandform();
+				Context.reloadBuilding();
 			}
 		}
 	}
