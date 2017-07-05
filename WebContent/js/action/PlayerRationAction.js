@@ -1,5 +1,5 @@
 
-PlayerPowerAction = jClass(Action, {
+PlayerRationAction = jClass(Action, {
 	
 	init: function(info,view){
 		
@@ -9,9 +9,9 @@ PlayerPowerAction = jClass(Action, {
 	doAction : function(){
 		if(Context.getControl().id==this.info.player.id){
 			var h = this.view.html();
-			var h1 = h.split('(')[0];
-			var h2 = h.split(')')[1];
-			h = h1 + '('+this.info.power+')' +h2;
+			var h1 = h.split('[')[0];
+			var h2 = h.split(']')[1];
+			h = h1 + '['+this.info.ration+'/'+Context.getControl().rationLimit+']' +h2;
 			this.view.html(h);
 		}
 	}

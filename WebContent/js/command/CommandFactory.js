@@ -13,7 +13,7 @@ var CommandFactory = function(){
 				command = new ContextCommand(action,data);   //这里position硬编码1，1表示<div>command_show
 			}else if('Command_Show'==action){              //（独立的一块区域显示）
 				command = new ShowCommand(action,data);  
-			}else if('Player_Power'==action){              //（独立的一块区域显示）
+			}else if('Player_Resource'==action || 'Player_Ration'==action || 'Player_Bout'==action){              //（独立的一块区域显示）
 				command = new ControlCommand(action,data);
 			}else
 				command = new GeneralCommand(action,data);

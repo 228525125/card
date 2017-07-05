@@ -4,8 +4,12 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
+import org.cx.game.card.CardFactory;
+import org.cx.game.card.LifeCard;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.IPlayer;
+import org.cx.game.core.Player;
+import org.cx.game.core.PlayerDecorator;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
 import org.cx.game.widget.GroundDecorator;
@@ -16,13 +20,13 @@ import com.easyjf.web.ActionContext;
 
 public class CreateCommand extends ExternalCommand {
 
-	private IPlayer player = null;
+	private User user = null;
 	private ServletContext context = ActionContext.getContext().getSession().getServletContext();
 	
-	public CreateCommand(IPlayer player) {
+	public CreateCommand(User user) {
 		// TODO Auto-generated constructor stub
-		this.player = player;
-		addValidator(new RepeatCreateValidator(context,((User)player).getAccount()));
+		this.user = user;
+		addValidator(new RepeatCreateValidator(context,user.getAccount()));
 	}
 
 	@Override
@@ -32,10 +36,17 @@ public class CreateCommand extends ExternalCommand {
 		
 		IGround ground = GroundFactory.getInstance("test");
 		
+		IPlayer player = new Player(1, user.getAccount());   //硬编码
+		player = new PlayerDecorator(player);
+	
 		player.setGround(ground);
-		player.setId(1);                       //硬编码
+		player.setHeroEntry(380082);           //硬编码
+		player.setHeroCardID(10190001);        //硬编码
+		player.setResource(1000);              //硬编码
 		
 		ground.captureBuilding(380082, player);     //硬编码
+		
+		user.setPlayer(player);
 		
 		context.setAttribute(parameter.toString(), player);
 	}

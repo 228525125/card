@@ -1,15 +1,9 @@
 package org.cx.card.mvc;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
-import javax.servlet.ServletContext;
-
-import org.apache.commons.fileupload.FileItem;
 import org.cx.game.command.Invoker;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
@@ -22,11 +16,8 @@ import org.cx.card.service.JDBCQueryService;
 import org.cx.card.util.Tools;
 
 import com.easyjf.container.annonation.Inject;
-import com.easyjf.web.ActionContext;
-import com.easyjf.web.Module;
 import com.easyjf.web.Page;
 import com.easyjf.web.WebForm;
-import com.easyjf.web.core.ExtResult;
 
 public class PlayAction extends BaseAction {
 
@@ -69,9 +60,9 @@ public class PlayAction extends BaseAction {
 				else if(-1!=command.indexOf("join"))
 					invoker.receiveCommand(command, new JoinCommand(getUser()));
 				else if(-1!=command.indexOf("finish"))
-					invoker.receiveCommand(command, new FinishCommand(getUser()));
+					invoker.receiveCommand(command, new FinishCommand(getUser().getPlayer()));
 				else
-					invoker.receiveCommand(getUser(), command);
+					invoker.receiveCommand(getUser().getPlayer(), command);
 				
 			} catch (ValidatorException e) {
 				// TODO Auto-generated catch block
@@ -82,14 +73,14 @@ public class PlayAction extends BaseAction {
 			
 			if(!"".equals(response)&&0<response.split(";").length){
 				String[] resps = response.split(";");
-				String playNo = getUser().getContext().getPlayNo();
+				String playNo = getUser().getPlayer().getContext().getPlayNo();
 				Integer sequence = processService.getNewSequence(playNo);
 				for(int i=0;i<resps.length;i++){
 					Process p = new Process();
 					p.setPlayNo(playNo);
 					p.setCommand(resps[i]);
 					p.setSequence(sequence+i);
-					p.setPlayerId(getUser().getId());
+					p.setPlayerId(getUser().getPlayer().getId());
 					String action = resps[i].split("\",")[0].substring(11);
 					p.setAction(action);
 					list.add(p);
@@ -107,12 +98,13 @@ public class PlayAction extends BaseAction {
 		List<Process> list = new ArrayList<Process>();
 		Integer sequence = 0;
 		if(null!=getUser()
-		&&null!=getUser().getContext()
+		&&null!=getUser().getPlayer()
+		&&null!=getUser().getPlayer().getContext()
 		&&null!=form.get("sequence")
 		&&!"".equals(form.get("sequence").toString())){
 			sequence = Integer.valueOf(form.get("sequence").toString());
 			//list = jdbcService.query("select sequence,command from Cprocess where playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence");
-			String sql = "playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence";
+			String sql = "playNo='"+getUser().getPlayer().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence";
 			list = processService.query(sql, null, 0, 999);
 		}
 		

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<advantage>
+		<profession type="301" description="战士">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">0,0</landform>
+			<landform type="403" description="森林">20,20</landform>
+			<landform type="404" description="河">-20,-20</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">40,40</landform>
+			<landform type="408" description="村庄">30,30</landform>
+		</profession>
+		<profession type="302" description="法师">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">0,0</landform>
+			<landform type="403" description="森林">0,0</landform>
+			<landform type="404" description="河">0,0</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">0,40</landform>
+			<landform type="408" description="村庄">0,30</landform>
+		</profession>
+		<profession type="303" description="牧师">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">0,0</landform>
+			<landform type="403" description="森林">0,0</landform>
+			<landform type="404" description="河">0,0</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">0,40</landform>
+			<landform type="408" description="村庄">0,30</landform>
+		</profession>
+		<profession type="304" description="圣骑士">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">0,0</landform>
+			<landform type="403" description="森林">20,20</landform>
+			<landform type="404" description="河">-20,-20</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">40,40</landform>
+			<landform type="408" description="村庄">30,30</landform>
+		</profession>
+		<profession type="304" description="猎人">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">20,20</landform>
+			<landform type="403" description="森林">20,20</landform>
+			<landform type="404" description="河">-20,-20</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">40,40</landform>
+			<landform type="408" description="村庄">30,30</landform>
+		</profession>
+		<profession type="305" description="盗贼">
+			<landform type="401" description="草地">0,0</landform>
+			<landform type="402" description="丘林">0,0</landform>
+			<landform type="403" description="森林">40,40</landform>
+			<landform type="404" description="河">-20,-20</landform>
+			<landform type="405" description="山">0,0</landform>
+			<landform type="407" description="城镇">0,40</landform>
+			<landform type="408" description="村庄">0,30</landform>
+		</profession>
+	</advantage>
+</game>

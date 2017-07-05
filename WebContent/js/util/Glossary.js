@@ -10,6 +10,10 @@ var Glossary = function(){
 	typeMap.put('ActiveSkill_Func',new Map());
 	typeMap.put('Ground_Landform',new Map());
 	typeMap.put('Ground_Building',new Map());
+	typeMap.put('Ground_Building_Product',new Map());
+	typeMap.put('Ground_Building_Product',new Map());
+	typeMap.put('Buff_Type',new Map());
+	typeMap.put('Card_Type',new Map());
 	
 	return {
 		add: function(type,code,name){
@@ -33,6 +37,9 @@ var Glossary = function(){
 		ActiveSkill_Style : 'ActiveSkill_Style',
 		ActiveSkill_Func : 'ActiveSkill_Func',
 		Ground_Landform : 'Ground_Landform',
-		Ground_Building : 'Ground_Building'
+		Ground_Building : 'Ground_Building',
+		Ground_Building_Product : 'Ground_Building_Product',
+		Buff_Type : 'Buff_Type',
+		Card_Type : 'Card_Type'
 	}
 }();

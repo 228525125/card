@@ -152,7 +152,7 @@ $(function(){
 			var position = this.id.substring(6,this.id.length);			
 			var val = $("#command_input").val();
 			
-			if(-1!=val.indexOf('call') || -1!=val.indexOf('move')){
+			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute')){
 				val += 'ground place'+position+';';
 			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
 				val += 'ground place'+position+' card;'; 
@@ -297,7 +297,9 @@ $(function(){
 	Context.setOptionList(optionList);
 	Context.put(Context.Ground,ground);
 	
-	ActionFactory.register('Player_Power', 'new PlayerPowerAction(data.info,view)');
+	ActionFactory.register('Player_Resource', 'new PlayerResourceAction(data.info,view)');
+	ActionFactory.register('Player_Ration', 'new PlayerRationAction(data.info,view)');
+	ActionFactory.register('Player_Bout', 'new PlayerBoutAction(data.info,view)');
 	ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');
 	ActionFactory.register('Container_UseCard_Remove', 'new UseCardRemoveAction(data.info,view)');
 	ActionFactory.register('Container_Place_In', 'new PlaceInAction(data.info,view)');
@@ -347,20 +349,28 @@ $(function(){
 	BuffEffectActionFactory.register('AttackLockBuff', 'new BuffAttackLockBuffEffectAction(info,view)');
 	BuffAffectActionFactory.register('DizzyBuff', 'new BuffDizzyBuffAffectAction(info,view)');
 	
-	Glossary.add(Glossary.Attack_Mode,0,'近战');
-	Glossary.add(Glossary.Attack_Mode,1,'远程');
+	Glossary.add(Glossary.Attack_Mode,123,'近战');
+	Glossary.add(Glossary.Attack_Mode,124,'远程');
 	Glossary.add(Glossary.Death_Status,0,'live');
 	Glossary.add(Glossary.Death_Status,1,'death');
 	Glossary.add(Glossary.Death_Status,2,'exsits');
+	Glossary.add(Glossary.ActiveSkill_Velocity,0,'瞬发');
+	Glossary.add(Glossary.ActiveSkill_Velocity,1,'蓄力');
+	Glossary.add(Glossary.ActiveSkill_Style,112,'法术');
+	Glossary.add(Glossary.ActiveSkill_Style,111,'物理');
+	Glossary.add(Glossary.Buff_Type,121,'受益');
+	Glossary.add(Glossary.Buff_Type,122,'受损');
+	Glossary.add(Glossary.Buff_Type,123,'中性');
+	Glossary.add(Glossary.Card_Type,131,'随从');
+	Glossary.add(Glossary.Card_Type,132,'法术');
 	Glossary.add(Glossary.Move_Type,141,'步行');
 	Glossary.add(Glossary.Move_Type,142,'骑行');
 	Glossary.add(Glossary.Move_Type,143,'驾驶');
 	Glossary.add(Glossary.Move_Type,144,'飞行');
 	Glossary.add(Glossary.Move_Type,145,'传送');
-	Glossary.add(Glossary.ActiveSkill_Velocity,0,'瞬发');
-	Glossary.add(Glossary.ActiveSkill_Velocity,1,'蓄力');
-	Glossary.add(Glossary.ActiveSkill_Style,0,'法术');
-	Glossary.add(Glossary.ActiveSkill_Style,1,'物理');
+	Glossary.add(Glossary.Ground_Building_Product,151,'刀剑');
+	Glossary.add(Glossary.Ground_Building_Product,152,'护甲');
+	Glossary.add(Glossary.Ground_Building_Product,153,'信仰');
 	Glossary.add(Glossary.ActiveSkill_Func,201,'移动限制');
 	Glossary.add(Glossary.ActiveSkill_Func,202,'直接伤害');
 	Glossary.add(Glossary.ActiveSkill_Func,203,'召唤');
@@ -381,6 +391,8 @@ $(function(){
 	Glossary.add(Glossary.Ground_Landform,408,'沙地');
 	Glossary.add(Glossary.Ground_Building,501,'城镇');
 	Glossary.add(Glossary.Ground_Building,502,'桥');
+	Glossary.add(Glossary.Ground_Building,503,'铁匠铺');
+	Glossary.add(Glossary.Ground_Building,504,'神殿');
 	
 	//-------------------init end-------------------
 	

@@ -10,6 +10,7 @@
 				<landform type="404" description="河">-1</landform>
 				<landform type="405" description="山">-1</landform>
 				<landform type="407" description="城镇">1</landform>
+				<landform type="408" description="村庄">1</landform>
 			</moveType>
 			<moveType type="142" description="骑行">
 				<landform type="401" description="草地">1</landform>
@@ -18,6 +19,7 @@
 				<landform type="404" description="河">-1</landform>
 				<landform type="405" description="山">-1</landform>
 				<landform type="407" description="城镇">1</landform>
+				<landform type="408" description="村庄">1</landform>
 			</moveType>
 			<moveType type="144" description="飞行">
 				<landform type="401" description="草地">1</landform>
@@ -26,6 +28,7 @@
 				<landform type="404" description="河">1</landform>
 				<landform type="405" description="山">1</landform>
 				<landform type="407" description="城镇">1</landform>
+				<landform type="408" description="村庄">1</landform>
 			</moveType>
 		</consume>
 	</move>

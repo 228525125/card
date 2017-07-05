@@ -36,14 +36,26 @@ CommandShowAction = jClass(Action, {
 			
 			optionList[i].html(optionName);
 			if((i+1)<this.info.building.options.length)
-				option += ',';
+				option += ' | ';
+		}
+		
+		var product = '';
+		for(var i=0;i<this.info.building.products.length;i++){
+			var productName = this.info.building.products[i].name;
+			var productLevel = this.info.building.products[i].upgrade.level;
+			product += productName;
+			product += '('+productLevel+')';
+			
+			if((i+1)<this.info.building.products.length)
+				product += ' | ';
 		}
 		
 		var building = null==this.info.building || undefined == this.info.building ? '' : this.info.building.name;
 		var text = '<p style="margin: 0;padding: 0;">建筑:'+building+' '+
 		'| 占领者:'+this.info.building.player.name+' '+
-		'| 等级:'+this.info.building.level+ ' ' +
-		'| 选项:'+option+' '+
+		'| 等级:'+this.info.building.upgrade.level+ ' ' +
+		'<p style="margin: 0;padding: 0;">产品:'+product+'</p>' +
+		'<p style="margin: 0;padding: 0;">选项:'+option+'</p>' +
 		'</p>';
 		return text;
 	},
@@ -97,10 +109,10 @@ CommandShowAction = jClass(Action, {
 				var skillName = this.info.card.skillList[i].name;
 				skill += '['+skillName+',';
 
-				if(undefined==this.info.card.skillList[i].cooldownBout)
+				if(undefined==this.info.card.skillList[i].cooldownRemain)
 					skill += 'CD:no]';
 				else
-					skill += 'CD:'+this.info.card.skillList[i].cooldownBout+']';
+					skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
 				if((i+1)<this.info.card.skillList.length)
 					skill += ',';
 				
@@ -114,21 +126,21 @@ CommandShowAction = jClass(Action, {
 				'| 持久:'+this.info.card.attack.weapon.wear+' '+'</p>';
 			}
 			
-			
 			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
 			'| hp:'+this.info.card.death.hp+' '+
 			'| atk:'+this.info.card.attack.atk+' '+
-			'| 移动:'+this.info.card.move.energy+
+			'| 等级:'+this.info.card.upgrade.level+' '+
+			'| 移动:'+this.info.card.move.energy+ ' '+
 			'| 激活:'+this.info.card.activate.activation+'</p>'+
 			'<p style="margin: 0;padding: 0;">攻击:'+' '+
 			'距离:'+this.info.card.attack.range+' '+
 			'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
-			'| 速度:'+this.info.card.attack.speedChance+' '+'</p>'+
+			'| 速度:'+this.info.card.activate.speed+' '+
+			'| 激活:'+this.info.card.attack.attackable+'</p>'+
 			weapon+
 			'<p style="margin: 0;padding: 0;">防守:'+' '+
-			'| 护甲:'+this.info.card.attacked.armour+' '+'</p>'+
-			'<p style="margin: 0;padding: 0;">施法:'+' '+
-			'能量:'+this.info.card.conjure.power+' '+'</p>'+
+			'护甲:'+this.info.card.attacked.armour+' '+ 
+			'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">移动:'+' '+
 			'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
 			'| 躲避:'+this.info.card.move.flee+
@@ -155,7 +167,7 @@ CommandShowAction = jClass(Action, {
 		this.info.skill.cooldown = undefined==this.info.skill.cooldown ? '无' : this.info.skill.cooldown;
 		this.info.skill.velocity = undefined==this.info.skill.velocity ? '无' : Glossary.get(Glossary.ActiveSkill_Velocity,this.info.skill.velocity);
 		
-		var text = '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 属性:'+Glossary.get(Glossary.ActiveSkill_Style,this.info.skill.style)+' | 发动方式:'+this.info.skill.velocity+'</p>'; 
+		var text = '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 等级:'+this.info.skill.upgrade.level+'</p>'; 
 		return text;
 	},
 	showTrick : function(){

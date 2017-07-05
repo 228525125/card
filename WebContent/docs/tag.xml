@@ -5,11 +5,9 @@
 	
 		<!-- 技能属性  -->
 		<category key="jinengshuxing" description="技能属性" code="1001">
-			<tag key="wuli" description="物理" code="111">
-				<object type="org.cx.game.card.skill.DogHuntUnits" description="狗头人围猎" code="1001001"></object>
-			</tag>
+			<tag key="wuli" description="物理" code="111"></tag>
 			<tag key="fashu" description="法术" code="112"></tag>	
-		</category>		
+		</category>
 		
 		<!-- 法术功能  -->
 		<category key="fashugongneng" description="法术功能" code="1005">
@@ -24,25 +22,29 @@
 			<tag key="qita" description="其他" code="299"></tag>
 		</category>
 		
+		<!-- 职业 -->
+		<category key="zhiye" description="职业" code="1006">
+			<tag key="zhanshi" description="战士" code="301">
+				<object code="10190001"></object>
+				<object code="10190002"></object>
+				<object code="10100001"></object>
+			</tag>
+			<tag key="fashi" description="法师" code="302"></tag>
+			<tag key="mushi" description="牧师" code="303">
+				<object code="10100003"></object>
+			</tag>
+			<tag key="shengqishi" description="圣骑士" code="304"></tag>
+			<tag key="lieren" description="猎人" code="305">
+				<object code="10100002"></object>				
+			</tag>
+			<tag key="daozei" description="盗贼" code="306"></tag>
+		</category>
+
 		<!-- 敌我类型  -->
 		<category key="diwoleixing" description="敌我类型" code="1002">
 			<tag key="shouyi" description="受益" code="121"></tag>
 			<tag key="shousun" description="受损" code="122"></tag>
 			<tag key="zhongxing" description="中性" code="123"></tag>
-		</category>
-		
-		<!-- 职业  -->
-		<category key="profession" description="职业" code="1006">
-			<tag key="zhanshi" description="战士" code="301"></tag>
-			<tag key="mofashi" description="魔法师" code="302"></tag>
-			<tag key="mushi" description="牧师" code="303"></tag>
-			<tag key="shengqishi" description="圣骑士" code="304"></tag>
-			<tag key="lieren" description="猎人" code="305"></tag>
-			<tag key="daozei" description="盗贼" code="306"></tag>
-			<tag key="deluyi" description="德鲁伊" code="307"></tag>
-			<tag key="deluyi" description="海盗" code="308">
-				<object type="org.cx.game.card.LifeCard" description="南海船工" code="10100002"></object>
-			</tag>
 		</category>
 		
 		<!-- 卡牌类型  -->
@@ -53,8 +55,7 @@
 		
 		<!-- 种族  -->
 		<category key="zhongzu" description="种族" code="1004">
-			<tag key="renlei" description="人类" code="171">
-			</tag>
+			<tag key="renlei" description="人类" code="171"></tag>
 			<tag key="wangling" description="亡灵" code="172"></tag>
 			<tag key="tianshen" description="天神" code="173"></tag>
 			<tag key="emo" description="恶魔" code="174"></tag>
@@ -64,6 +65,52 @@
 			<tag key="jixie" description="机械" code="178"></tag>
 			<tag key="jixie" description="龙" code="179"></tag>
 			<tag key="jixie" description="鱼" code="180"></tag>
+		</category>
+		
+		<!-- 随从 -->
+		<category description="随从" code="1007">
+			<tag code="10190001"></tag>
+			<tag code="10190002"></tag>
+			<tag code="10100001"></tag>
+			<tag code="10100002"></tag>
+			<tag code="10100003"></tag>
+		</category>
+		
+		<!-- 技能 -->
+		<category description="技能" code="1008">
+			<tag code="10200001"></tag>
+			<tag code="10200002"></tag>
+			<tag code="10200004"></tag>
+			<tag code="10200006"></tag>
+			<tag code="10290001"></tag>
+			<tag code="10290002"></tag>
+		</category>
+		
+		<!-- Buff -->
+		<category description="Buff" code="1009">
+			<tag code="10300001"></tag>
+			<tag code="10300004"></tag>
+			<tag code="10300006"></tag>
+		</category>
+		
+		<!-- 建筑物 -->
+		<category description="建筑物" code="1010">
+			<tag code="501"></tag>
+			<tag code="502"></tag>
+			<tag code="503"></tag>
+			<tag code="504"></tag>
+			<tag code="505"></tag>
+		</category>
+		
+		<!-- 地形 -->
+		<category description="地形" code="1011">
+			<tag code="401"></tag>
+			<tag code="402"></tag>
+			<tag code="403"></tag>
+			<tag code="404"></tag>
+			<tag code="405"></tag>
+			<tag code="406"></tag>
+			<tag code="407"></tag>
 		</category>
 	</tags>
 </game>

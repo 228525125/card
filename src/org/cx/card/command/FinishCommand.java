@@ -25,13 +25,13 @@ public class FinishCommand extends ExternalCommand {
 		// TODO Auto-generated method stub
 		super.execute(parameter);
 		
-		User user = (User) player;
-		Context ctx = (Context) context.getAttribute(user.getAccount());
+		Context ctx = (Context) player.getContext();
 		
-		User other = (User) ctx.getOtherPlayer(user);
+		IPlayer player1 = ctx.getPlayer1();
+		IPlayer player2 = ctx.getPlayer2();
 		ctx.finish();
 		
-		context.setAttribute(user.getAccount(), null);
-		context.setAttribute(other.getAccount(), null);
+		context.setAttribute(player1.getName(), null);
+		context.setAttribute(player2.getName(), null);
 	}
 }

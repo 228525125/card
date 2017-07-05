@@ -6,12 +6,13 @@
 			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
 			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
 		</parameter>
-		<buildingList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 城镇的集合 -->
-			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+		<buildingList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
+			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
+					<buildingType type="int">501</buildingType>
 					<position type="int">380082</position>                                                                                   <!-- 位置 -->
-					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
+				<tax type="int">50</tax>
 				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
 					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
@@ -28,13 +29,58 @@
 							<cardId type="int">10100003</cardId>
 						</parameter>
 					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">151</productType>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">152</productType>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">153</productType>
+						</parameter>
+					</option>
 				</options>
+				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">151</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">152</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">153</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+				</products>
+				<upgrade type="org.cx.game.widget.building.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
+					<waitBout type="int">1</waitBout>
+				</upgrade>
 			</town>
-			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
+					<buildingType type="int">501</buildingType>
 					<position type="int">2080082</position>                                                                                   <!-- 位置 -->
-					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
+				<tax type="int">50</tax>
 				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
 					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
@@ -51,14 +97,59 @@
 							<cardId type="int">10100003</cardId>
 						</parameter>
 					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">151</productType>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">152</productType>
+						</parameter>
+					</option>
+					<option type="org.cx.game.widget.building.UpgradeOption">
+						<parameter>
+							<productType type="int">153</productType>
+						</parameter>
+					</option>
 				</options>
+				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">151</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">152</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
+						<parameter>
+							<productType type="int">153</productType>
+						</parameter>
+						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
+							<waitBout type="int">1</waitBout>
+						</upgrade>
+					</product>
+				</products>
+				<upgrade type="org.cx.game.widget.building.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
+					<waitBout type="int">1</waitBout>
+				</upgrade>
 			</town>
-			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
+					<buildingType type="int">501</buildingType>
 					<position type="int">1280086</position>                                                                                   <!-- 位置 -->
-					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
+				<tax type="int">50</tax>
+				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       
 					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<cardId type="int">10100001</cardId>
@@ -76,11 +167,12 @@
 					</option>
 				</options>
 			</town>
-			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
+					<buildingType type="int">501</buildingType>
 					<position type="int">3800811</position>                                                                                   <!-- 位置 -->
-					<main type='bool'>true</main>                                                                                            <!-- 是否主城 -->
 				</parameter>
+				<tax type="int">50</tax>
 				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
 					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
@@ -99,11 +191,12 @@
 					</option>
 				</options>
 			</town>
-			<town type="org.cx.game.widget.building.Town" interface="org.cx.game.widget.building.IBuilding">
+			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
+					<buildingType type="int">501</buildingType>
 					<position type="int">20800811</position>
-					<main type='bool'>true</main>
 				</parameter>
+				<tax type="int">50</tax>
 				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
 					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
