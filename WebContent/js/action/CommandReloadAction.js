@@ -7,13 +7,11 @@ CommandReloadAction = jClass(Action, {
 	
 	doAction : function(){
 		var playerData = Context.getPlayer(this.info[0].player.id);
-		var group = playerData.getContainer('CardGroup');
 		var use = playerData.getContainer('UseCard');
 		var ground = playerData.getContainer('Ground');
 		
-		var otherData = Context.getPlayer(this.info[1].other.id);
-		var othergroup = otherData.getContainer('CardGroup');
-		var otheruse = otherData.getContainer('UseCard');
+		//var otherData = Context.getPlayer(this.info[1].other.id);
+		//var otheruse = otherData.getContainer('UseCard');
 		
 		for(var i=0;i<this.info[0].use.length;i++){
 			var card = this.info[0].use[i];
@@ -35,11 +33,11 @@ CommandReloadAction = jClass(Action, {
 			}
 		}
 		
-		for(var i=0;i<this.info[1].otheruse.length;i++){
+		/*for(var i=0;i<this.info[1].otheruse.length;i++){
 			var card = this.info[1].otheruse[i];
 			var position = card.containerPosition;
 			var place = otheruse.getPlace(position);
 			place.view.html(card.name);
-		}
+		}*/
 	}
 });

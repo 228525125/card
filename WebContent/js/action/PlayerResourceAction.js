@@ -7,6 +7,7 @@ PlayerResourceAction = jClass(Action, {
 	},
 	
 	doAction : function(){
+		var control = Context.getControl();
 		if(Context.getControl().id==this.info.player.id){
 			var h = this.view.html();
 			var h1 = h.split('(')[0];

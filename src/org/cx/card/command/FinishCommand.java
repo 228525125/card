@@ -27,11 +27,10 @@ public class FinishCommand extends ExternalCommand {
 		
 		Context ctx = (Context) player.getContext();
 		
-		IPlayer player1 = ctx.getPlayer1();
-		IPlayer player2 = ctx.getPlayer2();
+		for(IPlayer player : ctx.getPlayerList()){
+			context.setAttribute(player.getName(), null);			
+		}
+
 		ctx.finish();
-		
-		context.setAttribute(player1.getName(), null);
-		context.setAttribute(player2.getName(), null);
 	}
 }

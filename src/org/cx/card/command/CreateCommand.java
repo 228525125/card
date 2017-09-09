@@ -40,8 +40,8 @@ public class CreateCommand extends ExternalCommand {
 		player = new PlayerDecorator(player);
 	
 		player.setGround(ground);
-		player.setHeroEntry(380082);           //硬编码
-		player.setHeroCardID(10190001);        //硬编码
+		player.setHomePosition(380082);           //硬编码
+		player.addHeroCardID(10190001);        //硬编码
 		player.setResource(1000);              //硬编码
 		
 		ground.captureBuilding(380082, player);     //硬编码

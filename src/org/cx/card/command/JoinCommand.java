@@ -44,15 +44,16 @@ public class JoinCommand extends ExternalCommand {
 		IGround ground = player1.getGround();
 
 		player2.setGround(ground);
-		player2.setHeroEntry(20800811);             //硬编码
-		player2.setHeroCardID(10190002);            //硬编码
+		player2.setHomePosition(20800811);             //硬编码
+		player2.addHeroCardID(10190002);            //硬编码
 		player2.setResource(1000);                  //硬编码
 		
 		user.setPlayer(player2);
 		
 		ground.captureBuilding(20800811, player2);         //硬编码
 		
-		IContext ctx = ContextFactory.createContext(player1, player2);
+		
+		IContext ctx = ContextFactory.getInstance(ground.getNeutral(),player1,player2);
 		context.setAttribute(player1.getName(), ctx);
 		context.setAttribute(player2.getName(), ctx);
 	}

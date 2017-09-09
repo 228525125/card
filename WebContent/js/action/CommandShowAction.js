@@ -32,8 +32,11 @@ CommandShowAction = jClass(Action, {
 		var option = '';
 		for(var i=0;i<this.info.building.options.length;i++){
 			var optionName = this.info.building.options[i].name;
-			option += optionName;
+			var spacingProcess = this.info.building.options[i].spacingProcess;
+			var executeProcess = this.info.building.options[i].executeProcess;
 			
+			option += optionName;
+			optionName += '<br>('+spacingProcess+'%|'+executeProcess+'%)';
 			optionList[i].html(optionName);
 			if((i+1)<this.info.building.options.length)
 				option += ' | ';

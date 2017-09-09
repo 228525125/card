@@ -287,7 +287,7 @@ $(function(){
 	data3.put('TrickList', ground);
 	data3.put('Notice', notice);
 	//data3.put('OptionList', optionList);
-	var faction = new Player('101', data3);     //硬编码，101表示中立生物
+	var faction = new Player('9', data3);     //硬编码，9表示中立生物
 	
 	//context初始化
 	Context.addPlayer(player1);

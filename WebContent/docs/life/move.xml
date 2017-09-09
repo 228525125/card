@@ -5,8 +5,8 @@
 		<consume>
 			<moveType type="141" description="步行">
 				<landform type="401" description="草地">1</landform>
-				<landform type="402" description="丘林">1</landform>
-				<landform type="403" description="森林">1</landform>
+				<landform type="402" description="丘林">2</landform>
+				<landform type="403" description="森林">2</landform>
 				<landform type="404" description="河">-1</landform>
 				<landform type="405" description="山">-1</landform>
 				<landform type="407" description="城镇">1</landform>
@@ -14,8 +14,8 @@
 			</moveType>
 			<moveType type="142" description="骑行">
 				<landform type="401" description="草地">1</landform>
-				<landform type="402" description="丘林">1</landform>
-				<landform type="403" description="森林">1</landform>
+				<landform type="402" description="丘林">3</landform>
+				<landform type="403" description="森林">3</landform>
 				<landform type="404" description="河">-1</landform>
 				<landform type="405" description="山">-1</landform>
 				<landform type="407" description="城镇">1</landform>

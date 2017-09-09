@@ -18,31 +18,40 @@
 						<parameter>
 							<cardId type="int">10100001</cardId>
 						</parameter>
+						<spacingWait type="int">2</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.CallOption">
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<cardId type="int">10100002</cardId>
 						</parameter>
+						<spacingWait type="int">1</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.CallOption">
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<cardId type="int">10100003</cardId>
 						</parameter>
+						<spacingWait type="int">1</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">151</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">152</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">153</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
+					</option>
+					<option type="org.cx.game.widget.building.BuildingUpgradeOption" interface="org.cx.game.widget.building.IOption">
+						<executeWait type="int">2</executeWait>
 					</option>
 				</options>
 				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
@@ -50,30 +59,18 @@
 						<parameter>
 							<productType type="int">151</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
 						<parameter>
 							<productType type="int">152</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
 						<parameter>
 							<productType type="int">153</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 				</products>
-				<upgrade type="org.cx.game.widget.building.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
-					<waitBout type="int">1</waitBout>
-				</upgrade>
 			</town>
 			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
@@ -86,31 +83,37 @@
 						<parameter>
 							<cardId type="int">10100001</cardId>
 						</parameter>
+						<spacingWait type="int">2</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.CallOption">
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<cardId type="int">10100002</cardId>
 						</parameter>
+						<spacingWait type="int">1</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.CallOption">
+					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<cardId type="int">10100003</cardId>
 						</parameter>
+						<spacingWait type="int">1</spacingWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">151</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">152</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
 					</option>
-					<option type="org.cx.game.widget.building.UpgradeOption">
+					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
 						<parameter>
 							<productType type="int">153</productType>
 						</parameter>
+						<executeWait type="int">1</executeWait>
 					</option>
 				</options>
 				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
@@ -118,30 +121,18 @@
 						<parameter>
 							<productType type="int">151</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
 						<parameter>
 							<productType type="int">152</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
 						<parameter>
 							<productType type="int">153</productType>
 						</parameter>
-						<upgrade type="org.cx.game.widget.building.ProductUpgrade" interface="org.cx.game.action.IUpgrade">
-							<waitBout type="int">1</waitBout>
-						</upgrade>
 					</product>
 				</products>
-				<upgrade type="org.cx.game.widget.building.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
-					<waitBout type="int">1</waitBout>
-				</upgrade>
 			</town>
 			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
 				<parameter>
@@ -216,6 +207,52 @@
 				</options>
 			</town>
 		</buildingList>
+		
+		
+		<npcMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">1080087</key>
+				<value type="int">10100001</value>
+			</map>
+			<!--  
+			<map>
+				<key type="int">1080085</key>
+				<value type="int">10100001</value>
+			</map>
+			<map>
+				<key type="int">1280084</key>
+				<value type="int">10100001</value>
+			</map>
+			<map>
+				<key type="int">1380085</key>
+				<value type="int">10100001</value>
+			</map>
+			<map>
+				<key type="int">1280088</key>
+				<value type="int">10100001</value>
+			</map>
+			<map>
+				<key type="int">1380087</key>
+				<value type="int">10100001</value>
+			</map>
+			<map>
+				<key type="int">1280086</key>
+				<value type="int">10100002</value>
+			</map>
+			-->
+		</npcMap>
+		
+		<policyMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">1080087</key>
+				<value type="org.cx.game.policy.PolicyGroup" interface="org.cx.game.policy.IGroupPolicy" factory="org.cx.game.policy.PolicyGroupFactory">
+					<factoryMethodParameter>
+						<guardId type="int">10400001</guardId>
+					</factoryMethodParameter>
+					<guardPosition type="int">1080087</guardPosition>
+				</value>
+			</map>
+		</policyMap>
 		
 		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<!-- 山 -->
@@ -428,6 +465,7 @@
 				<key type="int">580083</key>
 				<value type="int">402</value>
 			</map>
+			
 			<!-- 8 -->
 			<map>
 				<key type="int">5800810</key>

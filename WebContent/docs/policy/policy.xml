@@ -1,0 +1,17 @@
+<policys>
+	<policyGroup type="org.cx.game.policy.GuardPolicyGroup" id="10400001">
+		<policyList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<policy type="org.cx.game.policy.RunbackPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+			<policy type="org.cx.game.policy.SallyPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+			<policy type="org.cx.game.policy.AttackPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+			<policy type="org.cx.game.policy.GuardPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+		</policyList>
+	</policyGroup>
+	<policyGroup type="org.cx.game.policy.NeutralPolicyGroup" id="10450001">
+		<policyList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<policy type="org.cx.game.policy.DisposeNPCPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+			<policy type="org.cx.game.policy.ArmyPolicy" interface="org.cx.game.policy.IPolicy"></policy>
+			<policy type="org.cx.game.policy.DonePolicy" interface="org.cx.game.policy.IPolicy"></policy>
+		</policyList>
+	</policyGroup>
+</policys>
