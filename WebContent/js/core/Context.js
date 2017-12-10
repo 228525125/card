@@ -83,12 +83,12 @@ var Context = function(){
 			
 			for(var i=0;i<buildingList.length;i++){
 				var building = buildingList[i];
-				var buildingName = Glossary.get(Glossary.Ground_Building,building.type);
+				var buildingName = building.name;
 				
 				var ground = this.get(this.Ground);
 				var place = ground.getPlace(building.position);
 				
-				if('城镇'==buildingName)
+				if('城市'==buildingName)
 					place.view.css("background-color","#C8BFE7");
 				else if('桥'==buildingName)
 					place.view.css("background-color","#FFFFFF");

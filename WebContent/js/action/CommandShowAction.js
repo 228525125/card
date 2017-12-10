@@ -32,11 +32,12 @@ CommandShowAction = jClass(Action, {
 		var option = '';
 		for(var i=0;i<this.info.building.options.length;i++){
 			var optionName = this.info.building.options[i].name;
-			var spacingProcess = this.info.building.options[i].spacingProcess;
-			var executeProcess = this.info.building.options[i].executeProcess;
+			var allow = this.info.building.options[i].allow;
+			var spacingRemainBout = this.info.building.options[i].spacingRemainBout;
+			var executeRemainBout = this.info.building.options[i].executeRemainBout;
 			
-			option += optionName;
-			optionName += '<br>('+spacingProcess+'%|'+executeProcess+'%)';
+			option += optionName+'['+(allow ? '是' : '否')+']';
+			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
 			optionList[i].html(optionName);
 			if((i+1)<this.info.building.options.length)
 				option += ' | ';
@@ -53,19 +54,45 @@ CommandShowAction = jClass(Action, {
 				product += ' | ';
 		}
 		
-		var building = null==this.info.building || undefined == this.info.building ? '' : this.info.building.name;
-		var text = '<p style="margin: 0;padding: 0;">建筑:'+building+' '+
+		var building = '';
+		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
+			for(var i=0;i<this.info.building.buildings.length;i++){
+				var buildingName = this.info.building.buildings[i].name;
+				
+				building += ''+i+buildingName;
+				if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.buildings[i].type))
+					building += '('+this.info.building.buildings[i].nop+'/'+this.info.building.buildings[i].yield+')';
+				
+				if((i+1)<this.info.building.buildings.length)
+					building += ' | ';
+			}
+		}
+		
+		var buildingName = null==this.info.building || undefined == this.info.building ? '' : this.info.building.name;
+		var text = '<p style="margin: 0;padding: 0;">建筑:'+buildingName+' '+
 		'| 占领者:'+this.info.building.player.name+' '+
-		'| 等级:'+this.info.building.upgrade.level+ ' ' +
-		'<p style="margin: 0;padding: 0;">产品:'+product+'</p>' +
-		'<p style="margin: 0;padding: 0;">选项:'+option+'</p>' +
-		'</p>';
+		'| 等级:'+this.info.building.upgrade.level+ ' '+
+		'| 状态:'+Glossary.get(Glossary.Building_Status,this.info.building.status);
+		text += '<p style="margin: 0;padding: 0;">建造费用:'+'金币 '+this.info.building.consume[Glossary.Resource_Type_Gold]+' | 木材 '+this.info.building.consume[Glossary.Resource_Type_Wood]+' | 石材 '+this.info.building.consume[Glossary.Resource_Type_Stone]+' | 矿 '+this.info.building.consume[Glossary.Resource_Type_Ore]+'</p>';
+		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type))
+			text += '<p style="margin: 0;padding: 0;">内部:'+building+'</p>';
+		if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
+			text += '<p style="margin: 0;padding: 0;">产量:'+this.info.building.yield+'</p>';
+			text += '<p style="margin: 0;padding: 0;">招募:'+this.info.building.nop+'</p>';
+		}
+		if(''!=product)
+			text += '<p style="margin: 0;padding: 0;">产品:'+product+'</p>'; 
+		
+		text += '<p style="margin: 0;padding: 0;">选项:'+option+'</p></p>';
 		return text;
 	},
 	showOption : function(){
-		var option = null==this.info.option || undefined == this.info.option ? '' : this.info.option.name;
-		var text = '<p style="margin: 0;padding: 0;">选项:'+option+' '+
-		'</p>';
+		var text = '<p style="margin: 0;padding: 0;">选项:';
+		if(null != this.info.option && undefined != this.info.option){
+			text += this.info.option.name + ' ' +
+			'['+(this.info.option.allow ? '是' : '否') + ']' + 
+			'</p>';
+		}
 		return text;
 	},
 	showCemetery : function(){
@@ -130,9 +157,7 @@ CommandShowAction = jClass(Action, {
 			}
 			
 			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
-			'| hp:'+this.info.card.death.hp+' '+
 			'| atk:'+this.info.card.attack.atk+' '+
-			'| 等级:'+this.info.card.upgrade.level+' '+
 			'| 移动:'+this.info.card.move.energy+ ' '+
 			'| 激活:'+this.info.card.activate.activation+'</p>'+
 			'<p style="margin: 0;padding: 0;">攻击:'+' '+
@@ -142,16 +167,24 @@ CommandShowAction = jClass(Action, {
 			'| 激活:'+this.info.card.attack.attackable+'</p>'+
 			weapon+
 			'<p style="margin: 0;padding: 0;">防守:'+' '+
-			'护甲:'+this.info.card.attacked.armour+' '+ 
+			'def:'+this.info.card.attacked.def+' '+
+			'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+
+			'| 护甲:'+this.info.card.attacked.armour+' '+ 
 			'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">移动:'+' '+
 			'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
-			'| 躲避:'+this.info.card.move.flee+
+			'| 躲避:'+this.info.card.move.flee+' '+
 			'| 激活:'+this.info.card.move.moveable+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">生命:'+' '+
 			'状态:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
 			'<p style="margin: 0;padding: 0;">招募:'+' '+
-			'消耗:'+this.info.card.call.consume+'</p>'+
+			'人数:'+this.info.card.call.nop+' '+
+			'| 单位人口:'+this.info.card.call.ration+' '+
+			'| 消耗:'+this.info.card.call.consume[Glossary.Resource_Type_Gold]+'/'+this.info.card.call.consume[Glossary.Resource_Type_Ore]+'</p>'+
+			'<p style="margin: 0;padding: 0;">等级:'+' '+
+			'level:'+this.info.card.upgrade.level+' '+
+			'| 经验值:'+this.info.card.upgrade.empiricValue+'['+this.info.card.upgrade.requirement[Glossary.Resource_Type_EmpiricValue]+']'+' '+
+			'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount:' ')+'</p>'+
 			'<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
 			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
 		}else if(this.info.card.id>=10150001 && this.info.card.id<=10159999){           //表示魔法卡

@@ -18,6 +18,7 @@ public class Process {
 	
 	@Column(length = 2000)
 	private String playNo;
+	
 	private Integer sequence;
 	
 	@Column(length = 8000)

@@ -160,7 +160,7 @@ $(function(){
 				val = '';
 			}
 			
-			val += 'select ground place'+position+' card;show';
+			val += 'select ground place'+position+';'         //+' card;show';
 			
 			$("#command_input").val(val);
 			command_input_sub();
@@ -349,8 +349,8 @@ $(function(){
 	BuffEffectActionFactory.register('AttackLockBuff', 'new BuffAttackLockBuffEffectAction(info,view)');
 	BuffAffectActionFactory.register('DizzyBuff', 'new BuffDizzyBuffAffectAction(info,view)');
 	
-	Glossary.add(Glossary.Attack_Mode,123,'近战');
-	Glossary.add(Glossary.Attack_Mode,124,'远程');
+	Glossary.add(Glossary.Attack_Mode,115,'近战');
+	Glossary.add(Glossary.Attack_Mode,116,'远程');
 	Glossary.add(Glossary.Death_Status,0,'live');
 	Glossary.add(Glossary.Death_Status,1,'death');
 	Glossary.add(Glossary.Death_Status,2,'exsits');
@@ -368,9 +368,12 @@ $(function(){
 	Glossary.add(Glossary.Move_Type,143,'驾驶');
 	Glossary.add(Glossary.Move_Type,144,'飞行');
 	Glossary.add(Glossary.Move_Type,145,'传送');
-	Glossary.add(Glossary.Ground_Building_Product,151,'刀剑');
-	Glossary.add(Glossary.Ground_Building_Product,152,'护甲');
-	Glossary.add(Glossary.Ground_Building_Product,153,'信仰');
+	Glossary.add(Glossary.Building_Product,151,'刀剑');
+	Glossary.add(Glossary.Building_Product,152,'护甲');
+	Glossary.add(Glossary.Building_Product,153,'信仰');
+	Glossary.add(Glossary.Building_Status,0,'Nothingness');
+	Glossary.add(Glossary.Building_Status,1,'Build');
+	Glossary.add(Glossary.Building_Status,2,'Complete');
 	Glossary.add(Glossary.ActiveSkill_Func,201,'移动限制');
 	Glossary.add(Glossary.ActiveSkill_Func,202,'直接伤害');
 	Glossary.add(Glossary.ActiveSkill_Func,203,'召唤');
@@ -389,10 +392,25 @@ $(function(){
 	Glossary.add(Glossary.Ground_Landform,406,'沼泽');
 	Glossary.add(Glossary.Ground_Landform,407,'旱地');
 	Glossary.add(Glossary.Ground_Landform,408,'沙地');
-	Glossary.add(Glossary.Ground_Building,501,'城镇');
-	Glossary.add(Glossary.Ground_Building,502,'桥');
-	Glossary.add(Glossary.Ground_Building,503,'铁匠铺');
-	Glossary.add(Glossary.Ground_Building,504,'神殿');
+	
+	//对建筑进行分类
+	Glossary.add(Glossary.Ground_Building,601,Glossary.Ground_Building_Town);
+	Glossary.add(Glossary.Ground_Building,602,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,603,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,604,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,605,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,606,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,608,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,609,Glossary.Ground_Building_Call);
+	
+	Glossary.add(Glossary.Resource_Type,'701','金币');
+	Glossary.add(Glossary.Resource_Type,'702','木材');
+	Glossary.add(Glossary.Resource_Type,'703','石材');
+	Glossary.add(Glossary.Resource_Type,'704','矿石');
+	Glossary.add(Glossary.Resource_Type,'710','经验值');
+	Glossary.add(Glossary.Resource_Type,'720','技能点');
+	
+	
 	
 	//-------------------init end-------------------
 	

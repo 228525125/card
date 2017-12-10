@@ -3,21 +3,27 @@
 <game>
 	<cards>
 		<!-- classics -->
-		<card type="org.cx.game.card.LifeCard" cardID="10190001">
+		<card type="org.cx.game.card.HeroCard" cardID="10190001">
 			<parameter>
 				<id type="int">10190001</id>
 			</parameter>
-			<atk type="int">0</atk>
-			<hp type="int">30</hp>
-			<consume type="int">0</consume>
+			<atk type="int">150</atk>
+			<def type="int">10</def>
+			<hp type="int">100</hp>
+			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-100</value>                                                        
+				</map>
+			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
 			<star type="int">1</star>
+			<level type="int">3</level>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
-			<hero type="bool">true</hero>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<ShieldHit type="org.cx.game.card.skill.ShieldHit">
 					<parameter>
@@ -28,13 +34,19 @@
 				</ShieldHit>
 			</skillList>
 		</card>
-		<card type="org.cx.game.card.LifeCard" cardID="10190002">
+		<card type="org.cx.game.card.HeroCard" cardID="10190002">
 			<parameter>
 				<id type="int">10190002</id>
 			</parameter>
-			<atk type="int">0</atk>
-			<hp type="int">30</hp>
-			<consume type="int">0</consume>
+			<atk type="int">1</atk>
+			<def type="int">5</def>
+			<hp type="int">100</hp>
+			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-100</value>                                                        
+				</map>
+			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
@@ -42,15 +54,20 @@
 			<star type="int">1</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
-			<hero type="bool">true</hero>
 		</card>
 		<card type="org.cx.game.card.LifeCard" cardID="10100001">
 			<parameter>
 				<id type="int">10100001</id>
 			</parameter>
-			<atk type="int">1</atk>
-			<hp type="int">1</hp>
-			<consume type="int">50</consume>
+			<atk type="int">10</atk>
+			<def type="int">5</def>
+			<hp type="int">100</hp>
+			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-50</value>                                                        
+				</map>
+			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
@@ -63,9 +80,15 @@
 			<parameter>
 				<id type="int">10100002</id>
 			</parameter>
-			<atk type="int">2</atk>
-			<hp type="int">10</hp>
-			<consume type="int">1</consume>
+			<atk type="int">330</atk>
+			<def type="int">5</def>
+			<hp type="int">100</hp>
+			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-1</value>                                                        
+				</map>
+			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
@@ -79,8 +102,13 @@
 				<id type="int">10100003</id>
 			</parameter>
 			<atk type="int">1</atk>
-			<hp type="int">1</hp>
-			<consume type="int">1</consume>
+			<hp type="int">100</hp>
+			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-1</value>                                                        
+				</map>
+			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>

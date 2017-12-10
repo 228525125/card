@@ -1,10 +1,15 @@
 package org.cx.card.mvc;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.cx.game.command.Invoker;
+import org.cx.game.core.Camera;
+import org.cx.game.core.ContextFactory;
+import org.cx.game.core.Record;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
 import org.cx.card.command.CreateCommand;
@@ -84,17 +89,18 @@ public class PlayAction extends BaseAction {
 					String action = resps[i].split("\",")[0].substring(11);
 					p.setAction(action);
 					list.add(p);
-					
-					processService.addProcess(p);
 				}
+				
+				updateProcess(playNo);
 			}
 		}
-		
+
 		return success(form, true, list, msg);
 	}
 	
 	public Page syn(WebForm form){
-		String msg = Util.format(new Date())+"  syn-complete start:";
+		String msg = Util.format(new Date())+"  syn-complete start:";		
+		
 		List<Process> list = new ArrayList<Process>();
 		Integer sequence = 0;
 		if(null!=getUser()
@@ -102,9 +108,11 @@ public class PlayAction extends BaseAction {
 		&&null!=getUser().getPlayer().getContext()
 		&&null!=form.get("sequence")
 		&&!"".equals(form.get("sequence").toString())){
+			String playNo = getUser().getPlayer().getContext().getPlayNo();
+			updateProcess(playNo);
+			
 			sequence = Integer.valueOf(form.get("sequence").toString());
-			//list = jdbcService.query("select sequence,command from Cprocess where playNo='"+getUser().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence");
-			String sql = "playNo='"+getUser().getPlayer().getContext().getPlayNo()+"' and sequence>="+sequence+" order by sequence";
+			String sql = "playNo='"+playNo+"' and sequence>="+sequence+" order by sequence";
 			list = processService.query(sql, null, 0, 999);
 		}
 		
@@ -114,5 +122,36 @@ public class PlayAction extends BaseAction {
 		msg += sequence;
 		
 		return success(form, true, list, msg);
+	}
+	
+	/**
+	 * 将比赛进程更新到数据库
+	 * @param playNo 比赛唯一标识
+	 */
+	private void updateProcess(String playNo){
+		Camera camera = Camera.getInstance();
+		
+		Integer sequence = processService.getNewSequence(playNo);
+		List<Record> list = camera.query(--sequence);
+		
+		for(Record record : list){
+			Process process = new Process();
+			try {
+				PropertyUtils.copyProperties(process, record);
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			process.setPlayerId(getUser().getPlayer().getId());
+			
+			processService.addProcess(process);
+		}
 	}
 }

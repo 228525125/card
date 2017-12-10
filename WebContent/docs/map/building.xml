@@ -1,0 +1,49 @@
+<buildings>
+	<building type="org.cx.game.widget.building.BuildingTown" interface="org.cx.game.widget.building.IBuilding" id="601">
+		<parameter>
+			<buildingType type="int">601</buildingType>
+		</parameter>
+		<buildings type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<buildingType type="int">602</buildingType>
+			<buildingType type="int">603</buildingType>
+		</buildings>
+		<!-- 
+		<upgrade type="org.cx.game.action.UpgradeBuilding" interface="org.cx.game.action.IUpgrade">
+			<requirement type="java.util.HashMap" interface="java.util.Map" map="true">
+				<map>
+					<key type="str">701</key>
+					<value type="int">-100</value>
+				</map>
+			</requirement>
+		</upgrade>
+		 -->
+	</building>
+	<building type="org.cx.game.widget.building.BuildingCall" interface="org.cx.game.widget.building.IBuilding" id="602">
+		<parameter>
+			<cardID type="int">10100001</cardID>
+			<yield type="int">1</yield>
+			<buildingType type="int">602</buildingType>
+		</parameter>
+		<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="str">701</key>
+				<value type="int">-1</value>
+			</map>
+		</consume>
+		<buildWait type="int">1</buildWait>
+		<levelLimit type="int">2</levelLimit>
+	</building>
+	<building type="org.cx.game.widget.building.BuildingCall" interface="org.cx.game.widget.building.IBuilding" id="603">
+		<parameter>
+			<cardID type="int">10100002</cardID>
+			<yield type="int">1</yield>
+			<buildingType type="int">603</buildingType>
+		</parameter>
+		<consume type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="str">701</key>
+				<value type="int">-1</value>
+			</map>
+		</consume>
+	</building>
+</buildings>

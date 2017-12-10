@@ -10,10 +10,11 @@ var Glossary = function(){
 	typeMap.put('ActiveSkill_Func',new Map());
 	typeMap.put('Ground_Landform',new Map());
 	typeMap.put('Ground_Building',new Map());
-	typeMap.put('Ground_Building_Product',new Map());
-	typeMap.put('Ground_Building_Product',new Map());
+	typeMap.put('Building_Product',new Map());
+	typeMap.put('Building_Status',new Map());
 	typeMap.put('Buff_Type',new Map());
 	typeMap.put('Card_Type',new Map());
+	typeMap.put('Resource_Type',new Map());
 	
 	return {
 		add: function(type,code,name){
@@ -38,8 +39,20 @@ var Glossary = function(){
 		ActiveSkill_Func : 'ActiveSkill_Func',
 		Ground_Landform : 'Ground_Landform',
 		Ground_Building : 'Ground_Building',
-		Ground_Building_Product : 'Ground_Building_Product',
+		Ground_Building_Town : 'Ground_Building_Town',
+		Ground_Building_Call : 'Ground_Building_Call',
+		Building_Product : 'Building_Product',
+		Building_Status : 'Building_Status',
 		Buff_Type : 'Buff_Type',
-		Card_Type : 'Card_Type'
+		Card_Type : 'Card_Type',
+		Resource_Type : 'Resource_Type',
+		
+		//------------------------常数----------------------
+		Resource_Type_Gold : '701',
+		Resource_Type_Wood : '702',
+		Resource_Type_Stone : '703',
+		Resource_Type_Ore : '704',
+		Resource_Type_EmpiricValue : '710',
+		Resource_Type_SkillCount : '720'
 	}
 }();

@@ -6,253 +6,34 @@
 			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
 			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
 		</parameter>
-		<buildingList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
-			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
-				<parameter>
-					<buildingType type="int">501</buildingType>
-					<position type="int">380082</position>                                                                                   <!-- 位置 -->
-				</parameter>
-				<tax type="int">50</tax>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100001</cardId>
-						</parameter>
-						<spacingWait type="int">2</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100002</cardId>
-						</parameter>
-						<spacingWait type="int">1</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100003</cardId>
-						</parameter>
-						<spacingWait type="int">1</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">151</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">152</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">153</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-					<option type="org.cx.game.widget.building.BuildingUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<executeWait type="int">2</executeWait>
-					</option>
-				</options>
-				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">151</productType>
-						</parameter>
-					</product>
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">152</productType>
-						</parameter>
-					</product>
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">153</productType>
-						</parameter>
-					</product>
-				</products>
-			</town>
-			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
-				<parameter>
-					<buildingType type="int">501</buildingType>
-					<position type="int">2080082</position>                                                                                   <!-- 位置 -->
-				</parameter>
-				<tax type="int">50</tax>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100001</cardId>
-						</parameter>
-						<spacingWait type="int">2</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100002</cardId>
-						</parameter>
-						<spacingWait type="int">1</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100003</cardId>
-						</parameter>
-						<spacingWait type="int">1</spacingWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">151</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">152</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-					<option type="org.cx.game.widget.building.ProductUpgradeOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<productType type="int">153</productType>
-						</parameter>
-						<executeWait type="int">1</executeWait>
-					</option>
-				</options>
-				<products type="java.util.ArrayList" interface="java.util.List" collection="true">
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">151</productType>
-						</parameter>
-					</product>
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">152</productType>
-						</parameter>
-					</product>
-					<product type="org.cx.game.widget.building.Product" interface="org.cx.game.widget.building.IProduct">
-						<parameter>
-							<productType type="int">153</productType>
-						</parameter>
-					</product>
-				</products>
-			</town>
-			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
-				<parameter>
-					<buildingType type="int">501</buildingType>
-					<position type="int">1280086</position>                                                                                   <!-- 位置 -->
-				</parameter>
-				<tax type="int">50</tax>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100001</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100002</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100003</cardId>
-						</parameter>
-					</option>
-				</options>
-			</town>
-			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
-				<parameter>
-					<buildingType type="int">501</buildingType>
-					<position type="int">3800811</position>                                                                                   <!-- 位置 -->
-				</parameter>
-				<tax type="int">50</tax>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100001</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100002</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100003</cardId>
-						</parameter>
-					</option>
-				</options>
-			</town>
-			<town type="org.cx.game.widget.building.Building" interface="org.cx.game.widget.building.IBuilding">
-				<parameter>
-					<buildingType type="int">501</buildingType>
-					<position type="int">20800811</position>
-				</parameter>
-				<tax type="int">50</tax>
-				<options type="java.util.ArrayList" interface="java.util.List" collection="true">                                       <!-- 可招募的兵种 -->
-					<option type="org.cx.game.widget.building.CallOption" interface="org.cx.game.widget.building.IOption">
-						<parameter>
-							<cardId type="int">10100001</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100002</cardId>
-						</parameter>
-					</option>
-					<option type="org.cx.game.widget.building.CallOption">
-						<parameter>
-							<cardId type="int">10100003</cardId>
-						</parameter>
-					</option>
-				</options>
-			</town>
-		</buildingList>
 		
+		<buildings type="java.util.HashMap" interface="java.util.Map" map="true">                                                    <!-- 建筑物的集合 -->
+			<map>
+				<key type="int">380082</key>                                                                                                                 <!-- 位置 -->
+				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
+			</map>
+			<map>
+				<key type="int">2080082</key>                                                                                                                 <!-- 位置 -->
+				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
+			</map>
+			<map>
+				<key type="int">1280086</key>                                                                                                                 <!-- 位置 -->
+				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
+			</map>
+			<map>
+				<key type="int">3800811</key>                                                                                                                 <!-- 位置 -->
+				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
+			</map>
+			<map>
+				<key type="int">20800811</key>                                                                                                                 <!-- 位置 -->
+				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
+			</map>
+		</buildings>
 		
-		<npcMap type="java.util.HashMap" interface="java.util.Map" map="true">
-			<map>
-				<key type="int">1080087</key>
-				<value type="int">10100001</value>
-			</map>
-			<!--  
-			<map>
-				<key type="int">1080085</key>
-				<value type="int">10100001</value>
-			</map>
-			<map>
-				<key type="int">1280084</key>
-				<value type="int">10100001</value>
-			</map>
-			<map>
-				<key type="int">1380085</key>
-				<value type="int">10100001</value>
-			</map>
-			<map>
-				<key type="int">1280088</key>
-				<value type="int">10100001</value>
-			</map>
-			<map>
-				<key type="int">1380087</key>
-				<value type="int">10100001</value>
-			</map>
-			<map>
-				<key type="int">1280086</key>
-				<value type="int">10100002</value>
-			</map>
-			-->
-		</npcMap>
-		
-		<policyMap type="java.util.HashMap" interface="java.util.Map" map="true">
-			<map>
-				<key type="int">1080087</key>
-				<value type="org.cx.game.policy.PolicyGroup" interface="org.cx.game.policy.IGroupPolicy" factory="org.cx.game.policy.PolicyGroupFactory">
-					<factoryMethodParameter>
-						<guardId type="int">10400001</guardId>
-					</factoryMethodParameter>
-					<guardPosition type="int">1080087</guardPosition>
-				</value>
-			</map>
-		</policyMap>
+		<npcData type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<npc type="str">10100001,580085,2,10400001</npc>
+			<npc type="str">10100002,680085,2,10400001</npc>
+		</npcData>
 		
 		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<!-- 山 -->
@@ -645,5 +426,14 @@
 			<position type="int">610013</position>
 		</disableList>
 		 -->
+		 
+		 <!-- 仅用来记录 factory属性的用法 -->
+		 <!--  
+		 <value type="org.cx.game.policy.PolicyGroup" interface="org.cx.game.policy.IGroupPolicy" factory="org.cx.game.policy.PolicyGroupFactory">
+				<factoryMethodParameter>
+					<guardId type="int">10400001</guardId>
+				</factoryMethodParameter>
+		</value>
+		-->
 	</map>
 </maps>

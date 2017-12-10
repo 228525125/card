@@ -3,6 +3,9 @@
 		<ruleList type="java.util.ArrayList" interface="java.util.List" collection="true">
 		
 			<!-- 系统级Rule -->
+			<rule type="org.cx.game.rule.ContextBoutRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.ContextDayRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.ContextWeekRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.ActivateRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.ApplyRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.AttackedRule" interface="org.cx.game.rule.IRule"></rule>
@@ -10,12 +13,17 @@
 			<rule type="org.cx.game.rule.CallRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.ConjureRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.DeathRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.DeathHpRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.ExecuteRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.MoveRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.PlaceRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.RenewRule" interface="org.cx.game.rule.IRule"></rule>
-			<rule type="org.cx.game.rule.UpgradeRule" interface="org.cx.game.rule.IRule"></rule>
-			
+			<rule type="org.cx.game.rule.UpgradeBuildingRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.UpgradeBuildingProductRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.UpgradeLifeRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.UpgradeHeroRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.UpgradeLifeEmpiricValueRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.UpgradeSkillRule" interface="org.cx.game.rule.IRule"></rule>
 		</ruleList>
 	</ruleGroup>
 </rules>

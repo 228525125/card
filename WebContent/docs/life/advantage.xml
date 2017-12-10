@@ -4,11 +4,11 @@
 		<profession type="301" description="战士">
 			<landform type="401" description="草地">0,0</landform>
 			<landform type="402" description="丘林">0,0</landform>
-			<landform type="403" description="森林">20,20</landform>
-			<landform type="404" description="河">-20,-20</landform>
+			<landform type="403" description="森林">50,50</landform>
+			<landform type="404" description="河">-50,-50</landform>
 			<landform type="405" description="山">0,0</landform>
-			<landform type="407" description="城镇">40,40</landform>
-			<landform type="408" description="村庄">30,30</landform>
+			<landform type="407" description="城镇">100,100</landform>
+			<landform type="408" description="村庄">70,70</landform>
 		</profession>
 		<profession type="302" description="法师">
 			<landform type="401" description="草地">0,0</landform>

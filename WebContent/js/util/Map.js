@@ -115,7 +115,7 @@ function testMap(){
     var m = new Map();  
     m.put('key1','Comtop');  
     m.put('key2','南方电网');  
-    m.put('key3','景新花园');  
+    m.put('key3','美堤雅城');  
     alert("init:"+m);  
       
     m.put('key1','康拓普');  

@@ -1,5 +1,8 @@
 package org.cx.card.command;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
@@ -42,7 +45,9 @@ public class CreateCommand extends ExternalCommand {
 		player.setGround(ground);
 		player.setHomePosition(380082);           //硬编码
 		player.addHeroCardID(10190001);        //硬编码
-		player.setResource(1000);              //硬编码
+		Map<String, Integer> res = new HashMap<String, Integer>();
+		res.put(IPlayer.Gold, 1000);
+		player.setResource(res);              //硬编码
 		
 		ground.captureBuilding(380082, player);     //硬编码
 		

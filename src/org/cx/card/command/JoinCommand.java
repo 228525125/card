@@ -1,5 +1,8 @@
 package org.cx.card.command;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.UnableHostValidator;
@@ -46,7 +49,9 @@ public class JoinCommand extends ExternalCommand {
 		player2.setGround(ground);
 		player2.setHomePosition(20800811);             //硬编码
 		player2.addHeroCardID(10190002);            //硬编码
-		player2.setResource(1000);                  //硬编码
+		Map<String, Integer> res = new HashMap<String, Integer>();
+		res.put(IPlayer.Gold, 1000);
+		player2.setResource(res);              //硬编码
 		
 		user.setPlayer(player2);
 		
