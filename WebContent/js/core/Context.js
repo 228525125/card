@@ -94,9 +94,22 @@ var Context = function(){
 					place.view.css("background-color","#FFFFFF");
 			}
 		},
+		reloadTreasure : function(){
+			var treasureMap = this.get(this.TreasureMap);
+			var keys = Object.getOwnPropertyNames(treasureMap);
+			
+			for(var i=0;i<keys.length;i++){
+				var key = keys[i];
+				var ground = this.get(this.Ground);
+				var place = ground.getPlace(key);
+				
+				place.view.html('【物品】');
+			}
+		},
 		Ground : 'Ground',
 		Landform : 'Landform',
-		BuildingList : 'BuildingList'
+		BuildingList : 'BuildingList',
+		TreasureMap : 'TreasureMap',
 		/*,
 		getQueue: function(){
 			return queue;

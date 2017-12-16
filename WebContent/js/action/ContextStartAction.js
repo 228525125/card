@@ -19,5 +19,10 @@ ContextStartAction = jClass(Action, {
 		Context.put(Context.BuildingList,this.info.buildingList);
 		Context.reloadBuilding();
 		
+		Context.put(Context.TreasureMap,this.info.treasure);
+		Context.reloadTreasure();
+		
+		
+		
 	}
 });

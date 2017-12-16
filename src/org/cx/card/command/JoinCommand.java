@@ -15,7 +15,6 @@ import org.cx.game.core.ContextFactory;
 import org.cx.game.core.IContext;
 import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
-import org.cx.game.core.PlayerDecorator;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.widget.IGround;
 
@@ -39,14 +38,15 @@ public class JoinCommand extends ExternalCommand {
 		super.execute(parameter);
 		
 		IPlayer player1 = (IPlayer) context.getAttribute(parameter.toString());
+		IGround ground = (IGround) context.getAttribute(parameter+"Ground");
 		IPlayer player2 = new Player(2, user.getAccount());     //硬编码
-		player2 = new PlayerDecorator(player2);
 		
 		context.setAttribute(parameter.toString(), null);
+		context.setAttribute(parameter+"Ground", null);
 		
-		IGround ground = player1.getGround();
+		//IGround ground = player1.getGround();
 
-		player2.setGround(ground);
+		//player2.setGround(ground);
 		player2.setHomePosition(20800811);             //硬编码
 		player2.addHeroCardID(10190002);            //硬编码
 		Map<String, Integer> res = new HashMap<String, Integer>();
@@ -58,7 +58,7 @@ public class JoinCommand extends ExternalCommand {
 		ground.captureBuilding(20800811, player2);         //硬编码
 		
 		
-		IContext ctx = ContextFactory.getInstance(ground.getNeutral(),player1,player2);
+		IContext ctx = ContextFactory.getInstance(ground, ground.getNeutral(),player1,player2);
 		context.setAttribute(player1.getName(), ctx);
 		context.setAttribute(player2.getName(), ctx);
 	}

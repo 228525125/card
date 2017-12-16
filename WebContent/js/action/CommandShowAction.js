@@ -6,7 +6,7 @@ CommandShowAction = jClass(Action, {
 	},
 	
 	showPlayer : function(){
-		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'</p>';
+		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.resource[Glossary.Resource_Type_Gold]+'/'+this.info.player.resource[Glossary.Resource_Type_Wood]+'/'+this.info.player.resource[Glossary.Resource_Type_Stone]+'/'+this.info.player.resource[Glossary.Resource_Type_Ore]+')'+'</p>';
 		return text;
 	},
 	showContainer : function(){
@@ -14,9 +14,11 @@ CommandShowAction = jClass(Action, {
 		return text;
 	},
 	showPlace : function(){
-		var life = null==this.info.place.life || undefined == this.info.place.life ? '' : this.info.place.life.name;
+		var life = null==this.info.place.life || undefined == this.info.place.life ? '无' : this.info.place.life.name;
+		var treasure = null!=this.info.place.treasure ? this.info.place.treasure.name : '无';
 		var text = '<p style="margin: 0;padding: 0;">坐标:'+this.info.place.position+' '+
 		'| life:'+life+' '+
+		'| 物品:'+treasure + ' '+
 		'| 墓地:'+this.info.place.cemetery.size+' '+
 		'| 陷阱:'+this.info.place.trickList.size+'</p>';
 		return text;

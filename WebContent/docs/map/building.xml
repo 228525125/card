@@ -45,5 +45,9 @@
 				<value type="int">-1</value>
 			</map>
 		</consume>
+		<buildWait type="int">1</buildWait>
+		<needBuilding type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<building type="int">602</building>
+		</needBuilding>
 	</building>
 </buildings>

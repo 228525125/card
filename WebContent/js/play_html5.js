@@ -152,7 +152,7 @@ $(function(){
 			var position = this.id.substring(6,this.id.length);			
 			var val = $("#command_input").val();
 			
-			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute')){
+			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute') || -1!=val.indexOf('pick')){
 				val += 'ground place'+position+';';
 			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
 				val += 'ground place'+position+' card;'; 
@@ -200,6 +200,12 @@ $(function(){
 	$("#button_apply").click(function(){
 		post('query apply');
 		$("#command_input").val('apply ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_pick").click(function(){
+		post('query pick');
+		$("#command_input").val('pick ');
 		$("#command_input").focus();
 	});
 	
@@ -313,6 +319,7 @@ $(function(){
 	ActionFactory.register('Command_Query_Conjure', 'new CommandQueryConjureAction(data.info,view)');
 	ActionFactory.register('Command_Query_Apply', 'new CommandQueryApplyAction(data.info,view)');
 	ActionFactory.register('Command_Query_Execute', 'new CommandQueryExecuteAction(data.info,view)');
+	ActionFactory.register('Command_Query_Pick', 'new CommandQueryPickAction(data.info,view)');
 	
 	ActionFactory.register('Card_LifeCard_Action_Move', 'new LifeCardMoveAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Call', 'new LifeCardCallAction(data.info,view)');
@@ -320,6 +327,8 @@ $(function(){
 	ActionFactory.register('Card_LifeCard_Action_Attack', 'new LifeCardAttackAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Attacked', 'new LifeCardAttackedAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_Action_Activate', 'new LifeCardActivateAction(data.info,view)');
+	ActionFactory.register('Card_LifeCard_Action_Pick', 'new LifeCardPickAction(data.info,view)');
+	ActionFactory.register('Treasure_Action_Picked', 'new TreasurePickedAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
 	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');

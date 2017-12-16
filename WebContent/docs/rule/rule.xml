@@ -16,7 +16,6 @@
 			<rule type="org.cx.game.rule.DeathHpRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.ExecuteRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.MoveRule" interface="org.cx.game.rule.IRule"></rule>
-			<rule type="org.cx.game.rule.PlaceRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.RenewRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.UpgradeBuildingRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.UpgradeBuildingProductRule" interface="org.cx.game.rule.IRule"></rule>

@@ -12,10 +12,8 @@ import org.cx.game.card.LifeCard;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
-import org.cx.game.core.PlayerDecorator;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
-import org.cx.game.widget.GroundDecorator;
 import org.cx.game.widget.GroundFactory;
 import org.cx.game.widget.IGround;
 
@@ -40,9 +38,8 @@ public class CreateCommand extends ExternalCommand {
 		IGround ground = GroundFactory.getInstance("test");
 		
 		IPlayer player = new Player(1, user.getAccount());   //硬编码
-		player = new PlayerDecorator(player);
 	
-		player.setGround(ground);
+		//player.setGround(ground);
 		player.setHomePosition(380082);           //硬编码
 		player.addHeroCardID(10190001);        //硬编码
 		Map<String, Integer> res = new HashMap<String, Integer>();
@@ -54,5 +51,6 @@ public class CreateCommand extends ExternalCommand {
 		user.setPlayer(player);
 		
 		context.setAttribute(parameter.toString(), player);
+		context.setAttribute(parameter+"Ground", ground);
 	}
 }

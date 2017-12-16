@@ -30,10 +30,26 @@
 			</map>
 		</buildings>
 		
+		<!-- NPC 
 		<npcData type="java.util.ArrayList" interface="java.util.List" collection="true">
 			<npc type="str">10100001,580085,2,10400001</npc>
 			<npc type="str">10100002,680085,2,10400001</npc>
 		</npcData>
+		-->
+		<!-- 宝物 -->
+		<treasureMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">480084</key>
+				<value type="org.cx.game.widget.treasure.TreasureResource" interface="org.cx.game.widget.treasure.ITreasure">
+					<parameter>
+						<gold type="int">10</gold>
+						<wood type="int">0</wood>
+						<stone type="int">0</stone>
+						<ore type="int">0</ore>
+					</parameter>
+				</value>
+			</map>
+		</treasureMap>
 		
 		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<!-- 山 -->
