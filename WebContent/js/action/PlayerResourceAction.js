@@ -12,7 +12,7 @@ PlayerResourceAction = jClass(Action, {
 			var h = this.view.html();
 			var h1 = h.split('(')[0];
 			var h2 = h.split(')')[1];
-			h = h1 + '('+this.info.player.resource[Glossary.Resource_Type_Gold]+'/'+this.info.player.resource[Glossary.Resource_Type_Wood]+'/'+this.info.player.resource[Glossary.Resource_Type_Stone]+'/'+this.info.player.resource[Glossary.Resource_Type_Ore]+')' + h2;
+			h = h1 + '('+this.info.player.resource.gold+'/'+this.info.player.resource.wood+'/'+this.info.player.resource.stone+'/'+this.info.player.resource.ore+')' + h2;
 			this.view.html(h);
 		}*/
 	}

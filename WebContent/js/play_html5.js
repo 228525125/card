@@ -165,12 +165,13 @@ $(function(){
 			$("#command_input").val(val);
 			command_input_sub();
 		}
+		/* usecard 取消
 		if(-1!=this.id.indexOf('usecard')){
 			var playerId =this.id.substring(7,this.id.length).split('_')[0];
 			var position = this.id.substring(7,this.id.length).split('_')[1];
 			if(Context.getOwn().id==playerId)
 				post('select use card'+position+';show');
-		}
+		}*/
 	});
 	
 	$("#button_execute").click(function(){
@@ -222,7 +223,7 @@ $(function(){
 	//--------------------UI end------------------
 	
 	//-------------------init-------------------
-	
+	/* usecard 取消
 	var useCard1 = new UseCard();
 	
 	useCard1.addObserver(new UseCardPlace(0,$("#usecard1_0")));
@@ -244,7 +245,7 @@ $(function(){
 	useCard2.addObserver(new UseCardPlace(5,$("#usecard2_5")));
 	useCard2.addObserver(new UseCardPlace(6,$("#usecard2_6")));
 	useCard2.addObserver(new UseCardPlace(7,$("#usecard2_7")));
-	
+	*/
 	var xBorder = 21;
 	var yBorder = 12;
 	
@@ -255,11 +256,13 @@ $(function(){
 		}
 	}
 
+	/* cardgroup 取消
 	var cardGroup1 =  new CardGroup();
 	cardGroup1.addObserver(new CardGroupPlace($("#cardgroup1")));
 	
 	var cardGroup2 =  new CardGroup();
 	cardGroup2.addObserver(new CardGroupPlace($("#cardgroup2")));
+	*/
 	
 	var notice = new Notice();
 	notice.addObserver(new NoticePlace(0,$("#command_show0")));
@@ -268,8 +271,8 @@ $(function(){
 	notice.addObserver(new NoticePlace(3,$("#command_show3")));
 	
 	var data1 = new Map();
-	data1.put('CardGroup',cardGroup1);   //这里的key必须与Container中一致
-	data1.put('UseCard', useCard1);
+	//data1.put('CardGroup',cardGroup1);   //这里的key必须与Container中一致
+	//data1.put('UseCard', useCard1);
 	data1.put('Ground', ground);
 	data1.put('Cemetery', ground);
 	data1.put('TrickList', ground);
@@ -278,8 +281,8 @@ $(function(){
 	var player1 = new Player('1',data1);         //硬编码，这里的1应该是player的id属性
 	
 	var data2 = new Map();
-	data2.put('CardGroup',cardGroup2);
-	data2.put('UseCard', useCard2);
+	//data2.put('CardGroup',cardGroup2);
+	//data2.put('UseCard', useCard2);
 	data2.put('Ground', ground);
 	data2.put('Cemetery', ground);
 	data2.put('TrickList', ground);
@@ -306,8 +309,8 @@ $(function(){
 	ActionFactory.register('Player_Resource', 'new PlayerResourceAction(data.info,view)');
 	ActionFactory.register('Player_Ration', 'new PlayerRationAction(data.info,view)');
 	ActionFactory.register('Player_Bout', 'new PlayerBoutAction(data.info,view)');
-	ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');
-	ActionFactory.register('Container_UseCard_Remove', 'new UseCardRemoveAction(data.info,view)');
+	//ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');
+	//ActionFactory.register('Container_UseCard_Remove', 'new UseCardRemoveAction(data.info,view)');
 	ActionFactory.register('Container_Place_In', 'new PlaceInAction(data.info,view)');
 	ActionFactory.register('Container_Place_Out', 'new PlaceOutAction(data.info,view)');	
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');

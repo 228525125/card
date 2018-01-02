@@ -10,11 +10,10 @@
 			<atk type="int">150</atk>
 			<def type="int">10</def>
 			<hp type="int">100</hp>
-			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-				<map>
-					<key type="str">701</key>
-					<value type="int">-100</value>                                                        
-				</map>
+			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+				<parameter>
+					<gold type="int">-100</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
@@ -41,11 +40,10 @@
 			<atk type="int">1</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-				<map>
-					<key type="str">701</key>
-					<value type="int">-100</value>                                                        
-				</map>
+			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+				<parameter>
+					<gold type="int">-100</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
@@ -62,11 +60,10 @@
 			<atk type="int">10</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-				<map>
-					<key type="str">701</key>
-					<value type="int">-50</value>                                                        
-				</map>
+			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+				<parameter>
+					<gold type="int">-50</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
@@ -83,11 +80,10 @@
 			<atk type="int">330</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-				<map>
-					<key type="str">701</key>
-					<value type="int">-1</value>                                                        
-				</map>
+			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+				<parameter>
+					<gold type="int">-70</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>
@@ -103,11 +99,10 @@
 			</parameter>
 			<atk type="int">1</atk>
 			<hp type="int">100</hp>
-			<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-				<map>
-					<key type="str">701</key>
-					<value type="int">-1</value>                                                        
-				</map>
+			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+				<parameter>
+					<gold type="int">-90</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">100</speed>

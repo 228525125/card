@@ -7,6 +7,8 @@
 			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
 		</parameter>
 		
+		<!-- 玩家数量，玩家领地，玩家阵营 -->
+				
 		<buildings type="java.util.HashMap" interface="java.util.Map" map="true">                                                    <!-- 建筑物的集合 -->
 			<map>
 				<key type="int">380082</key>                                                                                                                 <!-- 位置 -->
@@ -36,6 +38,7 @@
 			<npc type="str">10100002,680085,2,10400001</npc>
 		</npcData>
 		-->
+		
 		<!-- 宝物 -->
 		<treasureMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<map>

@@ -17,6 +17,7 @@ import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.widget.IGround;
+import org.cx.game.widget.treasure.IResource;
 
 import com.easyjf.web.ActionContext;
 
@@ -49,9 +50,6 @@ public class JoinCommand extends ExternalCommand {
 		//player2.setGround(ground);
 		player2.setHomePosition(20800811);             //硬编码
 		player2.addHeroCardID(10190002);            //硬编码
-		Map<String, Integer> res = new HashMap<String, Integer>();
-		res.put(IPlayer.Gold, 1000);
-		player2.setResource(res);              //硬编码
 		
 		user.setPlayer(player2);
 		
@@ -59,6 +57,10 @@ public class JoinCommand extends ExternalCommand {
 		
 		
 		IContext ctx = ContextFactory.getInstance(ground, ground.getNeutral(),player1,player2);
+		
+		player1.addToResource(IResource.Gold, 1000);              //硬编码
+		player2.addToResource(IResource.Gold, 1000);;              //硬编码
+		
 		context.setAttribute(player1.getName(), ctx);
 		context.setAttribute(player2.getName(), ctx);
 	}

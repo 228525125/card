@@ -6,7 +6,7 @@ CommandShowAction = jClass(Action, {
 	},
 	
 	showPlayer : function(){
-		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.resource[Glossary.Resource_Type_Gold]+'/'+this.info.player.resource[Glossary.Resource_Type_Wood]+'/'+this.info.player.resource[Glossary.Resource_Type_Stone]+'/'+this.info.player.resource[Glossary.Resource_Type_Ore]+')'+'</p>';
+		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.resource.gold+'/'+this.info.player.resource.wood+'/'+this.info.player.resource.stone+'/'+this.info.player.resource.ore+')'+'</p>';
 		return text;
 	},
 	showContainer : function(){
@@ -75,7 +75,9 @@ CommandShowAction = jClass(Action, {
 		'| 占领者:'+this.info.building.player.name+' '+
 		'| 等级:'+this.info.building.upgrade.level+ ' '+
 		'| 状态:'+Glossary.get(Glossary.Building_Status,this.info.building.status);
-		text += '<p style="margin: 0;padding: 0;">建造费用:'+'金币 '+this.info.building.consume[Glossary.Resource_Type_Gold]+' | 木材 '+this.info.building.consume[Glossary.Resource_Type_Wood]+' | 石材 '+this.info.building.consume[Glossary.Resource_Type_Stone]+' | 矿 '+this.info.building.consume[Glossary.Resource_Type_Ore]+'</p>';
+		text += '<p style="margin: 0;padding: 0;">建造费用:'+'金币 '+this.info.building.consume.gold+' | 木材 '+this.info.building.consume.wood+' | 石材 '+this.info.building.consume.stone+' | 矿 '+this.info.building.consume.ore+'</p>';
+		if(null!=this.info.building.upgrade.requirement)
+			text += '<p style="margin: 0;padding: 0;">升级费用:'+'金币 '+ this.info.building.upgrade.requirement.gold+' | 木材 '+this.info.building.upgrade.requirement.wood+' | 石材 '+this.info.building.upgrade.requirement.stone+' | 矿 '+this.info.building.upgrade.requirement.ore+'</p>';
 		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type))
 			text += '<p style="margin: 0;padding: 0;">内部:'+building+'</p>';
 		if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
@@ -170,8 +172,7 @@ CommandShowAction = jClass(Action, {
 			weapon+
 			'<p style="margin: 0;padding: 0;">防守:'+' '+
 			'def:'+this.info.card.attacked.def+' '+
-			'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+
-			'| 护甲:'+this.info.card.attacked.armour+' '+ 
+			'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+ 
 			'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">移动:'+' '+
 			'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
@@ -182,11 +183,11 @@ CommandShowAction = jClass(Action, {
 			'<p style="margin: 0;padding: 0;">招募:'+' '+
 			'人数:'+this.info.card.call.nop+' '+
 			'| 单位人口:'+this.info.card.call.ration+' '+
-			'| 消耗:'+this.info.card.call.consume[Glossary.Resource_Type_Gold]+'/'+this.info.card.call.consume[Glossary.Resource_Type_Ore]+'</p>'+
+			'| 消耗:'+this.info.card.call.consume.gold+'/'+this.info.card.call.consume.ore+'</p>'+
 			'<p style="margin: 0;padding: 0;">等级:'+' '+
 			'level:'+this.info.card.upgrade.level+' '+
-			'| 经验值:'+this.info.card.upgrade.empiricValue+'['+this.info.card.upgrade.requirement[Glossary.Resource_Type_EmpiricValue]+']'+' '+
-			'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount:' ')+'</p>'+
+			'| 经验值:'+this.info.card.upgrade.empiricValue.value+'['+this.info.card.upgrade.requirement.value+']'+' '+
+			'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.value:' ')+'</p>'+
 			'<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
 			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
 		}else if(this.info.card.id>=10150001 && this.info.card.id<=10159999){           //表示魔法卡

@@ -24,12 +24,17 @@
 			<yield type="int">1</yield>
 			<buildingType type="int">602</buildingType>
 		</parameter>
-		<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-			<map>
-				<key type="str">701</key>
-				<value type="int">-1</value>
-			</map>
+		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<parameter>
+				<res type="str">-110</res>
+			</parameter>
 		</consume>
+		<upgradeRequirement type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">2</key>
+				<value type="str">r-100,0,0,0</value>
+			</map>
+		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
 		<levelLimit type="int">2</levelLimit>
 	</building>
@@ -39,12 +44,17 @@
 			<yield type="int">1</yield>
 			<buildingType type="int">603</buildingType>
 		</parameter>
-		<consume type="java.util.HashMap" interface="java.util.Map" map="true">
-			<map>
-				<key type="str">701</key>
-				<value type="int">-1</value>
-			</map>
+		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<parameter>
+				<res type="str">-120,0,0,0</res>
+			</parameter>
 		</consume>
+		<upgradeRequirement type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">2</key>
+				<value type="str">r-100,0,0,0</value>
+			</map>
+		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
 		<needBuilding type="java.util.ArrayList" interface="java.util.List" collection="true">
 			<building type="int">602</building>

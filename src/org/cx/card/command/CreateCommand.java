@@ -16,6 +16,7 @@ import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
 import org.cx.game.widget.GroundFactory;
 import org.cx.game.widget.IGround;
+import org.cx.game.widget.treasure.IResource;
 
 import com.easyjf.web.ActionContext;
 
@@ -42,9 +43,7 @@ public class CreateCommand extends ExternalCommand {
 		//player.setGround(ground);
 		player.setHomePosition(380082);           //硬编码
 		player.addHeroCardID(10190001);        //硬编码
-		Map<String, Integer> res = new HashMap<String, Integer>();
-		res.put(IPlayer.Gold, 1000);
-		player.setResource(res);              //硬编码
+		//player.addToResource(IResource.Gold, 1000);              //硬编码
 		
 		ground.captureBuilding(380082, player);     //硬编码
 		

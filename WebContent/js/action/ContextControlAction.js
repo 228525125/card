@@ -11,7 +11,7 @@ ContextControlAction = jClass(Action, {
 		var notice = Context.getNotice();
 		var place = notice.getPlace(3);
 		
-		var h = '控制：'+this.info.control.name+'['+this.info.control.ration+'/'+this.info.control.rationLimit+']'; //+'('+this.info.control.resource[Glossary.Resource_Type_Gold]+'/'+this.info.control.resource[Glossary.Resource_Type_Wood]+'/'+this.info.control.resource[Glossary.Resource_Type_Stone]+'/'+this.info.control.resource[Glossary.Resource_Type_Ore]+')
+		var h = '控制：'+this.info.control.name+'['+this.info.control.ration+'/'+this.info.control.rationLimit+']';
 		
 		var id = Context.getOwn().id;
 		
