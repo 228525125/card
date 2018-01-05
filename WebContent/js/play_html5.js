@@ -223,29 +223,6 @@ $(function(){
 	//--------------------UI end------------------
 	
 	//-------------------init-------------------
-	/* usecard 取消
-	var useCard1 = new UseCard();
-	
-	useCard1.addObserver(new UseCardPlace(0,$("#usecard1_0")));
-	useCard1.addObserver(new UseCardPlace(1,$("#usecard1_1")));
-	useCard1.addObserver(new UseCardPlace(2,$("#usecard1_2")));
-	useCard1.addObserver(new UseCardPlace(3,$("#usecard1_3")));
-	useCard1.addObserver(new UseCardPlace(4,$("#usecard1_4")));
-	useCard1.addObserver(new UseCardPlace(5,$("#usecard1_5")));
-	useCard1.addObserver(new UseCardPlace(6,$("#usecard1_6")));
-	useCard1.addObserver(new UseCardPlace(7,$("#usecard1_7")));
-	
-	var useCard2 = new UseCard();
-	
-	useCard2.addObserver(new UseCardPlace(0,$("#usecard2_0")));
-	useCard2.addObserver(new UseCardPlace(1,$("#usecard2_1")));
-	useCard2.addObserver(new UseCardPlace(2,$("#usecard2_2")));
-	useCard2.addObserver(new UseCardPlace(3,$("#usecard2_3")));
-	useCard2.addObserver(new UseCardPlace(4,$("#usecard2_4")));
-	useCard2.addObserver(new UseCardPlace(5,$("#usecard2_5")));
-	useCard2.addObserver(new UseCardPlace(6,$("#usecard2_6")));
-	useCard2.addObserver(new UseCardPlace(7,$("#usecard2_7")));
-	*/
 	var xBorder = 21;
 	var yBorder = 12;
 	
@@ -255,14 +232,6 @@ $(function(){
 			ground.addObserver(new GroundPlace(""+i+"8008"+n,$("#ground"+i+"8008"+n)));
 		}
 	}
-
-	/* cardgroup 取消
-	var cardGroup1 =  new CardGroup();
-	cardGroup1.addObserver(new CardGroupPlace($("#cardgroup1")));
-	
-	var cardGroup2 =  new CardGroup();
-	cardGroup2.addObserver(new CardGroupPlace($("#cardgroup2")));
-	*/
 	
 	var notice = new Notice();
 	notice.addObserver(new NoticePlace(0,$("#command_show0")));
@@ -270,24 +239,18 @@ $(function(){
 	notice.addObserver(new NoticePlace(2,$("#command_show2")));
 	notice.addObserver(new NoticePlace(3,$("#command_show3")));
 	
-	var data1 = new Map();
-	//data1.put('CardGroup',cardGroup1);   //这里的key必须与Container中一致
-	//data1.put('UseCard', useCard1);
+	/*var data1 = new Map();
 	data1.put('Ground', ground);
 	data1.put('Cemetery', ground);
 	data1.put('TrickList', ground);
 	data1.put('Notice', notice);
-	//data1.put('OptionList', optionList);
 	var player1 = new Player('1',data1);         //硬编码，这里的1应该是player的id属性
 	
 	var data2 = new Map();
-	//data2.put('CardGroup',cardGroup2);
-	//data2.put('UseCard', useCard2);
 	data2.put('Ground', ground);
 	data2.put('Cemetery', ground);
 	data2.put('TrickList', ground);
 	data2.put('Notice', notice);
-	//data2.put('OptionList', optionList);
 	var player2 = new Player('2',data2);       //硬编码，这里的2应该是player的id属性
 	
 	var data3 = new Map();
@@ -295,13 +258,12 @@ $(function(){
 	data3.put('Cemetery', ground);
 	data3.put('TrickList', ground);
 	data3.put('Notice', notice);
-	//data3.put('OptionList', optionList);
-	var faction = new Player('9', data3);     //硬编码，9表示中立生物
+	var faction = new Player('9', data3);     //硬编码，9表示中立生物*/
 	
 	//context初始化
-	Context.addPlayer(player1);
-	Context.addPlayer(player2);
-	Context.addPlayer(faction);
+	//Context.addPlayer(player1);
+	//Context.addPlayer(player2);
+	//Context.addPlayer(faction);
 	Context.setNotice(notice);
 	Context.setOptionList(optionList);
 	Context.put(Context.Ground,ground);
@@ -309,8 +271,6 @@ $(function(){
 	ActionFactory.register('Player_Resource', 'new PlayerResourceAction(data.info,view)');
 	ActionFactory.register('Player_Ration', 'new PlayerRationAction(data.info,view)');
 	ActionFactory.register('Player_Bout', 'new PlayerBoutAction(data.info,view)');
-	//ActionFactory.register('Container_UseCard_Add', 'new UseCardAddAction(data.info,view)');
-	//ActionFactory.register('Container_UseCard_Remove', 'new UseCardRemoveAction(data.info,view)');
 	ActionFactory.register('Container_Place_In', 'new PlaceInAction(data.info,view)');
 	ActionFactory.register('Container_Place_Out', 'new PlaceOutAction(data.info,view)');	
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');

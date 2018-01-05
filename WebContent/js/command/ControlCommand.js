@@ -5,6 +5,9 @@ ControlCommand = jClass(Command, {
 	
 	init: function(action,info){
 		
-		this.superFunction(Context.getNotice(),3,action,info);
+		var container = Context.getNotice();
+		var position = 2;
+		
+		this.superFunction(container,position,action,info);
 	}
 });

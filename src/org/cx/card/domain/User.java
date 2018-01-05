@@ -15,14 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.cx.game.card.CardFactory;
-import org.cx.game.card.ICard;
 import org.cx.game.core.IPlayer;
-import org.cx.game.core.Player;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 
 @Entity
 @Table(name="CUser")

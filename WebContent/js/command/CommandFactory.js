@@ -6,8 +6,7 @@ var CommandFactory = function(){
 				Buffer.cancelQuery();
 				command = new QueryCommand(action,data);
 				
-				var pd = Context.getPlayer(data.player.id);
-				Buffer.setQueryContainer(pd.getContainer(data.container.name));
+				Buffer.setQueryContainer(Context.get(Context.Ground));
 				Buffer.setQueryPositionList(data.positionList);
 			}else if(-1!=action.indexOf('Context') || -1!=action.indexOf('Ground_LoadMap')){       //与比赛相关，但与具体元素无关的（独立的一块区域显示）
 				command = new ContextCommand(action,data);   //这里position硬编码1，1表示<div>command_show

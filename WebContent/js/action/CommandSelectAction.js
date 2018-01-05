@@ -11,8 +11,7 @@ CommandSelectAction = jClass(Action, {
 		
 		this.view.css("color","red");
 		
-		var pd = Context.getPlayer(this.info.player.id);
-		Buffer.setSelectContainer(pd.getContainer(this.info.container.name));
+		Buffer.setSelectContainer(Context.get(Context.Ground));
 		Buffer.setSelectPosition(this.info.position);
 	}
 });

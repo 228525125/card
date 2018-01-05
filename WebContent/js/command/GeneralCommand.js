@@ -4,10 +4,7 @@
 GeneralCommand = jClass(Command, {
 	
 	init: function(action,info){
-		
-		this.player = info.player;
-		var playerData = Context.getPlayer(this.player.id);
-		var container = playerData.getContainer(info.container.name);
+		var container = Context.get(Context.Ground);
 		var position = info.position;
 		
 		this.superFunction(container,position,action,info);

@@ -9,8 +9,8 @@ CommandShowAction = jClass(Action, {
 		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.resource.gold+'/'+this.info.player.resource.wood+'/'+this.info.player.resource.stone+'/'+this.info.player.resource.ore+')'+'</p>';
 		return text;
 	},
-	showContainer : function(){
-		var text = '<p style="margin: 0;padding: 0;">容器:'+this.info.container.name+'</p>';
+	showGround : function(){
+		var text = '<p style="margin: 0;padding: 0;">容器:'+this.info.grd.name+'</p>';
 		return text;
 	},
 	showPlace : function(){
@@ -177,6 +177,7 @@ CommandShowAction = jClass(Action, {
 			'<p style="margin: 0;padding: 0;">移动:'+' '+
 			'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
 			'| 躲避:'+this.info.card.move.flee+' '+
+			'| 精力:'+this.info.card.move.energy+' '+
 			'| 激活:'+this.info.card.move.moveable+' '+'</p>'+
 			'<p style="margin: 0;padding: 0;">生命:'+' '+
 			'状态:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
@@ -219,8 +220,8 @@ CommandShowAction = jClass(Action, {
 		if(null!=this.info.player)
 			res += this.showPlayer();
 		
-		if(null!=this.info.container)
-			res += this.showContainer();
+		if(null!=this.info.grd)
+			res += this.showGround();
 		
 		if(null!=this.info.place)
 			res += this.showPlace();
