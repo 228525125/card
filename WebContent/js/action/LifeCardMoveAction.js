@@ -13,7 +13,7 @@ LifeCardMoveAction = jClass(Action, {
 		this.view.html(this.info.card.name);
 		
 		if('send'==this.info.sign){
-			post('select ground place'+this.info.position+' card;');
+			post('select ground place'+this.info.position+' corps;');
 		}
 		*/
 		
@@ -31,7 +31,7 @@ LifeCardMoveAction = jClass(Action, {
 		Buffer.setSelectPosition(this.info.position);
 		
 		if('send'==this.info.sign){
-			post('select ground place'+this.info.position+' card;');
+			post('select ground place'+this.info.position+' corps;');
 		}
 	}
 });

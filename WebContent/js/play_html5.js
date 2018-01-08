@@ -155,12 +155,12 @@ $(function(){
 			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute') || -1!=val.indexOf('pick')){
 				val += 'ground place'+position+';';
 			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
-				val += 'ground place'+position+' card;'; 
+				val += 'ground place'+position+' corps;'; 
 			}else{
 				val = '';
 			}
 			
-			val += 'select ground place'+position+';'         //+' card;show';
+			val += 'select ground place'+position+';'         //+' corps;show';
 			
 			$("#command_input").val(val);
 			command_input_sub();
@@ -271,8 +271,8 @@ $(function(){
 	ActionFactory.register('Player_Resource', 'new PlayerResourceAction(data.info,view)');
 	ActionFactory.register('Player_Ration', 'new PlayerRationAction(data.info,view)');
 	ActionFactory.register('Player_Bout', 'new PlayerBoutAction(data.info,view)');
-	ActionFactory.register('Container_Place_In', 'new PlaceInAction(data.info,view)');
-	ActionFactory.register('Container_Place_Out', 'new PlaceOutAction(data.info,view)');	
+	ActionFactory.register('Place_In', 'new PlaceInAction(data.info,view)');
+	ActionFactory.register('Place_Out', 'new PlaceOutAction(data.info,view)');	
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');
 	ActionFactory.register('Command_Show', 'new CommandShowAction(data.info,view)');
 	ActionFactory.register('Command_Reload', 'new CommandReloadAction(data.info,view)');
@@ -284,18 +284,17 @@ $(function(){
 	ActionFactory.register('Command_Query_Execute', 'new CommandQueryExecuteAction(data.info,view)');
 	ActionFactory.register('Command_Query_Pick', 'new CommandQueryPickAction(data.info,view)');
 	
-	ActionFactory.register('Card_LifeCard_Action_Move', 'new LifeCardMoveAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Call', 'new LifeCardCallAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Death', 'new LifeCardDeathAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Attack', 'new LifeCardAttackAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Attacked', 'new LifeCardAttackedAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Activate', 'new LifeCardActivateAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_Action_Pick', 'new LifeCardPickAction(data.info,view)');
-	ActionFactory.register('Treasure_Action_Picked', 'new TreasurePickedAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_Hp', 'new LifeCardHpAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_Atk', 'new LifeCardAtkAction(data.info,view)');
-	ActionFactory.register('Card_LifeCard_State_ImmuneDamageRatio', 'new LifeCardImmuneDamageRatioAction(data.info,view)');
+	ActionFactory.register('Corps_Move', 'new LifeCardMoveAction(data.info,view)');
+	ActionFactory.register('Corps_Call', 'new LifeCardCallAction(data.info,view)');
+	ActionFactory.register('Corps_Death', 'new LifeCardDeathAction(data.info,view)');
+	ActionFactory.register('Corps_Attack', 'new LifeCardAttackAction(data.info,view)');
+	ActionFactory.register('Corps_Attacked', 'new LifeCardAttackedAction(data.info,view)');
+	ActionFactory.register('Corps_Activate', 'new LifeCardActivateAction(data.info,view)');
+	ActionFactory.register('Corps_Pick', 'new LifeCardPickAction(data.info,view)');
+	ActionFactory.register('Corps_Hp', 'new LifeCardHpAction(data.info,view)');
+	ActionFactory.register('Corps_Atk', 'new LifeCardAtkAction(data.info,view)');
 	ActionFactory.register('Skill_UseSkill', 'new SkillAction(data.info,view)');
+	ActionFactory.register('Treasure_Picked', 'new TreasurePickedAction(data.info,view)');
 	ActionFactory.register('Buff_Affect', 'new BuffAffectAction(data.info,view)');
 	ActionFactory.register('Buff_Effect', 'new BuffEffectAction(data.info,view)');
 	ActionFactory.register('Buff_Invalid', 'new BuffInvalidAction(data.info,view)');
@@ -308,7 +307,7 @@ $(function(){
 	ActionFactory.register('Context_ControlQueue_Insert', 'new ControlQueueInsertAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Refurbish', 'new ControlQueueRefurbishAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Move', 'new ControlQueueMoveAction(data.info,view)');
-	ActionFactory.register('Container_Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
+	ActionFactory.register('Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
 	
 	SkillActionFactory.register('AttackBack','new SkillAttackBackAction(info,view)');
 	SkillActionFactory.register('Dodge', 'new SkillDodgeAction(info,view)');

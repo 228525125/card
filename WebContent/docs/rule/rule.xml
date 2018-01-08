@@ -4,6 +4,8 @@
 		
 			<!-- 系统级Rule -->
 			<rule type="org.cx.game.rule.ActivateRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.AttackRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.TauntRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.CallRule" interface="org.cx.game.rule.IRule"></rule>
 		</ruleList>
 	</ruleGroup>

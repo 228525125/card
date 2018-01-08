@@ -15,7 +15,7 @@ LifeCardCallAction = jClass(Action, {
 		Buffer.setSelectPosition(this.info.position);
 		
 		if('send'==this.info.sign){
-			post('select ground place'+this.info.position+' card;');
+			post('select ground place'+this.info.position+' corps;');
 		}
 	}
 });

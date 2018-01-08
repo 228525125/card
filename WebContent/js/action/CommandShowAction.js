@@ -10,7 +10,7 @@ CommandShowAction = jClass(Action, {
 		return text;
 	},
 	showGround : function(){
-		var text = '<p style="margin: 0;padding: 0;">容器:'+this.info.grd.name+'</p>';
+		var text = '<p style="margin: 0;padding: 0;">容器:'+this.info.ground.name+'</p>';
 		return text;
 	},
 	showPlace : function(){
@@ -45,7 +45,7 @@ CommandShowAction = jClass(Action, {
 				option += ' | ';
 		}
 		
-		var product = '';
+		/*var product = '';
 		for(var i=0;i<this.info.building.products.length;i++){
 			var productName = this.info.building.products[i].name;
 			var productLevel = this.info.building.products[i].upgrade.level;
@@ -54,7 +54,7 @@ CommandShowAction = jClass(Action, {
 			
 			if((i+1)<this.info.building.products.length)
 				product += ' | ';
-		}
+		}*/
 		
 		var building = '';
 		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
@@ -84,8 +84,8 @@ CommandShowAction = jClass(Action, {
 			text += '<p style="margin: 0;padding: 0;">产量:'+this.info.building.yield+'</p>';
 			text += '<p style="margin: 0;padding: 0;">招募:'+this.info.building.nop+'</p>';
 		}
-		if(''!=product)
-			text += '<p style="margin: 0;padding: 0;">产品:'+product+'</p>'; 
+		/*if(''!=product)
+			text += '<p style="margin: 0;padding: 0;">产品:'+product+'</p>';*/ 
 		
 		text += '<p style="margin: 0;padding: 0;">选项:'+option+'</p></p>';
 		return text;
@@ -123,82 +123,73 @@ CommandShowAction = jClass(Action, {
 		
 		var text = '';
 		
-		if(undefined!=this.info.card.hp){       //判断是否为life
-			var buff = '';
-			for(var i=0;i<this.info.card.buffList.length;i++){
-				buff += this.info.card.buffList[i].name;
-				if((i+1)<this.info.card.buffList.length)
-					buff += ',';
-			}
-			
-			var optionList = Context.getOptionList();
-			
-			for(var i=0;i<optionList.length;i++){
-				optionList[i].html('');
-				optionList[i].attr("title","skill"+i);
-			}
-			
-			var skill = '';
-			for(var i=0;i<this.info.card.skillList.length;i++){
-				var skillName = this.info.card.skillList[i].name;
-				skill += '['+skillName+',';
-
-				if(undefined==this.info.card.skillList[i].cooldownRemain)
-					skill += 'CD:no]';
-				else
-					skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
-				if((i+1)<this.info.card.skillList.length)
-					skill += ',';
-				
-				optionList[i].html(skillName);
-			}
-			
-			var weapon = '<p style="margin: 0;padding: 0;">武器:';
-			if(null!=this.info.card.attack.weapon){
-				weapon += this.info.card.attack.weapon.name+' '+
-				'| 攻击:'+this.info.card.attack.weapon.atk+' '+
-				'| 持久:'+this.info.card.attack.weapon.wear+' '+'</p>';
-			}
-			
-			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
-			'| atk:'+this.info.card.attack.atk+' '+
-			'| 移动:'+this.info.card.move.energy+ ' '+
-			'| 激活:'+this.info.card.activate.activation+'</p>'+
-			'<p style="margin: 0;padding: 0;">攻击:'+' '+
-			'距离:'+this.info.card.attack.range+' '+
-			'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
-			'| 速度:'+this.info.card.activate.speed+' '+
-			'| 激活:'+this.info.card.attack.attackable+'</p>'+
-			weapon+
-			'<p style="margin: 0;padding: 0;">防守:'+' '+
-			'def:'+this.info.card.attacked.def+' '+
-			'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+ 
-			'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
-			'<p style="margin: 0;padding: 0;">移动:'+' '+
-			'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
-			'| 躲避:'+this.info.card.move.flee+' '+
-			'| 精力:'+this.info.card.move.energy+' '+
-			'| 激活:'+this.info.card.move.moveable+' '+'</p>'+
-			'<p style="margin: 0;padding: 0;">生命:'+' '+
-			'状态:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
-			'<p style="margin: 0;padding: 0;">招募:'+' '+
-			'人数:'+this.info.card.call.nop+' '+
-			'| 单位人口:'+this.info.card.call.ration+' '+
-			'| 消耗:'+this.info.card.call.consume.gold+'/'+this.info.card.call.consume.ore+'</p>'+
-			'<p style="margin: 0;padding: 0;">等级:'+' '+
-			'level:'+this.info.card.upgrade.level+' '+
-			'| 经验值:'+this.info.card.upgrade.empiricValue.value+'['+this.info.card.upgrade.requirement.value+']'+' '+
-			'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.value:' ')+'</p>'+
-			'<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
-			'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
-		}else if(this.info.card.id>=10150001 && this.info.card.id<=10159999){           //表示魔法卡
-			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>'+
-			'<p style="margin: 0;padding: 0;">施法:'+' '+
-			'| 能量 '+this.info.card.apply.consume+'</p>'+
-			'<p style="margin: 0;padding: 0;">描述:'+this.info.card.depiction+'</p>';
-		}else{
-			text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'</p>';
+		var buff = '';
+		for(var i=0;i<this.info.card.buffList.length;i++){
+			buff += this.info.card.buffList[i].name;
+			if((i+1)<this.info.card.buffList.length)
+				buff += ',';
 		}
+		
+		var optionList = Context.getOptionList();
+		
+		for(var i=0;i<optionList.length;i++){
+			optionList[i].html('');
+			optionList[i].attr("title","skill"+i);
+		}
+		
+		var skill = '';
+		for(var i=0;i<this.info.card.skillList.length;i++){
+			var skillName = this.info.card.skillList[i].name;
+			skill += '['+skillName+',';
+
+			if(undefined==this.info.card.skillList[i].cooldownRemain)
+				skill += 'CD:no]';
+			else
+				skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
+			if((i+1)<this.info.card.skillList.length)
+				skill += ',';
+			
+			optionList[i].html(skillName);
+		}
+		
+		var weapon = '<p style="margin: 0;padding: 0;">武器:';
+		if(null!=this.info.card.attack.weapon){
+			weapon += this.info.card.attack.weapon.name+' '+
+			'| 攻击:'+this.info.card.attack.weapon.atk+' '+
+			'| 持久:'+this.info.card.attack.weapon.wear+' '+'</p>';
+		}
+		
+		text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
+		'| atk:'+this.info.card.attack.atk+' '+
+		'| 移动:'+this.info.card.move.energy+ ' '+
+		'| 激活:'+this.info.card.activate.activation+'</p>'+
+		'<p style="margin: 0;padding: 0;">攻击:'+' '+
+		'距离:'+this.info.card.attack.range+' '+
+		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
+		'| 速度:'+this.info.card.activate.speed+' '+
+		'| 激活:'+this.info.card.attack.attackable+'</p>'+
+		weapon+
+		'<p style="margin: 0;padding: 0;">防守:'+' '+
+		'def:'+this.info.card.attacked.def+' '+
+		'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+ 
+		'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
+		'<p style="margin: 0;padding: 0;">移动:'+' '+
+		'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
+		'| 躲避:'+this.info.card.move.flee+' '+
+		'| 精力:'+this.info.card.move.energy+' '+
+		'| 激活:'+this.info.card.move.moveable+' '+'</p>'+
+		'<p style="margin: 0;padding: 0;">生命:'+' '+
+		'状态:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
+		'<p style="margin: 0;padding: 0;">招募:'+' '+
+		'人数:'+this.info.card.call.nop+' '+
+		'| 单位人口:'+this.info.card.call.ration+' '+
+		'| 消耗:'+this.info.card.call.consume.gold+'/'+this.info.card.call.consume.ore+'</p>'+
+		'<p style="margin: 0;padding: 0;">等级:'+' '+
+		'level:'+this.info.card.upgrade.level+' '+
+		'| 经验值:'+this.info.card.upgrade.empiricValue.value+'['+this.info.card.upgrade.requirement.value+']'+' '+
+		'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.value:' ')+'</p>'+
+		'<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
+		'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
 		
 		return text;
 	},
@@ -220,7 +211,7 @@ CommandShowAction = jClass(Action, {
 		if(null!=this.info.player)
 			res += this.showPlayer();
 		
-		if(null!=this.info.grd)
+		if(null!=this.info.ground)
 			res += this.showGround();
 		
 		if(null!=this.info.place)

@@ -63,8 +63,8 @@
 			<tag key="kunchong" description="昆虫" code="176"></tag>
 			<tag key="zhiwu" description="植物" code="177"></tag>
 			<tag key="jixie" description="机械" code="178"></tag>
-			<tag key="jixie" description="龙" code="179"></tag>
-			<tag key="jixie" description="鱼" code="180"></tag>
+			<tag key="long" description="龙" code="179"></tag>
+			<tag key="yu" description="鱼" code="180"></tag>
 		</category>
 		
 		<!-- 随从 -->

@@ -8,11 +8,11 @@ ControlQueueRemoveAction = jClass(Action, {
 	
 	doAction : function(){
 		var h = this.view.html();		
-		var res = '<p style="margin: 0;padding: 0;">unit：'+this.info.unit.name+'->从队列移除</p>';
+		var res = '<p style="margin: 0;padding: 0;">player：'+this.info.player.name+'->从队列移除</p>';
 		
 		res += '<p style="margin: 0;padding: 0;">';
 		for(var i=0;i<this.info.queue.length;i++){
-			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].unit.name+'('+this.info.queue[i].count+')';
+			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].player.name+'('+this.info.queue[i].count+')';
 			if(i<(this.info.queue.length-1))
 				res += ' | ';
 		}

@@ -7,8 +7,6 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.UnableHostValidator;
 import org.cx.card.domain.User;
-import org.cx.game.card.CardFactory;
-import org.cx.game.card.LifeCard;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.Context;
 import org.cx.game.core.ContextFactory;
@@ -49,7 +47,7 @@ public class JoinCommand extends ExternalCommand {
 
 		//player2.setGround(ground);
 		player2.setHomePosition(20800811);             //硬编码
-		player2.addHeroCardID(10190002);            //硬编码
+		player2.addHeroID(10190002);            //硬编码
 		
 		user.setPlayer(player2);
 		

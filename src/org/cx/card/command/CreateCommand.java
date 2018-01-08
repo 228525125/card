@@ -7,8 +7,6 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
-import org.cx.game.card.CardFactory;
-import org.cx.game.card.LifeCard;
 import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
@@ -42,7 +40,7 @@ public class CreateCommand extends ExternalCommand {
 	
 		//player.setGround(ground);
 		player.setHomePosition(380082);           //硬编码
-		player.addHeroCardID(10190001);        //硬编码
+		player.addHeroID(10190001);        //硬编码
 		//player.addToResource(IResource.Gold, 1000);              //硬编码
 		
 		ground.captureBuilding(380082, player);     //硬编码
