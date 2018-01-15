@@ -7,7 +7,6 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
-import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.IPlayer;
 import org.cx.game.core.Player;
 import org.cx.game.exception.ValidatorException;
@@ -18,7 +17,7 @@ import org.cx.game.widget.treasure.IResource;
 
 import com.easyjf.web.ActionContext;
 
-public class CreateCommand extends ExternalCommand {
+public class CreateCommand extends OutsideCommand {
 
 	private User user = null;
 	private ServletContext context = ActionContext.getContext().getSession().getServletContext();
@@ -30,10 +29,9 @@ public class CreateCommand extends ExternalCommand {
 	}
 
 	@Override
-	public void execute(Object parameter) throws ValidatorException {
+	public void execute() throws ValidatorException {
 		// TODO Auto-generated method stub
-		super.execute(parameter);
-		
+		super.execute();
 		IGround ground = GroundFactory.getInstance("test");
 		
 		IPlayer player = new Player(1, user.getAccount());   //硬编码

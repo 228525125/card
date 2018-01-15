@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.cx.game.command.Invoker;
@@ -58,23 +59,23 @@ public class PlayAction extends BaseAction {
 		if(null!=form.get("command")&&!"".equals(form.get("command").toString())){
 			String command = form.get("command").toString();
 			msg = command +"-"+ msg;
-			Invoker invoker = new Invoker();
+			
+			String response = "";
 			try {
-				if(-1!=command.indexOf("create"))
-					invoker.receiveCommand(command, new CreateCommand(getUser()));
-				else if(-1!=command.indexOf("join"))
-					invoker.receiveCommand(command, new JoinCommand(getUser()));
-				else if(-1!=command.indexOf("finish"))
-					invoker.receiveCommand(command, new FinishCommand(getUser().getPlayer()));
-				else
-					invoker.receiveCommand(getUser().getPlayer(), command);
+				if(-1!=command.indexOf("create") || -1!=command.indexOf("join") || -1!=command.indexOf("finish")){
+					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
+					oInvoker.receiveCommand(getUser(), command);
+					response = oInvoker.getResponse();
+				}else{
+					Invoker iInvoker = new Invoker(getUser().getPlayer().getContext().getPlayNo());
+					iInvoker.receiveCommand(getUser().getPlayer(), command);
+					response = iInvoker.getResponse();
+				}
 				
 			} catch (ValidatorException e) {
 				// TODO Auto-generated catch block
 				msg = e.getMessage();
 			}
-			
-			String response = invoker.getResponse();
 			
 			if(!"".equals(response)&&0<response.split(";").length){
 				String[] resps = response.split(";");

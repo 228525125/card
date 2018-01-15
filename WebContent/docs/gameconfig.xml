@@ -1,0 +1,8 @@
+<config>
+	<response-format>
+		<format>
+			<format-name>default</format-name>
+			<format-class>org.cx.game.out.JsonOut</format-class>
+		</format>
+	</response-format>
+</config>

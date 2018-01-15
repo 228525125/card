@@ -3,7 +3,7 @@
 <game>
 	<corps>
 		<!-- classics -->
-		<card type="org.cx.game.corps.Hero" cardID="10190001">
+		<card type="org.cx.game.corps.Hero" id="10190001">
 			<parameter>
 				<id type="int">10190001</id>
 			</parameter>
@@ -33,7 +33,7 @@
 				</ShieldHit>
 			</skillList>
 		</card>
-		<card type="org.cx.game.corps.Hero" cardID="10190002">
+		<card type="org.cx.game.corps.Hero" id="10190002">
 			<parameter>
 				<id type="int">10190002</id>
 			</parameter>
@@ -53,7 +53,7 @@
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 		</card>
-		<card type="org.cx.game.corps.Corps" cardID="10100001">
+		<card type="org.cx.game.corps.Corps" id="10100001">
 			<parameter>
 				<id type="int">10100001</id>
 			</parameter>
@@ -73,7 +73,7 @@
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 		</card>
-		<card type="org.cx.game.corps.Corps" cardID="10100002">
+		<card type="org.cx.game.corps.Corps" id="10100002">
 			<parameter>
 				<id type="int">10100002</id>
 			</parameter>
@@ -93,7 +93,7 @@
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 		</card>
-		<card type="org.cx.game.corps.Corps" cardID="10100003">
+		<card type="org.cx.game.corps.Corps" id="10100003">
 			<parameter>
 				<id type="int">10100003</id>
 			</parameter>

@@ -7,7 +7,6 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.UnableHostValidator;
 import org.cx.card.domain.User;
-import org.cx.game.command.ExternalCommand;
 import org.cx.game.core.Context;
 import org.cx.game.core.ContextFactory;
 import org.cx.game.core.IContext;
@@ -19,7 +18,7 @@ import org.cx.game.widget.treasure.IResource;
 
 import com.easyjf.web.ActionContext;
 
-public class JoinCommand extends ExternalCommand {
+public class JoinCommand extends OutsideCommand {
 
 	private User user = null;
 	private ServletContext context = ActionContext.getContext().getSession().getServletContext();
@@ -30,11 +29,11 @@ public class JoinCommand extends ExternalCommand {
 	}
 
 	@Override
-	public void execute(Object parameter) throws ValidatorException {
+	public void execute() throws ValidatorException {
 		// TODO Auto-generated method stub
 		addValidator(new UnableHostValidator(context, parameter.toString()));
 		
-		super.execute(parameter);
+		super.execute();
 		
 		IPlayer player1 = (IPlayer) context.getAttribute(parameter.toString());
 		IGround ground = (IGround) context.getAttribute(parameter+"Ground");
