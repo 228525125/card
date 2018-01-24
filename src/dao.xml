@@ -9,7 +9,7 @@
       <bean parent="baseDAO"> 
         <constructor-arg> 
           <value>org.cx.card.domain.User</value> 
-        </constructor-arg> 
+        </constructor-arg>
       </bean> 
     </property> 
   </bean>  

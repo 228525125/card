@@ -7,6 +7,14 @@
 			<rule type="org.cx.game.rule.AttackRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.TauntRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.CallRule" interface="org.cx.game.rule.IRule"></rule>
+			
+			<!-- 更新Corps的属性值，例如，atk,def等 -->
+			<rule type="org.cx.game.rule.CorpsPropertyUpdateAddBuffRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.CorpsPropertyUpdateAddSkillRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.CorpsPropertyUpdatePlaceInRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.CorpsPropertyUpdateRemoveBuffRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.CorpsPropertyUpdateTreasureEquipmentPickedRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.CorpsPropertyUpdateUpgradeRule" interface="org.cx.game.rule.IRule"></rule>
 		</ruleList>
 	</ruleGroup>
 </rules>

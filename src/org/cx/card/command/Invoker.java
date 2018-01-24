@@ -8,7 +8,6 @@ import org.cx.game.core.IPlayer;
 import org.cx.game.core.Record;
 import org.cx.game.exception.SyntaxValidatorException;
 import org.cx.game.exception.ValidatorException;
-import org.cx.game.out.Response;
 
 public class Invoker {
 

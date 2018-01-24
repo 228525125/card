@@ -1,5 +1,5 @@
 <buildings>
-	<building type="org.cx.game.widget.building.BuildingTown" interface="org.cx.game.widget.building.IBuilding" id="601">
+	<building type="org.cx.game.widget.building.TownBuilding" interface="org.cx.game.widget.building.IBuilding" id="601">
 		<parameter>
 			<buildingType type="int">601</buildingType>
 		</parameter>
@@ -8,7 +8,7 @@
 			<buildingType type="int">603</buildingType>
 		</buildings>
 		<!-- 
-		<upgrade type="org.cx.game.action.UpgradeBuilding" interface="org.cx.game.action.IUpgrade">
+		<upgrade type="org.cx.game.action.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
 			<requirement type="java.util.HashMap" interface="java.util.Map" map="true">
 				<map>
 					<key type="str">701</key>
@@ -18,7 +18,7 @@
 		</upgrade>
 		 -->
 	</building>
-	<building type="org.cx.game.widget.building.BuildingCall" interface="org.cx.game.widget.building.IBuilding" id="602">
+	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="602">
 		<parameter>
 			<cardID type="int">10100001</cardID>
 			<yield type="int">1</yield>
@@ -38,7 +38,7 @@
 		<buildWait type="int">1</buildWait>
 		<levelLimit type="int">2</levelLimit>
 	</building>
-	<building type="org.cx.game.widget.building.BuildingCall" interface="org.cx.game.widget.building.IBuilding" id="603">
+	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="603">
 		<parameter>
 			<cardID type="int">10100002</cardID>
 			<yield type="int">1</yield>
