@@ -7,6 +7,7 @@
 			<rule type="org.cx.game.rule.AttackRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.TauntRule" interface="org.cx.game.rule.IRule"></rule>
 			<rule type="org.cx.game.rule.CallRule" interface="org.cx.game.rule.IRule"></rule>
+			<rule type="org.cx.game.rule.DeathRule" interface="org.cx.game.rule.IRule"></rule>
 			
 			<!-- 更新Corps的属性值，例如，atk,def等 -->
 			<rule type="org.cx.game.rule.CorpsPropertyUpdateAddBuffRule" interface="org.cx.game.rule.IRule"></rule>

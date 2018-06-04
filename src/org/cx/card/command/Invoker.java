@@ -12,7 +12,7 @@ import org.cx.game.exception.ValidatorException;
 public class Invoker {
 
 	private Command command;
-	private String response = "";
+	//private String response = "";
 
 	private void setCommand(Command command) {
 		this.command = command;
@@ -22,39 +22,9 @@ public class Invoker {
 		this.command.execute();
 	}
 	
-	public String getResponse() {		
+	/*public String getResponse() {		
 		return response;
-	}
-
-	/*
-	 * 把执行中观察的结果反馈给前台
-	
-	private void response(){
-		response = Response.process.get().toString();
-		Response.process.get().delete(0, Response.process.get().length());
-		
-		record();
-	}
-	
-	private void record(){
-		Camera camera = Camera.getInstance();
-		
-		if(!"".equals(response) && 0<response.split(";").length){
-			String[] resps = response.split(";");
-			
-			Integer sequence = camera.getNewSequence();
-			for(int i=0;i<resps.length;i++){
-				Record r = new Record();
-				r.setPlayNo(playNo);
-				r.setCommand(resps[i]);
-				r.setSequence(sequence+i);
-				String action = resps[i].split("\",")[0].substring(11);
-				r.setAction(action);
-				
-				camera.addRecord(r);
-			}
-		}
-	} */
+	}*/
 	
 	private void intergrityValidate(String cmd) throws SyntaxValidatorException {
 		String[] cs = cmd.split(Calculator.SPACE);
@@ -76,6 +46,7 @@ public class Invoker {
 			// TODO: handle exception
 			throw e;
 		} finally {
+			//外部命令用于创建主机，游戏场景并未创建，因此所有输出都无法正常显示
 			//response();
 		}
 	}

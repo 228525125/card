@@ -1,0 +1,40 @@
+<parameter>
+	<topographicAdvantage description="地形优势">
+		<landform code="401" description="草地">
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="402" description="丘林">
+			<object type="MoveConsume" code="141" description="步行">2</object>
+			<object type="MoveConsume" code="142" description="骑行">3</object>
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>			
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="403" description="森林">
+			<object type="MoveConsume" code="141" description="步行">2</object>
+			<object type="MoveConsume" code="142" description="骑行">3</object>
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="404" description="河">
+			<object type="MoveConsume" code="141" description="步行">3</object>
+			<object type="MoveConsume" code="142" description="骑行">-1</object>
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="405" description="山">
+			<object type="MoveConsume" code="141" description="步行">-1</object>
+			<object type="MoveConsume" code="142" description="骑行">-1</object>
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="407" description="城镇">
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+		<landform code="408" description="村庄">
+			<object type="MoveConsume" code="40" description="移动消耗默认">1</object>
+			<object type="OffensiveAndDefensiveOfProfession" code="40" description="兵种攻防优势默认">0,0</object>
+		</landform>
+	</topographicAdvantage>
+</parameter>

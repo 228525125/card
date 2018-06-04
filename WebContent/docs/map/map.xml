@@ -7,37 +7,39 @@
 			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
 		</parameter>
 		
-		<!-- 玩家数量，玩家领地，玩家阵营 -->
-				
-		<buildings type="java.util.HashMap" interface="java.util.Map" map="true">                                                    <!-- 建筑物的集合 -->
-			<map>
-				<key type="int">380082</key>                                                                                                                 <!-- 位置 -->
-				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
-			</map>
-			<map>
-				<key type="int">2080082</key>                                                                                                                 <!-- 位置 -->
-				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
-			</map>
-			<map>
-				<key type="int">1280086</key>                                                                                                                 <!-- 位置 -->
-				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
-			</map>
-			<map>
-				<key type="int">3800811</key>                                                                                                                 <!-- 位置 -->
-				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
-			</map>
-			<map>
-				<key type="int">20800811</key>                                                                                                                 <!-- 位置 -->
-				<value type="int">601</value>                                                                                                             <!-- 建筑 -->
-			</map>
-		</buildings>
+		<!-- 阵营 -->
+		<troopList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<troop type="int">1</troop>
+			<troop type="int">2</troop>
+		</troopList>
 		
-		<!-- NPC 
+		<!-- 英雄入口 --><!-- 入口数决定了英雄数 -->
+		<entranceMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">380082</key>
+				<value type="int">1</value>
+			</map>
+			<map>
+				<key type="int">2080082</key>
+				<value type="int">2</value>
+			</map>
+		</entranceMap>
+				
+		<!-- 建筑 -->
+		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
+			<building type="str">380082,601,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
+			<building type="str">2080082,601,2</building>
+			<building type="str">1280086,601,0</building>
+			<building type="str">3800811,601,0</building>
+			<building type="str">20800811,601,0</building>
+		</buildingData>
+		
+		<!-- NPC --> 
 		<npcData type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<npc type="str">10100001,580085,2,10400001</npc>
-			<npc type="str">10100002,680085,2,10400001</npc>
+			<npc type="str">580085,10100001,2,20,20</npc>                                                                                       <!--  位置，兵种，等级，数量，阵营  -->
+			<npc type="str">680085,10100002,3,20,21</npc>
 		</npcData>
-		-->
+		
 		
 		<!-- 宝物 -->
 		<treasureMap type="java.util.HashMap" interface="java.util.Map" map="true">
@@ -54,6 +56,7 @@
 			</map>
 		</treasureMap>
 		
+		<!-- 地形 -->
 		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<!-- 山 -->
 			<!-- 9 -->

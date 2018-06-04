@@ -1,6 +1,5 @@
 //全局对象
 var Context = function(){
-	var playerMap = new Map();
 	var map = new Map(); 
 	var control = null;
 	var notice = null;
@@ -10,12 +9,6 @@ var Context = function(){
 	var timer = null;
 	//var queue = new Array();   //目前无法测试
 	return {
-		addPlayer:function(player){
-			playerMap.put(player.id, player);
-		},
-		getPlayer:function(playerId){
-			return playerMap.get(playerId);
-		},
 		put:function(key,value){
 			map.put(key,value);
 		},
@@ -49,7 +42,7 @@ var Context = function(){
 		beginSyn: function(){
 			if(null!=timer)
 				clearInterval(timer);
-			timer = setInterval("syn()",10000);
+			timer = setInterval("syn()",8000);
 		},
 		stopSyn: function(){
 			clearInterval(timer);
@@ -110,12 +103,5 @@ var Context = function(){
 		Landform : 'Landform',
 		BuildingList : 'BuildingList',
 		TreasureMap : 'TreasureMap',
-		/*,
-		getQueue: function(){
-			return queue;
-		},
-		setQueue: function(array){
-			queue = array;
-		}*/
 	}
 }();

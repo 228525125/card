@@ -165,6 +165,13 @@ $(function(){
 			$("#command_input").val(val);
 			command_input_sub();
 		}
+		/* usecard 取消
+		if(-1!=this.id.indexOf('usecard')){
+			var playerId =this.id.substring(7,this.id.length).split('_')[0];
+			var position = this.id.substring(7,this.id.length).split('_')[1];
+			if(Context.getOwn().id==playerId)
+				post('select use card'+position+';show');
+		}*/
 	});
 	
 	$("#button_execute").click(function(){
@@ -254,6 +261,9 @@ $(function(){
 	var faction = new Player('9', data3);     //硬编码，9表示中立生物*/
 	
 	//context初始化
+	//Context.addPlayer(player1);
+	//Context.addPlayer(player2);
+	//Context.addPlayer(faction);
 	Context.setNotice(notice);
 	Context.setOptionList(optionList);
 	Context.put(Context.Ground,ground);

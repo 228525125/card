@@ -130,6 +130,10 @@
 			<description>结束回合</description>
 		</command>
 		
+		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='no'>
+			<description>准备就绪</description>		
+		</command>
+		
 		<command name='start' class='org.cx.game.command.StartCommand' parameter='no'>
 			<description>比赛开始</description>		
 		</command>

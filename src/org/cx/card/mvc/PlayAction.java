@@ -4,18 +4,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.cx.game.command.Invoker;
 import org.cx.game.core.Camera;
-import org.cx.game.core.ContextFactory;
 import org.cx.game.core.Record;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.Util;
-import org.cx.card.command.CreateCommand;
-import org.cx.card.command.FinishCommand;
-import org.cx.card.command.JoinCommand;
 import org.cx.card.domain.Process;
 import org.cx.card.service.IProcessService;
 import org.cx.card.service.JDBCQueryService;
@@ -59,13 +54,12 @@ public class PlayAction extends BaseAction {
 		if(null!=form.get("command")&&!"".equals(form.get("command").toString())){
 			String command = form.get("command").toString();
 			msg = command +"-"+ msg;
-			
 			String response = "";
 			try {
-				if(-1!=command.indexOf("create") || -1!=command.indexOf("join") || -1!=command.indexOf("finish")){
+				if(-1!=command.indexOf("create") || -1!=command.indexOf("join") || -1!=command.indexOf("finish") || -1!=command.indexOf("ready")){
 					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
 					oInvoker.receiveCommand(getUser(), command);
-					response = oInvoker.getResponse();
+					//response = oInvoker.getResponse();外部命令用于创建主机，游戏场景并未创建，因此所有输出都无法正常显示
 				}else{
 					Invoker iInvoker = new Invoker(getUser().getPlayer().getContext().getPlayNo());
 					iInvoker.receiveCommand(getUser().getPlayer(), command);
@@ -86,7 +80,7 @@ public class PlayAction extends BaseAction {
 					p.setPlayNo(playNo);
 					p.setCommand(resps[i]);
 					p.setSequence(sequence+i);
-					p.setPlayerId(getUser().getPlayer().getId());
+					p.setPlayerId(getUser().getPlayer().getTroop());
 					String action = resps[i].split("\",")[0].substring(11);
 					p.setAction(action);
 					list.add(p);
@@ -150,7 +144,7 @@ public class PlayAction extends BaseAction {
 				e.printStackTrace();
 			}
 			
-			process.setPlayerId(getUser().getPlayer().getId());
+			process.setPlayerId(getUser().getPlayer().getTroop());
 			
 			processService.addProcess(process);
 		}

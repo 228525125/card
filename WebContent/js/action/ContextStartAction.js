@@ -22,7 +22,5 @@ ContextStartAction = jClass(Action, {
 		Context.put(Context.TreasureMap,this.info.treasure);
 		Context.reloadTreasure();
 		
-		
-		
 	}
 });
