@@ -8,6 +8,7 @@ import org.cx.game.core.IPlayer;
 import org.cx.game.core.Record;
 import org.cx.game.exception.SyntaxValidatorException;
 import org.cx.game.exception.ValidatorException;
+import org.cx.game.tools.PropertiesUtil;
 
 public class Invoker {
 
@@ -35,7 +36,7 @@ public class Invoker {
 	public void receiveCommand(User user, String cmd) throws ValidatorException {
 		try {
 			intergrityValidate(cmd);    //验证命令完整性
-		
+			
 			for(String c : cmd.split(";")){
 				OutsideCommand command = CommandFactory.getInstance(user, c);
 				//command.setExternal(external);

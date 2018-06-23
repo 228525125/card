@@ -15,7 +15,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.cx.game.core.Host;
+import org.cx.game.core.AbstractHost;
+import org.cx.game.core.GroundHost;
 import org.cx.game.core.IPlayer;
 
 @Entity
@@ -75,12 +76,12 @@ public class User {
 	}
 	
 	@Transient
-	private Host host = null;
+	private AbstractHost host = null;
 
-	public Host getHost() {
+	public AbstractHost getHost() {
 		return host;
 	}
-	public void setHost(Host host) {
+	public void setHost(AbstractHost host) {
 		this.host = host;
 		this.player = host.queryPlayerForName(account);
 	}

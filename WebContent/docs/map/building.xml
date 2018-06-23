@@ -1,11 +1,11 @@
 <buildings>
-	<building type="org.cx.game.widget.building.TownBuilding" interface="org.cx.game.widget.building.IBuilding" id="601">
+	<building type="org.cx.game.widget.building.TownBuilding" interface="org.cx.game.widget.building.IBuilding" id="601001">
 		<parameter>
-			<buildingType type="int">601</buildingType>
+			<buildingType type="int">601001</buildingType>
 		</parameter>
 		<buildings type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<buildingType type="int">602</buildingType>
-			<buildingType type="int">603</buildingType>
+			<building type="int">602001</building>
+			<building type="int">603001</building>
 		</buildings>
 		<!-- 
 		<upgrade type="org.cx.game.action.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
@@ -18,11 +18,11 @@
 		</upgrade>
 		 -->
 	</building>
-	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="602">
+	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="602001">
 		<parameter>
 			<cardID type="int">10100001</cardID>
 			<yield type="int">1</yield>
-			<buildingType type="int">602</buildingType>
+			<buildingType type="int">602001</buildingType>
 		</parameter>
 		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
 			<parameter>
@@ -38,11 +38,11 @@
 		<buildWait type="int">1</buildWait>
 		<levelLimit type="int">2</levelLimit>
 	</building>
-	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="603">
+	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="603001">
 		<parameter>
 			<cardID type="int">10100002</cardID>
 			<yield type="int">1</yield>
-			<buildingType type="int">603</buildingType>
+			<buildingType type="int">603001</buildingType>
 		</parameter>
 		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
 			<parameter>
@@ -57,7 +57,40 @@
 		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
 		<needBuilding type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<building type="int">602</building>
+			<buildingType type="int">602</buildingType>
 		</needBuilding>
+	</building>
+	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+		<parameter>
+			<buildingType type="int">506001</buildingType>
+		</parameter>
+		<transmissionIsUsable type="bool">true</transmissionIsUsable>
+		<receiveIsUsable type="bool">true</receiveIsUsable>
+		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<buildingType type="int">506002</buildingType>
+			<buildingType type="int">506003</buildingType>
+		</spatialBuildingTypeList>
+	</building>
+	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+		<parameter>
+			<buildingType type="int">506002</buildingType>
+		</parameter>
+		<transmissionIsUsable type="bool">true</transmissionIsUsable>
+		<receiveIsUsable type="bool">true</receiveIsUsable>
+		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<buildingType type="int">506001</buildingType>
+			<buildingType type="int">506003</buildingType>
+		</spatialBuildingTypeList>
+	</building>
+	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+		<parameter>
+			<buildingType type="int">506003</buildingType>
+		</parameter>
+		<transmissionIsUsable type="bool">true</transmissionIsUsable>
+		<receiveIsUsable type="bool">true</receiveIsUsable>
+		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<buildingType type="int">506001</buildingType>
+			<buildingType type="int">506002</buildingType>
+		</spatialBuildingTypeList>
 	</building>
 </buildings>

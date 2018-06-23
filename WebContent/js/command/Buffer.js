@@ -33,6 +33,8 @@ var Buffer = function(){
 				}
 				Context.reloadLandform();
 				Context.reloadBuilding();
+				Context.reloadTreasure();
+				Context.reloadCorps();
 			}
 		}
 	}

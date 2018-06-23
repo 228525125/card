@@ -11,5 +11,19 @@ GroundLoadMapAction = jClass(Action, {
 		
 		var scrollTop = this.view[0].scrollHeight;
 		this.view.scrollTop(scrollTop+1);
+		
+		Context.refurbishGround();
+		
+		Context.put(Context.Landform,this.info.landform);
+		Context.reloadLandform();
+		
+		Context.put(Context.BuildingList,this.info.buildingList);
+		Context.reloadBuilding();
+		
+		Context.put(Context.TreasureList,this.info.treasureList);
+		Context.reloadTreasure();
+		
+		Context.put(Context.CorpsList,this.info.corpsList);
+		Context.reloadCorps();
 	}
 });

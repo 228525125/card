@@ -1,16 +1,17 @@
 <maps>
-	<map type="org.cx.game.widget.HoneycombGround" id="test">
+	<map type="org.cx.game.widget.HoneycombGround" id="107001">
 		<description>测试专用图</description>
 		<parameter>
+			<id type="int">107001</id>
+			<name type="str">腐败沼泽</name>
 			<xBorder type="int">21</xBorder>                                                                                                  <!-- 地图边界：x轴最大值 -->
 			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
-			<imagePath type="str"></imagePath>                                                                                             <!-- 背景图片的路径 -->
+			<imagePath type="str"></imagePath>                                                                                                <!-- 背景图片的路径 -->
 		</parameter>
 		
 		<!-- 阵营 -->
 		<troopList type="java.util.ArrayList" interface="java.util.List" collection="true">
 			<troop type="int">1</troop>
-			<troop type="int">2</troop>
 		</troopList>
 		
 		<!-- 英雄入口 --><!-- 入口数决定了英雄数 -->
@@ -19,19 +20,18 @@
 				<key type="int">380082</key>
 				<value type="int">1</value>
 			</map>
-			<map>
-				<key type="int">2080082</key>
-				<value type="int">2</value>
-			</map>
 		</entranceMap>
 				
 		<!-- 建筑 -->
 		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
-			<building type="str">380082,601,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
-			<building type="str">2080082,601,2</building>
-			<building type="str">1280086,601,0</building>
-			<building type="str">3800811,601,0</building>
-			<building type="str">20800811,601,0</building>
+			<building type="str">380082,601001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
+			<building type="str">2080082,601001,0</building>
+			<building type="str">1280086,601001,0</building>
+			<building type="str">3800811,601001,0</building>
+			<building type="str">20800811,601001,0</building>
+			<building type="str">380083,506001,0</building>
+			<building type="str">2080084,506001,0</building>
+			<building type="str">1280087,506001,0</building>
 		</buildingData>
 		
 		<!-- NPC --> 
@@ -439,6 +439,343 @@
 			<map>
 				<key type="int">1280088</key>
 				<value type="int">403</value>
+			</map>
+		</landformMap>
+		
+		<!-- 无效的位置集合（暂时没用） -->
+		<!-- 
+		<disableList type="java.util.ArrayList" interface="java.util.List" collection="true">                                                 
+			<position type="int">610013</position>
+		</disableList>
+		 -->
+		 
+		 <!-- 仅用来记录 factory属性的用法 -->
+		 <!--  
+		 <value type="org.cx.game.policy.PolicyGroup" interface="org.cx.game.policy.IGroupPolicy" factory="org.cx.game.policy.PolicyGroupFactory">
+				<factoryMethodParameter>
+					<guardId type="int">10400001</guardId>
+				</factoryMethodParameter>
+		</value>
+		-->
+	</map>
+	
+	<map type="org.cx.game.widget.HoneycombGround" id="107002">
+		<description>测试专用图</description>
+		<parameter>
+			<id type="int">107002</id>
+			<name type="str">毒蜥沼泽</name>
+			<xBorder type="int">21</xBorder>                                                                                                  <!-- 地图边界：x轴最大值 -->
+			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
+			<imagePath type="str"></imagePath>                                                                                                <!-- 背景图片的路径 -->
+		</parameter>
+		
+		<!-- 阵营 -->
+		<troopList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<troop type="int">1</troop>
+		</troopList>
+		
+		<!-- 英雄入口 --><!-- 入口数决定了英雄数 -->
+		<entranceMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<map>
+				<key type="int">380082</key>
+				<value type="int">1</value>
+			</map>
+		</entranceMap>
+				
+		<!-- 建筑 -->
+		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
+			<building type="str">380082,601001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
+			<building type="str">2080082,601001,0</building>
+		</buildingData>
+		
+		<!-- 地形 -->
+		<landformMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<!-- 山 -->
+			<!-- 9 -->
+			<map>
+				<key type="int">180086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">280086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">380086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">480086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">580086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">180087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">280087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">380087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">480087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">580087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680087</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 10 -->
+			<map>
+				<key type="int">780081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">780082</key>
+				<value type="int">405</value>
+			</map>	
+			<map>
+				<key type="int">780083</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">880081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">880082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">680083</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 8 -->
+			<map>
+				<key type="int">7800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">7800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800812</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">8800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">9800812</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 2 -->
+			<map>
+				<key type="int">1480081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580081</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1680082</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1580083</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1680083</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 4 -->
+			<map>
+				<key type="int">16800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">17800810</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">15800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">16800811</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">15800812</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">16800812</key>
+				<value type="int">405</value>
+			</map>
+			<!-- 3 -->
+			<map>
+				<key type="int">1780086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1880086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1980086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2080086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2180086</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1780087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1880087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">1980087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2080087</key>
+				<value type="int">405</value>
+			</map>
+			<map>
+				<key type="int">2180087</key>
+				<value type="int">405</value>
+			</map>
+			
+			<!-- 山丘 -->
+			<!-- 10 -->
+			<map>
+				<key type="int">580082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">680082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">480083</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">580083</key>
+				<value type="int">402</value>
+			</map>
+			
+			<!-- 8 -->
+			<map>
+				<key type="int">5800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">6800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">5800811</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">6800811</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 2 -->
+			<map>
+				<key type="int">1780082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1880082</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1780083</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1880083</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 4 -->
+			<map>
+				<key type="int">18800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">19800810</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">17800811</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">18800811</key>
+				<value type="int">402</value>
+			</map>
+			<!-- 中 -->
+			<map>
+				<key type="int">1180085</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1280085</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1180086</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1380086</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1180087</key>
+				<value type="int">402</value>
+			</map>
+			<map>
+				<key type="int">1280087</key>
+				<value type="int">402</value>
 			</map>
 		</landformMap>
 		

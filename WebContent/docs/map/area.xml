@@ -1,0 +1,23 @@
+<world>
+	<area type="org.cx.game.widget.Area" id="106001">
+		<description>区域</description>
+		<parameter>
+			<id type="int">1</id>
+			<imagePath type="str"></imagePath>
+		</parameter>
+		
+		<!-- 阵营 -->
+		<troopList type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<troop type="int">1</troop>
+		</troopList>
+		
+		<!-- 地图集 -->
+		<atlas type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<map type="int">107001</map>
+			<map type="int">107002</map>
+		</atlas>
+		
+		<!-- 区域入口地图 -->
+		<startingPoint type="int">107001</startingPoint>
+	</area>
+</world>

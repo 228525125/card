@@ -4,7 +4,9 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
-import org.cx.game.core.Host;
+import org.cx.game.core.AbstractHost;
+import org.cx.game.core.AreaHost;
+import org.cx.game.core.GroundHost;
 import org.cx.game.core.IPlayer;
 import org.cx.game.exception.ValidatorException;
 
@@ -26,7 +28,7 @@ public class CreateCommand extends OutsideCommand {
 		// TODO Auto-generated method stub
 		super.execute();
 		
-		Host host = new Host(1, user.getAccount());
+		AbstractHost host = new AreaHost(106001, user.getAccount());        //硬编码
 		host.setHeroOfPlayer(10190001, user.getAccount());
 		user.setHost(host);
 		context.setAttribute(parameter.toString(), host);

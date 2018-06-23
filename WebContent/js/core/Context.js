@@ -88,20 +88,48 @@ var Context = function(){
 			}
 		},
 		reloadTreasure : function(){
-			var treasureMap = this.get(this.TreasureMap);
-			var keys = Object.getOwnPropertyNames(treasureMap);
+			var treasureList = this.get(this.TreasureList);
 			
-			for(var i=0;i<keys.length;i++){
-				var key = keys[i];
+			for(var i=0;i<treasureList.length;i++){
+				var treasure = treasureList[i];
+				var position = treasure.position;
+				
 				var ground = this.get(this.Ground);
-				var place = ground.getPlace(key);
+				var place = ground.getPlace(position);
 				
 				place.view.html('【物品】');
+			}
+		},
+		reloadCorps : function(){
+			var corpsList = this.get(this.CorpsList);
+			
+			for(var i=0;i<corpsList.length;i++){
+				var corps = corpsList[i];
+				var position = corps.position;
+				
+				var ground = this.get(this.Ground);
+				var place = ground.getPlace(position);
+				
+				place.view.html(corps.name);
+			}
+		},
+		refurbishGround : function(){
+			var ground = this.get(this.Ground);
+			
+			for(var i=1;i<=ground.xBorder;i++){
+				for(var n=1;n<=ground.yBorder;n++){
+					var place = ground.getPlace(""+i+"8008"+n);
+					place.view.html("");
+					place.view.css("background-color","");
+				}
 			}
 		},
 		Ground : 'Ground',
 		Landform : 'Landform',
 		BuildingList : 'BuildingList',
-		TreasureMap : 'TreasureMap',
+		TreasureList : 'TreasureList',
+		CorpsList : 'CorpsList',
+		XBorder : 'XBorder',
+		YBorder : 'YBorder'
 	}
 }();

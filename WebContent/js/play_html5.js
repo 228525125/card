@@ -219,7 +219,7 @@ $(function(){
 	var xBorder = 21;
 	var yBorder = 12;
 	
-	var ground = new Ground();
+	var ground = new Ground(xBorder, yBorder);
 	for(var i=1;i<=xBorder;i++){
 		for(var n=1;n<=yBorder;n++){
 			ground.addObserver(new GroundPlace(""+i+"8008"+n,$("#ground"+i+"8008"+n)));

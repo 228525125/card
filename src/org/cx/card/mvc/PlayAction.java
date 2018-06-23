@@ -10,6 +10,7 @@ import org.cx.game.command.Invoker;
 import org.cx.game.core.Camera;
 import org.cx.game.core.Record;
 import org.cx.game.exception.ValidatorException;
+import org.cx.game.tools.PropertiesUtil;
 import org.cx.game.tools.Util;
 import org.cx.card.domain.Process;
 import org.cx.card.service.IProcessService;
@@ -48,6 +49,7 @@ public class PlayAction extends BaseAction {
 	}
 	
 	public Page send(WebForm form){
+		
 		form.addResult("user", getUser().getAccount());
 		String msg = "complete";
 		List<Process> list = new ArrayList<Process>();
@@ -148,5 +150,10 @@ public class PlayAction extends BaseAction {
 			
 			processService.addProcess(process);
 		}
+	}
+	
+	public static void main(String[] args) {
+		String value = PropertiesUtil.getConfigure("area.path");
+		System.out.println(value);
 	}
 }

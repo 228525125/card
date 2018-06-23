@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <game>
-	<types> <!-- 类型定义 --><!-- 这里的text必须与CommandBuffer一致 -->
+	<types> <!-- 类型定义 -->
+		<!-- InteriorCommandParameterBufferExpression 这部分必须与CommandBuffer一致 -->
 		<type name = "player">
 			<item>player</item>
 		</type>
@@ -26,6 +27,16 @@
 		<type name = "trick">
 			<item>trick</item>
 		</type>
+		<type name = "building">
+			<item>building</item>
+		</type>
+		<type name = "option">
+			<item>option</item>
+		</type>
+		
+		<!-- InteriorCommandParameterBufferExpression End -->
+		
+		<!-- InteriorCommandParameterActionExpression -->
 		<type name = "action">
 			<item>attack</item>
 			<item>call</item>
@@ -35,15 +46,15 @@
 			<item>execute</item>
 			<item>pick</item>
 		</type>
-		<type name = "building">
-			<item>building</item>
-		</type>
-		<type name = "option">
-			<item>option</item>
-		</type>
+		
+		<!-- InteriorCommandParameterActionExpression End -->
+		
+		<!-- InteriorCommandParameterPropertyExpression -->
 		<type name = "property"> <!-- 用来应付一些需要通过命令来给对象属性赋值的情况，例如一次招募人数，就需要对招募选项的数量赋值 -->
 			<item>option.number</item>  <!-- 对象+属性名 -->
 		</type>
+		
+		<!-- InteriorCommandParameterPropertyExpression End -->
 	</types>	
 	
 	<commands>
@@ -65,8 +76,15 @@
 		</command>
 		
 		<!-- 命令转换例子：show ground 1 = select ground 1;show = select ground;select 1;show -->
-		<command name='show' class='org.cx.game.command.ShowCommand' parameter='no'>
-			<description>显示</description>			
+		<command name='show' class='org.cx.game.command.ShowCommand' parameter='none'>
+			<description>显示</description>
+		</command>
+		
+		<command name='switch' class='org.cx.game.command.SwitchCommand' parameter='request'>
+			<description>切换地图</description>
+			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterBasicTypeExpression">
+				<option>basic</option>
+			</parameter>		
 		</command>
 		
 		<!-- set option.number[2] 等价于 set 对象.属性[值]-->
@@ -114,27 +132,27 @@
 			</parameter>
 		</command>
 		
-		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='no'>
+		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='none'>
 			<description>升级</description>
 		</command>
 		
-		<command name='chuck' class='org.cx.game.command.ChuckCommand' parameter='no'>
+		<command name='chuck' class='org.cx.game.command.ChuckCommand' parameter='none'>
 			<description>丢弃</description>
 		</command>
 		
-		<command name='guard' class='org.cx.game.command.GuardCommand' parameter='no'>
+		<command name='guard' class='org.cx.game.command.GuardCommand' parameter='none'>
 			<description>原地防守</description>
 		</command>
 		
-		<command name='done' class='org.cx.game.command.DoneCommand' parameter='no'>
+		<command name='done' class='org.cx.game.command.DoneCommand' parameter='none'>
 			<description>结束回合</description>
 		</command>
 		
-		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='no'>
+		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='none'>
 			<description>准备就绪</description>		
 		</command>
 		
-		<command name='start' class='org.cx.game.command.StartCommand' parameter='no'>
+		<command name='start' class='org.cx.game.command.StartCommand' parameter='none'>
 			<description>比赛开始</description>		
 		</command>
 		
@@ -159,15 +177,15 @@
 			</parameter>	
 		</command>
 		
-		<command name='finish' class='org.cx.card.command.FinishCommand' parameter='no'>
+		<command name='finish' class='org.cx.card.command.FinishCommand' parameter='none'>
 			<description>结束比赛</description>		
 		</command>
 		
-		<command name='auto' class='org.cx.game.command.AutoCommand' parameter='no'>
+		<command name='auto' class='org.cx.game.command.AutoCommand' parameter='none'>
 			<description>电脑托管</description>
 		</command>
 		
-		<command name='reload' class='org.cx.game.command.ReloadCommand' parameter='no'>
+		<command name='reload' class='org.cx.game.command.ReloadCommand' parameter='none'>
 			<description>前台重新加载后台数据</description>		
 		</command>
 		

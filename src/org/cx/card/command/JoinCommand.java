@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 
 import org.cx.card.command.Validator.HostVacancyValidator;
 import org.cx.card.domain.User;
-import org.cx.game.core.Host;
+import org.cx.game.core.AbstractHost;
 import org.cx.game.exception.ValidatorException;
 
 import com.easyjf.web.ActionContext;
@@ -26,7 +26,7 @@ public class JoinCommand extends OutsideCommand {
 		
 		super.execute();
 		
-		Host host = (Host) context.getAttribute(parameter.toString());
+		AbstractHost host = (AbstractHost) context.getAttribute(parameter.toString());
 		host.playerJoinGame(user.getAccount());
 		host.setHeroOfPlayer(10190002, user.getAccount());
 		user.setHost(host);
