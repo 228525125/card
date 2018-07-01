@@ -265,7 +265,7 @@ $(function(){
 	ActionFactory.register('Place_Out', 'new PlaceOutAction(data.info,view)');	
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');
 	ActionFactory.register('Command_Show', 'new CommandShowAction(data.info,view)');
-	ActionFactory.register('Command_Reload', 'new CommandReloadAction(data.info,view)');
+	ActionFactory.register('Command_Switch', 'new CommandSwitchAction(data.info,view)');
 	ActionFactory.register('Command_Query_Call', 'new CommandQueryCallAction(data.info,view)');
 	ActionFactory.register('Command_Query_Attack', 'new CommandQueryAttackAction(data.info,view)');
 	ActionFactory.register('Command_Query_Move', 'new CommandQueryMoveAction(data.info,view)');
@@ -283,6 +283,10 @@ $(function(){
 	ActionFactory.register('Corps_Pick', 'new LifeCardPickAction(data.info,view)');
 	ActionFactory.register('Corps_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Corps_Atk', 'new LifeCardAtkAction(data.info,view)');
+	
+	ActionFactory.register('Building_Transmit', 'new BuildingTransmitAction(data.info,view)');
+	ActionFactory.register('Building_Receive', 'new BuildingReceiveAction(data.info,view)');
+	
 	ActionFactory.register('Skill_UseSkill', 'new SkillAction(data.info,view)');
 	ActionFactory.register('Treasure_Picked', 'new TreasurePickedAction(data.info,view)');
 	ActionFactory.register('Buff_Affect', 'new BuffAffectAction(data.info,view)');

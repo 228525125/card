@@ -19,5 +19,12 @@
 		
 		<!-- 区域入口地图 -->
 		<startingPoint type="int">107001</startingPoint>
+		
+		<!-- 传送站 -->
+		<spatialNodeData type="java.util.ArrayList" interface="java.util.List" collection="true">
+			<spatialNode type="str">506001,506002,506003</spatialNode>
+			<spatialNode type="str">506002,506001,506003</spatialNode>
+			<spatialNode type="str">506003,506001,506002</spatialNode>
+		</spatialNodeData>
 	</area>
 </world>

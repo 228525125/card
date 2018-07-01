@@ -72,7 +72,7 @@ CommandShowAction = jClass(Action, {
 		
 		var buildingName = null==this.info.building || undefined == this.info.building ? '' : this.info.building.name;
 		var text = '<p style="margin: 0;padding: 0;">建筑:'+buildingName+' '+
-		'| 占领者:'+this.info.building.player.name+' '+
+		'| 占领者:'+(undefined==this.info.building.player ? '' : this.info.building.player.name)+' '+
 		'| 等级:'+this.info.building.upgrade.level+ ' '+
 		'| 状态:'+Glossary.get(Glossary.Building_Status,this.info.building.status);
 		text += '<p style="margin: 0;padding: 0;">建造费用:'+'金币 '+this.info.building.consume.gold+' | 木材 '+this.info.building.consume.wood+' | 石材 '+this.info.building.consume.stone+' | 矿 '+this.info.building.consume.ore+'</p>';

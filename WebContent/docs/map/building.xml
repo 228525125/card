@@ -66,31 +66,19 @@
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>
-		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<buildingType type="int">506002</buildingType>
-			<buildingType type="int">506003</buildingType>
-		</spatialBuildingTypeList>
 	</building>
-	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506002">
 		<parameter>
 			<buildingType type="int">506002</buildingType>
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>
-		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<buildingType type="int">506001</buildingType>
-			<buildingType type="int">506003</buildingType>
-		</spatialBuildingTypeList>
 	</building>
-	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506003">
 		<parameter>
 			<buildingType type="int">506003</buildingType>
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>
-		<spatialBuildingTypeList type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<buildingType type="int">506001</buildingType>
-			<buildingType type="int">506002</buildingType>
-		</spatialBuildingTypeList>
 	</building>
 </buildings>

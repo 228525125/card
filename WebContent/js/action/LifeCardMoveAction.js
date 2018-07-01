@@ -14,8 +14,7 @@ LifeCardMoveAction = jClass(Action, {
 		
 		if('send'==this.info.sign){
 			post('select ground place'+this.info.position+' corps;');
-		}
-		*/
+		}*/
 		
 		Buffer.cancelSelect();
 		Buffer.cancelQuery();
@@ -31,7 +30,7 @@ LifeCardMoveAction = jClass(Action, {
 		Buffer.setSelectPosition(this.info.position);
 		
 		if('send'==this.info.sign){
-			post('select ground place'+this.info.position+' corps;');
+			post('reload;');
 		}
 	}
 });

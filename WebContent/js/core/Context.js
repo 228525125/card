@@ -54,13 +54,13 @@ var Context = function(){
 			return own;
 		},
 		reloadLandform: function(){
-			var landform = this.get(this.Landform);
-			var keys = Object.getOwnPropertyNames(landform);
+			var ground = this.get(this.Ground);
+			var keys = Object.getOwnPropertyNames(ground.landform);
 			
 			for(var i=0;i<keys.length;i++){
 				var key = keys[i];
-				var value = landform[key];
-				var ground = this.get(this.Ground);
+				var value = ground.landform[key];
+				
 				var place = ground.getPlace(key);
 				var landformName = Glossary.get(Glossary.Ground_Landform,value);
 				if('山'==landformName)
@@ -72,44 +72,41 @@ var Context = function(){
 			}
 		},
 		reloadBuilding : function(){
-			var buildingList = this.get(this.BuildingList);
+			var ground = this.get(this.Ground);
 			
-			for(var i=0;i<buildingList.length;i++){
-				var building = buildingList[i];
+			for(var i=0;i<ground.buildingList.length;i++){
+				var building = ground.buildingList[i];
 				var buildingName = building.name;
 				
-				var ground = this.get(this.Ground);
 				var place = ground.getPlace(building.position);
 				
 				if('城市'==buildingName)
 					place.view.css("background-color","#C8BFE7");
 				else if('桥'==buildingName)
 					place.view.css("background-color","#FFFFFF");
+				else if('传送站'==buildingName)
+					place.view.css("background-color","#80FFFF");
 			}
 		},
 		reloadTreasure : function(){
-			var treasureList = this.get(this.TreasureList);
+			var ground = this.get(this.Ground);
 			
-			for(var i=0;i<treasureList.length;i++){
-				var treasure = treasureList[i];
+			for(var i=0;i<ground.treasureList.length;i++){
+				var treasure = ground.treasureList[i];
 				var position = treasure.position;
 				
-				var ground = this.get(this.Ground);
 				var place = ground.getPlace(position);
-				
 				place.view.html('【物品】');
 			}
 		},
 		reloadCorps : function(){
-			var corpsList = this.get(this.CorpsList);
+			var ground = this.get(this.Ground);
 			
-			for(var i=0;i<corpsList.length;i++){
-				var corps = corpsList[i];
+			for(var i=0;i<ground.corpsList.length;i++){
+				var corps = ground.corpsList[i];
 				var position = corps.position;
 				
-				var ground = this.get(this.Ground);
 				var place = ground.getPlace(position);
-				
 				place.view.html(corps.name);
 			}
 		},
@@ -123,13 +120,13 @@ var Context = function(){
 					place.view.css("background-color","");
 				}
 			}
+			
+			Context.reloadLandform();
+			Context.reloadBuilding();
+			Context.reloadTreasure();
+			Context.reloadCorps();
+			
 		},
-		Ground : 'Ground',
-		Landform : 'Landform',
-		BuildingList : 'BuildingList',
-		TreasureList : 'TreasureList',
-		CorpsList : 'CorpsList',
-		XBorder : 'XBorder',
-		YBorder : 'YBorder'
+		Ground : 'Ground'
 	}
 }();

@@ -30,8 +30,7 @@
 			<building type="str">3800811,601001,0</building>
 			<building type="str">20800811,601001,0</building>
 			<building type="str">380083,506001,0</building>
-			<building type="str">2080084,506001,0</building>
-			<building type="str">1280087,506001,0</building>
+			<building type="str">2080084,506002,0</building>
 		</buildingData>
 		
 		<!-- NPC --> 
@@ -486,6 +485,7 @@
 		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
 			<building type="str">380082,601001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
 			<building type="str">2080082,601001,0</building>
+			<building type="str">1280087,506003,0</building>
 		</buildingData>
 		
 		<!-- 地形 -->
