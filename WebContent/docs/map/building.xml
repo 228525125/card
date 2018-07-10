@@ -1,14 +1,14 @@
 <buildings>
-	<building type="org.cx.game.widget.building.TownBuilding" interface="org.cx.game.widget.building.IBuilding" id="601001">
+	<building type="org.cx.game.widget.building.TownBuilding" id="501001">
 		<parameter>
-			<buildingType type="int">601001</buildingType>
+			<id type="int">501001</id>
 		</parameter>
 		<buildings type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<building type="int">602001</building>
-			<building type="int">603001</building>
+			<building type="int">505001</building>
+			<building type="int">505002</building>
 		</buildings>
 		<!-- 
-		<upgrade type="org.cx.game.action.BuildingUpgrade" interface="org.cx.game.action.IUpgrade">
+		<upgrade type="org.cx.game.action.BuildingUpgrade">
 			<requirement type="java.util.HashMap" interface="java.util.Map" map="true">
 				<map>
 					<key type="str">701</key>
@@ -18,13 +18,13 @@
 		</upgrade>
 		 -->
 	</building>
-	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="602001">
+	<building type="org.cx.game.widget.building.CallBuilding" id="505001">
 		<parameter>
+			<id type="int">505001</id>
 			<cardID type="int">10100001</cardID>
 			<yield type="int">1</yield>
-			<buildingType type="int">602001</buildingType>
 		</parameter>
-		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+		<consume type="org.cx.game.widget.treasure.Resource">
 			<parameter>
 				<res type="str">-110</res>
 			</parameter>
@@ -38,13 +38,13 @@
 		<buildWait type="int">1</buildWait>
 		<levelLimit type="int">2</levelLimit>
 	</building>
-	<building type="org.cx.game.widget.building.CallBuilding" interface="org.cx.game.widget.building.IBuilding" id="603001">
+	<building type="org.cx.game.widget.building.CallBuilding" id="505002">
 		<parameter>
+			<id type="int">505002</id>
 			<cardID type="int">10100002</cardID>
 			<yield type="int">1</yield>
-			<buildingType type="int">603001</buildingType>
 		</parameter>
-		<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+		<consume type="org.cx.game.widget.treasure.Resource">
 			<parameter>
 				<res type="str">-120,0,0,0</res>
 			</parameter>
@@ -57,26 +57,26 @@
 		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
 		<needBuilding type="java.util.ArrayList" interface="java.util.List" collection="true">
-			<buildingType type="int">602</buildingType>
+			<id type="int">505001</id>
 		</needBuilding>
 	</building>
-	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506001">
+	<building type="org.cx.game.widget.building.SpatialBuilding" id="506001">
 		<parameter>
-			<buildingType type="int">506001</buildingType>
+			<id type="int">506001</id>
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>
 	</building>
-	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506002">
+	<building type="org.cx.game.widget.building.SpatialBuilding" id="506002">
 		<parameter>
-			<buildingType type="int">506002</buildingType>
+			<id type="int">506002</id>
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>
 	</building>
-	<building type="org.cx.game.widget.building.SpatialBuilding" interface="org.cx.game.widget.building.IBuilding" id="506003">
+	<building type="org.cx.game.widget.building.SpatialBuilding" id="506003">
 		<parameter>
-			<buildingType type="int">506003</buildingType>
+			<id type="int">506003</id>
 		</parameter>
 		<transmissionIsUsable type="bool">true</transmissionIsUsable>
 		<receiveIsUsable type="bool">true</receiveIsUsable>

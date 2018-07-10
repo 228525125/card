@@ -16,8 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import org.cx.game.core.AbstractHost;
-import org.cx.game.core.GroundHost;
-import org.cx.game.core.IPlayer;
+import org.cx.game.core.AbstractPlayer;
 
 @Entity
 @Table(name="CUser")
@@ -69,9 +68,9 @@ public class User {
 	}
 	
 	@Transient
-	private IPlayer player = null;
+	private AbstractPlayer player = null;
 
-	public IPlayer getPlayer() {
+	public AbstractPlayer getPlayer() {
 		return player;
 	}
 	

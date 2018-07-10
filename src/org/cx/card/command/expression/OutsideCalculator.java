@@ -15,7 +15,6 @@ import org.cx.game.command.Command;
 import org.cx.game.command.CommandBuffer;
 import org.cx.game.command.InteriorCommand;
 import org.cx.game.command.expression.ParameterExpression;
-import org.cx.game.core.IPlayer;
 import org.cx.game.exception.SyntaxValidatorException;
 import org.cx.game.tools.I18n;
 import org.cx.game.tools.PropertiesUtil;

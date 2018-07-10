@@ -10,7 +10,7 @@
 			<atk type="int">150</atk>
 			<def type="int">10</def>
 			<hp type="int">100</hp>
-			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<consume type="org.cx.game.widget.treasure.Resource">
 				<parameter>
 					<gold type="int">-100</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
@@ -40,7 +40,7 @@
 			<atk type="int">1</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<consume type="org.cx.game.widget.treasure.Resource">
 				<parameter>
 					<gold type="int">-100</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
@@ -60,7 +60,7 @@
 			<atk type="int">10</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<consume type="org.cx.game.widget.treasure.Resource">
 				<parameter>
 					<gold type="int">-50</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
@@ -80,7 +80,7 @@
 			<atk type="int">330</atk>
 			<def type="int">5</def>
 			<hp type="int">100</hp>
-			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<consume type="org.cx.game.widget.treasure.Resource">
 				<parameter>
 					<gold type="int">-70</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
@@ -99,7 +99,7 @@
 			</parameter>
 			<atk type="int">1</atk>
 			<hp type="int">100</hp>
-			<consume type="org.cx.game.widget.treasure.Resource" interface="org.cx.game.widget.treasure.IResource">
+			<consume type="org.cx.game.widget.treasure.Resource">
 				<parameter>
 					<gold type="int">-90</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>

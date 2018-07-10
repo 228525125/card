@@ -41,6 +41,8 @@ var Glossary = function(){
 		Ground_Building : 'Ground_Building',
 		Ground_Building_Town : 'Ground_Building_Town',
 		Ground_Building_Call : 'Ground_Building_Call',
+		Ground_Building_Bridge : 'Ground_Building_Bridge',
+		Ground_Building_Spatial : 'Ground_Building_Spatial',
 		Building_Product : 'Building_Product',
 		Building_Status : 'Building_Status',
 		Buff_Type : 'Buff_Type',

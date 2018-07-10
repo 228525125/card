@@ -6,8 +6,6 @@ import org.cx.card.command.Validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
 import org.cx.game.core.AbstractHost;
 import org.cx.game.core.AreaHost;
-import org.cx.game.core.GroundHost;
-import org.cx.game.core.IPlayer;
 import org.cx.game.exception.ValidatorException;
 
 import com.easyjf.web.ActionContext;

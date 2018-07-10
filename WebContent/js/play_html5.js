@@ -152,15 +152,15 @@ $(function(){
 			var position = this.id.substring(6,this.id.length);			
 			var val = $("#command_input").val();
 			
-			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute') || -1!=val.indexOf('pick')){
+			if(-1!=val.indexOf('call') || -1!=val.indexOf('move') || -1!=val.indexOf('execute') || -1!=val.indexOf('pick') || -1!=val.indexOf('leave')){
 				val += 'ground place'+position+';';
-			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('apply')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
+			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('merge')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
 				val += 'ground place'+position+' corps;'; 
 			}else{
 				val = '';
 			}
 			
-			val += 'select ground place'+position+';'         //+' corps;show';
+			val += 'select ground place'+position+';';         //+' corps;show';
 			
 			$("#command_input").val(val);
 			command_input_sub();
@@ -191,15 +191,27 @@ $(function(){
 		$("#command_input").focus();
 	});
 	
-	$("#button_apply").click(function(){
+	/*$("#button_apply").click(function(){
 		post('query apply');
 		$("#command_input").val('apply ');
 		$("#command_input").focus();
-	});
+	});*/
 	
 	$("#button_pick").click(function(){
 		post('query pick');
 		$("#command_input").val('pick ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_merge").click(function(){
+		post('query merge');
+		$("#command_input").val('merge ');
+		$("#command_input").focus();
+	});
+	
+	$("#button_leave").click(function(){
+		post('query leave');
+		$("#command_input").val('leave ');
 		$("#command_input").focus();
 	});
 	
@@ -269,8 +281,10 @@ $(function(){
 	ActionFactory.register('Command_Query_Call', 'new CommandQueryCallAction(data.info,view)');
 	ActionFactory.register('Command_Query_Attack', 'new CommandQueryAttackAction(data.info,view)');
 	ActionFactory.register('Command_Query_Move', 'new CommandQueryMoveAction(data.info,view)');
+	ActionFactory.register('Command_Query_Merge', 'new CommandQueryMergeAction(data.info,view)');
+	ActionFactory.register('Command_Query_Leave', 'new CommandQueryLeaveAction(data.info,view)');
 	ActionFactory.register('Command_Query_Conjure', 'new CommandQueryConjureAction(data.info,view)');
-	ActionFactory.register('Command_Query_Apply', 'new CommandQueryApplyAction(data.info,view)');
+	//ActionFactory.register('Command_Query_Apply', 'new CommandQueryApplyAction(data.info,view)');
 	ActionFactory.register('Command_Query_Execute', 'new CommandQueryExecuteAction(data.info,view)');
 	ActionFactory.register('Command_Query_Pick', 'new CommandQueryPickAction(data.info,view)');
 	
@@ -281,6 +295,8 @@ $(function(){
 	ActionFactory.register('Corps_Attacked', 'new LifeCardAttackedAction(data.info,view)');
 	ActionFactory.register('Corps_Activate', 'new LifeCardActivateAction(data.info,view)');
 	ActionFactory.register('Corps_Pick', 'new LifeCardPickAction(data.info,view)');
+	ActionFactory.register('Corps_Merge', 'new CorpsMergeAction(data.info,view)');
+	ActionFactory.register('Corps_Leave', 'new CorpsLeaveAction(data.info,view)');
 	ActionFactory.register('Corps_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Corps_Atk', 'new LifeCardAtkAction(data.info,view)');
 	
@@ -355,18 +371,13 @@ $(function(){
 	Glossary.add(Glossary.Ground_Landform,404,'河');
 	Glossary.add(Glossary.Ground_Landform,405,'山');
 	Glossary.add(Glossary.Ground_Landform,406,'沼泽');
-	Glossary.add(Glossary.Ground_Landform,407,'旱地');
-	Glossary.add(Glossary.Ground_Landform,408,'沙地');
+	Glossary.add(Glossary.Ground_Landform,407,'建筑');
 	
 	//对建筑进行分类
-	Glossary.add(Glossary.Ground_Building,601,Glossary.Ground_Building_Town);
-	Glossary.add(Glossary.Ground_Building,602,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,603,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,604,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,605,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,606,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,608,Glossary.Ground_Building_Call);
-	Glossary.add(Glossary.Ground_Building,609,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,501,Glossary.Ground_Building_Town);
+	Glossary.add(Glossary.Ground_Building,502,Glossary.Ground_Building_Bridge);
+	Glossary.add(Glossary.Ground_Building,505,Glossary.Ground_Building_Call);
+	Glossary.add(Glossary.Ground_Building,506,Glossary.Ground_Building_Spatial);
 	
 	Glossary.add(Glossary.Resource_Type,'701','金币');
 	Glossary.add(Glossary.Resource_Type,'702','木材');

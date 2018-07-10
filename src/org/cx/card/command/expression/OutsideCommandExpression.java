@@ -8,7 +8,6 @@ import org.cx.card.command.OutsideCommand;
 import org.cx.card.domain.User;
 import org.cx.game.command.expression.Calculator;
 import org.cx.game.command.expression.CommandExpression;
-import org.cx.game.core.IPlayer;
 import org.cx.game.exception.SyntaxValidatorException;
 import org.cx.game.tools.XmlUtil;
 import org.dom4j.Element;

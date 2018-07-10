@@ -57,12 +57,13 @@ CommandShowAction = jClass(Action, {
 		}*/
 		
 		var building = '';
-		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
+		var category = Glossary.get(Glossary.Ground_Building, this.info.building.category);
+		if(Glossary.Ground_Building_Town==category){
 			for(var i=0;i<this.info.building.buildings.length;i++){
 				var buildingName = this.info.building.buildings[i].name;
 				
 				building += ''+i+buildingName;
-				if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.buildings[i].type))
+				if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.buildings[i].category))
 					building += '('+this.info.building.buildings[i].nop+'/'+this.info.building.buildings[i].yield+')';
 				
 				if((i+1)<this.info.building.buildings.length)
@@ -78,9 +79,9 @@ CommandShowAction = jClass(Action, {
 		text += '<p style="margin: 0;padding: 0;">建造费用:'+'金币 '+this.info.building.consume.gold+' | 木材 '+this.info.building.consume.wood+' | 石材 '+this.info.building.consume.stone+' | 矿 '+this.info.building.consume.ore+'</p>';
 		if(null!=this.info.building.upgrade.requirement)
 			text += '<p style="margin: 0;padding: 0;">升级费用:'+'金币 '+ this.info.building.upgrade.requirement.gold+' | 木材 '+this.info.building.upgrade.requirement.wood+' | 石材 '+this.info.building.upgrade.requirement.stone+' | 矿 '+this.info.building.upgrade.requirement.ore+'</p>';
-		if(Glossary.Ground_Building_Town==Glossary.get(Glossary.Ground_Building, this.info.building.type))
+		if(Glossary.Ground_Building_Town==category)
 			text += '<p style="margin: 0;padding: 0;">内部:'+building+'</p>';
-		if(Glossary.Ground_Building_Call==Glossary.get(Glossary.Ground_Building, this.info.building.type)){
+		if(Glossary.Ground_Building_Call==category){
 			text += '<p style="margin: 0;padding: 0;">产量:'+this.info.building.yield+'</p>';
 			text += '<p style="margin: 0;padding: 0;">招募:'+this.info.building.nop+'</p>';
 		}
@@ -138,25 +139,31 @@ CommandShowAction = jClass(Action, {
 		}
 		
 		var skill = '';
-		for(var i=0;i<this.info.card.skillList.length;i++){
-			var skillName = this.info.card.skillList[i].name;
-			skill += '['+skillName+',';
+		if(true==this.info.card.hero){
+			for(var i=0;i<this.info.card.skillList.length;i++){
+				var skillName = this.info.card.skillList[i].name;
+				skill += '['+skillName+',';
 
-			if(undefined==this.info.card.skillList[i].cooldownRemain)
-				skill += 'CD:no]';
-			else
-				skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
-			if((i+1)<this.info.card.skillList.length)
-				skill += ',';
-			
-			optionList[i].html(skillName);
+				if(undefined==this.info.card.skillList[i].cooldownRemain)
+					skill += 'CD:no]';
+				else
+					skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
+				if((i+1)<this.info.card.skillList.length)
+					skill += ',';
+				
+				optionList[i].html(skillName);
+			}
 		}
 		
-		var weapon = '<p style="margin: 0;padding: 0;">武器:';
-		if(null!=this.info.card.attack.weapon){
-			weapon += this.info.card.attack.weapon.name+' '+
-			'| 攻击:'+this.info.card.attack.weapon.atk+' '+
-			'| 持久:'+this.info.card.attack.weapon.wear+' '+'</p>';
+		var troops = '';
+		if(true==this.info.card.hero){
+			for(var i=0;i<this.info.card.troops.length;i++){
+				var corpsName = this.info.card.troops[i].name;
+				troops += corpsName;
+				
+				if((i+1)<this.info.card.troops.length)
+					troops += ',';
+			}
 		}
 		
 		text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
@@ -168,7 +175,6 @@ CommandShowAction = jClass(Action, {
 		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
 		'| 速度:'+this.info.card.activate.speed+' '+
 		'| 激活:'+this.info.card.attack.attackable+'</p>'+
-		weapon+
 		'<p style="margin: 0;padding: 0;">防守:'+' '+
 		'def:'+this.info.card.attacked.def+' '+
 		'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+ 
@@ -187,9 +193,14 @@ CommandShowAction = jClass(Action, {
 		'<p style="margin: 0;padding: 0;">等级:'+' '+
 		'level:'+this.info.card.upgrade.level+' '+
 		'| 经验值:'+this.info.card.upgrade.empiricValue.value+'['+this.info.card.upgrade.requirement.value+']'+' '+
-		'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.value:' ')+'</p>'+
-		'<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
+		'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.count:' ')+'</p>'+
 		'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
+		
+		if(true==this.info.card.hero){
+			text += '<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
+			'<p style="margin: 0;padding: 0;">队伍:'+troops+'</p>';
+		}
+		
 		
 		return text;
 	},

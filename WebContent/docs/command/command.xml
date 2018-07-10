@@ -45,6 +45,8 @@
 			<item>swap</item>
 			<item>execute</item>
 			<item>pick</item>
+			<item>merge</item>
+			<item>leave</item>
 		</type>
 		
 		<!-- InteriorCommandParameterActionExpression End -->
@@ -138,6 +140,20 @@
 		
 		<command name='chuck' class='org.cx.game.command.ChuckCommand' parameter='none'>
 			<description>丢弃</description>
+		</command>
+		
+		<command name='merge' class='org.cx.game.command.MergeCommand' parameter='request'>
+			<description>加入队伍</description>
+			<parameter>
+				<option>corps</option>
+			</parameter>
+		</command>
+		
+		<command name='leave' class='org.cx.game.command.LeaveCommand' parameter='request'>
+			<description>离开队伍</description>
+			<parameter>
+				<option>place</option>
+			</parameter>
 		</command>
 		
 		<command name='guard' class='org.cx.game.command.GuardCommand' parameter='none'>

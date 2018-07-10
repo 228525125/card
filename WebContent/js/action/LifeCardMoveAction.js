@@ -16,7 +16,7 @@ LifeCardMoveAction = jClass(Action, {
 			post('select ground place'+this.info.position+' corps;');
 		}*/
 		
-		Buffer.cancelSelect();
+		/*Buffer.cancelSelect();
 		Buffer.cancelQuery();
 		
 		var ground =  Context.get(Context.Ground);
@@ -27,7 +27,7 @@ LifeCardMoveAction = jClass(Action, {
 		
 		
 		Buffer.setSelectContainer(ground);
-		Buffer.setSelectPosition(this.info.position);
+		Buffer.setSelectPosition(this.info.position);*/
 		
 		if('send'==this.info.sign){
 			post('reload;');

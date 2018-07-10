@@ -24,11 +24,11 @@
 				
 		<!-- 建筑 -->
 		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
-			<building type="str">380082,601001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
-			<building type="str">2080082,601001,0</building>
-			<building type="str">1280086,601001,0</building>
-			<building type="str">3800811,601001,0</building>
-			<building type="str">20800811,601001,0</building>
+			<building type="str">380082,501001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
+			<building type="str">2080082,501001,0</building>
+			<building type="str">1280086,501001,0</building>
+			<building type="str">3800811,501001,0</building>
+			<building type="str">20800811,501001,0</building>
 			<building type="str">380083,506001,0</building>
 			<building type="str">2080084,506002,0</building>
 		</buildingData>
@@ -46,7 +46,7 @@
 				<key type="int">480084</key>
 				<value type="org.cx.game.widget.treasure.ResourceTreasure" interface="org.cx.game.widget.treasure.ITreasure">
 					<parameter>
-						<gold type="int">10</gold>
+						<gold type="int">1000</gold>
 						<wood type="int">0</wood>
 						<stone type="int">0</stone>
 						<ore type="int">0</ore>
@@ -483,8 +483,8 @@
 				
 		<!-- 建筑 -->
 		<buildingData type="java.util.ArrayList" interface="java.util.List" collection="true">                                                    <!-- 建筑物的集合 -->
-			<building type="str">380082,601001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
-			<building type="str">2080082,601001,0</building>
+			<building type="str">380082,501001,1</building>                                                                                       <!-- 位置，城镇类型，阵营 -->
+			<building type="str">2080082,501001,0</building>
 			<building type="str">1280087,506003,0</building>
 		</buildingData>
 		
