@@ -309,7 +309,6 @@ $(function(){
 	ActionFactory.register('Buff_Effect', 'new BuffEffectAction(data.info,view)');
 	ActionFactory.register('Buff_Invalid', 'new BuffInvalidAction(data.info,view)');
 	ActionFactory.register('Context_Start', 'new ContextStartAction(data.info,view)');
-	ActionFactory.register('Context_Control', 'new ContextControlAction(data.info,view)');
 	ActionFactory.register('Context_Deploy', 'new ContextDeployAction(data.info,view)');
 	ActionFactory.register('Context_Done', 'new ContextDoneAction(data.info,view)');
 	ActionFactory.register('Context_Finish', 'new ContextFinishAction(data.info,view)');

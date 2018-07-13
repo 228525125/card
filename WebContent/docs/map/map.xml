@@ -44,7 +44,7 @@
 		<treasureMap type="java.util.HashMap" interface="java.util.Map" map="true">
 			<map>
 				<key type="int">480084</key>
-				<value type="org.cx.game.widget.treasure.ResourceTreasure" interface="org.cx.game.widget.treasure.ITreasure">
+				<value type="org.cx.game.widget.treasure.MineralTreasure" interface="org.cx.game.widget.treasure.ITreasure">
 					<parameter>
 						<gold type="int">1000</gold>
 						<wood type="int">0</wood>

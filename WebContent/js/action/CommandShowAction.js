@@ -6,7 +6,7 @@ CommandShowAction = jClass(Action, {
 	},
 	
 	showPlayer : function(){
-		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.resource.gold+'/'+this.info.player.resource.wood+'/'+this.info.player.resource.stone+'/'+this.info.player.resource.ore+')'+'</p>';
+		var text = '<p style="margin: 0;padding: 0;">当前玩家:'+this.info.player.name+'('+this.info.player.mineral.gold+'/'+this.info.player.mineral.wood+'/'+this.info.player.mineral.stone+'/'+this.info.player.mineral.ore+')'+'</p>';
 		return text;
 	},
 	showGround : function(){

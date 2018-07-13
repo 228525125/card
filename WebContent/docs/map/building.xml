@@ -12,7 +12,7 @@
 			<requirement type="java.util.HashMap" interface="java.util.Map" map="true">
 				<map>
 					<key type="str">701</key>
-					<value type="int">-100</value>
+					<value type="int">100</value>
 				</map>
 			</requirement>
 		</upgrade>
@@ -24,15 +24,15 @@
 			<cardID type="int">10100001</cardID>
 			<yield type="int">1</yield>
 		</parameter>
-		<consume type="org.cx.game.widget.treasure.Resource">
+		<consume type="org.cx.game.widget.treasure.Mineral">
 			<parameter>
-				<res type="str">-110</res>
+				<res type="str">110</res>
 			</parameter>
 		</consume>
 		<upgradeRequirement type="java.util.HashMap" interface="java.util.Map" map="true">
 			<map>
 				<key type="int">2</key>
-				<value type="str">r-100,0,0,0</value>
+				<value type="str">m100,0,0,0</value>
 			</map>
 		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
@@ -44,15 +44,15 @@
 			<cardID type="int">10100002</cardID>
 			<yield type="int">1</yield>
 		</parameter>
-		<consume type="org.cx.game.widget.treasure.Resource">
+		<consume type="org.cx.game.widget.treasure.Mineral">
 			<parameter>
-				<res type="str">-120,0,0,0</res>
+				<res type="str">120,0,0,0</res>
 			</parameter>
 		</consume>
 		<upgradeRequirement type="java.util.HashMap" interface="java.util.Map" map="true">
 			<map>
 				<key type="int">2</key>
-				<value type="str">r-100,0,0,0</value>
+				<value type="str">m100,0,0,0</value>
 			</map>
 		</upgradeRequirement>
 		<buildWait type="int">1</buildWait>
