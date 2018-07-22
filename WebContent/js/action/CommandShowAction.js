@@ -231,9 +231,6 @@ CommandShowAction = jClass(Action, {
 		if(null!=this.info.building)
 			res += this.showBuilding();
 		
-		if(null!=this.info.option)
-			res += this.showOption();
-		
 		if(null!=this.info.cemetery)
 			res += this.showCemetery();
 		
@@ -245,6 +242,9 @@ CommandShowAction = jClass(Action, {
 		
 		if(null!=this.info.skill)
 			res += this.showSkill();
+		
+		if(null!=this.info.option)
+			res += this.showOption();
 		
 		if(null!=this.info.trick)
 			res += this.showTrick();

@@ -105,7 +105,7 @@ var Context = function(){
 			for(var i=0;i<ground.corpsList.length;i++){
 				var corps = ground.corpsList[i];
 				var position = corps.position;
-				
+		
 				var place = ground.getPlace(position);
 				place.view.html(corps.name);
 			}
