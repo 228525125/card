@@ -12,20 +12,11 @@
 		<type name = "place">
 			<item>place</item>
 		</type>
-		<type name = "cemetery">
-			<item>cemetery</item>
-		</type>
-		<type name = "tricklist">
-			<item>tricklist</item>
-		</type>
 		<type name = "corps">
 			<item>corps</item>
 		</type>		
 		<type name = "skill">
 			<item>skill</item>
-		</type>
-		<type name = "trick">
-			<item>trick</item>
 		</type>
 		<type name = "building">
 			<item>building</item>
@@ -69,11 +60,8 @@
 				<option>place</option>
 				<option>building</option>
 				<option>option</option>
-				<option>cemetery</option>
-				<option>tricklist</option>
 				<option>corps</option>			
 				<option>skill</option>
-				<option>trick</option>
 			</parameter>
 		</command>
 		
@@ -126,6 +114,7 @@
 			</parameter>
 		</command>
 		
+		<!-- 
 		<command name='conjure' class='org.cx.game.command.ConjureCommand' parameter='request'>
 			<description>施法</description>
 			<parameter>
@@ -133,6 +122,7 @@
 				<option>corps</option>
 			</parameter>
 		</command>
+		 -->
 		
 		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='none'>
 			<description>升级</description>

@@ -24,13 +24,11 @@
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<ShieldHit type="org.cx.game.magic.skill.ShieldHit">
-					<parameter>
-						<cooldown type="int">2</cooldown>
-						<atkScale type="int">0</atkScale>
-						<bout type="int">1</bout>
-					</parameter>
-				</ShieldHit>
+				<skill type="org.cx.game.magic.skill.ShieldHit" factory="org.cx.game.magic.skill.SkillFactory">
+					<factoryMethodParameter>
+						<id type="int">10200007</id>	
+					</factoryMethodParameter>
+				</skill>
 			</skillList>
 		</card>
 		<card type="org.cx.game.corps.Hero" id="10190002">

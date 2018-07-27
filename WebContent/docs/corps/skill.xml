@@ -1,0 +1,10 @@
+<skills>
+	<skill type="org.cx.game.magic.skill.ShieldHit" id="10200007">
+		<parameter>
+			<id type="int">10200007</id>	
+			<cooldown type="int">2</cooldown>
+			<atkScale type="int">0</atkScale>
+			<bout type="int">1</bout>
+		</parameter>
+	</skill>
+</skills>

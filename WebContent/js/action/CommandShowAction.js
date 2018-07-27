@@ -32,16 +32,16 @@ CommandShowAction = jClass(Action, {
 		}
 		
 		var option = '';
-		for(var i=0;i<this.info.building.options.length;i++){
-			var optionName = this.info.building.options[i].name;
-			var allow = this.info.building.options[i].allow;
-			var spacingRemainBout = this.info.building.options[i].spacingRemainBout;
-			var executeRemainBout = this.info.building.options[i].executeRemainBout;
+		for(var i=0;i<this.info.building.optionList.length;i++){
+			var optionName = this.info.building.optionList[i].name;
+			var allow = this.info.building.optionList[i].allow;
+			var spacingRemainBout = this.info.building.optionList[i].spacingRemainBout;
+			var executeRemainBout = this.info.building.optionList[i].executeRemainBout;
 			
 			option += optionName+'['+(allow ? '是' : '否')+']';
 			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
 			optionList[i].html(optionName);
-			if((i+1)<this.info.building.options.length)
+			if((i+1)<this.info.building.optionList.length)
 				option += ' | ';
 		}
 		
@@ -100,7 +100,7 @@ CommandShowAction = jClass(Action, {
 		}
 		return text;
 	},
-	showCemetery : function(){
+	/*showCemetery : function(){
 		var list = '';
 		for(var i=0;i<this.info.cemetery.list.length;i++){
 			list += this.info.cemetery.list[i].name;
@@ -119,15 +119,15 @@ CommandShowAction = jClass(Action, {
 		}
 		var text = '<p style="margin: 0;padding: 0;">陷阱:'+list+'</p>';
 		return text;
-	},
+	},*/
 	showCard : function(){
 		
 		var text = '';
 		
 		var buff = '';
-		for(var i=0;i<this.info.card.buffList.length;i++){
-			buff += this.info.card.buffList[i].name;
-			if((i+1)<this.info.card.buffList.length)
+		for(var i=0;i<this.info.corps.buffList.length;i++){
+			buff += this.info.corps.buffList[i].name;
+			if((i+1)<this.info.corps.buffList.length)
 				buff += ',';
 		}
 		
@@ -135,87 +135,118 @@ CommandShowAction = jClass(Action, {
 		
 		for(var i=0;i<optionList.length;i++){
 			optionList[i].html('');
-			optionList[i].attr("title","skill"+i);
+			optionList[i].attr("title","option"+i);
+		}
+		
+		var option = '';
+		for(var i=0;i<this.info.corps.optionList.length;i++){
+			var optionName = this.info.corps.optionList[i].name;
+			var allow = this.info.corps.optionList[i].allow;
+			var spacingRemainBout = this.info.corps.optionList[i].spacingRemainBout;
+			var executeRemainBout = this.info.corps.optionList[i].executeRemainBout;
+			
+			option += optionName+'['+(allow ? '是' : '否')+']';
+			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
+			optionList[i].html(optionName);
+			if((i+1)<this.info.corps.optionList.length)
+				option += ' | ';
 		}
 		
 		var skill = '';
-		if(true==this.info.card.hero){
-			for(var i=0;i<this.info.card.skillList.length;i++){
-				var skillName = this.info.card.skillList[i].name;
+		if(true==this.info.corps.hero){
+			for(var i=0;i<this.info.corps.skillList.length;i++){
+				var skillName = this.info.corps.skillList[i].name;
 				skill += '['+skillName+',';
 
-				if(undefined==this.info.card.skillList[i].cooldownRemain)
+				if(undefined==this.info.corps.skillList[i].cooldownRemain)
 					skill += 'CD:no]';
 				else
-					skill += 'CD:'+this.info.card.skillList[i].cooldownRemain+']';
-				if((i+1)<this.info.card.skillList.length)
+					skill += 'CD:'+this.info.corps.skillList[i].cooldownRemain+']';
+				if((i+1)<this.info.corps.skillList.length)
 					skill += ',';
-				
-				optionList[i].html(skillName);
 			}
 		}
 		
 		var troops = '';
-		if(true==this.info.card.hero){
-			for(var i=0;i<this.info.card.troops.length;i++){
-				var corpsName = this.info.card.troops[i].name;
+		if(true==this.info.corps.hero){
+			for(var i=0;i<this.info.corps.troops.length;i++){
+				var corpsName = this.info.corps.troops[i].name;
 				troops += corpsName;
 				
-				if((i+1)<this.info.card.troops.length)
+				if((i+1)<this.info.corps.troops.length)
 					troops += ',';
 			}
 		}
 		
-		text = '<p style="margin: 0;padding: 0;">card:'+this.info.card.name+'['+this.info.card.player.name+'] '+
-		'| atk:'+this.info.card.attack.atk+' '+
-		'| 移动:'+this.info.card.move.energy+ ' '+
-		'| 激活:'+this.info.card.activate.activation+'</p>'+
+		text = '<p style="margin: 0;padding: 0;">card:'+this.info.corps.name+'['+this.info.corps.player.name+'] '+
+		'| atk:'+this.info.corps.attack.atk+' '+
+		'| 移动:'+this.info.corps.move.energy+ ' '+
+		'| 激活:'+this.info.corps.activate.activation+'</p>'+
 		'<p style="margin: 0;padding: 0;">攻击:'+' '+
-		'距离:'+this.info.card.attack.range+' '+
-		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.card.attack.mode)+' '+
-		'| 速度:'+this.info.card.activate.speed+' '+
-		'| 激活:'+this.info.card.attack.attackable+'</p>'+
+		'距离:'+this.info.corps.attack.range+' '+
+		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.corps.attack.mode)+' '+
+		'| 速度:'+this.info.corps.activate.speed+' '+
+		'| 激活:'+this.info.corps.attack.attackable+'</p>'+
 		'<p style="margin: 0;padding: 0;">防守:'+' '+
-		'def:'+this.info.card.attacked.def+' '+
-		'| hp:'+this.info.card.death.hp+'['+this.info.card.death.hpLimit+']'+' '+ 
-		'| 反击:'+this.info.card.attacked.fightBack+' '+'</p>'+
+		'def:'+this.info.corps.attacked.def+' '+
+		'| hp:'+this.info.corps.death.hp+'['+this.info.corps.death.hpLimit+']'+' '+ 
+		'| 反击:'+this.info.corps.attacked.fightBack+' '+'</p>'+
 		'<p style="margin: 0;padding: 0;">移动:'+' '+
-		'类型:'+Glossary.get(Glossary.Move_Type,this.info.card.move.type)+' '+
-		'| 躲避:'+this.info.card.move.flee+' '+
-		'| 精力:'+this.info.card.move.energy+' '+
-		'| 激活:'+this.info.card.move.moveable+' '+'</p>'+
+		'类型:'+Glossary.get(Glossary.Move_Type,this.info.corps.move.type)+' '+
+		'| 躲避:'+this.info.corps.move.flee+' '+
+		'| 精力:'+this.info.corps.move.energy+' '+
+		'| 激活:'+this.info.corps.move.moveable+' '+'</p>'+
 		'<p style="margin: 0;padding: 0;">生命:'+' '+
-		'状态:'+Glossary.get(Glossary.Death_Status,this.info.card.death.status)+'</p>'+
+		'状态:'+Glossary.get(Glossary.Death_Status,this.info.corps.death.status)+'</p>'+
 		'<p style="margin: 0;padding: 0;">招募:'+' '+
-		'人数:'+this.info.card.call.nop+' '+
-		'| 单位人口:'+this.info.card.call.ration+' '+
-		'| 消耗:'+this.info.card.call.consume.gold+'/'+this.info.card.call.consume.ore+'</p>'+
+		'人数:'+this.info.corps.call.nop+' '+
+		'| 单位人口:'+this.info.corps.call.ration+' '+
+		'| 消耗:'+this.info.corps.call.consume.gold+'/'+this.info.corps.call.consume.ore+'</p>'+
 		'<p style="margin: 0;padding: 0;">等级:'+' '+
-		'level:'+this.info.card.upgrade.level+' '+
-		'| 经验值:'+this.info.card.upgrade.empiricValue.value+'['+this.info.card.upgrade.requirement.value+']'+' '+
-		'| 技能点:'+(this.info.card.hero?this.info.card.upgrade.skillCount.count:' ')+'</p>'+
-		'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>';
+		'level:'+this.info.corps.upgrade.level+' '+
+		'| 经验值:'+this.info.corps.upgrade.empiricValue.value+'['+this.info.corps.upgrade.requirement.value+']'+' '+
+		'| 技能点:'+(this.info.corps.hero?this.info.corps.upgrade.skillCount.count:' ')+'</p>'+
+		'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>' +' '+
+		'<p style="margin: 0;padding: 0;">选项:'+option+'</p>';
 		
-		if(true==this.info.card.hero){
+		if(true==this.info.corps.hero){
 			text += '<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
 			'<p style="margin: 0;padding: 0;">队伍:'+troops+'</p>';
 		}
 		
-		
 		return text;
 	},
 	showSkill : function(){
-		this.info.skill.consume = undefined==this.info.skill.consume ? '无' : this.info.skill.consume; 
-		this.info.skill.cooldown = undefined==this.info.skill.cooldown ? '无' : this.info.skill.cooldown;
-		this.info.skill.velocity = undefined==this.info.skill.velocity ? '无' : Glossary.get(Glossary.ActiveSkill_Velocity,this.info.skill.velocity);
+		var optionList = Context.getOptionList();
 		
-		var text = '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 消耗:'+this.info.skill.consume+' | 冷却:'+this.info.skill.cooldown+' | 等级:'+this.info.skill.upgrade.level+'</p>'; 
+		for(var i=0;i<optionList.length;i++){
+			optionList[i].html('');
+			optionList[i].attr("title","option"+i);
+		}
+		
+		var option = '';
+		for(var i=0;i<this.info.skill.optionList.length;i++){
+			var optionName = this.info.skill.optionList[i].name;
+			var allow = this.info.skill.optionList[i].allow;
+			var spacingRemainBout = this.info.skill.optionList[i].spacingRemainBout;
+			var executeRemainBout = this.info.skill.optionList[i].executeRemainBout;
+			
+			option += optionName+'['+(allow ? '是' : '否')+']';
+			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
+			optionList[i].html(optionName);
+			if((i+1)<this.info.skill.optionList.length)
+				option += ' | ';
+		}
+		
+		this.info.skill.cooldown = undefined==this.info.skill.cooldown ? '无' : this.info.skill.cooldown;
+		
+		var text = '<p style="margin: 0;padding: 0;">skill:'+this.info.skill.name+' | 冷却:'+this.info.skill.cooldown+' | 等级:'+this.info.skill.upgrade.level+'</p>'; 
 		return text;
 	},
-	showTrick : function(){
+	/*showTrick : function(){
 		var text = '<p style="margin: 0;padding: 0;">trick:'+this.info.trick.name+'</p>';
 		return text;
-	},
+	},*/
 	doAction : function(){
 		var h = this.view.html();
 		var res = '';
@@ -231,13 +262,7 @@ CommandShowAction = jClass(Action, {
 		if(null!=this.info.building)
 			res += this.showBuilding();
 		
-		if(null!=this.info.cemetery)
-			res += this.showCemetery();
-		
-		if(null!=this.info.tricklist)
-			res += this.showTricklist();
-		
-		if(null!=this.info.card)
+		if(null!=this.info.corps)
 			res += this.showCard();
 		
 		if(null!=this.info.skill)
@@ -245,9 +270,6 @@ CommandShowAction = jClass(Action, {
 		
 		if(null!=this.info.option)
 			res += this.showOption();
-		
-		if(null!=this.info.trick)
-			res += this.showTrick();
 		
 		res += '<p>--------------------------------------------------------------------------</p>';
 		this.view.html(h+res);
