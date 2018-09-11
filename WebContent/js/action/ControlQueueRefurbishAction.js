@@ -12,7 +12,7 @@ ControlQueueRefurbishAction = jClass(Action, {
 		
 		res += '<p style="margin: 0;padding: 0;">';
 		for(var i=0;i<this.info.queue.length;i++){
-			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].player.name+'('+this.info.queue[i].count+')';
+			res += ''+this.info.queue[i].position+' - '+this.info.queue[i].unit.name+'('+this.info.queue[i].count+')';
 			if(i<(this.info.queue.length-1))
 				res += ' | ';
 		}

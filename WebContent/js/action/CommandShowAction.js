@@ -167,14 +167,14 @@ CommandShowAction = jClass(Action, {
 			}
 		}
 		
-		var troops = '';
+		var teammateList = '';
 		if(true==this.info.corps.hero){
-			for(var i=0;i<this.info.corps.troops.length;i++){
-				var corpsName = this.info.corps.troops[i].name;
-				troops += corpsName;
+			for(var i=0;i<this.info.corps.teammateList.length;i++){
+				var corpsName = this.info.corps.teammateList[i].name;
+				teammateList += corpsName;
 				
-				if((i+1)<this.info.corps.troops.length)
-					troops += ',';
+				if((i+1)<this.info.corps.teammateList.length)
+					teammateList += ',';
 			}
 		}
 		
@@ -211,7 +211,7 @@ CommandShowAction = jClass(Action, {
 		
 		if(true==this.info.corps.hero){
 			text += '<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
-			'<p style="margin: 0;padding: 0;">队伍:'+troops+'</p>';
+			'<p style="margin: 0;padding: 0;">队伍:'+teammateList+'</p>';
 		}
 		
 		return text;

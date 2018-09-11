@@ -24,7 +24,7 @@ public class HostVacancyValidator extends UnableHostValidator {
 		if(ret){
 			if(null==getHost().getUsableTroop()){
 				ret = false;
-				addMessage(I18n.getMessage(this));
+				addMessage(I18n.getMessage(HostVacancyValidator.class.getName()));
 			}
 		}
 		

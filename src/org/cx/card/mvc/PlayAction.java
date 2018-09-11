@@ -58,7 +58,10 @@ public class PlayAction extends BaseAction {
 			msg = command +"-"+ msg;
 			String response = "";
 			try {
-				if(-1!=command.indexOf("create") || -1!=command.indexOf("join") || -1!=command.indexOf("finish") || -1!=command.indexOf("ready")){
+				if(-1!=command.indexOf("create") 
+				|| -1!=command.indexOf("join") 
+				|| -1!=command.indexOf("finish") 
+				|| -1!=command.indexOf("ready")){
 					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
 					oInvoker.receiveCommand(getUser(), command);
 					//response = oInvoker.getResponse();外部命令用于创建主机，游戏场景并未创建，因此所有输出都无法正常显示

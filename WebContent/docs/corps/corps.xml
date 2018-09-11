@@ -64,7 +64,7 @@
 				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
-			<speed type="int">100</speed>
+			<speed type="int">150</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
 			<star type="int">1</star>
@@ -84,7 +84,7 @@
 				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
-			<speed type="int">100</speed>
+			<speed type="int">120</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
 			<star type="int">2</star>
@@ -103,7 +103,7 @@
 				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
-			<speed type="int">100</speed>
+			<speed type="int">130</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
 			<star type="int">2</star>
