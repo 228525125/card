@@ -1,4 +1,4 @@
-package org.cx.card.command.Validator;
+package org.cx.card.command.validator;
 
 import org.cx.card.domain.User;
 import org.cx.game.tools.I18n;

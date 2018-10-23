@@ -1,4 +1,4 @@
-package org.cx.card.command.Validator;
+package org.cx.card.command.validator;
 
 import javax.servlet.ServletContext;
 
@@ -7,7 +7,7 @@ import org.cx.game.tools.I18n;
 /**
  * 验证主机是否还有空位
  * @author chenxian
- *
+ * 
  */
 public class HostVacancyValidator extends UnableHostValidator {
 

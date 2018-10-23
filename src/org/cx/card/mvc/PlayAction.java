@@ -58,15 +58,17 @@ public class PlayAction extends BaseAction {
 			msg = command +"-"+ msg;
 			String response = "";
 			try {
-				if(-1!=command.indexOf("create") 
-				|| -1!=command.indexOf("join") 
-				|| -1!=command.indexOf("finish") 
-				|| -1!=command.indexOf("ready")){
+				if(-1!=command.indexOf("create")
+				|| -1!=command.indexOf("join")
+				|| -1!=command.indexOf("ready")
+				|| -1!=command.indexOf("deploy")
+				|| -1!=command.indexOf("clos")
+				|| -1!=command.indexOf("finish")){
 					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
 					oInvoker.receiveCommand(getUser(), command);
-					//response = oInvoker.getResponse();外部命令用于创建主机，游戏场景并未创建，因此所有输出都无法正常显示
+					//response = oInvoker.getResponse();
 				}else{
-					Invoker iInvoker = new Invoker(getUser().getPlayer().getContext().getPlayNo());
+					Invoker iInvoker = new Invoker(getUser().getHost().getPlayNo());
 					iInvoker.receiveCommand(getUser().getPlayer(), command);
 					response = iInvoker.getResponse();
 				}
@@ -78,14 +80,14 @@ public class PlayAction extends BaseAction {
 			
 			if(!"".equals(response)&&0<response.split(";").length){
 				String[] resps = response.split(";");
-				String playNo = getUser().getPlayer().getContext().getPlayNo();
+				String playNo = getUser().getHost().getPlayNo();
 				Integer sequence = processService.getNewSequence(playNo);
 				for(int i=0;i<resps.length;i++){
 					Process p = new Process();
 					p.setPlayNo(playNo);
-					p.setCommand(resps[i]);
+					p.setResponse(resps[i]);
 					p.setSequence(sequence+i);
-					p.setPlayerId(getUser().getPlayer().getTroop());
+					p.setExecutor(getUser().getPlayer().getTroop());
 					String action = resps[i].split("\",")[0].substring(11);
 					p.setAction(action);
 					list.add(p);
@@ -104,11 +106,10 @@ public class PlayAction extends BaseAction {
 		List<Process> list = new ArrayList<Process>();
 		Integer sequence = 0;
 		if(null!=getUser()
-		&&null!=getUser().getPlayer()
-		&&null!=getUser().getPlayer().getContext()
+		&&null!=getUser().getHost()
 		&&null!=form.get("sequence")
 		&&!"".equals(form.get("sequence").toString())){
-			String playNo = getUser().getPlayer().getContext().getPlayNo();
+			String playNo = getUser().getHost().getPlayNo();
 			updateProcess(playNo);
 			
 			sequence = Integer.valueOf(form.get("sequence").toString());
@@ -148,8 +149,6 @@ public class PlayAction extends BaseAction {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			process.setPlayerId(getUser().getPlayer().getTroop());
 			
 			processService.addProcess(process);
 		}

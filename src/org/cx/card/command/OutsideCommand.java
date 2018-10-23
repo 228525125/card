@@ -1,14 +1,25 @@
 package org.cx.card.command;
 
+import org.cx.card.domain.User;
 import org.cx.game.command.Command;
-import org.cx.game.exception.ValidatorException;
 
 public class OutsideCommand extends Command {
-
-	//private IExternalCommand external = null;
 	
-	/*public void setExternal(IExternalCommand external) {
-		this.external = external;
-	}*/
+	private User user = null;
+	private CommandBuffer buffer = null;
+	
+	public OutsideCommand(User user) {
+		// TODO Auto-generated constructor stub
+		this.user = user;
+		this.buffer = user.getBuffer();
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public CommandBuffer getBuffer() {
+		return buffer;
+	}
 
 }

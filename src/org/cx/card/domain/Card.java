@@ -1,14 +1,9 @@
 package org.cx.card.domain;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,8 +18,6 @@ public class Card {
 	private String name;
 	private String classname;
 	
-	@ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "cards", fetch = FetchType.LAZY)
-	private Set<User> users;
 	public Long getId() {
 		return id;
 	}

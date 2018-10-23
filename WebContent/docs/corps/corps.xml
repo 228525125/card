@@ -55,9 +55,10 @@
 			<parameter>
 				<id type="int">10100001</id>
 			</parameter>
-			<atk type="int">10</atk>
+			<atk type="int">6</atk>
+			<dmg type="int">280083</dmg>
 			<def type="int">5</def>
-			<hp type="int">100</hp>
+			<hp type="int">10</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<gold type="int">50</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
@@ -75,9 +76,11 @@
 			<parameter>
 				<id type="int">10100002</id>
 			</parameter>
-			<atk type="int">330</atk>
+			<atk type="int">7</atk>
+			<attackMode type="int">116</attackMode>
+			<dmg type="int">280083</dmg>
 			<def type="int">5</def>
-			<hp type="int">100</hp>
+			<hp type="int">10</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<gold type="int">70</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
@@ -95,8 +98,10 @@
 			<parameter>
 				<id type="int">10100003</id>
 			</parameter>
-			<atk type="int">1</atk>
-			<hp type="int">100</hp>
+			<atk type="int">5</atk>
+			<dmg type="int">180083</dmg>
+			<def type="int">5</def>
+			<hp type="int">6</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<gold type="int">90</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>

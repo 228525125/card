@@ -1,4 +1,4 @@
-package org.cx.card.command.Validator;
+package org.cx.card.command.validator;
 
 import javax.servlet.ServletContext;
 
@@ -25,7 +25,7 @@ public class UnableHostValidator extends Validator {
 			this.host = (AbstractHost) context.getAttribute(hostName);
 			return true;
 		}else{
-			addMessage(I18n.getMessage(this));
+			addMessage(I18n.getMessage(UnableHostValidator.class.getName()));
 			return false;
 		}
 	}

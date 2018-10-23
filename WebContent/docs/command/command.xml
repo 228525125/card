@@ -25,8 +25,6 @@
 			<item>option</item>
 		</type>
 		
-		<!-- InteriorCommandParameterBufferExpression End -->
-		
 		<!-- InteriorCommandParameterActionExpression -->
 		<type name = "action">
 			<item>attack</item>
@@ -40,14 +38,10 @@
 			<item>leave</item>
 		</type>
 		
-		<!-- InteriorCommandParameterActionExpression End -->
-		
 		<!-- InteriorCommandParameterPropertyExpression -->
 		<type name = "property"> <!-- 用来应付一些需要通过命令来给对象属性赋值的情况，例如一次招募人数，就需要对招募选项的数量赋值 -->
 			<item>option.number</item>  <!-- 对象+属性名 -->
 		</type>
-		
-		<!-- InteriorCommandParameterPropertyExpression End -->
 	</types>	
 	
 	<commands>
@@ -114,15 +108,7 @@
 			</parameter>
 		</command>
 		
-		<!-- 
-		<command name='conjure' class='org.cx.game.command.ConjureCommand' parameter='request'>
-			<description>施法</description>
-			<parameter>
-				<option>place</option>
-				<option>corps</option>
-			</parameter>
-		</command>
-		 -->
+		
 		
 		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='none'>
 			<description>升级</description>
@@ -154,10 +140,6 @@
 			<description>结束回合</description>
 		</command>
 		
-		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='none'>
-			<description>准备就绪</description>		
-		</command>
-		
 		<command name='start' class='org.cx.game.command.StartCommand' parameter='none'>
 			<description>比赛开始</description>		
 		</command>
@@ -168,6 +150,16 @@
 				<option>action</option>
 			</parameter>	
 		</command>
+		
+		<command name='auto' class='org.cx.game.command.AutoCommand' parameter='none'>
+			<description>电脑托管</description>
+		</command>
+		
+		<command name='reload' class='org.cx.game.command.ReloadCommand' parameter='none'>
+			<description>前台重新加载后台数据</description>		
+		</command>
+		
+		<!-- 外部命令 -->
 				
 		<command name='create' class='org.cx.card.command.CreateCommand' parameter='request'>
 			<description>创建比赛</description>	
@@ -183,17 +175,18 @@
 			</parameter>	
 		</command>
 		
+		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='none'>
+			<description>准备就绪</description>		
+		</command>
+		
+		<command name='deploy' class='org.cx.card.command.DeployCommand' parameter='none'>
+			<description>玩家部署，战斗开始前各自排兵布阵</description>		
+		</command>
+		
 		<command name='finish' class='org.cx.card.command.FinishCommand' parameter='none'>
 			<description>结束比赛</description>		
 		</command>
 		
-		<command name='auto' class='org.cx.game.command.AutoCommand' parameter='none'>
-			<description>电脑托管</description>
-		</command>
-		
-		<command name='reload' class='org.cx.game.command.ReloadCommand' parameter='none'>
-			<description>前台重新加载后台数据</description>		
-		</command>
 		
 		<!-- 命令转换例子：setup 1 = select group 1;setup = select group;select 1;setup 
 		<command name='setup' class='org.cx.game.command.SetupCommand' parameter='request'>
@@ -210,11 +203,34 @@
 				<option>corps</option>
 			</parameter>
 		</command>
+		
 		<command name='call' class='org.cx.game.command.CallCommand' parameter='request'>
 			<description>招募(已被CallOption代替)</description>
 			<parameter>
 				<option>place</option>
 			</parameter>			
+		</command>
+		
+		<command name='conjure' class='org.cx.game.command.ConjureCommand' parameter='request'>
+			<description>施法</description>
+			<parameter>
+				<option>place</option>
+				<option>corps</option>
+			</parameter>
+		</command>
+		
+		<command name='take' class='org.cx.card.command.TakeCommand' parameter='request'>
+			<description>选择代表Corps的选项</description>
+			<parameter>
+				<option>custom</option>
+			</parameter>
+		</command>
+		
+		<command name='lay' class='org.cx.card.command.PlacementCommand' parameter='request'>
+			<description>放置Corps</description>
+			<parameter>
+				<option>custom</option> 
+			</parameter>		
 		</command>
 		-->
 	</commands>

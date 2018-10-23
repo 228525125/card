@@ -1,4 +1,4 @@
-package org.cx.card.command.Validator;
+package org.cx.card.command.validator;
 
 import javax.servlet.ServletContext;
 

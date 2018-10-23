@@ -1,4 +1,9 @@
 function post(command){
+	if('syn'==command){
+		syn();
+		return ;
+	}
+	
 	$.post("play.do?cmd=send",{command:command},function(response){
     	var h = $('#command_output').html();
     	var p = $('input#command_input').attr('alt');
@@ -9,29 +14,12 @@ function post(command){
     	if(0<data.length){
     		for(var i=0;i<data.length;i++){
     			var sequence = data[i].sequence;
-    			var jsonObject = $.parseJSON(data[i].command);    			
+    			var jsonObject = $.parseJSON(data[i].response);    			
         		Invoker.response(jsonObject, data[i].sign);
-            		
+            	
             	Context.setProcessSequence(sequence);
     			
     		}
-    		
-    		/* 间隔执行
-    		var i = 0;
-			var vID = setInterval(function(){
-    	    	if(i<data.length){
-    	    		var sequence = data[i].sequence;
-        			var jsonObject = $.parseJSON(data[i].command);
-        			var sign = data[i].sign;
-        			Invoker.response(jsonObject, sign);
-            		
-                	Context.setProcessSequence(sequence);
-    	    		
-    	    		i++;
-    	    	 }else{
-    	    		 clearInterval(vID);
-    	    	 }
-    	     },1000);*/
     	}
     });
 }
@@ -49,7 +37,7 @@ function syn(){
     			var sequence = data[i].sequence;
     			
     			if(sequence>Context.getProcessSequence()){     //异步时，可能会出现重复发送同步命令，这样就避免了重复加载
-	    			var jsonObject = $.parseJSON(data[i].command);
+	    			var jsonObject = $.parseJSON(data[i].response);
 	    			if('Command_Show'==jsonObject.action ||
 	    			    'Command_Select'==jsonObject.action || 
 	    			    'Command_Query_Call'==jsonObject.action ||
@@ -57,7 +45,8 @@ function syn(){
 	    			    'Command_Query_Move'==jsonObject.action ||
 	    			    'Command_Query_Conjure'==jsonObject.action ||
 	    			    'Command_Query_Apply'==jsonObject.action ||
-	    			    'Command_Query_Execute'==jsonObject.action)
+	    			    'Command_Query_Execute'==jsonObject.action||
+	    			    'Command_Deploy'==jsonObject.action)
 	    			;
 	    			else
 	    				Invoker.response(jsonObject, data[i].sign);
@@ -65,27 +54,6 @@ function syn(){
 	        		Context.setProcessSequence(sequence);
     			}
     		}
-    		
-    		/* 间隔执行
-    		var i = 0;
-			var vID = setInterval(function(){
-    	    	if(i<data.length){
-    	    		var sequence = data[i].sequence;
-    	    			
-    	    		if(sequence>Context.getProcessSequence()){
-    		    		var jsonObject = $.parseJSON(data[i].command);
-    		    		var sign = data[i].sign;
-    		    			
-    		    		Invoker.response(jsonObject, sign);
-    		    			
-    		        	Context.setProcessSequence(sequence);
-    	    		}
-    	    		
-    	    		i++;
-    	    	 }else{
-    	    		 clearInterval(vID);
-    	    	 }
-    	     },1000);*/
     	}
     });
 }
@@ -278,6 +246,9 @@ $(function(){
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');
 	ActionFactory.register('Command_Show', 'new CommandShowAction(data.info,view)');
 	ActionFactory.register('Command_Switch', 'new CommandSwitchAction(data.info,view)');
+	ActionFactory.register('Command_Deploy', 'new CommandDeployAction(data.info,view)');
+	ActionFactory.register('Command_Ready', 'new CommandReadyAction(data.info,view)');
+	
 	ActionFactory.register('Command_Query_Call', 'new CommandQueryCallAction(data.info,view)');
 	ActionFactory.register('Command_Query_Attack', 'new CommandQueryAttackAction(data.info,view)');
 	ActionFactory.register('Command_Query_Move', 'new CommandQueryMoveAction(data.info,view)');
@@ -389,5 +360,5 @@ $(function(){
 	
 	//-------------------init end-------------------
 	
-	Context.beginSyn();
+	//Context.beginSyn();
 });

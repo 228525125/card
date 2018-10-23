@@ -1,20 +1,14 @@
 package org.cx.card.domain;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.cx.card.command.CommandBuffer;
 import org.cx.game.core.AbstractHost;
 import org.cx.game.core.AbstractPlayer;
 
@@ -31,10 +25,6 @@ public class User {
 	private String account;
 	private String name;
 	private String password;
-	
-	@ManyToMany(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)  
-    @JoinTable(name = "user_card", inverseJoinColumns = @JoinColumn(name = "card_id"), joinColumns = @JoinColumn(name = "user_id"))
-	private Set<Card> cards;
 	
 	public Long getCid() {
 		return cid;
@@ -60,12 +50,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Card> getCards() {
-		return cards;
-	}
-	public void setCards(Set<Card> cards) {
-		this.cards = cards;
-	}
 	
 	@Transient
 	private AbstractPlayer player = null;
@@ -85,5 +69,13 @@ public class User {
 		this.player = host.queryPlayerForName(account);
 	}
 	
+	@Transient
+	private CommandBuffer buffer = null;
 	
+	public CommandBuffer getBuffer() {
+		if(null==buffer)
+			buffer = new CommandBuffer(this);
+		
+		return buffer;
+	}
 }

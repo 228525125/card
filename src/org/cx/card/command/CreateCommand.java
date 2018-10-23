@@ -1,8 +1,10 @@
 package org.cx.card.command;
 
+import java.util.UUID;
+
 import javax.servlet.ServletContext;
 
-import org.cx.card.command.Validator.RepeatCreateValidator;
+import org.cx.card.command.validator.RepeatCreateValidator;
 import org.cx.card.domain.User;
 import org.cx.game.core.SceneHost;
 import org.cx.game.exception.ValidatorException;
@@ -11,12 +13,11 @@ import com.easyjf.web.ActionContext;
 
 public class CreateCommand extends OutsideCommand {
 
-	private User user = null;
 	private ServletContext context = ActionContext.getContext().getSession().getServletContext();
 	
 	public CreateCommand(User user) {
 		// TODO Auto-generated constructor stub
-		this.user = user;
+		super(user);
 		addValidator(new RepeatCreateValidator(context,user.getAccount()));
 	}
 
@@ -33,10 +34,11 @@ public class CreateCommand extends OutsideCommand {
 		context.setAttribute(parameter.toString(), host);*/
 		
 		//GroundHost
+		String playNo = UUID.randomUUID().toString();
 		
-		SceneHost host = new SceneHost(107003, user.getAccount(), 1);
+		SceneHost host = new SceneHost(107003, getUser().getAccount(), 1, playNo);
 		host.setCorpsDataOfTroop(1,"[10190001,1,1,1];[10100001,1,1,1];[10100002,1,1,1]");
-		user.setHost(host);
+		getUser().setHost(host);
 		context.setAttribute(parameter.toString(), host);
 	}
 }

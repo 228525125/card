@@ -2,7 +2,7 @@ package org.cx.card.command;
 
 import javax.servlet.ServletContext;
 
-import org.cx.card.command.Validator.HostVacancyValidator;
+import org.cx.card.command.validator.HostVacancyValidator;
 import org.cx.card.domain.User;
 import org.cx.game.core.AbstractHost;
 import org.cx.game.core.SceneHost;
@@ -12,12 +12,11 @@ import com.easyjf.web.ActionContext;
 
 public class JoinCommand extends OutsideCommand {
 
-	private User user = null;
 	private ServletContext context = ActionContext.getContext().getSession().getServletContext();
 	
 	public JoinCommand(User user) {
 		// TODO Auto-generated constructor stub
-		this.user = user;		
+		super(user);
 	}
 
 	@Override
@@ -29,13 +28,15 @@ public class JoinCommand extends OutsideCommand {
 		
 		AbstractHost host = (AbstractHost) context.getAttribute(parameter.toString());
 		Integer troop = host.getUsableTroop();
-		host.playerJoinGame(user.getAccount(), troop);
+		host.playerJoinGame(getUser().getAccount(), troop);
 		
 		if (host instanceof SceneHost) {
 			SceneHost sceneHost = (SceneHost) host;
 			sceneHost.setCorpsDataOfTroop(troop, "[10190002,1,1,"+troop+"];[10100003,1,1,"+troop+"]");
 		}
 		
-		user.setHost(host);
+		host.setStatus(AbstractHost.Status_WaitReady);
+		
+		getUser().setHost(host);
 	}
 }

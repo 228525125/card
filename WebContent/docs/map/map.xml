@@ -306,20 +306,46 @@
 		</troopList>
 		
 		<entranceMap type="java.util.HashMap" interface="java.util.Map" map="true">
+			<!-- 
+			<map><key type="int">880088</key><value type="int">1</value></map>
+			<map><key type="int">980088</key><value type="int">1</value></map>
+			 -->
 			<map><key type="int">1080088</key><value type="int">1</value></map>
 			<map><key type="int">1180088</key><value type="int">1</value></map>
 			<map><key type="int">1280088</key><value type="int">1</value></map>
 			<map><key type="int">1380088</key><value type="int">1</value></map>
+			<!-- 
+			<map><key type="int">1480088</key><value type="int">1</value></map>
+			<map><key type="int">1580088</key><value type="int">1</value></map>
+			<map><key type="int">880089</key><value type="int">1</value></map>
+			<map><key type="int">980089</key><value type="int">1</value></map>
+			 -->
 			<map><key type="int">1080089</key><value type="int">1</value></map>
 			<map><key type="int">1180089</key><value type="int">1</value></map>
 			<map><key type="int">1280089</key><value type="int">1</value></map>
-			<map><key type="int">1080085</key><value type="int">2</value></map>
-			<map><key type="int">1180085</key><value type="int">2</value></map>
-			<map><key type="int">1280085</key><value type="int">2</value></map>
-			<map><key type="int">1380085</key><value type="int">2</value></map>
+			<!-- 
+			<map><key type="int">1380089</key><value type="int">1</value></map>
+			<map><key type="int">1480089</key><value type="int">1</value></map>
+			<map><key type="int">880084</key><value type="int">2</value></map>
+			<map><key type="int">980084</key><value type="int">2</value></map>
+			 -->
 			<map><key type="int">1080084</key><value type="int">2</value></map>
 			<map><key type="int">1180084</key><value type="int">2</value></map>
 			<map><key type="int">1280084</key><value type="int">2</value></map>
+			<map><key type="int">1380084</key><value type="int">2</value></map>
+			<!-- 
+			<map><key type="int">1480084</key><value type="int">2</value></map>
+			<map><key type="int">1580084</key><value type="int">2</value></map>
+			<map><key type="int">880083</key><value type="int">2</value></map>
+			<map><key type="int">980083</key><value type="int">2</value></map>
+			-->
+			<map><key type="int">1080083</key><value type="int">2</value></map>
+			<map><key type="int">1180083</key><value type="int">2</value></map>
+			<map><key type="int">1280083</key><value type="int">2</value></map>
+			<!-- 
+			<map><key type="int">1380083</key><value type="int">2</value></map>
+			<map><key type="int">1480083</key><value type="int">2</value></map>
+			  -->
 		</entranceMap>
 		
 		<!-- 地形 -->

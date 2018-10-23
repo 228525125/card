@@ -22,9 +22,9 @@ public class Process {
 	private Integer sequence;
 	
 	@Column(length = 8000)
-	private String command;
+	private String response;
 	
-	private Integer playerId;
+	private Integer executor;
 	
 	private String action;
 	
@@ -52,17 +52,17 @@ public class Process {
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
 	}
-	public String getCommand() {
-		return command;
+	public String getResponse() {
+		return response;
 	}
-	public void setCommand(String command) {
-		this.command = command;
+	public void setResponse(String response) {
+		this.response = response;
 	}
-	public Integer getPlayerId() {
-		return playerId;
+	public Integer getExecutor() {
+		return executor;
 	}
-	public void setPlayerId(Integer playerId) {
-		this.playerId = playerId;
+	public void setExecutor(Integer executor) {
+		this.executor = executor;
 	}
 	public String getAction() {
 		return action;
