@@ -61,11 +61,11 @@
 			<hp type="int">10</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
-					<gold type="int">50</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+					<gold type="int">75</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
-			<speed type="int">150</speed>
+			<speed type="int">100</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
 			<star type="int">1</star>
@@ -77,16 +77,16 @@
 				<id type="int">10100002</id>
 			</parameter>
 			<atk type="int">7</atk>
+			<attackRange type="int">3</attackRange>
 			<attackMode type="int">116</attackMode>
 			<dmg type="int">280083</dmg>
 			<def type="int">5</def>
 			<hp type="int">10</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
-					<gold type="int">70</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+					<gold type="int">150</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
 			</consume>
-			<attackRange type="int">1</attackRange>
 			<speed type="int">120</speed>
 			<energy type="int">3</energy>
 			<moveType type="int">141</moveType>
@@ -98,20 +98,20 @@
 			<parameter>
 				<id type="int">10100003</id>
 			</parameter>
-			<atk type="int">5</atk>
-			<dmg type="int">180083</dmg>
-			<def type="int">5</def>
-			<hp type="int">6</hp>
+			<atk type="int">180</atk>
+			<dmg type="int">380087</dmg>
+			<def type="int">9</def>
+			<hp type="int">30</hp>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
-					<gold type="int">90</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
+					<gold type="int">275</gold><wood type="int">0</wood><stone type="int">0</stone><ore type="int">0</ore>
 				</parameter>
 			</consume>
 			<attackRange type="int">1</attackRange>
 			<speed type="int">130</speed>
 			<energy type="int">3</energy>
-			<moveType type="int">141</moveType>
-			<star type="int">2</star>
+			<moveType type="int">144</moveType>
+			<star type="int">3</star>
 			<lockChance type="int">100</lockChance>
 			<fleeChance type="int">0</fleeChance>
 		</card>

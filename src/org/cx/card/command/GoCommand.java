@@ -1,20 +1,15 @@
 package org.cx.card.command;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.cx.card.command.validator.TypeOfHostValidator;
 import org.cx.card.domain.User;
 import org.cx.game.core.AbstractHost;
 import org.cx.game.core.SceneHost;
 import org.cx.game.exception.ValidatorException;
-import org.cx.game.observer.NotifyInfo;
-import org.cx.game.tools.CommonIdentifierE;
 import org.cx.card.command.validator.HostStatusValidator;
 
-public class DeployCommand extends OutsideCommand {
-	
-	public DeployCommand(User user) {
+public class GoCommand extends OutsideCommand {
+
+	public GoCommand(User user) {
 		// TODO Auto-generated constructor stub
 		super(user);
 		addValidator(new TypeOfHostValidator(SceneHost.class, user.getHost()));
@@ -27,12 +22,6 @@ public class DeployCommand extends OutsideCommand {
 		super.execute();
 		
 		SceneHost host = (SceneHost) getUser().getHost();
-		host.deploy(getUser().getPlayer());
-		
-		Map<String,Object> map = new HashMap<String,Object>();
-
-		map.put("ground", host.getGround());
-		NotifyInfo info = new NotifyInfo(CommonIdentifierE.Command_Deploy,map);
-		super.notifyObservers(info);
+		host.go(getUser().getPlayer());
 	}
 }

@@ -9,7 +9,7 @@ import org.cx.game.core.AbstractHost;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.observer.NotifyInfo;
 import org.cx.game.tools.CommonIdentifierE;
-import org.cx.game.validator.HostStatusValidator;
+import org.cx.card.command.validator.HostStatusValidator;
 import org.cx.game.widget.Ground;
 
 public class ReadyCommand extends OutsideCommand {

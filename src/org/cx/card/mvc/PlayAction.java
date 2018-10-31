@@ -62,7 +62,7 @@ public class PlayAction extends BaseAction {
 				|| -1!=command.indexOf("join")
 				|| -1!=command.indexOf("ready")
 				|| -1!=command.indexOf("deploy")
-				|| -1!=command.indexOf("clos")
+				|| -1!=command.indexOf("go")
 				|| -1!=command.indexOf("finish")){
 					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
 					oInvoker.receiveCommand(getUser(), command);

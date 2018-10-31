@@ -183,6 +183,10 @@
 			<description>玩家部署，战斗开始前各自排兵布阵</description>		
 		</command>
 		
+		<command name='go' class='org.cx.card.command.GoCommand' parameter='none'>
+			<description>玩家部署完毕，等待战斗开始</description>		
+		</command>
+		
 		<command name='finish' class='org.cx.card.command.FinishCommand' parameter='none'>
 			<description>结束比赛</description>		
 		</command>
