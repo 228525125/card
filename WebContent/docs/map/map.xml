@@ -36,8 +36,8 @@
 		
 		<!-- 战斗单位 --> 
 		<corpsData type="java.util.ArrayList" interface="java.util.List" collection="true" afterConstruct="true">
-			<corps type="str">[10100001,2,20,20];[10100002,1,20,20]</corps>                                                                                       <!--  兵种，等级，数量，阵营  -->
-			<corps type="str">10100002,3,20,21</corps>
+			<corps type="str">[10100001,2,20];[10100002,1,20]</corps>                                                                                       <!--  兵种，等级，阵营  -->
+			<corps type="str">10100002,3,21</corps>
 		</corpsData>
 		
 		

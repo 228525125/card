@@ -6,7 +6,6 @@
 			<rule type="org.cx.game.rule.ActivateRule"></rule>
 			<rule type="org.cx.game.rule.AttackRule"></rule>
 			<rule type="org.cx.game.rule.DefendRule"></rule>
-			<rule type="org.cx.game.rule.TauntRule"></rule>
 			<rule type="org.cx.game.rule.CallRule"></rule>
 			<rule type="org.cx.game.rule.DeathRule"></rule>
 			

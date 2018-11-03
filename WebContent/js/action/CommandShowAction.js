@@ -188,9 +188,9 @@ CommandShowAction = jClass(Action, {
 		'| 速度:'+this.info.corps.activate.speed+' '+
 		'| 激活:'+this.info.corps.attack.attackable+'</p>'+
 		'<p style="margin: 0;padding: 0;">防守:'+' '+
-		'def:'+this.info.corps.attacked.def+' '+
+		'def:'+this.info.corps.defend.def+' '+
 		'| hp:'+this.info.corps.death.hp+'['+this.info.corps.death.hpLimit+']'+' '+ 
-		'| 反击:'+this.info.corps.attacked.fightBack+' '+'</p>'+
+		'| 反击:'+this.info.corps.defend.canFightBack+' '+'</p>'+
 		'<p style="margin: 0;padding: 0;">移动:'+' '+
 		'类型:'+Glossary.get(Glossary.Move_Type,this.info.corps.move.type)+' '+
 		'| 躲避:'+this.info.corps.move.flee+' '+
@@ -199,8 +199,7 @@ CommandShowAction = jClass(Action, {
 		'<p style="margin: 0;padding: 0;">生命:'+' '+
 		'状态:'+Glossary.get(Glossary.Death_Status,this.info.corps.death.status)+'</p>'+
 		'<p style="margin: 0;padding: 0;">招募:'+' '+
-		'人数:'+this.info.corps.call.nop+' '+
-		'| 单位人口:'+this.info.corps.call.ration+' '+
+		'单位人口:'+this.info.corps.call.ration+' '+
 		'| 消耗:'+this.info.corps.call.consume.gold+'/'+this.info.corps.call.consume.ore+'</p>'+
 		'<p style="margin: 0;padding: 0;">等级:'+' '+
 		'level:'+this.info.corps.upgrade.level+' '+

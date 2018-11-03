@@ -34,6 +34,7 @@
 				<object code="10190001"></object>
 				<object code="10190002"></object>
 				<object code="10100001"></object>
+				<object code="10100004"></object>
 			</tag>
 			<tag key="fashi" description="法师" code="302"></tag>
 			<tag key="mushi" description="牧师" code="303">
