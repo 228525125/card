@@ -32,17 +32,12 @@
 		<category key="zhiye" description="职业" code="1006">
 			<tag key="zhanshi" description="战士" code="301">
 				<object code="10190001"></object>
-				<object code="10190002"></object>
-				<object code="10100001"></object>
-				<object code="10100004"></object>
 			</tag>
 			<tag key="fashi" description="法师" code="302"></tag>
 			<tag key="mushi" description="牧师" code="303">
-				<object code="10100003"></object>
 			</tag>
 			<tag key="shengqishi" description="圣骑士" code="304"></tag>
 			<tag key="lieren" description="猎人" code="305">
-				<object code="10100002"></object>				
 			</tag>
 			<tag key="daozei" description="盗贼" code="306"></tag>
 		</category>
@@ -70,7 +65,6 @@
 		<!-- 随从
 		<category description="随从" code="1007">
 			<tag code="10190001"></tag>
-			<tag code="10190002"></tag>
 			<tag code="10100001"></tag>
 			<tag code="10100002"></tag>
 			<tag code="10100003"></tag>

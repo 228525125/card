@@ -49,7 +49,7 @@ public class PlayAction extends BaseAction {
 	}
 	
 	public Page send(WebForm form){
-		
+		getUser().getHost();
 		form.addResult("user", getUser().getAccount());
 		String msg = "complete";
 		List<Process> list = new ArrayList<Process>();

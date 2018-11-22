@@ -32,7 +32,8 @@ public class JoinCommand extends OutsideCommand {
 		
 		if (host instanceof SceneHost) {
 			SceneHost sceneHost = (SceneHost) host;
-			sceneHost.setCorpsDataOfTroop(troop, "[10100001,1,"+troop+"];[10100004,1,"+troop+"]");
+			sceneHost.setCorpsDataOfTroop(troop, "[10100008,1,"+troop+"];[10100008,1,"+troop+"];[10100008,1,"+troop+"];"
+					+ "[10100008,1,"+troop+"];[10100008,1,"+troop+"];[10100008,1,"+troop+"];[10100008,1,"+troop+"]");
 		}
 		
 		host.setStatus(AbstractHost.Status_WaitReady);

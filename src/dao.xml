@@ -14,19 +14,6 @@
     </property> 
   </bean>  
   
-  <bean id="cardDao" parent="abstractDao"> 
-    <property name="proxyInterfaces"> 
-      <value>org.cx.card.dao.ICardDAO</value> 
-    </property>  
-    <property name="target"> 
-      <bean parent="baseDAO"> 
-        <constructor-arg> 
-          <value>org.cx.card.domain.Card</value> 
-        </constructor-arg> 
-      </bean> 
-    </property> 
-  </bean>
-  
   <bean id="processDao" parent="abstractDao"> 
     <property name="proxyInterfaces"> 
       <value>org.cx.card.dao.IProcessDAO</value> 

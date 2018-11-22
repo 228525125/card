@@ -3,11 +3,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">  
   <bean id="userService" class="org.cx.card.service.impl.UserServiceImpl"> 
     <property name="userDao" ref="userDao"/> 
-  </bean>  
-  
-  <bean id="cardService" class="org.cx.card.service.impl.CardServiceImpl"> 
-    <property name="cardDao" ref="cardDao"/> 
-  </bean>  
+  </bean>   
   
   <bean id="processService" class="org.cx.card.service.impl.ProcessServiceImpl"> 
     <property name="processDao" ref="processDao"/> 

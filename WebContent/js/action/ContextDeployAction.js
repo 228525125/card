@@ -13,7 +13,7 @@ ContextDeployAction = jClass(Action, {
 		var notice = Context.getNotice();
 		var place = notice.getPlace(3);
 		
-		h = '控制：'+this.info.player.name+'['+(null!=this.info.corps ? this.info.corps.name : '')+']';
+		h = '控制：'+this.info.player.name+'['+(null!=this.info.corps ? this.info.corps.name+this.info.corps.playId : '')+']';
 		place.view.html(h);
 		
 		var scrollTop = this.view[0].scrollHeight;

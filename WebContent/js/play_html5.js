@@ -240,7 +240,6 @@ $(function(){
 	
 	ActionFactory.register('Player_Resource', 'new PlayerResourceAction(data.info,view)');
 	ActionFactory.register('Player_Ration', 'new PlayerRationAction(data.info,view)');
-	ActionFactory.register('Player_Bout', 'new PlayerBoutAction(data.info,view)');
 	ActionFactory.register('Place_In', 'new PlaceInAction(data.info,view)');
 	ActionFactory.register('Place_Out', 'new PlaceOutAction(data.info,view)');	
 	ActionFactory.register('Command_Select', 'new CommandSelectAction(data.info,view)');

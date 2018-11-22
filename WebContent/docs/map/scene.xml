@@ -1,9 +1,9 @@
 <scenes>
-	<scene type="org.cx.game.widget.HoneycombGround" id="107002">
+	<scene type="org.cx.game.widget.Scene" id="107003">
 		<description>测试专用图</description>
 		<parameter>
-			<id type="int">107002</id>
-			<name type="str">毒蜥沼泽</name>
+			<id type="int">107003</id>
+			<name type="str">战斗场景</name>
 			<xBorder type="int">21</xBorder>                                                                                                  <!-- 地图边界：x轴最大值 -->
 			<yBorder type="int">12</yBorder>                                                                                                  <!-- 地图边界：y轴最大值 -->
 			<imagePath type="str"></imagePath>                                                                                                <!-- 背景图片的路径 -->
@@ -12,14 +12,50 @@
 		<!-- 阵营 -->
 		<troopList type="java.util.ArrayList" interface="java.util.List" collection="true">
 			<troop type="int">1</troop>
+			<troop type="int">2</troop>
 		</troopList>
 		
-		<!-- 英雄入口 --><!-- 入口数决定了英雄数 -->
 		<entranceMap type="java.util.HashMap" interface="java.util.Map" map="true">
-			<map>
-				<key type="int">380082</key>
-				<value type="int">1</value>
-			</map>
+			<!-- 
+			<map><key type="int">880088</key><value type="int">1</value></map>
+			<map><key type="int">980088</key><value type="int">1</value></map>
+			 -->
+			<map><key type="int">10800810</key><value type="int">1</value></map>
+			<map><key type="int">11800810</key><value type="int">1</value></map>
+			<map><key type="int">12800810</key><value type="int">1</value></map>
+			<map><key type="int">13800810</key><value type="int">1</value></map>
+			<!-- 
+			<map><key type="int">1480088</key><value type="int">1</value></map>
+			<map><key type="int">1580088</key><value type="int">1</value></map>
+			<map><key type="int">880089</key><value type="int">1</value></map>
+			<map><key type="int">980089</key><value type="int">1</value></map>
+			 -->
+			<map><key type="int">10800811</key><value type="int">1</value></map>
+			<map><key type="int">11800811</key><value type="int">1</value></map>
+			<map><key type="int">12800811</key><value type="int">1</value></map>
+			<!-- 
+			<map><key type="int">1380089</key><value type="int">1</value></map>
+			<map><key type="int">1480089</key><value type="int">1</value></map>
+			<map><key type="int">880084</key><value type="int">2</value></map>
+			<map><key type="int">980084</key><value type="int">2</value></map>
+			 -->
+			<map><key type="int">1080084</key><value type="int">2</value></map>
+			<map><key type="int">1180084</key><value type="int">2</value></map>
+			<map><key type="int">1280084</key><value type="int">2</value></map>
+			<map><key type="int">1380084</key><value type="int">2</value></map>
+			<!-- 
+			<map><key type="int">1480084</key><value type="int">2</value></map>
+			<map><key type="int">1580084</key><value type="int">2</value></map>
+			<map><key type="int">880083</key><value type="int">2</value></map>
+			<map><key type="int">980083</key><value type="int">2</value></map>
+			-->
+			<map><key type="int">1080083</key><value type="int">2</value></map>
+			<map><key type="int">1180083</key><value type="int">2</value></map>
+			<map><key type="int">1280083</key><value type="int">2</value></map>
+			<!-- 
+			<map><key type="int">1380083</key><value type="int">2</value></map>
+			<map><key type="int">1480083</key><value type="int">2</value></map>
+			  -->
 		</entranceMap>
 		
 		<!-- 地形 -->
@@ -45,10 +81,6 @@
 			<map><key type="int">880081</key><value type="int">405</value></map>
 			<map><key type="int">880082</key><value type="int">405</value></map>
 			<map><key type="int">680083</key><value type="int">405</value></map>
-			<map><key type="int">680084</key><value type="int">405</value></map>
-			<map><key type="int">780084</key><value type="int">405</value></map>
-			<map><key type="int">580085</key><value type="int">405</value></map>
-			<map><key type="int">680085</key><value type="int">405</value></map>
 			<!-- 8 -->
 			<map><key type="int">7800810</key><value type="int">405</value></map>
 			<map><key type="int">7800811</key><value type="int">405</value></map>
@@ -56,10 +88,6 @@
 			<map><key type="int">8800810</key><value type="int">405</value></map>
 			<map><key type="int">8800811</key><value type="int">405</value></map>
 			<map><key type="int">9800812</key><value type="int">405</value></map>
-			<map><key type="int">680088</key><value type="int">405</value></map>
-			<map><key type="int">780088</key><value type="int">405</value></map>
-			<map><key type="int">680089</key><value type="int">405</value></map>
-			<map><key type="int">780089</key><value type="int">405</value></map>
 			<!-- 2 -->
 			<map><key type="int">1480081</key><value type="int">405</value></map>
 			<map><key type="int">1580081</key><value type="int">405</value></map>
@@ -67,21 +95,16 @@
 			<map><key type="int">1680082</key><value type="int">405</value></map>
 			<map><key type="int">1580083</key><value type="int">405</value></map>
 			<map><key type="int">1680083</key><value type="int">405</value></map>
-			<map><key type="int">1680084</key><value type="int">405</value></map>
-			<map><key type="int">1780084</key><value type="int">405</value></map>
-			<map><key type="int">1680085</key><value type="int">405</value></map>
-			<map><key type="int">1780085</key><value type="int">405</value></map>
 			<!-- 4 -->
 			<map><key type="int">16800810</key><value type="int">405</value></map>
-			<map><key type="int">17800810</key><value type="int">405</value></map>
 			<map><key type="int">15800811</key><value type="int">405</value></map>
-			<map><key type="int">16800811</key><value type="int">405</value></map>
 			<map><key type="int">15800812</key><value type="int">405</value></map>
-			<map><key type="int">16800812</key><value type="int">405</value></map>
-			<map><key type="int">1780088</key><value type="int">405</value></map>
-			<map><key type="int">1880088</key><value type="int">405</value></map>
-			<map><key type="int">1680089</key><value type="int">405</value></map>
-			<map><key type="int">1780089</key><value type="int">405</value></map>
+			<map><key type="int">1680087</key><value type="int">405</value></map>
+			<map><key type="int">1680088</key><value type="int">405</value></map>
+			<map><key type="int">1580089</key><value type="int">405</value></map>
+			<map><key type="int">15800810</key><value type="int">405</value></map>
+			<map><key type="int">14800811</key><value type="int">405</value></map>
+			<map><key type="int">14800812</key><value type="int">405</value></map>
 			<!-- 3 -->
 			<map><key type="int">1780086</key><value type="int">405</value></map>
 			<map><key type="int">1880086</key><value type="int">405</value></map>
@@ -94,7 +117,21 @@
 			<map><key type="int">2080087</key><value type="int">405</value></map>
 			<map><key type="int">2180087</key><value type="int">405</value></map>
 			
-			
+			<map><key type="int">680084</key><value type="int">405</value></map>
+			<map><key type="int">780084</key><value type="int">405</value></map>
+			<map><key type="int">580085</key><value type="int">405</value></map>
+			<map><key type="int">680085</key><value type="int">405</value></map>
+			<map><key type="int">680088</key><value type="int">405</value></map>
+			<map><key type="int">780088</key><value type="int">405</value></map>
+			<map><key type="int">680089</key><value type="int">405</value></map>
+			<map><key type="int">780089</key><value type="int">405</value></map>
+			<map><key type="int">1680084</key><value type="int">405</value></map>
+			<map><key type="int">1780084</key><value type="int">405</value></map>
+			<map><key type="int">1680085</key><value type="int">405</value></map>
+			<map><key type="int">1780085</key><value type="int">405</value></map>
+			<map><key type="int">1780088</key><value type="int">405</value></map>
+			<map><key type="int">1680089</key><value type="int">405</value></map>
 		</landformMap>
 	</scene>
+	
 </scenes>

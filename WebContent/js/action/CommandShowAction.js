@@ -178,7 +178,7 @@ CommandShowAction = jClass(Action, {
 			}
 		}
 		
-		text = '<p style="margin: 0;padding: 0;">card:'+this.info.corps.name+'['+this.info.corps.player.name+'] '+
+		text = '<p style="margin: 0;padding: 0;">card:'+this.info.corps.name+this.info.corps.playId+'['+this.info.corps.player.name+'] '+
 		'| atk:'+this.info.corps.attack.atk+' '+
 		'| 移动:'+this.info.corps.move.energy+ ' '+
 		'| 激活:'+this.info.corps.activate.activation+'</p>'+
