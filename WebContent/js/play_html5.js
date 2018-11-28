@@ -128,7 +128,7 @@ $(function(){
 				val = '';
 			}
 			
-			val += 'select ground place'+position+';';         //+' corps;show';
+			val += 'select ground place'+position+';select corps;show;';         //+' corps;show';
 			
 			$("#command_input").val(val);
 			command_input_sub();
