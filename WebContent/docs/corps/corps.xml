@@ -25,7 +25,7 @@
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<skill type="org.cx.game.magic.skill.ShieldHit" factory="org.cx.game.magic.skill.SkillFactory">
 					<factoryMethodParameter>
-						<id type="int">10200007</id>	
+						<id type="int">10200007</id>
 					</factoryMethodParameter>
 				</skill>
 			</skillList>
@@ -36,18 +36,18 @@
 			<parameter>
 				<id type="int">10100001</id>
 			</parameter>
-			<hp type="int">6</hp>
+			<hp type="int">60</hp>
 			<atk type="int">1</atk>
 			<def type="int">1</def>
 			<speed type="int">80</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">180082</dmg>
+			<dmg type="int">8800816</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">30,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">8</empiricValue>
+			<empiricValue type="int">80</empiricValue>
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">141</moveType>
 			<rank type="int">1</rank>
@@ -56,18 +56,18 @@
 			<parameter>
 				<id type="int">10100002</id>
 			</parameter>
-			<hp type="int">10</hp>
+			<hp type="int">50</hp>
 			<atk type="int">4</atk>
 			<def type="int">3</def>
 			<speed type="int">90</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">280088</dmg>
+			<dmg type="int">10800840</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">80,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">19</empiricValue>
+			<empiricValue type="int">95</empiricValue>
 			<attackRange type="int">4</attackRange>
 			<attackMode type="int">116</attackMode>
 			<moveType type="int">141</moveType>
@@ -77,18 +77,18 @@
 			<parameter>
 				<id type="int">10100003</id>
 			</parameter>
-			<hp type="int">26</hp>
+			<hp type="int">78</hp>
 			<atk type="int">5</atk>
 			<def type="int">9</def>
 			<speed type="int">80</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">280085</dmg>
+			<dmg type="int">6800815</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">130,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">28</empiricValue>
+			<empiricValue type="int">84</empiricValue>
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">141</moveType>
 			<rank type="int">3</rank>
@@ -97,18 +97,18 @@
 			<parameter>
 				<id type="int">10100004</id>
 			</parameter>
-			<hp type="int">35</hp>
+			<hp type="int">70</hp>
 			<atk type="int">9</atk>
 			<def type="int">8</def>
 			<speed type="int">150</speed>
 			<energy type="int">5</energy>
-			<dmg type="int">5800815</dmg>
+			<dmg type="int">10800830</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">360,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">58</empiricValue>
+			<empiricValue type="int">116</empiricValue>
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">144</moveType>
 			<rank type="int">4</rank>
@@ -133,6 +133,13 @@
 			<attackMode type="int">116</attackMode>
 			<moveType type="int">141</moveType>
 			<rank type="int">5</rank>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<skill type="org.cx.game.magic.skill.Cure" factory="org.cx.game.magic.skill.SkillFactory">
+					<factoryMethodParameter>
+						<id type="int">10200008</id>
+					</factoryMethodParameter>
+				</skill>
+			</skillList>
 		</card>
 		<card type="org.cx.game.corps.Corps" id="10100006">
 			<parameter>
@@ -175,23 +182,23 @@
 			<rank type="int">7</rank>
 		</card>
 		
-		<!-- 野蛮部落 -->
+		<!-- 亡灵 -->
 		<card type="org.cx.game.corps.Corps" id="10100008">
 			<parameter>
 				<id type="int">10100008</id>
 			</parameter>
-			<hp type="int">7</hp>
-			<atk type="int">1</atk>
-			<def type="int">3</def>
+			<hp type="int">40</hp>
+			<atk type="int">2</atk>
+			<def type="int">6</def>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">180081</dmg>
+			<dmg type="int">8800824</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">20,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">8</empiricValue>
+			<empiricValue type="int">80</empiricValue>
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">141</moveType>
 			<rank type="int">1</rank>
@@ -200,81 +207,80 @@
 			<parameter>
 				<id type="int">10100009</id>
 			</parameter>
-			<hp type="int">9</hp>
-			<atk type="int">4</atk>
+			<hp type="int">85</hp>
+			<atk type="int">2</atk>
 			<def type="int">2</def>
-			<speed type="int">100</speed>
+			<speed type="int">70</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">380086</dmg>
+			<dmg type="int">10800815</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">70,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">18</empiricValue>
-			<attackRange type="int">4</attackRange>
-			<attackMode type="int">116</attackMode>
+			<empiricValue type="int">75</empiricValue>
+			<attackRange type="int">1</attackRange>
 			<moveType type="int">141</moveType>
-			<rank type="int">2</rank>
+			<rank type="int">1</rank>
 		</card>
 		<card type="org.cx.game.corps.Corps" id="10100010">
 			<parameter>
 				<id type="int">10100010</id>
 			</parameter>
-			<hp type="int">12</hp>
-			<atk type="int">6</atk>
+			<hp type="int">57</hp>
+			<atk type="int">4</atk>
 			<def type="int">4</def>
-			<speed type="int">110</speed>
+			<speed type="int">100</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">480086</dmg>
+			<dmg type="int">12800818</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">120,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">25</empiricValue>
+			<empiricValue type="int">90</empiricValue>
 			<attackRange type="int">1</attackRange>
-			<moveType type="int">141</moveType>
+			<moveType type="int">144</moveType>
 			<rank type="int">3</rank>
 		</card>
 		<card type="org.cx.game.corps.Corps" id="10100011">
 			<parameter>
 				<id type="int">10100011</id>
 			</parameter>
-			<hp type="int">35</hp>
-			<atk type="int">7</atk>
+			<hp type="int">70</hp>
+			<atk type="int">9</atk>
 			<def type="int">9</def>
-			<speed type="int">120</speed>
-			<energy type="int">3</energy>
-			<dmg type="int">680089</dmg>
+			<speed type="int">110</speed>
+			<energy type="int">5</energy>
+			<dmg type="int">14800822</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">360,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">54</empiricValue>
-			<attackRange type="int">4</attackRange>
-			<attackMode type="int">116</attackMode>
-			<moveType type="int">141</moveType>
+			<empiricValue type="int">120</empiricValue>
+			<attackRange type="int">1</attackRange>
+			<moveType type="int">144</moveType>
 			<rank type="int">4</rank>
 		</card>
 		<card type="org.cx.game.corps.Corps" id="10100012">
 			<parameter>
 				<id type="int">10100012</id>
 			</parameter>
-			<hp type="int">40</hp>
-			<atk type="int">14</atk>
-			<def type="int">10</def>
-			<speed type="int">120</speed>
-			<energy type="int">3</energy>
-			<dmg type="int">8800812</dmg>
+			<hp type="int">55</hp>
+			<atk type="int">19</atk>
+			<def type="int">19</def>
+			<speed type="int">100</speed>
+			<energy type="int">2</energy>
+			<dmg type="int">16800820</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">500,0,0,0</resource>
 				</parameter>
 			</consume>
 			<empiricValue type="int">100</empiricValue>
-			<attackRange type="int">1</attackRange>
+			<attackRange type="int">4</attackRange>
+			<attackMode type="int">116</attackMode>
 			<moveType type="int">141</moveType>
 			<rank type="int">5</rank>
 		</card>
@@ -283,17 +289,17 @@
 				<id type="int">10100013</id>
 			</parameter>
 			<hp type="int">100</hp>
-			<atk type="int">21</atk>
-			<def type="int">18</def>
-			<speed type="int">100</speed>
-			<energy type="int">6</energy>
-			<dmg type="int">20800827</dmg>
+			<atk type="int">26</atk>
+			<def type="int">24</def>
+			<speed type="int">110</speed>
+			<energy type="int">4</energy>
+			<dmg type="int">25800830</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">1600,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">160</empiricValue>
+			<empiricValue type="int">155</empiricValue>
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">144</moveType>
 			<rank type="int">6</rank>
@@ -302,20 +308,20 @@
 			<parameter>
 				<id type="int">10100014</id>
 			</parameter>
-			<hp type="int">220</hp>
+			<hp type="int">160</hp>
 			<atk type="int">30</atk>
-			<def type="int">27</def>
-			<speed type="int">90</speed>
-			<energy type="int">4</energy>
-			<dmg type="int">45800857</dmg>
+			<def type="int">28</def>
+			<speed type="int">110</speed>
+			<energy type="int">5</energy>
+			<dmg type="int">25800835</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">3500,0,0,0</resource>
 				</parameter>
 			</consume>
-			<empiricValue type="int">320</empiricValue>
+			<empiricValue type="int">220</empiricValue>
 			<attackRange type="int">1</attackRange>
-			<moveType type="int">141</moveType>
+			<moveType type="int">144</moveType>
 			<rank type="int">7</rank>
 		</card>
 		

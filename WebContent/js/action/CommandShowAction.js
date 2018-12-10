@@ -153,19 +153,26 @@ CommandShowAction = jClass(Action, {
 		}
 		
 		var skill = '';
-		if(true==this.info.corps.hero){
+		//if(true==this.info.corps.hero){
 			for(var i=0;i<this.info.corps.skillList.length;i++){
 				var skillName = this.info.corps.skillList[i].name;
 				skill += '['+skillName+',';
 
 				if(undefined==this.info.corps.skillList[i].cooldownRemain)
-					skill += 'CD:no]';
+					skill += 'CD:no | ';
 				else
-					skill += 'CD:'+this.info.corps.skillList[i].cooldownRemain+']';
+					skill += 'CD:'+this.info.corps.skillList[i].cooldownRemain+' | ';
+
+				if(undefined==this.info.corps.skillList[i].prepare)
+					skill += '蓄:no]';
+				else
+					skill += '蓄:'+this.info.corps.skillList[i].prepare + ']';
+				
 				if((i+1)<this.info.corps.skillList.length)
 					skill += ',';
+				
 			}
-		}
+		//}
 		
 		var teammateList = '';
 		if(true==this.info.corps.hero){
@@ -186,7 +193,8 @@ CommandShowAction = jClass(Action, {
 		'距离:'+this.info.corps.attack.range+' '+
 		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.corps.attack.mode)+' '+
 		'| 速度:'+this.info.corps.activate.speed+' '+
-		'| 激活:'+this.info.corps.attack.attackable+'</p>'+
+		'| 激活:'+this.info.corps.attack.attackable+' '+
+		'| 蓄力:'+this.info.corps.grow.power+'</p>'+
 		'<p style="margin: 0;padding: 0;">防守:'+' '+
 		'def:'+this.info.corps.defend.def+' '+
 		'| hp:'+this.info.corps.death.hp+'['+this.info.corps.death.hpLimit+']'+' '+ 
@@ -208,9 +216,9 @@ CommandShowAction = jClass(Action, {
 		'<p style="margin: 0;padding: 0;">buff:'+buff+'</p>' +' '+
 		'<p style="margin: 0;padding: 0;">选项:'+option+'</p>';
 		
+		text += '<p style="margin: 0;padding: 0;">技能:'+skill+'</p>';
 		if(true==this.info.corps.hero){
-			text += '<p style="margin: 0;padding: 0;">技能:'+skill+'</p>'+
-			'<p style="margin: 0;padding: 0;">队伍:'+teammateList+'</p>';
+			text += '<p style="margin: 0;padding: 0;">队伍:'+teammateList+'</p>';
 		}
 		
 		return text;

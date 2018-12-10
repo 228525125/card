@@ -20,7 +20,9 @@
 			<tag key="xianzhi" description="限制" code="201"></tag>
 			<tag key="zhijieshanghai" description="直接伤害" code="202"></tag>
 			<tag key="zhaohuan" description="召唤" code="203"></tag>
-			<tag key="zengyi" description="治疗" code="204"></tag>
+			<tag key="zhiliao" description="治疗" code="204">
+				<object code="10200008"></object>
+			</tag>
 			<tag key="sunyi" description="损益" code="205"></tag>
 			<tag key="chixushanghai" description="持续伤害" code="206"></tag>
 			<tag key="xianjing" description="陷阱" code="207"></tag>

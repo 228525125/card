@@ -7,4 +7,13 @@
 			<bout type="int">1</bout>
 		</parameter>
 	</skill>
+	<skill type="org.cx.game.magic.skill.Cure" id="10200008">
+		<parameter>
+			<id type="int">10200008</id>	
+			<cureValue type="int">20</cureValue>
+			<antibodyBout type="int">2</antibodyBout>
+			<range type="int">1</range>
+			<prepare type="int">1</prepare>
+		</parameter>
+	</skill>
 </skills>

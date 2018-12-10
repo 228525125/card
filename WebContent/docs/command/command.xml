@@ -108,7 +108,9 @@
 			</parameter>
 		</command>
 		
-		
+		<command name='grow' class='org.cx.game.command.GrowCommand' parameter='none'>
+			<description>蓄力</description>
+		</command>
 		
 		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='none'>
 			<description>升级</description>

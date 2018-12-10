@@ -5,10 +5,11 @@
 			<!-- 系统级Rule -->
 			<rule type="org.cx.game.rule.ActivateRule"></rule>
 			<rule type="org.cx.game.rule.AttackRule"></rule>
-			<rule type="org.cx.game.rule.DefendRule"></rule>
 			<rule type="org.cx.game.rule.CallRule"></rule>
-			<rule type="org.cx.game.rule.DeathRule"></rule>
-			<rule type="org.cx.game.rule.MoveRule"></rule>
+			<rule type="org.cx.game.rule.ConjureRule"></rule>
+			<rule type="org.cx.game.rule.DefendRule"></rule>
+			<rule type="org.cx.game.rule.DeathRule"></rule>			
+			<rule type="org.cx.game.rule.MoveRule"></rule>			
 			
 			<!-- 更新Corps的属性值，例如，atk,def等 -->
 			<rule type="org.cx.game.rule.CorpsPropertyUpdateAddBuffRule"></rule>
