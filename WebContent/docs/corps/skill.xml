@@ -12,8 +12,17 @@
 			<id type="int">10200008</id>	
 			<cureValue type="int">20</cureValue>
 			<antibodyBout type="int">2</antibodyBout>
-			<range type="int">1</range>
-			<prepare type="int">1</prepare>
+			<range type="str">1-1</range>
+		</parameter>
+		<useItOnFriendOrFoeOrAll type="int">1</useItOnFriendOrFoeOrAll>
+	</skill>
+	<skill type="org.cx.game.magic.skill.Bump" id="10200009">
+		<parameter>
+			<id type="int">10200009</id>	
+			<cooldown type="int">2</cooldown>
+			<range type="str">3-7</range>
+			<atkScale type="int">150</atkScale>
+			<dizzyBout type="int">1</dizzyBout>
 		</parameter>
 	</skill>
 </skills>

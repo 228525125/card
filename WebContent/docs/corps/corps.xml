@@ -7,12 +7,12 @@
 			<parameter>
 				<id type="int">10190001</id>
 			</parameter>
-			<hp type="int">50</hp>
-			<atk type="int">6</atk>
-			<def type="int">6</def>
+			<hp type="int">80</hp>
+			<atk type="int">10</atk>
+			<def type="int">10</def>
 			<speed type="int">100</speed>
 			<energy type="int">3</energy>
-			<dmg type="int">280085</dmg>
+			<dmg type="int">15800825</dmg>
 			<consume type="org.cx.game.widget.treasure.Mineral">
 				<parameter>
 					<resource type="str">100,0,0,0</resource>
@@ -160,6 +160,13 @@
 			<attackRange type="int">1</attackRange>
 			<moveType type="int">142</moveType>
 			<rank type="int">6</rank>
+			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
+				<skill type="org.cx.game.magic.skill.Bump" factory="org.cx.game.magic.skill.SkillFactory">
+					<factoryMethodParameter>
+						<id type="int">10200009</id>
+					</factoryMethodParameter>
+				</skill>
+			</skillList>
 		</card>
 		<card type="org.cx.game.corps.Corps" id="10100007">
 			<parameter>
