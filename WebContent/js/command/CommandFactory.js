@@ -19,5 +19,5 @@ var CommandFactory = function(){
 			
 			return command;
 		}
-	}
+	};
 }();

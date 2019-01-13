@@ -24,9 +24,17 @@ function post(command){
     });
 }
 
+var exceptCommand = ['Command_Show','Command_Select'
+                     ,'Command_Query_Call'
+                     ,'Command_Query_Attack'
+                     ,'Command_Query_Move'
+                     ,'Command_Query_Conjure'
+                     ,'Command_Query_Apply'
+                     ,'Command_Query_Execute'
+                     ,'Command_Deploy'];
+
 function syn(){
 	$.post("play.do?cmd=syn",{sequence:Context.getProcessSequence()},function(response){
-    	var h = $('#command_output').html();
     	var p = $('input#command_input').attr('alt');
     	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
     	command_output_val(res);
@@ -38,16 +46,8 @@ function syn(){
     			
     			if(sequence>Context.getProcessSequence()){     //异步时，可能会出现重复发送同步命令，这样就避免了重复加载
 	    			var jsonObject = $.parseJSON(data[i].response);
-	    			if('Command_Show'==jsonObject.action ||
-	    			    'Command_Select'==jsonObject.action || 
-	    			    'Command_Query_Call'==jsonObject.action ||
-	    			    'Command_Query_Attack'==jsonObject.action ||
-	    			    'Command_Query_Move'==jsonObject.action ||
-	    			    'Command_Query_Conjure'==jsonObject.action ||
-	    			    'Command_Query_Apply'==jsonObject.action ||
-	    			    'Command_Query_Execute'==jsonObject.action||
-	    			    'Command_Deploy'==jsonObject.action)
-	    			;
+	    			if(-1 != exceptCommand.indexOf(jsonObject.action))
+	    				;
 	    			else
 	    				Invoker.response(jsonObject, data[i].sign);
 	        		
@@ -58,7 +58,12 @@ function syn(){
     });
 }
 
-function command_output_val(msg){
+function command_output_val(msg,action){
+	var index = exceptCommand.indexOf(action);
+	if(action && -1 != index){
+		return ;
+	}
+	
 	var html = $('#command_output').html();
 	$('#command_output').html(html+msg);
 	var scrollTop = $("#command_output")[0].scrollHeight;

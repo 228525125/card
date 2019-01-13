@@ -4,7 +4,7 @@
 Observable = jClass({
 	
 	init: function(){
-		this.observablelist = new Array();
+		this.observablelist = new List();
 	},
 	
 	addObserver: function(o){
