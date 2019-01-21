@@ -163,7 +163,7 @@
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
 				<skill type="org.cx.game.magic.skill.Bump" factory="org.cx.game.magic.skill.SkillFactory">
 					<factoryMethodParameter>
-						<id type="int">10200009</id>
+						<id type="int">10200010</id>
 					</factoryMethodParameter>
 				</skill>
 			</skillList>

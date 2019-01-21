@@ -34,11 +34,11 @@ CommandShowAction = jClass(Action, {
 		var option = '';
 		for(var i=0;i<this.info.building.optionList.length;i++){
 			var optionName = this.info.building.optionList[i].name;
-			var allow = this.info.building.optionList[i].allow;
+			var status = this.info.building.optionList[i].status;
 			var spacingRemainBout = this.info.building.optionList[i].spacingRemainBout;
 			var executeRemainBout = this.info.building.optionList[i].executeRemainBout;
 			
-			option += optionName+'['+(allow ? '是' : '否')+']';
+			option += optionName+'['+(Glossary.Option_Status_Executable==status ? '是' : '否')+']';
 			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
 			optionList[i].html(optionName);
 			if((i+1)<this.info.building.optionList.length)
@@ -93,9 +93,11 @@ CommandShowAction = jClass(Action, {
 	},
 	showOption : function(){
 		var text = '<p style="margin: 0;padding: 0;">选项:';
+		var status = this.info.option.status;
+			
 		if(null != this.info.option && undefined != this.info.option){
 			text += this.info.option.name + ' ' +
-			'['+(this.info.option.allow ? '是' : '否') + ']' + 
+			'['+(Glossary.Option_Status_Executable==status ? '是' : '否') + ']' + 
 			'</p>';
 		}
 		return text;
@@ -141,11 +143,11 @@ CommandShowAction = jClass(Action, {
 		var option = '';
 		for(var i=0;i<this.info.corps.optionList.length;i++){
 			var optionName = this.info.corps.optionList[i].name;
-			var allow = this.info.corps.optionList[i].allow;
+			var status = this.info.corps.optionList[i].status;
 			var spacingRemainBout = this.info.corps.optionList[i].spacingRemainBout;
 			var executeRemainBout = this.info.corps.optionList[i].executeRemainBout;
 			
-			option += optionName+'['+(allow ? '是' : '否')+']';
+			option += optionName+'['+(Glossary.Option_Status_Executable==status ? '是' : '否')+']';
 			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
 			optionList[i].html(optionName);
 			if((i+1)<this.info.corps.optionList.length)
@@ -193,7 +195,9 @@ CommandShowAction = jClass(Action, {
 		'距离:'+this.info.corps.attack.range+' '+
 		'| 类型:'+Glossary.get(Glossary.Attack_Mode,this.info.corps.attack.mode)+' '+
 		'| 速度:'+this.info.corps.activate.speed+' '+
-		'| 激活:'+this.info.corps.attack.attackable+' '+
+		'| 激活:'+this.info.corps.attack.attackable+'</p>'+
+		'<p style="margin: 0;padding: 0;">法术:'+' '+
+		'| 激活:'+this.info.corps.conjure.conjureable+' '+
 		'| 蓄力:'+this.info.corps.grow.power+'</p>'+
 		'<p style="margin: 0;padding: 0;">防守:'+' '+
 		'def:'+this.info.corps.defend.def+' '+
@@ -234,11 +238,11 @@ CommandShowAction = jClass(Action, {
 		var option = '';
 		for(var i=0;i<this.info.skill.optionList.length;i++){
 			var optionName = this.info.skill.optionList[i].name;
-			var allow = this.info.skill.optionList[i].allow;
+			var status = this.info.skill.optionList[i].status;
 			var spacingRemainBout = this.info.skill.optionList[i].spacingRemainBout;
 			var executeRemainBout = this.info.skill.optionList[i].executeRemainBout;
 			
-			option += optionName+'['+(allow ? '是' : '否')+']';
+			option += optionName+'['+(Glossary.Option_Status_Executable==status ? '是' : '否')+']';
 			optionName += '<br>('+spacingRemainBout+'|'+executeRemainBout+')';
 			optionList[i].html(optionName);
 			if((i+1)<this.info.skill.optionList.length)

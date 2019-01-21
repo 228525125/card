@@ -55,8 +55,9 @@ public class PlayAction extends BaseAction {
 		List<Process> list = new ArrayList<Process>();
 		if(null!=form.get("command")&&!"".equals(form.get("command").toString())){
 			String command = form.get("command").toString();
-			msg = command +"-"+ msg;
-			String response = "";
+			Camera camera = Camera.getInstance();
+			msg = command +" "+ msg;
+			//String response = "";
 			try {
 				if(-1!=command.indexOf("create")
 				|| -1!=command.indexOf("join")
@@ -68,9 +69,44 @@ public class PlayAction extends BaseAction {
 					oInvoker.receiveCommand(getUser(), command);
 					//response = oInvoker.getResponse();
 				}else{
-					Invoker iInvoker = new Invoker(getUser().getHost().getPlayNo());
+					Integer sequence = 0;
+					String playNo = getUser().getHost().getPlayNo();
+					
+					if(null!=form.get("sequence")&&!"".equals(form.get("sequence").toString())){
+						/*
+						 * 客户端sequence
+						 */
+						sequence = Integer.valueOf(form.get("sequence").toString());
+						System.out.println("客户端sequence："+sequence);
+						List<Record> recordList = camera.query(sequence);
+						list.addAll(copyRecrodToProcess(recordList));
+						/*
+						 * 同步后的sequence
+						 */
+						sequence = camera.getLastSequence();
+						System.out.println("同步后sequence："+sequence);
+					}
+					
+					Invoker iInvoker = new Invoker(playNo);
 					iInvoker.receiveCommand(getUser().getPlayer(), command);
-					response = iInvoker.getResponse();
+					//response = iInvoker.getResponse();
+					
+					/*
+					 * 上面经过操作又产生了新的记录
+					 */
+					List<Record> recordList = camera.query(sequence);
+					
+					System.out.println("操作后sequence："+camera.getLastSequence());
+					
+					for(Process process : copyRecrodToProcess(recordList)){
+						/*
+						 * 这些新记录添加操作标记
+						 */
+						process.setSign(Process.Sign_Send);
+						list.add(process);
+					}
+					
+					updateProcess(playNo);
 				}
 				
 			} catch (ValidatorException e) {
@@ -78,11 +114,14 @@ public class PlayAction extends BaseAction {
 				msg = e.getMessage();
 			}
 			
+			/*
 			if(!"".equals(response)&&0<response.split(";").length){
 				String[] resps = response.split(";");
 				String playNo = getUser().getHost().getPlayNo();
 				Integer sequence = processService.getNewSequence(playNo);
-				for(int i=0;i<resps.length;i++){
+				
+				
+				for(int i=1;i<=resps.length;i++){
 					Process p = new Process();
 					p.setPlayNo(playNo);
 					p.setResponse(resps[i]);
@@ -92,9 +131,7 @@ public class PlayAction extends BaseAction {
 					p.setAction(action);
 					list.add(p);
 				}
-				
-				updateProcess(playNo);
-			}
+			}*/
 		}
 
 		return success(form, true, list, msg);
@@ -135,6 +172,8 @@ public class PlayAction extends BaseAction {
 		Integer sequence = processService.getNewSequence(playNo);
 		List<Record> list = camera.query(--sequence);
 		
+		System.out.println("同步到数据库的记录数："+list.size());
+		
 		for(Record record : list){
 			Process process = new Process();
 			try {
@@ -152,6 +191,25 @@ public class PlayAction extends BaseAction {
 			
 			processService.addProcess(process);
 		}
+	}
+	
+	private List<Process> copyRecrodToProcess(List<Record> recordList) {
+		
+		List<Process> processList = new ArrayList<Process>();
+		
+		for(int i=0; i<recordList.size(); i++){
+			Record record = recordList.get(i);
+			Process process = new Process();
+			process.setAction(record.getAction());
+			process.setExecutor(record.getExecutor());
+			process.setPlayNo(record.getPlayNo());
+			process.setResponse(record.getResponse());
+			process.setSequence(record.getSequence());
+			process.setSign(Process.Sign_Syn);
+			processList.add(process);
+		}
+		
+		return processList;
 	}
 	
 	public static void main(String[] args) {

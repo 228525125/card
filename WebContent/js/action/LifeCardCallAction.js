@@ -15,7 +15,11 @@ LifeCardCallAction = jClass(Action, {
 		Buffer.setSelectPosition(this.info.position);
 		
 		if('send'==this.info.sign){
-			post('select ground place'+this.info.position+' corps;');
+			delayPost('reload;');
+		}
+		
+		if('send'==this.info.sign){
+			delayPost('select ground place'+this.info.position+' corps;');
 		}
 	}
 });

@@ -58,7 +58,7 @@ function jClass(baseClass, prop) {
 	
 		initializing = true;
 		
-		F.prototype = new baseClass();
+		F.prototype = new baseClass();        //等同于 F.prototype = inherit(baseClass.prototype);
 		
 		F.prototype.constructor = F;
 		

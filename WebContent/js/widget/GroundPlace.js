@@ -9,8 +9,9 @@ GroundPlace = jClass(Observer,{
 	update: function(data){
 		if(this.position==data.position){
 			var action = ActionFactory.createAction(data,this.view);
-			if(null!=action)
+			if(null!=action){
 				action.doAction();
+			}
 		}
 	}
 });

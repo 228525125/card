@@ -30,7 +30,7 @@ LifeCardMoveAction = jClass(Action, {
 		Buffer.setSelectPosition(this.info.position);*/
 		
 		if('send'==this.info.sign){
-			post('reload;');
+			delayPost('reload;');
 		}
 	}
 });

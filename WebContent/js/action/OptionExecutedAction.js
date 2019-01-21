@@ -1,4 +1,4 @@
-LifeCardPickAction = jClass(Action, {
+OptionExecutedAction = jClass(Action, {
 	
 	init: function(info,view){
 		

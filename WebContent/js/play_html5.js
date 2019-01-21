@@ -1,11 +1,16 @@
+var delayCommand = '';
+
+function delayPost(command){
+	delayCommand += command;
+}
+
 function post(command){
 	if('syn'==command){
 		syn();
 		return ;
 	}
 	
-	$.post("play.do?cmd=send",{command:command},function(response){
-    	var h = $('#command_output').html();
+	$.post("play.do?cmd=send",{command:command,sequence:Context.getProcessSequence()},function(response){
     	var p = $('input#command_input').attr('alt');
     	var res = '<p style="margin: 0;padding: 0;">'+p+'>'+response.result[0].msg+'</p>';
     	command_output_val(res);
@@ -13,13 +18,20 @@ function post(command){
     	var data = response.result[0].data;
     	if(0<data.length){
     		for(var i=0;i<data.length;i++){
+    			
     			var sequence = data[i].sequence;
     			var jsonObject = $.parseJSON(data[i].response);    			
         		Invoker.response(jsonObject, data[i].sign);
             	
             	Context.setProcessSequence(sequence);
-    			
     		}
+    		/*
+        	 * 在上面的Invoker.response方法中嵌套的命令，等待sequence更新后在执行；
+        	 */
+        	if(''!=delayCommand){
+        		post(delayCommand);
+            	delayCommand = '';
+        	}
     	}
     });
 }
@@ -130,10 +142,8 @@ $(function(){
 			}else if(-1!=val.indexOf('attack') || -1!=val.indexOf('conjure') || -1!=val.indexOf('merge')){         //conjure和apply可能有很多种参数形式，这里只默认了一种，其他形式只有手动输入了
 				val += 'ground place'+position+' corps;'; 
 			}else{
-				val = '';
+				val += 'select ground place'+position+';select corps;show;';
 			}
-			
-			val += 'select ground place'+position+';select corps;show;';         //+' corps;show';
 			
 			$("#command_input").val(val);
 			command_input_sub();
@@ -292,6 +302,9 @@ $(function(){
 	ActionFactory.register('Context_ControlQueue_Refurbish', 'new ControlQueueRefurbishAction(data.info,view)');
 	ActionFactory.register('Context_ControlQueue_Move', 'new ControlQueueMoveAction(data.info,view)');
 	ActionFactory.register('Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
+	ActionFactory.register('Skill_Used', 'new SkillUsedAction(data.info,view)');
+	ActionFactory.register('Option_Executed', 'new OptionExecutedAction(data.info,view)');
+	
 	
 	SkillActionFactory.register('AttackBack','new SkillAttackBackAction(info,view)');
 	SkillActionFactory.register('Dodge', 'new SkillDodgeAction(info,view)');

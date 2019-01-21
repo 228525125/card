@@ -1,7 +1,7 @@
 /**
  * 它继承了数组，但它覆盖了组数的一些方法用来处理GroundPlace、NoticePlace
  */
-List = jClass(Array, {
+List = Array.extend({
 
 	init : function() {
 		for(var i=0;i<arguments.length;i++)

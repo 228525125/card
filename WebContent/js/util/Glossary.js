@@ -55,6 +55,10 @@ var Glossary = function(){
 		Resource_Type_Stone : '703',
 		Resource_Type_Ore : '704',
 		Resource_Type_EmpiricValue : '710',
-		Resource_Type_SkillCount : '720'
-	}
+		Resource_Type_SkillCount : '720',
+		
+		Option_Status_Executable : 1,
+		Option_Status_Unenforceable : 2,
+		Option_Status_WaitExecute : 3
+	};
 }();

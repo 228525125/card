@@ -1,4 +1,4 @@
-LifeCardPickAction = jClass(Action, {
+SkillUsedAction = jClass(Action, {
 	
 	init: function(info,view){
 		

@@ -34,7 +34,7 @@ body {
 	padding: 5px;
 	position: relative;
 	word-break:break-all;
-	top: -550px;
+	top: -650px;
 	left: 215px;
 	z-index: 1;
 }
@@ -55,7 +55,7 @@ body {
 
 .command_show2 {
 	width:370px;
-	height:250px;
+	height:350px;
 	background-color:#336784;
 	color:lime;
 	overflow-y:scroll;
@@ -82,12 +82,12 @@ body {
 
 .command_window{
 	width:890px;
-	height:90px;
+	height:190px;
 	background-color:#336784;
 	padding: 5px;
 	position: relative;
 	z-index: 2;
-	top: -600px;
+	top: -700px;
 	left: 400px;
 }
 
@@ -95,7 +95,7 @@ body {
 	width:100%;
 	background-color:black;
 	overflow-y:scroll; 
-	height:73px;
+	height:173px;
 	color: white;
 }
 
@@ -120,7 +120,7 @@ body {
 	/*margin: 0 auto; padding: 5px;*/
 	position: relative;
 	z-index: 1;
-	top: -610px;
+	top: -710px;
 	left: 400px;
 	font-size: 9px;
 }
@@ -132,7 +132,7 @@ body {
 	padding: 5px;
 	position: relative;
 	z-index: 2;
-	top: -605px;
+	top: -705px;
 	left: 400px;
 }
 

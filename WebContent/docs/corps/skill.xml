@@ -1,11 +1,17 @@
 <skills>
+	<!-- 一些默认值： -->
+	<!-- useItOnFriendOrFoeOrAll：2 -->
+	<!-- useItOnYouself：false -->
+	<!-- cooldown：1 -->
+	<!-- prepare：0 -->
+	<!-- conjureWait：0 -->
 	<skill type="org.cx.game.magic.skill.ShieldHit" id="10200007">
 		<parameter>
 			<id type="int">10200007</id>	
-			<cooldown type="int">2</cooldown>
 			<atkScale type="int">0</atkScale>
 			<bout type="int">1</bout>
 		</parameter>
+		<cooldown type="int">2</cooldown>
 	</skill>
 	<skill type="org.cx.game.magic.skill.Cure" id="10200008">
 		<parameter>
@@ -14,13 +20,22 @@
 			<antibodyBout type="int">2</antibodyBout>
 			<range type="str">1-1</range>
 		</parameter>
-		<useItOnFriendOrFoeOrAll type="int">1</useItOnFriendOrFoeOrAll>
+		<useItOnFriendOrFoeOrAll type="int">1</useItOnFriendOrFoeOrAll>		
 	</skill>
 	<skill type="org.cx.game.magic.skill.Bump" id="10200009">
 		<parameter>
 			<id type="int">10200009</id>	
-			<cooldown type="int">2</cooldown>
 			<range type="str">3-7</range>
+			<atkScale type="int">150</atkScale>
+			<dizzyBout type="int">1</dizzyBout>
+		</parameter>
+		<prepare type="int">1</prepare>
+	</skill>
+	<skill type="org.cx.game.magic.skill.Dive" id="10200010">
+		<parameter>
+			<id type="int">10200010</id>	
+			<range type="str">1-10</range>
+			<waitBout type="int">2</waitBout>
 			<atkScale type="int">150</atkScale>
 			<dizzyBout type="int">1</dizzyBout>
 		</parameter>

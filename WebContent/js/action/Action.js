@@ -5,7 +5,5 @@ Action = jClass({
 		this.view = view;
 	},
 	
-	doAction: function(){
-		//子类覆盖
-	}
+	doAction: abstractmethod
 });

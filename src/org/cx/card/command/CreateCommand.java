@@ -37,7 +37,7 @@ public class CreateCommand extends OutsideCommand {
 		String playNo = UUID.randomUUID().toString();
 		
 		SceneHost host = new SceneHost(107003, getUser().getAccount(), 1, playNo);
-		host.setCorpsDataOfTroop(1,"[10190001,1,1];[10100002,1,1];[10100006,1,1];[10100005,1,1]");
+		host.setCorpsDataOfTroop(1,"[10100006,1,1];[10100005,1,1]");      //[10190001,1,1];[10100002,1,1];
 		getUser().setHost(host);
 		context.setAttribute(parameter.toString(), host);
 	}
