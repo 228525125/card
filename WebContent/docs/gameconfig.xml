@@ -5,4 +5,7 @@
 			<format-class>org.cx.game.out.JsonOut</format-class>
 		</format>
 	</response-format>
+	<commandsThatDoNotRequireControl>
+		<command-class>org.cx.game.command.ReloadCommand</command-class>
+	</commandsThatDoNotRequireControl>
 </config>

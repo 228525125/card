@@ -126,7 +126,11 @@ Context.prototype.reloadCorps = function() {
 		var position = corps.position;
 
 		var place = ground.getPlace(position);
-		place.view.html(corps.name);
+		
+		if(corps.move.hide)
+			place.view.css("background-color","gray");
+		else
+			place.view.html(corps.name);
 	}
 };
 

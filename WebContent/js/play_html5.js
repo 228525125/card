@@ -284,6 +284,7 @@ $(function(){
 	ActionFactory.register('Corps_Leave', 'new CorpsLeaveAction(data.info,view)');
 	ActionFactory.register('Corps_Hp', 'new LifeCardHpAction(data.info,view)');
 	ActionFactory.register('Corps_Atk', 'new LifeCardAtkAction(data.info,view)');
+	ActionFactory.register('Corps_Move_Hide_Change', 'new CorpsMoveHideChangeAction(data.info,view)');
 	
 	ActionFactory.register('Building_Transmit', 'new BuildingTransmitAction(data.info,view)');
 	ActionFactory.register('Building_Receive', 'new BuildingReceiveAction(data.info,view)');

@@ -5,6 +5,13 @@
 	<!-- cooldown：1 -->
 	<!-- prepare：0 -->
 	<!-- conjureWait：0 -->
+	<skill type="org.cx.game.magic.skill.Sneak" id="10200002">
+		<parameter>
+			<id type="int">10200002</id>
+		</parameter>
+		<useItOnYouself type="bool">true</useItOnYouself>
+		<useItOnFriendOrFoeOrAll type="int">1</useItOnFriendOrFoeOrAll>
+	</skill>
 	<skill type="org.cx.game.magic.skill.ShieldHit" id="10200007">
 		<parameter>
 			<id type="int">10200007</id>	

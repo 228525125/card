@@ -161,9 +161,9 @@
 			<moveType type="int">142</moveType>
 			<rank type="int">6</rank>
 			<skillList type="java.util.ArrayList" interface="java.util.List" collection="true">
-				<skill type="org.cx.game.magic.skill.Bump" factory="org.cx.game.magic.skill.SkillFactory">
+				<skill type="org.cx.game.magic.skill.Sneak" factory="org.cx.game.magic.skill.SkillFactory">
 					<factoryMethodParameter>
-						<id type="int">10200010</id>
+						<id type="int">10200002</id>
 					</factoryMethodParameter>
 				</skill>
 			</skillList>
