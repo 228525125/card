@@ -1,243 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <game>
-	<types> <!-- 类型定义 -->
-		<!-- InteriorCommandParameterBufferExpression 这部分必须与CommandBuffer一致 -->
-		<type name = "player">
-			<item>player</item>
-		</type>
-		<type name = "ground">
-			<item>ground</item>
-		</type>
-		<type name = "place">
-			<item>place</item>
-		</type>
-		<type name = "corps">
-			<item>corps</item>
-		</type>		
-		<type name = "skill">
-			<item>skill</item>
-		</type>
-		<type name = "building">
-			<item>building</item>
-		</type>
-		<type name = "option">
-			<item>option</item>
-		</type>
-		
-		<!-- InteriorCommandParameterActionExpression -->
-		<type name = "action">
-			<item>attack</item>
-			<item>call</item>
-			<item>conjure</item>
-			<item>move</item>
-			<item>swap</item>
-			<item>execute</item>
-			<item>pick</item>
-			<item>merge</item>
-			<item>leave</item>
-		</type>
-		
-		<!-- InteriorCommandParameterPropertyExpression -->
-		<type name = "property"> <!-- 用来应付一些需要通过命令来给对象属性赋值的情况，例如一次招募人数，就需要对招募选项的数量赋值 -->
-			<item>option.number</item>  <!-- 对象+属性名 -->
-		</type>
-	</types>	
-	
 	<commands>
-		<!-- 命令拆分例子：select ground place100001 corps = select ground; select place100001; select corps; -->
-		<command name='select' class='org.cx.game.command.SelectCommand' parameter='request'>			
-			<description>选择</description>			
-			<parameter>
-				<option>player</option>
-				<option>ground</option>
-				<option>place</option>
-				<option>building</option>
-				<option>option</option>
-				<option>corps</option>			
-				<option>skill</option>
-			</parameter>
-		</command>
-		
-		<!-- 命令转换例子：show ground 1 = select ground 1;show = select ground;select 1;show -->
-		<command name='show' class='org.cx.game.command.ShowCommand' parameter='none'>
-			<description>显示</description>
-		</command>
-		
-		<command name='switch' class='org.cx.game.command.SwitchCommand' parameter='request'>
-			<description>切换地图</description>
-			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterBasicTypeExpression">
-				<option>basic</option>
-			</parameter>		
-		</command>
-		
-		<!-- set option.number[2] 等价于 set 对象.属性[值]-->
-		<command name='set' class='org.cx.game.command.SetCommand' parameter='request'>
-			<description>设置</description>
-			<!-- expression 默认为：org.cx.game.command.expression.InteriorCommandParameterBufferExpression -->
-			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterPropertyExpression">
-				<option>property</option>
-			</parameter>
-		</command>
-		
-		<command name='execute' class='org.cx.game.command.OptionExecuteCommand' parameter='request'>
-			<description>执行选项</description>
-			<parameter>
-				<option>place</option>
-			</parameter>			
-		</command>
-		
-		<command name='move' class='org.cx.game.command.MoveCommand' parameter='request'>
-			<description>移动</description>
-			<parameter>
-				<option>place</option>
-			</parameter>
-		</command>
-		
-		<command name='pick' class='org.cx.game.command.PickCommand' parameter='request'>
-			<description>拾取</description>
-			<parameter>
-				<option>place</option>
-			</parameter>
-		</command>
-		
-		<command name='attack' class='org.cx.game.command.AttackCommand' parameter='request'>
-			<description>攻击</description>
-			<parameter>
-				<option>corps</option>
-			</parameter>
-		</command>
-		
-		<command name='grow' class='org.cx.game.command.GrowCommand' parameter='none'>
-			<description>蓄力</description>
-		</command>
-		
-		<command name='upgrade' class='org.cx.game.command.UpgradeCommand' parameter='none'>
-			<description>升级</description>
-		</command>
-		
-		<command name='chuck' class='org.cx.game.command.ChuckCommand' parameter='none'>
-			<description>丢弃</description>
-		</command>
-		
-		<command name='merge' class='org.cx.game.command.MergeCommand' parameter='request'>
-			<description>加入队伍</description>
-			<parameter>
-				<option>corps</option>
-			</parameter>
-		</command>
-		
-		<command name='leave' class='org.cx.game.command.LeaveCommand' parameter='request'>
-			<description>离开队伍</description>
-			<parameter>
-				<option>place</option>
-			</parameter>
-		</command>
-		
-		<command name='guard' class='org.cx.game.command.GuardCommand' parameter='none'>
-			<description>原地防守</description>
-		</command>
-		
-		<command name='done' class='org.cx.game.command.DoneCommand' parameter='none'>
-			<description>结束回合</description>
-		</command>
-		
-		<command name='start' class='org.cx.game.command.StartCommand' parameter='none'>
-			<description>比赛开始</description>		
-		</command>
-		
-		<command name='query' class='org.cx.game.command.QueryCommand' parameter='request'>
-			<description>查询</description>	
-			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterActionExpression">
-				<option>action</option>
-			</parameter>	
-		</command>
-		
-		<command name='auto' class='org.cx.game.command.AutoCommand' parameter='none'>
-			<description>电脑托管</description>
-		</command>
-		
-		<command name='reload' class='org.cx.game.command.ReloadCommand' parameter='none'>
-			<description>前台重新加载后台数据</description>		
-		</command>
-		
 		<!-- 外部命令 -->
 				
-		<command name='create' class='org.cx.card.command.CreateCommand' parameter='request'>
+		<command name='create' class='org.cx.game.command.CreateCommand' parameter='request'>
 			<description>创建比赛</description>	
 			<parameter>
 				<option>custom</option><!-- 创建主机名称 -->
 			</parameter>	
 		</command>
 		
-		<command name='join' class='org.cx.card.command.JoinCommand' parameter='request'>
+		<command name='join' class='org.cx.game.command.JoinCommand' parameter='request'>
 			<description>加入比赛</description>	
 			<parameter>
 				<option>custom</option><!-- 加入主机名称 -->
 			</parameter>	
 		</command>
 		
-		<command name='ready' class='org.cx.card.command.ReadyCommand' parameter='none'>
+		<command name='connect' class='org.cx.game.command.ConnectCommand' parameter='request'>
+			<description>连接</description>	
+			<parameter>
+				<option>custom</option>
+			</parameter>	
+		</command>
+		
+		<command name='ready' class='org.cx.game.command.ReadyCommand' parameter='none'>
 			<description>准备就绪</description>		
 		</command>
 		
-		<command name='deploy' class='org.cx.card.command.DeployCommand' parameter='none'>
+		<command name='deploy' class='org.cx.game.command.DeployCommand' parameter='none'>
 			<description>玩家部署，战斗开始前各自排兵布阵</description>		
 		</command>
 		
-		<command name='go' class='org.cx.card.command.GoCommand' parameter='none'>
+		<command name='go' class='org.cx.game.command.GoCommand' parameter='none'>
 			<description>玩家部署完毕，等待战斗开始</description>		
 		</command>
 		
-		<command name='finish' class='org.cx.card.command.FinishCommand' parameter='none'>
-			<description>结束比赛</description>		
-		</command>
+		<!-- 内部命令  -->
 		
-		
-		<!-- 命令转换例子：setup 1 = select group 1;setup = select group;select 1;setup 
-		<command name='setup' class='org.cx.game.command.SetupCommand' parameter='request'>
-			<description>放置</description>
-			<parameter>
-				<option>place</option>
-			</parameter>			
-		</command>
-		
-		<command name='apply' class='org.cx.game.command.ApplyCommand' parameter='request'>
-			<description>使用魔法卡</description>
-			<parameter>
-				<option>place</option>
-				<option>corps</option>
-			</parameter>
-		</command>
-		
-		<command name='call' class='org.cx.game.command.CallCommand' parameter='request'>
-			<description>招募(已被CallOption代替)</description>
-			<parameter>
-				<option>place</option>
-			</parameter>			
-		</command>
-		
-		<command name='conjure' class='org.cx.game.command.ConjureCommand' parameter='request'>
-			<description>施法</description>
-			<parameter>
-				<option>place</option>
-				<option>corps</option>
-			</parameter>
-		</command>
-		
-		<command name='take' class='org.cx.card.command.TakeCommand' parameter='request'>
-			<description>选择代表Corps的选项</description>
-			<parameter>
+		<command name='get' class='org.cx.game.command.GetCommand' parameter='request'>
+			<description></description>
+			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterGetExpression">
 				<option>custom</option>
-			</parameter>
+			</parameter>	
 		</command>
-		
-		<command name='lay' class='org.cx.card.command.PlacementCommand' parameter='request'>
-			<description>放置Corps</description>
-			<parameter>
-				<option>custom</option> 
-			</parameter>		
+		<command name='set' class='org.cx.game.command.SetCommand' parameter='request'>
+			<description></description>
+			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterSetExpression">
+				<option>custom</option>
+			</parameter>	
 		</command>
-		-->
+		<command name='select' class='org.cx.game.command.SelectCommand' parameter='request'>
+			<description></description>
+			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterGetExpression">
+				<option>custom</option>
+			</parameter>	
+		</command>
+		<command name='back' class='org.cx.game.command.BackCommand' parameter='none'>
+			<description>退回上次缓存</description>	
+		</command>
+		<command name='call' class='org.cx.game.command.CallCommand' parameter='request'>
+			<description></description>
+			<parameter expression="org.cx.game.command.expression.InteriorCommandParameterCallExpression">
+				<option>custom</option>
+			</parameter>	
+		</command>
 	</commands>
 </game>

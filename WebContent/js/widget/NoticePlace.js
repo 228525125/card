@@ -1,5 +1,5 @@
 //用于显示提示信息，position是指位置的编号
-NoticePlace = jClass(Observer, {
+NoticePlace = Observer.extend({
 	
 	init: function(position,view){
 		this.position = position;

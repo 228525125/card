@@ -226,6 +226,7 @@ $(function(){
 	notice.addObserver(new NoticePlace(1,$("#command_show1")));
 	notice.addObserver(new NoticePlace(2,$("#command_show2")));
 	notice.addObserver(new NoticePlace(3,$("#command_show3")));
+	notice.addObserver(new NoticePlace(4,$("#command_output")));
 	
 	/*var data1 = new Map();
 	data1.put('Ground', ground);
@@ -262,6 +263,7 @@ $(function(){
 	ActionFactory.register('Command_Switch', 'new CommandSwitchAction(data.info,view)');
 	ActionFactory.register('Command_Deploy', 'new CommandDeployAction(data.info,view)');
 	ActionFactory.register('Command_Ready', 'new CommandReadyAction(data.info,view)');
+	ActionFactory.register('Command_Get', 'new CommandGetAction(data.info,view)');
 	
 	ActionFactory.register('Command_Query_Call', 'new CommandQueryCallAction(data.info,view)');
 	ActionFactory.register('Command_Query_Attack', 'new CommandQueryAttackAction(data.info,view)');
@@ -305,7 +307,6 @@ $(function(){
 	ActionFactory.register('Ground_LoadMap', 'new GroundLoadMapAction(data.info,view)');
 	ActionFactory.register('Skill_Used', 'new SkillUsedAction(data.info,view)');
 	ActionFactory.register('Option_Executed', 'new OptionExecutedAction(data.info,view)');
-	
 	
 	SkillActionFactory.register('AttackBack','new SkillAttackBackAction(info,view)');
 	SkillActionFactory.register('Dodge', 'new SkillDodgeAction(info,view)');

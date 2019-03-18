@@ -1,7 +1,7 @@
 /**
  * 抽象方法
  */
-function abstractmethod() {
+function abstractMethod() {
       throw new Error('abstract method');
 }
 

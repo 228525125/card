@@ -5,5 +5,5 @@ Action = jClass({
 		this.view = view;
 	},
 	
-	doAction: abstractmethod
+	doAction: abstractMethod
 });

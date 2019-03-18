@@ -8,9 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import org.cx.card.command.CommandBuffer;
 import org.cx.game.core.AbstractHost;
-import org.cx.game.core.AbstractPlayer;
+import org.cx.game.core.Player;
 
 @Entity
 @Table(name="CUser")
@@ -51,31 +50,25 @@ public class User {
 		this.password = password;
 	}
 	
-	@Transient
-	private AbstractPlayer player = null;
+	/*@Transient
+	private String playNo = null;
 
-	public AbstractPlayer getPlayer() {
-		return player;
+	public String getPlayNo() {
+		return playNo;
+	}
+	
+	public void setPlayNo(String playNo) {
+		this.playNo = playNo;
 	}
 	
 	@Transient
-	private AbstractHost host = null;
-
-	public AbstractHost getHost() {
-		return host;
-	}
-	public void setHost(AbstractHost host) {
-		this.host = host;
-		this.player = host.queryPlayerForName(account);
+	private Integer troop = null;
+	
+	public Integer getTroop() {
+		return troop;
 	}
 	
-	@Transient
-	private CommandBuffer buffer = null;
-	
-	public CommandBuffer getBuffer() {
-		if(null==buffer)
-			buffer = new CommandBuffer(this);
-		
-		return buffer;
-	}
+	public void setTroop(Integer troop) {
+		this.troop = troop;
+	}*/
 }

@@ -1,0 +1,6 @@
+<checkHelper type="org.cx.game.command.check.CheckHelper">
+	<checkerList type="java.util.ArrayList" interface="java.util.List" collection="true">
+		<check type="org.cx.game.command.check.StartCheck"></check>
+		<check type="org.cx.game.command.check.AttackCheck"></check>
+	</checkerList>
+</checkHelper>

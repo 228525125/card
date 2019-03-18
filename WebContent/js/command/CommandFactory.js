@@ -14,6 +14,8 @@ var CommandFactory = function(){
 				command = new ShowCommand(action,data);  
 			}else if('Player_Resource'==action || 'Player_Ration'==action || 'Player_Bout'==action){              //（独立的一块区域显示）
 				command = new ControlCommand(action,data);
+			}else if('Command_Get'==action || 'Command_Put'==action){
+				command = new GeneralCommand2(action,data);
 			}else
 				command = new GeneralCommand(action,data);
 			

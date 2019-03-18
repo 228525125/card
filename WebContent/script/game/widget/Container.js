@@ -1,7 +1,12 @@
+var Observable = require('../core/Observable');
+
+if(!game) var game = {};
+if(!game.widget) game.widget = {};
+
 /**
  * 容器，对应后台的Container
  */
-Container = Observable.extend({
+game.widget.Container = Observable.extend({
 	
 	init: function(){
 		
@@ -16,3 +21,7 @@ Container = Observable.extend({
 		return this.observablelist.get(position);
 	}
 });
+
+var Container = game.widget.Container;
+
+module.exports = Container

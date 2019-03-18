@@ -1,7 +1,7 @@
 /**
  * 被观察者
  */
-Observable = jClass({
+Observable = Object.extend({
 	
 	init: function(){
 		this.observablelist = new List();

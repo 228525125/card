@@ -6,18 +6,23 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.cx.game.command.Invoker;
+import org.cx.game.command.CommandInvokerFactory;
+import org.cx.game.command.IInvoker;
 import org.cx.game.core.Camera;
 import org.cx.game.core.Record;
 import org.cx.game.exception.ValidatorException;
 import org.cx.game.tools.PropertiesUtil;
 import org.cx.game.tools.Util;
+import org.cx.card.domain.Connect;
 import org.cx.card.domain.Process;
 import org.cx.card.service.IProcessService;
 import org.cx.card.service.JDBCQueryService;
 import org.cx.card.util.Tools;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import com.easyjf.container.annonation.Inject;
+import com.easyjf.web.ActionContext;
 import com.easyjf.web.Page;
 import com.easyjf.web.WebForm;
 
@@ -42,6 +47,36 @@ public class PlayAction extends BaseAction {
 		if(null!=getUser()){
 			form.addResult("user", getUser().getAccount());
 			form.addPo(getUser());
+			
+			/*
+			 * 尝试去连接主机，并将playNo和troop保存起来，这里是为了处理掉线后的重连
+			 */
+			try {
+				IInvoker invoker = CommandInvokerFactory.getInstance();
+				invoker.receiveCommand("connect "+getUser().getAccount());
+				String resp = invoker.getResponse();
+				
+				JSONParser parser = new JSONParser();
+				
+				JSONObject obj = (JSONObject) parser.parse(resp.toString().substring(0, resp.length()-1));
+				JSONObject info = (JSONObject) obj.get("info");
+				Boolean isExistedHost = new Boolean(info.get("isExistedHost").toString());
+				if(isExistedHost){
+					String playNo = info.get("playNo").toString();
+					Integer troop = new Integer(info.get("troop").toString());
+					Connect conn = new Connect();
+					conn.setPlayNo(playNo);
+					conn.setTroop(troop);
+					ActionContext.getContext().getSession().setAttribute("conn", conn);
+				}
+			} catch (org.json.simple.parser.ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ValidatorException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			return page("index");
 		}else{
 			return forward("login", "user");
@@ -49,7 +84,6 @@ public class PlayAction extends BaseAction {
 	}
 	
 	public Page send(WebForm form){
-		getUser().getHost();
 		form.addResult("user", getUser().getAccount());
 		String msg = "complete";
 		List<Process> list = new ArrayList<Process>();
@@ -57,39 +91,59 @@ public class PlayAction extends BaseAction {
 			String command = form.get("command").toString();
 			Camera camera = Camera.getInstance();
 			msg = command +" "+ msg;
-			//String response = "";
+
+			String SPACE = " ";
+			
+			String action  = command.split(SPACE)[0];
+			
 			try {
-				if(-1!=command.indexOf("create")
-				|| -1!=command.indexOf("join")
-				|| -1!=command.indexOf("ready")
-				|| -1!=command.indexOf("deploy")
-				|| -1!=command.indexOf("go")
-				|| -1!=command.indexOf("finish")){
-					org.cx.card.command.Invoker oInvoker = new org.cx.card.command.Invoker();
-					oInvoker.receiveCommand(getUser(), command);
-					//response = oInvoker.getResponse();
-				}else{
-					Integer sequence = 0;
-					String playNo = getUser().getHost().getPlayNo();
+				Integer sequence = 0;
+				
+				if(null!=form.get("sequence")&&!"".equals(form.get("sequence").toString())){
+					/*
+					 * 客户端sequence
+					 */
+					sequence = Integer.valueOf(form.get("sequence").toString());
+					System.out.println("客户端sequence："+sequence);
+					List<Record> recordList = camera.query(sequence);
+					list.addAll(copyRecrodToProcess(recordList));
+					/*
+					 * 同步后的sequence
+					 */
+					sequence = camera.getLastSequence();
+					System.out.println("同步后sequence："+sequence);
+				}
+				
+				IInvoker invoker = null;
+				Connect conn = (Connect) ActionContext.getContext().getSession().getAttribute("conn");
+				
+				if(null==conn){
+					invoker = CommandInvokerFactory.getInstance();
+					invoker.receiveCommand(command);
+					String resp = invoker.getResponse();
 					
-					if(null!=form.get("sequence")&&!"".equals(form.get("sequence").toString())){
-						/*
-						 * 客户端sequence
-						 */
-						sequence = Integer.valueOf(form.get("sequence").toString());
-						System.out.println("客户端sequence："+sequence);
-						List<Record> recordList = camera.query(sequence);
-						list.addAll(copyRecrodToProcess(recordList));
-						/*
-						 * 同步后的sequence
-						 */
-						sequence = camera.getLastSequence();
-						System.out.println("同步后sequence："+sequence);
+					JSONParser parser = new JSONParser();
+
+					try {
+						JSONObject obj = (JSONObject) parser.parse(resp.toString().substring(0, resp.length()-1));
+						JSONObject info = (JSONObject) obj.get("info");
+						String playNo = info.get("playNo").toString();
+						Integer troop = new Integer(info.get("troop").toString());
+						
+						conn = new Connect();
+						conn.setPlayNo(playNo);
+						conn.setTroop(troop);
+						ActionContext.getContext().getSession().setAttribute("conn", conn);
+					} catch (org.json.simple.parser.ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 					
-					Invoker iInvoker = new Invoker(playNo);
-					iInvoker.receiveCommand(getUser().getPlayer(), command);
-					//response = iInvoker.getResponse();
+				}else{
+					String playNo = conn.getPlayNo();
+					Integer troop = conn.getTroop();
+					invoker = CommandInvokerFactory.getInstance(playNo, troop);
+					invoker.receiveCommand(command);
 					
 					/*
 					 * 上面经过操作又产生了新的记录
@@ -113,40 +167,22 @@ public class PlayAction extends BaseAction {
 				// TODO Auto-generated catch block
 				msg = e.getMessage();
 			}
-			
-			/*
-			if(!"".equals(response)&&0<response.split(";").length){
-				String[] resps = response.split(";");
-				String playNo = getUser().getHost().getPlayNo();
-				Integer sequence = processService.getNewSequence(playNo);
-				
-				
-				for(int i=1;i<=resps.length;i++){
-					Process p = new Process();
-					p.setPlayNo(playNo);
-					p.setResponse(resps[i]);
-					p.setSequence(sequence+i);
-					p.setExecutor(getUser().getPlayer().getTroop());
-					String action = resps[i].split("\",")[0].substring(11);
-					p.setAction(action);
-					list.add(p);
-				}
-			}*/
 		}
 
 		return success(form, true, list, msg);
 	}
 	
-	public Page syn(WebForm form){
-		String msg = Util.format(new Date())+"  syn-complete start:";		
+	public Page syn(WebForm form){		
+		
+		String msg = Util.format(new Date())+"  syn-complete start:";
 		
 		List<Process> list = new ArrayList<Process>();
 		Integer sequence = 0;
-		if(null!=getUser()
-		&&null!=getUser().getHost()
+		Connect conn = (Connect) ActionContext.getContext().getSession().getAttribute("conn");
+		if(null!=conn
 		&&null!=form.get("sequence")
 		&&!"".equals(form.get("sequence").toString())){
-			String playNo = getUser().getHost().getPlayNo();
+			String playNo = conn.getPlayNo();
 			updateProcess(playNo);
 			
 			sequence = Integer.valueOf(form.get("sequence").toString());

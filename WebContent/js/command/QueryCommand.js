@@ -2,7 +2,7 @@ QueryCommand = jClass(Command, {
 	
 	init: function(action, info){
 		var container = Context.get(Context.Ground);
-		this.positionList = info.positionList;
+		this.positionList = info.res;
 		
 		this.superFunction(container,0,action,info);
 	},

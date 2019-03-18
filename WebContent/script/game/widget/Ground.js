@@ -1,7 +1,12 @@
+var Container = require('./Container');
+
+if(!game) var game = {};
+if(!game.widget) game.widget = {};
+
 /**
  * 战场
  */
-Ground = Container.extend({
+game.widget.Ground = Container.extend({
 	
 	id : 0,
 	xBorder : 1,
@@ -16,5 +21,13 @@ Ground = Container.extend({
 		this.superFunction();
 		this.xBorder = xBorder;
 		this.yBorder = yBorder;
+	},
+
+	print: function() {
+		console.log("Ground");
 	}
 });
+
+var Ground = game.widget.Ground;
+
+module.exports = Ground

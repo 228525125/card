@@ -1,5 +1,5 @@
 
-GroundPlace = jClass(Observer,{
+GroundPlace = Observer.extend({
 	
 	init: function(position,view) {
 		this.position = position;

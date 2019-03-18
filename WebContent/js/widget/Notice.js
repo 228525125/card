@@ -1,7 +1,7 @@
 /**
  * 用于显示提示信息
  */
-Notice = jClass(Container, {
+Notice = Container.extend({
 	
 	init: function() {
 		
